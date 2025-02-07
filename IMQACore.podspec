@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "IMQACore"
-  s.version          = "1.0.3"
+  s.version          = "1.0.4"
   s.summary          = "IMQA iOS Core SDK"
   s.description      = "IMQA iOS Core SDK build한 Frameworks만 포함"
   s.homepage         = "https://github.com/your-repo"
@@ -52,4 +52,13 @@ Pod::Spec.new do |s|
 #    "FRAMEWORK_SEARCH_PATHS" => '"$(PODS_ROOT)/Frameworks"',
 #    "OTHER_LDFLAGS" => "-ObjC"
 #  }
+
+s.pod_target_xcconfig = {
+'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'x86_64 armv7 arm64',
+'VALID_ARCHS' => 'x86_64 armv7 arm64',
+}
+s.user_target_xcconfig = {
+'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'x86_64 armv7 arm64',
+'VALID_ARCHS' => 'x86_64 armv7 arm64',
+}
 end
