@@ -7,36 +7,49 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'IMQACore'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of IMQACore.'
+  s.name             = "IMQACore"
+  s.version          = "1.0.0"
+  s.summary          = "IMQA iOS Core SDK"
+  s.description      = "IMQA iOS Core SDK build한 Frameworks만 포함"
+  s.homepage         = "https://github.com/your-repo"
+  s.license          = { :type => "MIT", :file => "LICENSE" }
+  s.author           = { "Your Name" => "hunta@onycom.com" }
+  s.source           = { :git => "https://github.com/idlerecord/IMQAAPMKit.git", :tag => s.version.to_s }
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
+  s.ios.deployment_target = "13.0"
 
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+  # **1️⃣ 没有源代码，去掉 `source_files`**
+  # s.source_files = "Sources/**/*.{h,m,swift}"  ⛔️ 删除这一行
 
-  s.homepage         = 'https://github.com/Hunta/IMQACore'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Hunta' => 'hunta@onycom.com' }
-  s.source           = { :git => 'https://github.com/Hunta/IMQACore.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  # **2️⃣ 依赖的 Frameworks**
+  s.vendored_frameworks = [
+    "IMQACore/Frameworks/IMQACollectDeviceInfo.xcframework",
+    "IMQACore/Frameworks/IMQACommonInternal.xcframework",
+    "IMQACore/Frameworks/IMQACore.xcframework",
+    "IMQACore/Frameworks/IMQAObjCUtilsInternal.xcframework",
+    "IMQACore/Frameworks/IMQAOtelInternal.xcframework",
+    "IMQACore/Frameworks/KSCrash.xcframework",
+    "IMQACore/Frameworks/MMKV.xcframework",
+    "IMQACore/Frameworks/MMKVCore.xcframework",
+    "IMQACore/Frameworks/OpenTelemetryApi.xcframework",
+    "IMQACore/Frameworks/OpenTelemetrySdk.xcframework",
+    "IMQACore/Frameworks/SwiftProtobuf.xcframework"
+  ]
 
-  s.ios.deployment_target = '10.0'
+  # **3️⃣ 依赖其他 CocoaPods 库（如果有）**
+#  s.dependency "OpenTelemetryApi"
+#  s.dependency "OpenTelemetrySdk"
+#  s.dependency "KSCrash", "~> 1.15.0"
+#  s.dependency "MMKV"
 
-  s.source_files = 'IMQACore/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'IMQACore' => ['IMQACore/Assets/*.png']
-  # }
+  # **4️⃣ 资源文件 (如果 Framework 内部需要)**
+  s.resource_bundles = {
+    "IMQACoreResources" => ["Resources/*.xcprivacy", "Resources/*.bundle"]
+  }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  # **5️⃣ 额外的编译设置**
+#  s.pod_target_xcconfig = {
+#    "FRAMEWORK_SEARCH_PATHS" => '"$(PODS_ROOT)/Frameworks"',
+#    "OTHER_LDFLAGS" => "-ObjC"
+#  }
 end

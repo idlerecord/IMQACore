@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IMQACore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let endpoint = IMQA.Endpoints(collectorURL: "http://192.168.0.254:4318")
+        let serviceKey = "mSQE39offARH4SX9nxEVZDSkkXPbpG9zXSOgmJjE9FuwdYN9JsGxIEYcq_Memzlm5A2j1wFa3v6Z35lIhDvbFtNPkZtHX3-H5mjecBQ9Mg.gsJOcu8CiF1JaHV9ZEBGha"
+        let option = IMQA.Options(serviceKey: serviceKey,
+                                  endpoints: endpoint ,
+                                  sampleRate: 1.0)
+        do{
+            try IMQA
+                .setup(options: option)
+                .start()
+        }catch (let error){
+            print("\(error.localizedDescription)")
+        }
+
         return true
     }
 

@@ -42,11 +42,11 @@
 		607FACE51AFB9204008FA782 /* IMQACore_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IMQACore_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		86E7C664946365312AB29A20 /* IMQACore.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = IMQACore.podspec; path = ../IMQACore.podspec; sourceTree = "<group>"; };
+		86E7C664946365312AB29A20 /* IMQACore.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = IMQACore.podspec; path = ../IMQACore.podspec; sourceTree = "<group>"; };
 		BB3D3F686264D6D2F2750C56 /* Pods_IMQACore_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IMQACore_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB988BF5577CB4BD03A76E68 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		DB988BF5577CB4BD03A76E68 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		E3FE0A398036CDC7F92CD5EA /* Pods-IMQACore_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMQACore_Tests.debug.xcconfig"; path = "Target Support Files/Pods-IMQACore_Tests/Pods-IMQACore_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		FB132ED4F16C710BF79279F7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		FB132ED4F16C710BF79279F7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,7 +156,6 @@
 				E3FE0A398036CDC7F92CD5EA /* Pods-IMQACore_Tests.debug.xcconfig */,
 				379D38815B46A5872409C480 /* Pods-IMQACore_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -171,7 +170,7 @@
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				9022F1F3FB5E1F516F5D9221 /* [CP] Embed Pods Frameworks */,
+				7F8D37634040ACAA61EC994F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -213,10 +212,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = VPZBH6KE42;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = VPZBH6KE42;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -227,6 +228,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -262,22 +264,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		9022F1F3FB5E1F516F5D9221 /* [CP] Embed Pods Frameworks */ = {
+		7F8D37634040ACAA61EC994F /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-IMQACore_Example/Pods-IMQACore_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/IMQACore/IMQACore.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-IMQACore_Example/Pods-IMQACore_Example-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/IMQACore/IMQACoreResources.bundle",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IMQACore.framework",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IMQACoreResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IMQACore_Example/Pods-IMQACore_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IMQACore_Example/Pods-IMQACore_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9DC73159F9A1DD539D94535F /* [CP] Check Pods Manifest.lock */ = {
@@ -478,6 +480,7 @@
 			baseConfigurationReference = 4FC29082B497AEEF20E1A7F7 /* Pods-IMQACore_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = VPZBH6KE42;
 				INFOPLIST_FILE = IMQACore/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -493,6 +496,7 @@
 			baseConfigurationReference = 0C8F16E47B7F8BF9FE7EF1D9 /* Pods-IMQACore_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = VPZBH6KE42;
 				INFOPLIST_FILE = IMQACore/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -507,6 +511,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E3FE0A398036CDC7F92CD5EA /* Pods-IMQACore_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = VPZBH6KE42;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -529,6 +534,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 379D38815B46A5872409C480 /* Pods-IMQACore_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = VPZBH6KE42;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
