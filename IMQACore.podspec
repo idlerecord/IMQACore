@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "IMQACore"
-  s.version          = "1.0.2"
+  s.version          = "1.0.3"
   s.summary          = "IMQA iOS Core SDK"
   s.description      = "IMQA iOS Core SDK build한 Frameworks만 포함"
   s.homepage         = "https://github.com/your-repo"
@@ -23,17 +23,17 @@ Pod::Spec.new do |s|
 
   # **2️⃣ 依赖的 Frameworks**
   s.vendored_frameworks = [
-    "./IMQACore/Frameworks/IMQACollectDeviceInfo.xcframework",
-    "./IMQACore/Frameworks/IMQACommonInternal.xcframework",
-    "./IMQACore/Frameworks/IMQACore.xcframework",
-    "./IMQACore/Frameworks/IMQAObjCUtilsInternal.xcframework",
-    "./IMQACore/Frameworks/IMQAOtelInternal.xcframework",
-    "./IMQACore/Frameworks/KSCrash.xcframework",
-    "./IMQACore/Frameworks/MMKV.xcframework",
-    "./IMQACore/Frameworks/MMKVCore.xcframework",
-    "./IMQACore/Frameworks/OpenTelemetryApi.xcframework",
-    "./IMQACore/Frameworks/OpenTelemetrySdk.xcframework",
-    "./IMQACore/Frameworks/SwiftProtobuf.xcframework"
+    "IMQACore/Frameworks/IMQACollectDeviceInfo.xcframework",
+    "IMQACore/Frameworks/IMQACommonInternal.xcframework",
+    "IMQACore/Frameworks/IMQACore.xcframework",
+    "IMQACore/Frameworks/IMQAObjCUtilsInternal.xcframework",
+    "IMQACore/Frameworks/IMQAOtelInternal.xcframework",
+    "IMQACore/Frameworks/KSCrash.xcframework",
+    "IMQACore/Frameworks/MMKV.xcframework",
+    "IMQACore/Frameworks/MMKVCore.xcframework",
+    "IMQACore/Frameworks/OpenTelemetryApi.xcframework",
+    "IMQACore/Frameworks/OpenTelemetrySdk.xcframework",
+    "IMQACore/Frameworks/SwiftProtobuf.xcframework"
   ]
 
   # **3️⃣ 依赖其他 CocoaPods 库（如果有）**
