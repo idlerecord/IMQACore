@@ -481,7 +481,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) IMQA * _Nullable clien
 
 
 
-
 @interface IMQA (SWIFT_EXTENSION(IMQACore))
 @end
 
@@ -492,6 +491,7 @@ SWIFT_CLASS_NAMED("Options")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
 
 
 @interface IMQA (SWIFT_EXTENSION(IMQACore))
@@ -510,17 +510,17 @@ SWIFT_CLASS_NAMED("Endpoints")
 
 
 
+@interface IMQA (SWIFT_EXTENSION(IMQACore))
+- (IMQA * _Nullable)startAndReturnError:(NSError * _Nullable * _Nullable)error;
++ (IMQA * _Nullable)setupWithOptions:(IMQAOptions * _Nonnull)options error:(NSError * _Nullable * _Nullable)error;
+@end
+
+
 
 @interface IMQA (SWIFT_EXTENSION(IMQACore))
 - (NSString * _Nullable)currentSessionId SWIFT_WARN_UNUSED_RESULT;
 @end
 
-
-
-@interface IMQA (SWIFT_EXTENSION(IMQACore))
-- (IMQA * _Nullable)startAndReturnError:(NSError * _Nullable * _Nullable)error;
-+ (IMQA * _Nullable)setupWithOptions:(IMQAOptions * _Nonnull)options error:(NSError * _Nullable * _Nullable)error;
-@end
 
 
 
@@ -1256,7 +1256,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) IMQA * _Nullable clien
 
 
 
-
 @interface IMQA (SWIFT_EXTENSION(IMQACore))
 @end
 
@@ -1267,6 +1266,7 @@ SWIFT_CLASS_NAMED("Options")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
 
 
 @interface IMQA (SWIFT_EXTENSION(IMQACore))
@@ -1285,17 +1285,17 @@ SWIFT_CLASS_NAMED("Endpoints")
 
 
 
+@interface IMQA (SWIFT_EXTENSION(IMQACore))
+- (IMQA * _Nullable)startAndReturnError:(NSError * _Nullable * _Nullable)error;
++ (IMQA * _Nullable)setupWithOptions:(IMQAOptions * _Nonnull)options error:(NSError * _Nullable * _Nullable)error;
+@end
+
+
 
 @interface IMQA (SWIFT_EXTENSION(IMQACore))
 - (NSString * _Nullable)currentSessionId SWIFT_WARN_UNUSED_RESULT;
 @end
 
-
-
-@interface IMQA (SWIFT_EXTENSION(IMQACore))
-- (IMQA * _Nullable)startAndReturnError:(NSError * _Nullable * _Nullable)error;
-+ (IMQA * _Nullable)setupWithOptions:(IMQAOptions * _Nonnull)options error:(NSError * _Nullable * _Nullable)error;
-@end
 
 
 

@@ -7,33 +7,6 @@ import Swift
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
-public enum IMQALogType : Swift.String {
-  case SESSION
-  case RENDER
-  case XHR
-  case EVENT
-  case CRASH
-  case LOG
-  case APPLIFECYCLE
-  case INTERNAL
-  public init?(rawValue: Swift.String)
-  public typealias RawValue = Swift.String
-  public var rawValue: Swift.String {
-    get
-  }
-}
-@_hasMissingDesignatedInitializers public class IMQAMeta {
-  public static let sdkVersion: Swift.String
-  @objc deinit
-}
-extension IMQAOtelInternal.IMQAMeta {
-  public static var userAgent: Swift.String {
-    get
-  }
-}
-public struct IMQAScreen {
-  public static var name: Swift.String?
-}
 public enum IMQASetupError : Swift.Error, Swift.Equatable {
   case invalidThread(_: Swift.String)
   case initializationNotAllowed(_: Swift.String)
@@ -54,21 +27,6 @@ extension IMQAOtelInternal.IMQASetupError : Foundation.LocalizedError, Foundatio
     get
   }
   public var localizedDescription: Swift.String {
-    get
-  }
-}
-public enum IMQASpanType : Swift.String, Swift.Decodable {
-  case SESSION
-  case RENDER
-  case XHR
-  case EVENT
-  case CRASH
-  case LOG
-  case APPLIFECYCLE
-  case DEFAULT
-  public init?(rawValue: Swift.String)
-  public typealias RawValue = Swift.String
-  public var rawValue: Swift.String {
     get
   }
 }
@@ -117,6 +75,11 @@ extension Foundation.ProcessInfo {
   public var isSwiftUIPreview: Swift.Bool {
     get
   }
+}
+extension Foundation.URL {
+  public static func endpoint(basePath: Swift.String, apiPath: Swift.String) -> Foundation.URL?
+  public static func spansEndpoint(basePath: Swift.String) -> Foundation.URL?
+  public static func logsEndpoint(basePath: Swift.String) -> Foundation.URL?
 }
 public struct ResourceSemantics {
   public static let serviceName: Swift.String
@@ -195,22 +158,53 @@ public struct SpanSemantics {
     public static let appLifecycle: Swift.String
   }
 }
-extension Foundation.URL {
-  public static func endpoint(basePath: Swift.String, apiPath: Swift.String) -> Foundation.URL?
-  public static func spansEndpoint(basePath: Swift.String) -> Foundation.URL?
-  public static func logsEndpoint(basePath: Swift.String) -> Foundation.URL?
-}
 public struct UserSemantics {
   public static var userProfileUserDefaultKey: Swift.String {
     get
   }
 }
-extension IMQAOtelInternal.IMQALogType : Swift.Equatable {}
-extension IMQAOtelInternal.IMQALogType : Swift.Hashable {}
-extension IMQAOtelInternal.IMQALogType : Swift.RawRepresentable {}
-extension IMQAOtelInternal.IMQASpanType : Swift.Equatable {}
-extension IMQAOtelInternal.IMQASpanType : Swift.Hashable {}
-extension IMQAOtelInternal.IMQASpanType : Swift.RawRepresentable {}
+public struct IMQAScreen {
+  public static var name: Swift.String?
+}
+public enum IMQALogType : Swift.String {
+  case SESSION
+  case RENDER
+  case XHR
+  case EVENT
+  case CRASH
+  case LOG
+  case APPLIFECYCLE
+  case INTERNAL
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum IMQASpanType : Swift.String, Swift.Decodable {
+  case SESSION
+  case RENDER
+  case XHR
+  case EVENT
+  case CRASH
+  case LOG
+  case APPLIFECYCLE
+  case DEFAULT
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class IMQAMeta {
+  public static let sdkVersion: Swift.String
+  @objc deinit
+}
+extension IMQAOtelInternal.IMQAMeta {
+  public static var userAgent: Swift.String {
+    get
+  }
+}
 extension IMQAOtelInternal.LogLevel : Swift.Equatable {}
 extension IMQAOtelInternal.LogLevel : Swift.Hashable {}
 extension IMQAOtelInternal.LogLevel : Swift.RawRepresentable {}
@@ -220,3 +214,9 @@ extension IMQAOtelInternal.LogSeverity : Swift.RawRepresentable {}
 extension IMQAOtelInternal.SpanSemantics.EventValue : Swift.Equatable {}
 extension IMQAOtelInternal.SpanSemantics.EventValue : Swift.Hashable {}
 extension IMQAOtelInternal.SpanSemantics.EventValue : Swift.RawRepresentable {}
+extension IMQAOtelInternal.IMQALogType : Swift.Equatable {}
+extension IMQAOtelInternal.IMQALogType : Swift.Hashable {}
+extension IMQAOtelInternal.IMQALogType : Swift.RawRepresentable {}
+extension IMQAOtelInternal.IMQASpanType : Swift.Equatable {}
+extension IMQAOtelInternal.IMQASpanType : Swift.Hashable {}
+extension IMQAOtelInternal.IMQASpanType : Swift.RawRepresentable {}

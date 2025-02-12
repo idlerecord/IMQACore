@@ -11,6 +11,45 @@ import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
 import zlib
+public class SessionHeartbeat {
+  public static let defaultInterval: Swift.Double
+  public var callback: (() -> Swift.Void)?
+  public init(queue: Dispatch.DispatchQueue, interval: Foundation.TimeInterval)
+  public func start()
+  public func stop()
+  @objc deinit
+}
+public enum ErrorCode : Swift.String {
+  case failure
+  case userAbandon
+  case unknown
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum SessionState : Swift.String {
+  case foreground
+  case background
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension IMQACommonInternal.SessionState {
+  public init?(appState: UIKit.UIApplication.State)
+}
+public enum StackTraceBehavior : Swift.Int {
+  case notIncluded
+  case `default`
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 extension Foundation.Bundle {
   public class var appIdentifier: Swift.String {
     get
@@ -84,50 +123,17 @@ extension Foundation.Date {
     get
   }
 }
-public protocol KeychainInterface {
-  func valueFor(service: CoreFoundation.CFString, account: CoreFoundation.CFString) -> (value: Swift.String?, status: Darwin.OSStatus)
-  func setValue(service: CoreFoundation.CFString, account: CoreFoundation.CFString, value: Swift.String) -> Darwin.OSStatus
-  func deleteValue(service: CoreFoundation.CFString, account: CoreFoundation.CFString) -> Darwin.OSStatus
-}
-@_hasMissingDesignatedInitializers public class DefaultKeychainInterface : IMQACommonInternal.KeychainInterface {
-  public func valueFor(service: CoreFoundation.CFString, account: CoreFoundation.CFString) -> (value: Swift.String?, status: Darwin.OSStatus)
-  public func setValue(service: CoreFoundation.CFString, account: CoreFoundation.CFString, value: Swift.String) -> Darwin.OSStatus
-  public func deleteValue(service: CoreFoundation.CFString, account: CoreFoundation.CFString) -> Darwin.OSStatus
-  @objc deinit
-}
-public struct DeviceIdentifier : Swift.Equatable {
-  public init(value: Foundation.UUID)
-  public init?(string: Swift.String?)
-  public var hex: Swift.String {
-    get
-  }
-  public static func == (a: IMQACommonInternal.DeviceIdentifier, b: IMQACommonInternal.DeviceIdentifier) -> Swift.Bool
-}
-extension IMQACommonInternal.DeviceIdentifier {
-  public func intValue(digitCount: Swift.UInt) -> Swift.UInt64
-}
 extension Dispatch.DispatchQueue {
   public class func once(token: Swift.String, block: () -> Swift.Void)
-}
-public protocol DispatchableQueue : AnyObject {
-  func async(_ block: @escaping () -> Swift.Void)
-  func sync(execute block: () -> Swift.Void)
-}
-extension Dispatch.DispatchQueue : IMQACommonInternal.DispatchableQueue {
-  public func async(_ block: @escaping () -> Swift.Void)
 }
 extension Swift.Encodable {
   public func toString() -> Swift.String?
 }
-public enum ErrorCode : Swift.String {
-  case failure
-  case userAbandon
-  case unknown
-  public init?(rawValue: Swift.String)
-  public typealias RawValue = Swift.String
-  public var rawValue: Swift.String {
-    get
-  }
+extension UIKit.UIViewController {
+  @_Concurrency.MainActor @preconcurrency public static var currentVCLatestClickTraceId: Swift.String?
+}
+extension UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency public func findTitle() -> Swift.String?
 }
 public enum IMQASwizzableError : Swift.Error, Swift.Equatable {
   case methodNotFound(selectorName: Swift.String, className: Swift.String)
@@ -147,11 +153,29 @@ extension IMQACommonInternal.IMQASwizzableError : Foundation.LocalizedError, Fou
     get
   }
 }
-@_hasMissingDesignatedInitializers public class KeychainAccess {
-  public static var deviceId: Foundation.UUID {
+public protocol Swizzlable {
+  associatedtype ImplementationType
+  associatedtype BlockImplementationType
+  static var selector: ObjectiveC.Selector { get }
+  var baseClass: Swift.AnyClass { get }
+  func install() throws
+  func swizzleInstanceMethod(_ block: (Self.ImplementationType) -> Self.BlockImplementationType) throws
+  func swizzleClassMethod(_ block: (Self.ImplementationType) -> Self.BlockImplementationType) throws
+}
+extension IMQACommonInternal.Swizzlable {
+  public func swizzleInstanceMethod(_ block: (Self.ImplementationType) -> Self.BlockImplementationType) throws
+  public func swizzleClassMethod(_ block: (Self.ImplementationType) -> Self.BlockImplementationType) throws
+}
+public struct DeviceIdentifier : Swift.Equatable {
+  public init(value: Foundation.UUID)
+  public init?(string: Swift.String?)
+  public var hex: Swift.String {
     get
   }
-  @objc deinit
+  public static func == (a: IMQACommonInternal.DeviceIdentifier, b: IMQACommonInternal.DeviceIdentifier) -> Swift.Bool
+}
+extension IMQACommonInternal.DeviceIdentifier {
+  public func intValue(digitCount: Swift.UInt) -> Swift.UInt64
 }
 public struct LogIdentifier : Swift.Codable, Swift.Equatable {
   public let value: Foundation.UUID
@@ -168,6 +192,72 @@ extension IMQACommonInternal.LogIdentifier {
   public static var random: IMQACommonInternal.LogIdentifier {
     get
   }
+}
+public struct ProcessIdentifier : Swift.Equatable {
+  public let value: Swift.UInt32
+  public init?(hex: Swift.String)
+  public init(value: Swift.UInt32)
+  public var hex: Swift.String {
+    get
+  }
+  public static func == (a: IMQACommonInternal.ProcessIdentifier, b: IMQACommonInternal.ProcessIdentifier) -> Swift.Bool
+}
+extension IMQACommonInternal.ProcessIdentifier {
+  public static let current: IMQACommonInternal.ProcessIdentifier
+}
+extension IMQACommonInternal.ProcessIdentifier {
+  public static var random: IMQACommonInternal.ProcessIdentifier {
+    get
+  }
+}
+extension IMQACommonInternal.ProcessIdentifier : Swift.Codable {
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public struct SessionIdentifier : Swift.Equatable {
+  public init(value: Foundation.UUID)
+  public init?(string: Swift.String?)
+  public var toString: Swift.String {
+    get
+  }
+  public static func == (a: IMQACommonInternal.SessionIdentifier, b: IMQACommonInternal.SessionIdentifier) -> Swift.Bool
+}
+extension IMQACommonInternal.SessionIdentifier : Swift.Codable {
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+extension IMQACommonInternal.SessionIdentifier {
+  public static var random: IMQACommonInternal.SessionIdentifier {
+    get
+  }
+}
+extension IMQACommonInternal.SessionIdentifier : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+extension Foundation.UUID {
+  public init?(withoutHyphen: Swift.String)
+  public var withoutHyphen: Swift.String {
+    get
+  }
+}
+public protocol KeychainInterface {
+  func valueFor(service: CoreFoundation.CFString, account: CoreFoundation.CFString) -> (value: Swift.String?, status: Darwin.OSStatus)
+  func setValue(service: CoreFoundation.CFString, account: CoreFoundation.CFString, value: Swift.String) -> Darwin.OSStatus
+  func deleteValue(service: CoreFoundation.CFString, account: CoreFoundation.CFString) -> Darwin.OSStatus
+}
+@_hasMissingDesignatedInitializers public class DefaultKeychainInterface : IMQACommonInternal.KeychainInterface {
+  public func valueFor(service: CoreFoundation.CFString, account: CoreFoundation.CFString) -> (value: Swift.String?, status: Darwin.OSStatus)
+  public func setValue(service: CoreFoundation.CFString, account: CoreFoundation.CFString, value: Swift.String) -> Darwin.OSStatus
+  public func deleteValue(service: CoreFoundation.CFString, account: CoreFoundation.CFString) -> Darwin.OSStatus
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class KeychainAccess {
+  public static var deviceId: Foundation.UUID {
+    get
+  }
+  @objc deinit
 }
 public enum PersistableValue : Swift.Equatable, Swift.CustomStringConvertible, Swift.Hashable, Swift.Codable {
   case string(Swift.String)
@@ -199,91 +289,6 @@ extension IMQACommonInternal.PersistableValue {
   public init(_ value: [Swift.Int])
   public init(_ value: [Swift.Double])
 }
-public struct ProcessIdentifier : Swift.Equatable {
-  public let value: Swift.UInt32
-  public init?(hex: Swift.String)
-  public init(value: Swift.UInt32)
-  public var hex: Swift.String {
-    get
-  }
-  public static func == (a: IMQACommonInternal.ProcessIdentifier, b: IMQACommonInternal.ProcessIdentifier) -> Swift.Bool
-}
-extension IMQACommonInternal.ProcessIdentifier {
-  public static let current: IMQACommonInternal.ProcessIdentifier
-}
-extension IMQACommonInternal.ProcessIdentifier {
-  public static var random: IMQACommonInternal.ProcessIdentifier {
-    get
-  }
-}
-extension IMQACommonInternal.ProcessIdentifier : Swift.Codable {
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
-}
-public class SessionHeartbeat {
-  public static let defaultInterval: Swift.Double
-  public var callback: (() -> Swift.Void)?
-  public init(queue: Dispatch.DispatchQueue, interval: Foundation.TimeInterval)
-  public func start()
-  public func stop()
-  @objc deinit
-}
-public struct SessionIdentifier : Swift.Equatable {
-  public init(value: Foundation.UUID)
-  public init?(string: Swift.String?)
-  public var toString: Swift.String {
-    get
-  }
-  public static func == (a: IMQACommonInternal.SessionIdentifier, b: IMQACommonInternal.SessionIdentifier) -> Swift.Bool
-}
-extension IMQACommonInternal.SessionIdentifier : Swift.Codable {
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
-}
-extension IMQACommonInternal.SessionIdentifier {
-  public static var random: IMQACommonInternal.SessionIdentifier {
-    get
-  }
-}
-extension IMQACommonInternal.SessionIdentifier : Swift.CustomStringConvertible {
-  public var description: Swift.String {
-    get
-  }
-}
-public enum SessionState : Swift.String {
-  case foreground
-  case background
-  public init?(rawValue: Swift.String)
-  public typealias RawValue = Swift.String
-  public var rawValue: Swift.String {
-    get
-  }
-}
-extension IMQACommonInternal.SessionState {
-  public init?(appState: UIKit.UIApplication.State)
-}
-public enum StackTraceBehavior : Swift.Int {
-  case notIncluded
-  case `default`
-  public init?(rawValue: Swift.Int)
-  public typealias RawValue = Swift.Int
-  public var rawValue: Swift.Int {
-    get
-  }
-}
-public protocol Swizzlable {
-  associatedtype ImplementationType
-  associatedtype BlockImplementationType
-  static var selector: ObjectiveC.Selector { get }
-  var baseClass: Swift.AnyClass { get }
-  func install() throws
-  func swizzleInstanceMethod(_ block: (Self.ImplementationType) -> Self.BlockImplementationType) throws
-  func swizzleClassMethod(_ block: (Self.ImplementationType) -> Self.BlockImplementationType) throws
-}
-extension IMQACommonInternal.Swizzlable {
-  public func swizzleInstanceMethod(_ block: (Self.ImplementationType) -> Self.BlockImplementationType) throws
-  public func swizzleClassMethod(_ block: (Self.ImplementationType) -> Self.BlockImplementationType) throws
-}
 @propertyWrapper final public class ThreadSafe<Value> {
   public init(wrappedValue: Value)
   final public var wrappedValue: Value {
@@ -298,17 +303,12 @@ final public class UnfairLock {
   @objc deinit
   final public func locked<ReturnValue>(_ f: () throws -> ReturnValue) rethrows -> ReturnValue
 }
-extension UIKit.UIViewController {
-  @_Concurrency.MainActor @preconcurrency public static var currentVCLatestClickTraceId: Swift.String?
+public protocol DispatchableQueue : AnyObject {
+  func async(_ block: @escaping () -> Swift.Void)
+  func sync(execute block: () -> Swift.Void)
 }
-extension UIKit.UIView {
-  @_Concurrency.MainActor @preconcurrency public func findTitle() -> Swift.String?
-}
-extension Foundation.UUID {
-  public init?(withoutHyphen: Swift.String)
-  public var withoutHyphen: Swift.String {
-    get
-  }
+extension Dispatch.DispatchQueue : IMQACommonInternal.DispatchableQueue {
+  public func async(_ block: @escaping () -> Swift.Void)
 }
 extension IMQACommonInternal.ErrorCode : Swift.Equatable {}
 extension IMQACommonInternal.ErrorCode : Swift.Hashable {}
