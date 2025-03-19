@@ -2803,6 +2803,53 @@
                     "accessorKind": "get"
                   }
                 ]
+              },
+              {
+                "kind": "Var",
+                "name": "httpHost",
+                "printedName": "httpHost",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:16IMQAOtelInternal13SpanSemanticsV3XHRV8httpHostSSvpZ",
+                "mangledName": "$s16IMQAOtelInternal13SpanSemanticsV3XHRV8httpHostSSvpZ",
+                "moduleName": "IMQAOtelInternal",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:16IMQAOtelInternal13SpanSemanticsV3XHRV8httpHostSSvgZ",
+                    "mangledName": "$s16IMQAOtelInternal13SpanSemanticsV3XHRV8httpHostSSvgZ",
+                    "moduleName": "IMQAOtelInternal",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
               }
             ],
             "declKind": "Struct",
@@ -6287,564 +6334,571 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Enum\/LogLevel.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Enum\/LogLevel.swift",
       "kind": "IntegerLiteral",
       "offset": 195,
       "length": 5,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Enum\/LogLevel.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Enum\/LogLevel.swift",
       "kind": "IntegerLiteral",
       "offset": 210,
       "length": 5,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Enum\/LogLevel.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Enum\/LogLevel.swift",
       "kind": "IntegerLiteral",
       "offset": 225,
       "length": 4,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Enum\/LogLevel.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Enum\/LogLevel.swift",
       "kind": "IntegerLiteral",
       "offset": 239,
       "length": 7,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Enum\/LogLevel.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Enum\/LogLevel.swift",
       "kind": "IntegerLiteral",
       "offset": 256,
       "length": 5,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Enum\/LogSeverity.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Enum\/LogSeverity.swift",
       "kind": "IntegerLiteral",
       "offset": 167,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Enum\/LogSeverity.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Enum\/LogSeverity.swift",
       "kind": "IntegerLiteral",
       "offset": 186,
       "length": 1,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Enum\/LogSeverity.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Enum\/LogSeverity.swift",
       "kind": "IntegerLiteral",
       "offset": 204,
       "length": 1,
       "value": "9"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Enum\/LogSeverity.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Enum\/LogSeverity.swift",
       "kind": "IntegerLiteral",
       "offset": 222,
       "length": 2,
       "value": "13"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Enum\/LogSeverity.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Enum\/LogSeverity.swift",
       "kind": "IntegerLiteral",
       "offset": 242,
       "length": 2,
       "value": "17"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Enum\/LogSeverity.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Enum\/LogSeverity.swift",
       "kind": "IntegerLiteral",
       "offset": 262,
       "length": 2,
       "value": "24"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/ResourceSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/ResourceSemantics.swift",
       "kind": "StringLiteral",
       "offset": 209,
       "length": 14,
       "value": "\"service.name\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/ResourceSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/ResourceSemantics.swift",
       "kind": "StringLiteral",
       "offset": 304,
       "length": 17,
       "value": "\"service.version\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/ResourceSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/ResourceSemantics.swift",
       "kind": "StringLiteral",
       "offset": 383,
       "length": 20,
       "value": "\"imqa.agent.version\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/ResourceSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/ResourceSemantics.swift",
       "kind": "StringLiteral",
       "offset": 470,
       "length": 9,
       "value": "\"os.name\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/ResourceSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/ResourceSemantics.swift",
       "kind": "StringLiteral",
       "offset": 549,
       "length": 12,
       "value": "\"os.version\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/ResourceSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/ResourceSemantics.swift",
       "kind": "StringLiteral",
       "offset": 661,
       "length": 13,
       "value": "\"service.key\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/ResourceSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/ResourceSemantics.swift",
       "kind": "StringLiteral",
       "offset": 744,
       "length": 11,
       "value": "\"device.id\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/ResourceSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/ResourceSemantics.swift",
       "kind": "StringLiteral",
       "offset": 817,
       "length": 21,
       "value": "\"device.manufacturer\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/ResourceSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/ResourceSemantics.swift",
       "kind": "StringLiteral",
       "offset": 893,
       "length": 14,
       "value": "\"device.brand\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/ResourceSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/ResourceSemantics.swift",
       "kind": "StringLiteral",
       "offset": 969,
       "length": 25,
       "value": "\"device.model.identifier\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
       "offset": 181,
       "length": 11,
       "value": "\"span.type\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
       "offset": 262,
       "length": 12,
       "value": "\"event_type\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
       "offset": 317,
       "length": 16,
       "value": "\"target_element\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
       "offset": 380,
       "length": 21,
       "value": "\"target_element_text\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
       "offset": 440,
       "length": 12,
       "value": "\"tap.coords\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
       "offset": 527,
       "length": 7,
       "value": "\"click\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
       "offset": 563,
       "length": 8,
       "value": "\"scroll\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
       "offset": 650,
       "length": 22,
       "value": "\"http.request.headers\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
       "offset": 717,
       "length": 19,
       "value": "\"http.request.body\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
       "offset": 775,
       "length": 12,
       "value": "\"error.type\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 856,
+      "offset": 825,
+      "length": 11,
+      "value": "\"http.host\""
+    },
+    {
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "kind": "StringLiteral",
+      "offset": 933,
       "length": 9,
       "value": "\"session\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 900,
+      "offset": 977,
       "length": 12,
       "value": "\"session.id\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 950,
+      "offset": 1027,
       "length": 12,
       "value": "\"imqa.state\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 1004,
+      "offset": 1081,
       "length": 17,
       "value": "\"imqa.cold_start\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 1064,
+      "offset": 1141,
       "length": 17,
       "value": "\"imqa.terminated\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 1123,
+      "offset": 1200,
       "length": 17,
       "value": "\"imqa.clean_exit\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 1186,
+      "offset": 1263,
       "length": 21,
       "value": "\"imqa.session_number\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 1249,
+      "offset": 1326,
       "length": 31,
       "value": "\"imqa.heartbeat_time_unix_nano\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 1320,
+      "offset": 1397,
       "length": 15,
       "value": "\"imqa.crash_id\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 1465,
+      "offset": 1542,
       "length": 12,
       "value": "\"session.id\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 1523,
+      "offset": 1600,
       "length": 10,
       "value": "\"trace.id\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 1578,
+      "offset": 1655,
       "length": 9,
       "value": "\"span.id\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 1670,
+      "offset": 1747,
       "length": 16,
       "value": "\"source.address\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 1760,
+      "offset": 1837,
       "length": 13,
       "value": "\"screen.name\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 1842,
+      "offset": 1919,
       "length": 13,
       "value": "\"screen.type\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 1919,
+      "offset": 1996,
       "length": 9,
       "value": "\"user.id\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 2008,
+      "offset": 2085,
       "length": 22,
       "value": "\"network.carrier.name\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 2136,
+      "offset": 2213,
       "length": 28,
       "value": "\"network.connection.subtype\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 2254,
+      "offset": 2331,
       "length": 22,
       "value": "\"device.battery.level\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 2358,
+      "offset": 2435,
       "length": 25,
       "value": "\"device.battery.charging\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 2452,
+      "offset": 2529,
       "length": 15,
       "value": "\"app.cpu.usage\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 2550,
+      "offset": 2627,
       "length": 21,
       "value": "\"device.memory.total\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 2653,
+      "offset": 2730,
       "length": 20,
       "value": "\"device.memory.free\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 2766,
+      "offset": 2843,
       "length": 22,
       "value": "\"app.memory.allocated\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 2850,
+      "offset": 2927,
       "length": 11,
       "value": "\"area.code\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 2956,
+      "offset": 3033,
       "length": 19,
       "value": "\"network.available\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 3107,
+      "offset": 3184,
       "length": 18,
       "value": "\"network.cellular\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 3233,
+      "offset": 3310,
       "length": 14,
       "value": "\"network.wifi\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 3348,
+      "offset": 3425,
       "length": 10,
       "value": "\"NoScreen\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 3404,
+      "offset": 3481,
       "length": 6,
       "value": "\"view\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 3490,
+      "offset": 3567,
       "length": 9,
       "value": "\"Session\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 3639,
+      "offset": 3716,
       "length": 22,
       "value": "\"device.app.lifecycle\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Type\/IMQALogType.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Type\/IMQALogType.swift",
       "kind": "StringLiteral",
       "offset": 138,
       "length": 9,
       "value": "\"session\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Type\/IMQALogType.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Type\/IMQALogType.swift",
       "kind": "StringLiteral",
       "offset": 166,
       "length": 8,
       "value": "\"render\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Type\/IMQALogType.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Type\/IMQALogType.swift",
       "kind": "StringLiteral",
       "offset": 190,
       "length": 5,
       "value": "\"xhr\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Type\/IMQALogType.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Type\/IMQALogType.swift",
       "kind": "StringLiteral",
       "offset": 213,
       "length": 7,
       "value": "\"event\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Type\/IMQALogType.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Type\/IMQALogType.swift",
       "kind": "StringLiteral",
       "offset": 238,
       "length": 7,
       "value": "\"crash\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Type\/IMQALogType.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Type\/IMQALogType.swift",
       "kind": "StringLiteral",
       "offset": 261,
       "length": 5,
       "value": "\"log\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Type\/IMQALogType.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Type\/IMQALogType.swift",
       "kind": "StringLiteral",
       "offset": 291,
       "length": 15,
       "value": "\"app_lifecycle\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Type\/IMQALogType.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Type\/IMQALogType.swift",
       "kind": "StringLiteral",
       "offset": 327,
       "length": 10,
       "value": "\"internal\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Type\/IMQASpanType.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Type\/IMQASpanType.swift",
       "kind": "StringLiteral",
       "offset": 152,
       "length": 9,
       "value": "\"session\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Type\/IMQASpanType.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Type\/IMQASpanType.swift",
       "kind": "StringLiteral",
       "offset": 180,
       "length": 8,
       "value": "\"render\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Type\/IMQASpanType.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Type\/IMQASpanType.swift",
       "kind": "StringLiteral",
       "offset": 204,
       "length": 5,
       "value": "\"xhr\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Type\/IMQASpanType.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Type\/IMQASpanType.swift",
       "kind": "StringLiteral",
       "offset": 227,
       "length": 7,
       "value": "\"event\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Type\/IMQASpanType.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Type\/IMQASpanType.swift",
       "kind": "StringLiteral",
       "offset": 252,
       "length": 7,
       "value": "\"crash\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Type\/IMQASpanType.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Type\/IMQASpanType.swift",
       "kind": "StringLiteral",
       "offset": 275,
       "length": 5,
       "value": "\"log\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Type\/IMQASpanType.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Type\/IMQASpanType.swift",
       "kind": "StringLiteral",
       "offset": 305,
       "length": 15,
       "value": "\"app_lifecycle\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Type\/IMQASpanType.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Type\/IMQASpanType.swift",
       "kind": "StringLiteral",
       "offset": 340,
       "length": 9,
       "value": "\"default\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Sources\/IMQAOtelInternal\/Version\/IMQAMeta.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Sources\/IMQAOtelInternal\/Version\/IMQAMeta.swift",
       "kind": "StringLiteral",
       "offset": 143,
       "length": 7,
-      "value": "\"1.0.5\""
+      "value": "\"1.0.7\""
     }
   ]
 }

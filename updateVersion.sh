@@ -1,8 +1,9 @@
 #!/bin/bash
-
+# 第一个参数为主工程编译后的xcframework的目录，第二个参数为cocoapods的repo目录
 # 定义路径
-SRC_DIR="$1"
-REPO_DIR="$2"
+SRC_DIR="/Users/huntapark/.jenkins/workspace/iOSXCFramework/Build/xcframework"
+CURRENT_DIR=$(pwd)
+REPO_DIR="$CURRENT_DIR"
 DEST_DIR="$REPO_DIR/IMQACore/Frameworks"
 PODSPEC_FILE="$REPO_DIR/IMQACore.podspec"
 

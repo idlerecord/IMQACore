@@ -114,6 +114,7 @@ public struct SpanSemantics {
     public static let httpRequestHeaders: Swift.String
     public static let httpRequestBody: Swift.String
     public static let errorType: Swift.String
+    public static let httpHost: Swift.String
   }
   public struct Session {
     public static let name: Swift.String

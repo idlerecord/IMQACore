@@ -176,6 +176,9 @@ extension IMQACore.CrashlyticsReporter : IMQACore.ExtendableCrashReporter {
 extension IMQACore.IMQACrashReporter : IMQACore.ExtendableCrashReporter {
   final public func appendCrashInfo(key: Swift.String, value: Swift.String)
 }
+extension IMQACore.IMQACrashReporter {
+  public static func removeCrashSpanRecord(sessionId: Swift.String)
+}
 @_inheritsConvenienceInitializers @objc(IMQALowMemoryWarningCaptureService) public class LowMemoryWarningCaptureService : IMQACore.CaptureService {
   public var onWarningCaptured: (() -> Swift.Void)?
   @objc deinit
@@ -483,7 +486,7 @@ public class CustomOtlpHttpExporterBase {
   @objc deinit
 }
 @_inheritsConvenienceInitializers public class CustomOtlpHttpTraceExporter : IMQACore.CustomOtlpHttpExporterBase, OpenTelemetrySdk.SpanExporter {
-  convenience public init(endpoint: Foundation.URL, config: IMQACore.CustomOtlpConfiguration = CustomOtlpConfiguration(), useSession: Foundation.URLSession? = nil, envVarHeaders: [(Swift.String, Swift.String)]? = CustomEnvVarHeaders.attributes, storage: IMQACore.IMQAStorage)
+  convenience public init(endpoint: Foundation.URL, config: IMQACore.CustomOtlpConfiguration = CustomOtlpConfiguration(), useSession: Foundation.URLSession? = nil, envVarHeaders: [(Swift.String, Swift.String)]? = CustomEnvVarHeaders.attributes, uploadCache: IMQACore.IMQAUploadCache)
   public func export(spans: [OpenTelemetrySdk.SpanData], explicitTimeout: Foundation.TimeInterval? = nil) -> OpenTelemetrySdk.SpanExporterResultCode
   public func flush(explicitTimeout: Foundation.TimeInterval? = nil) -> OpenTelemetrySdk.SpanExporterResultCode
   override public init(endpoint: Foundation.URL, config: IMQACore.CustomOtlpConfiguration = super, useSession: Foundation.URLSession? = nil, envVarHeaders: [(Swift.String, Swift.String)]? = super)
@@ -517,11 +520,9 @@ extension IMQACore.IMQA {
   @objc public static func setup(options: IMQACore.IMQA.Options) throws -> IMQACore.IMQA
 }
 extension IMQACore.IMQA {
-  public static func customLog(level: IMQAOtelInternal.LogLevel, message: Swift.String)
-}
-extension IMQACore.IMQA {
   public static func setUserId(id: Swift.String?)
   public static func getUserId() -> Swift.String?
+  public static func customLog(level: IMQAOtelInternal.LogLevel, message: Swift.String)
 }
 extension IMQACore.IMQA {
   @objc dynamic public func currentSessionId() -> Swift.String?
@@ -612,6 +613,28 @@ extension OpenTelemetrySdk.SpanData.Link : IMQACore.SpanLink {
 }
 public protocol VVIdenti {
   var vvid: Swift.String { get }
+}
+public class CrashSpanRecord : Swift.Codable, IMQACore.VVIdenti {
+  public var id: Swift.String
+  public var name: Swift.String
+  public var traceId: Swift.String
+  public var type: IMQAOtelInternal.IMQASpanType
+  public var data: Foundation.Data
+  public var startTime: Foundation.Date
+  public var endTime: Foundation.Date?
+  public var processIdentifier: IMQACommonInternal.ProcessIdentifier
+  public var sessionId: Swift.String
+  public var vvid: Swift.String {
+    get
+  }
+  convenience public init(spanRecord: IMQACore.SpanRecord, sessionId: Swift.String)
+  public init(id: Swift.String, name: Swift.String, traceId: Swift.String, type: IMQAOtelInternal.IMQASpanType, data: Foundation.Data, startTime: Foundation.Date, endTime: Foundation.Date? = nil, processIdentifier: IMQACommonInternal.ProcessIdentifier, sessionId: Swift.String)
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+}
+extension IMQACore.CrashSpanRecord {
+  public func toSpanRecord() -> IMQACore.SpanRecord
 }
 public struct LogRecord : Swift.Codable, IMQACore.VVIdenti {
   public var identifier: IMQACommonInternal.LogIdentifier
@@ -852,6 +875,11 @@ public protocol FilePathProvider {
 }
 public struct IMQAFileSystem {
   public static let defaultPartitionId: Swift.String
+}
+@_hasMissingDesignatedInitializers public class LogFileManager {
+  public static let shared: IMQACore.LogFileManager
+  public func recordToFile(text: Swift.String)
+  @objc deinit
 }
 extension IMQACore.IMQAStorage {
   @discardableResult
@@ -2462,6 +2490,13 @@ public class IMQAUpload : IMQACore.IMQALogUploader {
   public func uploadCrash(id: Swift.String, data: Foundation.Data, completion: ((Swift.Result<(), any Swift.Error>) -> Swift.Void)?)
   @objc deinit
 }
+@_hasMissingDesignatedInitializers public class IMQAUploadCache {
+  public func fetchUploadData(id: Swift.String, type: IMQACore.IMQAUploadType) -> IMQACore.UploadDataRecord?
+  public func fetchAllUploadData() -> [IMQACore.UploadDataRecord]
+  @discardableResult
+  public func clearStaleDataIfNeeded() -> Swift.UInt
+  @objc deinit
+}
 public enum IMQAUploadErrorCode : Swift.Int {
   case invalidMetadata
   case invalidData
@@ -2488,6 +2523,16 @@ extension IMQACore.IMQAUploadError : Foundation.LocalizedError, Foundation.Custo
     get
   }
   public var localizedDescription: Swift.String {
+    get
+  }
+}
+public enum IMQAUploadType : Swift.Int {
+  case spans
+  case logs
+  case crash
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
     get
   }
 }
@@ -2546,3 +2591,6 @@ extension Foundation.Data.CompressionAlgorithm : Swift.Hashable {}
 extension IMQACore.IMQAUploadErrorCode : Swift.Equatable {}
 extension IMQACore.IMQAUploadErrorCode : Swift.Hashable {}
 extension IMQACore.IMQAUploadErrorCode : Swift.RawRepresentable {}
+extension IMQACore.IMQAUploadType : Swift.Equatable {}
+extension IMQACore.IMQAUploadType : Swift.Hashable {}
+extension IMQACore.IMQAUploadType : Swift.RawRepresentable {}

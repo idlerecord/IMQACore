@@ -54590,2044 +54590,2044 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/AttributesDictionary.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/AttributesDictionary.swift",
       "kind": "IntegerLiteral",
       "offset": 4008,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Aggregation\/Base2ExponentialHistogramAggregation.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Aggregation\/Base2ExponentialHistogramAggregation.swift",
       "kind": "IntegerLiteral",
       "offset": 237,
       "length": 3,
       "value": "160"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Aggregation\/Base2ExponentialHistogramAggregation.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Aggregation\/Base2ExponentialHistogramAggregation.swift",
       "kind": "IntegerLiteral",
       "offset": 282,
       "length": 2,
       "value": "20"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Data\/Internal\/Base2ExponentialHistogramIndexer.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Data\/Internal\/Base2ExponentialHistogramIndexer.swift",
       "kind": "IntegerLiteral",
       "offset": 2024,
       "length": 4,
       "value": "1023"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Data\/Internal\/Base2ExponentialHistogramIndexer.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Data\/Internal\/Base2ExponentialHistogramIndexer.swift",
       "kind": "IntegerLiteral",
       "offset": 2063,
       "length": 2,
       "value": "52"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Data\/Internal\/Base2ExponentialHistogramIndexer.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Data\/Internal\/Base2ExponentialHistogramIndexer.swift",
       "kind": "IntegerLiteral",
       "offset": 2097,
       "length": 2,
       "value": "11"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Data\/Internal\/Base2ExponentialHistogramIndexer.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Data\/Internal\/Base2ExponentialHistogramIndexer.swift",
       "kind": "FloatLiteral",
       "offset": 2149,
       "length": 3,
       "value": "1.0"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Data\/Internal\/Base2ExponentialHistogramIndexer.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Data\/Internal\/Base2ExponentialHistogramIndexer.swift",
       "kind": "IntegerLiteral",
       "offset": 2159,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Logs\/Processors\/BatchLogRecordProcessor.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Logs\/Processors\/BatchLogRecordProcessor.swift",
       "kind": "IntegerLiteral",
       "offset": 319,
       "length": 1,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Logs\/Processors\/BatchLogRecordProcessor.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Logs\/Processors\/BatchLogRecordProcessor.swift",
       "kind": "IntegerLiteral",
       "offset": 352,
       "length": 2,
       "value": "30"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Logs\/Processors\/BatchLogRecordProcessor.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Logs\/Processors\/BatchLogRecordProcessor.swift",
       "kind": "IntegerLiteral",
       "offset": 376,
       "length": 4,
       "value": "2048"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Logs\/Processors\/BatchLogRecordProcessor.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Logs\/Processors\/BatchLogRecordProcessor.swift",
       "kind": "IntegerLiteral",
       "offset": 408,
       "length": 3,
       "value": "512"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanProcessors\/BatchSpanProcessor.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanProcessors\/BatchSpanProcessor.swift",
       "kind": "StringLiteral",
       "offset": 877,
       "length": 15,
       "value": "\"processorType\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanProcessors\/BatchSpanProcessor.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanProcessors\/BatchSpanProcessor.swift",
       "kind": "StringLiteral",
       "offset": 957,
       "length": 9,
       "value": "\"dropped\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanProcessors\/BatchSpanProcessor.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanProcessors\/BatchSpanProcessor.swift",
       "kind": "IntegerLiteral",
       "offset": 1300,
       "length": 1,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanProcessors\/BatchSpanProcessor.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanProcessors\/BatchSpanProcessor.swift",
       "kind": "IntegerLiteral",
       "offset": 1337,
       "length": 2,
       "value": "30"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanProcessors\/BatchSpanProcessor.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanProcessors\/BatchSpanProcessor.swift",
       "kind": "IntegerLiteral",
       "offset": 1365,
       "length": 4,
       "value": "2048"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanProcessors\/BatchSpanProcessor.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanProcessors\/BatchSpanProcessor.swift",
       "kind": "IntegerLiteral",
       "offset": 1401,
       "length": 3,
       "value": "512"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanProcessors\/BatchSpanProcessor.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanProcessors\/BatchSpanProcessor.swift",
       "kind": "BooleanLiteral",
       "offset": 1828,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanProcessors\/BatchSpanProcessor.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanProcessors\/BatchSpanProcessor.swift",
       "kind": "BooleanLiteral",
       "offset": 1863,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Aggregators\/CounterSumAggregator.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Aggregators\/CounterSumAggregator.swift",
       "kind": "IntegerLiteral",
       "offset": 265,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Aggregators\/CounterSumAggregator.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Aggregators\/CounterSumAggregator.swift",
       "kind": "IntegerLiteral",
       "offset": 291,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/DoubleGaugeBuilderSdk.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/DoubleGaugeBuilderSdk.swift",
       "kind": "StringLiteral",
       "offset": 466,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/DoubleGaugeBuilderSdk.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/DoubleGaugeBuilderSdk.swift",
       "kind": "StringLiteral",
       "offset": 497,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/DoubleHistogramMeterBuilderSdk.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/DoubleHistogramMeterBuilderSdk.swift",
       "kind": "StringLiteral",
       "offset": 709,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/DoubleHistogramMeterBuilderSdk.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/DoubleHistogramMeterBuilderSdk.swift",
       "kind": "StringLiteral",
       "offset": 737,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Aggregation\/DoubleLastValueAggregator.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Aggregation\/DoubleLastValueAggregator.swift",
       "kind": "IntegerLiteral",
       "offset": 1484,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Aggregation\/DoubleSumAggregator.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Aggregation\/DoubleSumAggregator.swift",
       "kind": "IntegerLiteral",
       "offset": 1669,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Aggregation\/DropAggregator.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Aggregation\/DropAggregator.swift",
       "kind": "IntegerLiteral",
       "offset": 250,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Aggregation\/DropAggregator.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Aggregation\/DropAggregator.swift",
       "kind": "IntegerLiteral",
       "offset": 268,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Data\/Internal\/EmptyExponentialHistogramBuckets.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Data\/Internal\/EmptyExponentialHistogramBuckets.swift",
       "kind": "IntegerLiteral",
       "offset": 241,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Data\/Internal\/EmptyExponentialHistogramBuckets.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Data\/Internal\/EmptyExponentialHistogramBuckets.swift",
       "kind": "Array",
       "offset": 282,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Data\/Internal\/EmptyExponentialHistogramBuckets.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Data\/Internal\/EmptyExponentialHistogramBuckets.swift",
       "kind": "IntegerLiteral",
       "offset": 318,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/State\/EmptyMetricStorage.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/State\/EmptyMetricStorage.swift",
       "kind": "StringLiteral",
       "offset": 554,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/State\/EmptyMetricStorage.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/State\/EmptyMetricStorage.swift",
       "kind": "StringLiteral",
       "offset": 571,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/State\/EmptyMetricStorage.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/State\/EmptyMetricStorage.swift",
       "kind": "StringLiteral",
       "offset": 581,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/Propagation\/EnvironmentContextPropagator.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/Propagation\/EnvironmentContextPropagator.swift",
       "kind": "StringLiteral",
       "offset": 329,
       "length": 13,
       "value": "\"TRACEPARENT\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/Propagation\/EnvironmentContextPropagator.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/Propagation\/EnvironmentContextPropagator.swift",
       "kind": "StringLiteral",
       "offset": 371,
       "length": 12,
       "value": "\"TRACESTATE\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/EnvVarResource.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/EnvVarResource.swift",
       "kind": "StringLiteral",
       "offset": 326,
       "length": 26,
       "value": "\"OTEL_RESOURCE_ATTRIBUTES\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/EnvVarResource.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/EnvVarResource.swift",
       "kind": "StringLiteral",
       "offset": 406,
       "length": 3,
       "value": "\",\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/EnvVarResource.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/EnvVarResource.swift",
       "kind": "StringLiteral",
       "offset": 468,
       "length": 3,
       "value": "\"=\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Exemplar\/ExemplarReservoir.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Exemplar\/ExemplarReservoir.swift",
       "kind": "BooleanLiteral",
       "offset": 1514,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Exemplar\/ExemplarReservoir.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Exemplar\/ExemplarReservoir.swift",
       "kind": "IntegerLiteral",
       "offset": 4234,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Aggregation\/ExplicitBucketHistogramAggregation.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Aggregation\/ExplicitBucketHistogramAggregation.swift",
       "kind": "Array",
       "offset": 257,
       "length": 70,
       "value": "[0, 5, 10, 25, 50, 75, 100, 250, 500, 750, 1000, 2500, 5000, 7500]"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Aggregators\/HistogramAggregator.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Aggregators\/HistogramAggregator.swift",
       "kind": "Array",
       "offset": 488,
       "length": 119,
       "value": "[5, 10, 25, 50, 75, 100, 250, 500, 750, 1000, 2500, 5000, 7500, 10000]"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Logs\/Export\/InMemoryLogRecordExporter.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Logs\/Export\/InMemoryLogRecordExporter.swift",
       "kind": "BooleanLiteral",
       "offset": 249,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Common\/InstrumentationLibraryInfo.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Common\/InstrumentationLibraryInfo.swift",
       "kind": "StringLiteral",
       "offset": 353,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/InstrumentSelectorBuilder.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/InstrumentSelectorBuilder.swift",
       "kind": "StringLiteral",
       "offset": 221,
       "length": 4,
       "value": "\".*\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Aggregators\/LastValueAggregator.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Aggregators\/LastValueAggregator.swift",
       "kind": "IntegerLiteral",
       "offset": 246,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Aggregators\/LastValueAggregator.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Aggregators\/LastValueAggregator.swift",
       "kind": "IntegerLiteral",
       "offset": 272,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Internal\/Locks.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Internal\/Locks.swift",
       "kind": "IntegerLiteral",
       "offset": 1592,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Internal\/Locks.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Internal\/Locks.swift",
       "kind": "IntegerLiteral",
       "offset": 3779,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Logs\/LoggerBuilderSdk.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Logs\/LoggerBuilderSdk.swift",
       "kind": "BooleanLiteral",
       "offset": 449,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Logs\/LoggerProviderBuilder.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Logs\/LoggerProviderBuilder.swift",
       "kind": "Array",
       "offset": 393,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Logs\/LoggerProviderSdk.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Logs\/LoggerProviderSdk.swift",
       "kind": "Array",
       "offset": 505,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Logs\/LoggerSdk.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Logs\/LoggerSdk.swift",
       "kind": "BooleanLiteral",
       "offset": 505,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Logs\/LoggerSharedState.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Logs\/LoggerSharedState.swift",
       "kind": "BooleanLiteral",
       "offset": 305,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Logs\/LogLimits.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Logs\/LogLimits.swift",
       "kind": "IntegerLiteral",
       "offset": 180,
       "length": 3,
       "value": "128"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/LongCounterMeterBuilderSdk.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/LongCounterMeterBuilderSdk.swift",
       "kind": "StringLiteral",
       "offset": 490,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/LongCounterMeterBuilderSdk.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/LongCounterMeterBuilderSdk.swift",
       "kind": "StringLiteral",
       "offset": 521,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/LongGaugeBuilderSdk.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/LongGaugeBuilderSdk.swift",
       "kind": "StringLiteral",
       "offset": 459,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/LongGaugeBuilderSdk.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/LongGaugeBuilderSdk.swift",
       "kind": "StringLiteral",
       "offset": 490,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Aggregation\/LongLastValueAggregator.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Aggregation\/LongLastValueAggregator.swift",
       "kind": "IntegerLiteral",
       "offset": 1469,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Aggregation\/LongSumAggregator.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Aggregation\/LongSumAggregator.swift",
       "kind": "IntegerLiteral",
       "offset": 1643,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/LongUpDownCounterBuilderSdk.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/LongUpDownCounterBuilderSdk.swift",
       "kind": "StringLiteral",
       "offset": 507,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/LongUpDownCounterBuilderSdk.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/LongUpDownCounterBuilderSdk.swift",
       "kind": "StringLiteral",
       "offset": 538,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Aggregators\/MaxValueAggregator.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Aggregators\/MaxValueAggregator.swift",
       "kind": "IntegerLiteral",
       "offset": 204,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Aggregators\/MaxValueAggregator.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Aggregators\/MaxValueAggregator.swift",
       "kind": "IntegerLiteral",
       "offset": 230,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/MeterProviderSdk.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/MeterProviderSdk.swift",
       "kind": "IntegerLiteral",
       "offset": 336,
       "length": 2,
       "value": "60"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/State\/MetricStorage.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/State\/MetricStorage.swift",
       "kind": "IntegerLiteral",
       "offset": 201,
       "length": 5,
       "value": "2000"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanProcessors\/NoopSpanProcessor.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanProcessors\/NoopSpanProcessor.swift",
       "kind": "BooleanLiteral",
       "offset": 208,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanProcessors\/NoopSpanProcessor.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanProcessors\/NoopSpanProcessor.swift",
       "kind": "BooleanLiteral",
       "offset": 236,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Export\/PushMetricController.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Export\/PushMetricController.swift",
       "kind": "StringLiteral",
       "offset": 270,
       "length": 56,
       "value": "\"org.opentelemetry.PushMetricController.pushMetricQueue\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/RecordEventsReadableSpan.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/RecordEventsReadableSpan.swift",
       "kind": "BooleanLiteral",
       "offset": 277,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/RecordEventsReadableSpan.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/RecordEventsReadableSpan.swift",
       "kind": "StringLiteral",
       "offset": 346,
       "length": 64,
       "value": "\"org.opentelemetry.RecordEventsReadableSpan.internalStatusQueue\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/RecordEventsReadableSpan.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/RecordEventsReadableSpan.swift",
       "kind": "IntegerLiteral",
       "offset": 2823,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/RecordEventsReadableSpan.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/RecordEventsReadableSpan.swift",
       "kind": "IntegerLiteral",
       "offset": 2910,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/RecordEventsReadableSpan.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/RecordEventsReadableSpan.swift",
       "kind": "BooleanLiteral",
       "offset": 3796,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/RegisteredReader.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/RegisteredReader.swift",
       "kind": "IntegerLiteral",
       "offset": 302,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/RegisteredReader.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/RegisteredReader.swift",
       "kind": "IntegerLiteral",
       "offset": 555,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Exemplar\/ReservoirCell.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Exemplar\/ReservoirCell.swift",
       "kind": "IntegerLiteral",
       "offset": 289,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Exemplar\/ReservoirCell.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Exemplar\/ReservoirCell.swift",
       "kind": "IntegerLiteral",
       "offset": 326,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Exemplar\/ReservoirCell.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Exemplar\/ReservoirCell.swift",
       "kind": "IntegerLiteral",
       "offset": 353,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/Resource.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/Resource.swift",
       "kind": "IntegerLiteral",
       "offset": 366,
       "length": 3,
       "value": "255"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 671,
       "length": 16,
       "value": "\"browser.brands\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 1735,
       "length": 18,
       "value": "\"browser.platform\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 2130,
       "length": 16,
       "value": "\"browser.mobile\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 2581,
       "length": 18,
       "value": "\"browser.language\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 3192,
       "length": 21,
       "value": "\"user_agent.original\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 3427,
       "length": 16,
       "value": "\"cloud.provider\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 3717,
       "length": 18,
       "value": "\"cloud.account.id\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 4480,
       "length": 14,
       "value": "\"cloud.region\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 6736,
       "length": 19,
       "value": "\"cloud.resource_id\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 7191,
       "length": 25,
       "value": "\"cloud.availability_zone\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 7520,
       "length": 16,
       "value": "\"cloud.platform\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 7930,
       "length": 23,
       "value": "\"aws.ecs.container.arn\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 8276,
       "length": 21,
       "value": "\"aws.ecs.cluster.arn\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 8606,
       "length": 20,
       "value": "\"aws.ecs.launchtype\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 8982,
       "length": 18,
       "value": "\"aws.ecs.task.arn\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 9250,
       "length": 21,
       "value": "\"aws.ecs.task.family\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 9524,
       "length": 23,
       "value": "\"aws.ecs.task.revision\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 9793,
       "length": 21,
       "value": "\"aws.eks.cluster.arn\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 10303,
       "length": 21,
       "value": "\"aws.log.group.names\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 10772,
       "length": 20,
       "value": "\"aws.log.group.arns\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 11068,
       "length": 22,
       "value": "\"aws.log.stream.names\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 11692,
       "length": 21,
       "value": "\"aws.log.stream.arns\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 12216,
       "length": 29,
       "value": "\"gcp.cloud_run.job.execution\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 12631,
       "length": 30,
       "value": "\"gcp.cloud_run.job.task_index\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 13223,
       "length": 23,
       "value": "\"gcp.gce.instance.name\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 13694,
       "length": 27,
       "value": "\"gcp.gce.instance.hostname\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 13974,
       "length": 35,
       "value": "\"heroku.release.creation_timestamp\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 14255,
       "length": 23,
       "value": "\"heroku.release.commit\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 14509,
       "length": 15,
       "value": "\"heroku.app.id\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 14748,
       "length": 16,
       "value": "\"container.name\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 15118,
       "length": 14,
       "value": "\"container.id\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 15442,
       "length": 19,
       "value": "\"container.runtime\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 15706,
       "length": 22,
       "value": "\"container.image.name\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 15920,
       "length": 21,
       "value": "\"container.image.tag\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 16752,
       "length": 20,
       "value": "\"container.image.id\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 17140,
       "length": 19,
       "value": "\"container.command\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 17461,
       "length": 24,
       "value": "\"container.command_line\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 17786,
       "length": 24,
       "value": "\"container.command_args\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 18161,
       "length": 24,
       "value": "\"deployment.environment\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 19238,
       "length": 11,
       "value": "\"device.id\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 19690,
       "length": 25,
       "value": "\"device.model.identifier\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 20130,
       "length": 19,
       "value": "\"device.model.name\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 20585,
       "length": 21,
       "value": "\"device.manufacturer\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 21884,
       "length": 11,
       "value": "\"faas.name\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 22833,
       "length": 14,
       "value": "\"faas.version\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 23255,
       "length": 15,
       "value": "\"faas.instance\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 23796,
       "length": 17,
       "value": "\"faas.max_memory\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 24243,
       "length": 9,
       "value": "\"host.id\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 24577,
       "length": 11,
       "value": "\"host.name\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 24807,
       "length": 11,
       "value": "\"host.type\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 25041,
       "length": 11,
       "value": "\"host.arch\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 25371,
       "length": 17,
       "value": "\"host.image.name\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 25642,
       "length": 15,
       "value": "\"host.image.id\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 25938,
       "length": 20,
       "value": "\"host.image.version\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 26166,
       "length": 18,
       "value": "\"k8s.cluster.name\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 27684,
       "length": 17,
       "value": "\"k8s.cluster.uid\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 27885,
       "length": 15,
       "value": "\"k8s.node.name\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 28111,
       "length": 14,
       "value": "\"k8s.node.uid\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 28352,
       "length": 20,
       "value": "\"k8s.namespace.name\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 28580,
       "length": 13,
       "value": "\"k8s.pod.uid\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 28794,
       "length": 14,
       "value": "\"k8s.pod.name\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 29140,
       "length": 20,
       "value": "\"k8s.container.name\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 29527,
       "length": 29,
       "value": "\"k8s.container.restart_count\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 29785,
       "length": 20,
       "value": "\"k8s.replicaset.uid\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 30014,
       "length": 21,
       "value": "\"k8s.replicaset.name\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 30264,
       "length": 20,
       "value": "\"k8s.deployment.uid\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 30493,
       "length": 21,
       "value": "\"k8s.deployment.name\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 30746,
       "length": 21,
       "value": "\"k8s.statefulset.uid\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 30979,
       "length": 22,
       "value": "\"k8s.statefulset.name\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 31227,
       "length": 19,
       "value": "\"k8s.daemonset.uid\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 31452,
       "length": 20,
       "value": "\"k8s.daemonset.name\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 31680,
       "length": 13,
       "value": "\"k8s.job.uid\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 31881,
       "length": 14,
       "value": "\"k8s.job.name\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 32115,
       "length": 17,
       "value": "\"k8s.cronjob.uid\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 32332,
       "length": 18,
       "value": "\"k8s.cronjob.name\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 32542,
       "length": 9,
       "value": "\"os.type\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 32932,
       "length": 16,
       "value": "\"os.description\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 33206,
       "length": 9,
       "value": "\"os.name\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 33536,
       "length": 12,
       "value": "\"os.version\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 33722,
       "length": 13,
       "value": "\"process.pid\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 33927,
       "length": 20,
       "value": "\"process.parent_pid\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 34310,
       "length": 25,
       "value": "\"process.executable.name\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 34710,
       "length": 25,
       "value": "\"process.executable.path\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 35133,
       "length": 17,
       "value": "\"process.command\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 35624,
       "length": 22,
       "value": "\"process.command_line\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 36223,
       "length": 22,
       "value": "\"process.command_args\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 36455,
       "length": 15,
       "value": "\"process.owner\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 36779,
       "length": 22,
       "value": "\"process.runtime.name\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 37076,
       "length": 25,
       "value": "\"process.runtime.version\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 37463,
       "length": 29,
       "value": "\"process.runtime.description\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 38030,
       "length": 14,
       "value": "\"service.name\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 38362,
       "length": 17,
       "value": "\"service.version\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 39100,
       "length": 19,
       "value": "\"service.namespace\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 40271,
       "length": 21,
       "value": "\"service.instance.id\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 41074,
       "length": 20,
       "value": "\"telemetry.sdk.name\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 41336,
       "length": 24,
       "value": "\"telemetry.sdk.language\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 41578,
       "length": 23,
       "value": "\"telemetry.sdk.version\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 41843,
       "length": 24,
       "value": "\"telemetry.auto.version\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 42062,
       "length": 16,
       "value": "\"webengine.name\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 42281,
       "length": 19,
       "value": "\"webengine.version\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 42631,
       "length": 23,
       "value": "\"webengine.description\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 42925,
       "length": 17,
       "value": "\"otel.scope.name\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 43198,
       "length": 20,
       "value": "\"otel.scope.version\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 43463,
       "length": 19,
       "value": "\"otel.library.name\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 43709,
       "length": 22,
       "value": "\"otel.library.version\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 43995,
       "length": 15,
       "value": "\"alibaba_cloud\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 44116,
       "length": 5,
       "value": "\"aws\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 44225,
       "length": 7,
       "value": "\"azure\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 44340,
       "length": 5,
       "value": "\"gcp\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 44463,
       "length": 8,
       "value": "\"heroku\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 44572,
       "length": 11,
       "value": "\"ibm_cloud\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 44692,
       "length": 15,
       "value": "\"tencent_cloud\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 45210,
       "length": 19,
       "value": "\"alibaba_cloud_ecs\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 45357,
       "length": 18,
       "value": "\"alibaba_cloud_fc\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 45514,
       "length": 25,
       "value": "\"alibaba_cloud_openshift\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 45654,
       "length": 9,
       "value": "\"aws_ec2\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 45782,
       "length": 9,
       "value": "\"aws_ecs\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 45911,
       "length": 9,
       "value": "\"aws_eks\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 46023,
       "length": 12,
       "value": "\"aws_lambda\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 46159,
       "length": 23,
       "value": "\"aws_elastic_beanstalk\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 46292,
       "length": 16,
       "value": "\"aws_app_runner\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 46435,
       "length": 15,
       "value": "\"aws_openshift\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 46563,
       "length": 10,
       "value": "\"azure_vm\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 46705,
       "length": 27,
       "value": "\"azure_container_instances\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 46848,
       "length": 11,
       "value": "\"azure_aks\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 46972,
       "length": 17,
       "value": "\"azure_functions\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 47105,
       "length": 19,
       "value": "\"azure_app_service\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 47245,
       "length": 17,
       "value": "\"azure_openshift\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 47398,
       "length": 25,
       "value": "\"gcp_bare_metal_solution\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 47556,
       "length": 20,
       "value": "\"gcp_compute_engine\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 47687,
       "length": 15,
       "value": "\"gcp_cloud_run\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 47841,
       "length": 23,
       "value": "\"gcp_kubernetes_engine\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 47993,
       "length": 21,
       "value": "\"gcp_cloud_functions\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 48139,
       "length": 16,
       "value": "\"gcp_app_engine\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 48284,
       "length": 15,
       "value": "\"gcp_openshift\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 48430,
       "length": 21,
       "value": "\"ibm_cloud_openshift\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 48591,
       "length": 19,
       "value": "\"tencent_cloud_cvm\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 48755,
       "length": 19,
       "value": "\"tencent_cloud_eks\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 48918,
       "length": 19,
       "value": "\"tencent_cloud_scf\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 49435,
       "length": 5,
       "value": "\"ec2\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 49504,
       "length": 9,
       "value": "\"fargate\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 49777,
       "length": 7,
       "value": "\"amd64\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 49873,
       "length": 7,
       "value": "\"arm32\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 49969,
       "length": 7,
       "value": "\"arm64\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 50066,
       "length": 6,
       "value": "\"ia64\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 50170,
       "length": 7,
       "value": "\"ppc32\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 50275,
       "length": 7,
       "value": "\"ppc64\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 50384,
       "length": 7,
       "value": "\"s390x\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 50483,
       "length": 5,
       "value": "\"x86\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 50942,
       "length": 9,
       "value": "\"windows\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 51038,
       "length": 7,
       "value": "\"linux\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 51140,
       "length": 8,
       "value": "\"darwin\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 51239,
       "length": 9,
       "value": "\"freebsd\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 51337,
       "length": 8,
       "value": "\"netbsd\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 51436,
       "length": 9,
       "value": "\"openbsd\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 51547,
       "length": 14,
       "value": "\"dragonflybsd\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 51670,
       "length": 6,
       "value": "\"hpux\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 51792,
       "length": 5,
       "value": "\"aix\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 51902,
       "length": 9,
       "value": "\"solaris\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 51999,
       "length": 6,
       "value": "\"z_os\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 52491,
       "length": 5,
       "value": "\"cpp\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 52599,
       "length": 8,
       "value": "\"dotnet\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 52710,
       "length": 8,
       "value": "\"erlang\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 52813,
       "length": 4,
       "value": "\"go\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 52916,
       "length": 6,
       "value": "\"java\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 53025,
       "length": 8,
       "value": "\"nodejs\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 53130,
       "length": 5,
       "value": "\"php\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 53238,
       "length": 8,
       "value": "\"python\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 53345,
       "length": 6,
       "value": "\"ruby\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 53450,
       "length": 6,
       "value": "\"rust\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 53557,
       "length": 7,
       "value": "\"swift\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Resources\/ResourceAttributes.swift",
       "kind": "StringLiteral",
       "offset": 53665,
       "length": 7,
       "value": "\"webjs\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/Samplers\/Samplers.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/Samplers\/Samplers.swift",
       "kind": "BooleanLiteral",
       "offset": 1845,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/Samplers\/Samplers.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/Samplers\/Samplers.swift",
       "kind": "BooleanLiteral",
       "offset": 1921,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanProcessors\/SimpleSpanProcessor.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanProcessors\/SimpleSpanProcessor.swift",
       "kind": "BooleanLiteral",
       "offset": 477,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanProcessors\/SimpleSpanProcessor.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanProcessors\/SimpleSpanProcessor.swift",
       "kind": "StringLiteral",
       "offset": 534,
       "length": 38,
       "value": "\"io.opentelemetry.simplespanprocessor\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanProcessors\/SimpleSpanProcessor.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanProcessors\/SimpleSpanProcessor.swift",
       "kind": "BooleanLiteral",
       "offset": 608,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanProcessors\/SimpleSpanProcessor.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanProcessors\/SimpleSpanProcessor.swift",
       "kind": "BooleanLiteral",
       "offset": 643,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanBuilderSdk.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanBuilderSdk.swift",
       "kind": "BooleanLiteral",
       "offset": 435,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanBuilderSdk.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanBuilderSdk.swift",
       "kind": "BooleanLiteral",
       "offset": 511,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanBuilderSdk.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanBuilderSdk.swift",
       "kind": "IntegerLiteral",
       "offset": 968,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanBuilderSdk.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanBuilderSdk.swift",
       "kind": "BooleanLiteral",
       "offset": 1063,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/Data\/SpanData.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/Data\/SpanData.swift",
       "kind": "BooleanLiteral",
       "offset": 1830,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/Data\/SpanData.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/Data\/SpanData.swift",
       "kind": "BooleanLiteral",
       "offset": 1945,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/Data\/SpanData.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/Data\/SpanData.swift",
       "kind": "IntegerLiteral",
       "offset": 2303,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/Data\/SpanData.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/Data\/SpanData.swift",
       "kind": "IntegerLiteral",
       "offset": 2635,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/Data\/SpanData.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/Data\/SpanData.swift",
       "kind": "IntegerLiteral",
       "offset": 2982,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanLimits.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanLimits.swift",
       "kind": "IntegerLiteral",
       "offset": 454,
       "length": 3,
       "value": "128"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanLimits.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanLimits.swift",
       "kind": "IntegerLiteral",
       "offset": 569,
       "length": 3,
       "value": "128"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanLimits.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanLimits.swift",
       "kind": "IntegerLiteral",
       "offset": 688,
       "length": 3,
       "value": "128"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanLimits.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanLimits.swift",
       "kind": "IntegerLiteral",
       "offset": 819,
       "length": 3,
       "value": "128"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanLimits.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/SpanLimits.swift",
       "kind": "IntegerLiteral",
       "offset": 947,
       "length": 3,
       "value": "128"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/StableMeterProviderSdk.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/StableMeterProviderSdk.swift",
       "kind": "StringLiteral",
       "offset": 273,
       "length": 9,
       "value": "\"unknown\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Data\/StableMetricData.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Data\/StableMetricData.swift",
       "kind": "StringLiteral",
       "offset": 870,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Data\/StableMetricData.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Data\/StableMetricData.swift",
       "kind": "StringLiteral",
       "offset": 887,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Data\/StableMetricData.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Data\/StableMetricData.swift",
       "kind": "StringLiteral",
       "offset": 897,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Data\/StableMetricData.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Data\/StableMetricData.swift",
       "kind": "BooleanLiteral",
       "offset": 930,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/State\/StableObservableMeasurement.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/State\/StableObservableMeasurement.swift",
       "kind": "IntegerLiteral",
       "offset": 509,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/State\/StableObservableMeasurement.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/State\/StableObservableMeasurement.swift",
       "kind": "IntegerLiteral",
       "offset": 541,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Exporter\/StablePeriodicMeterReaderBuilder.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Exporter\/StablePeriodicMeterReaderBuilder.swift",
       "kind": "FloatLiteral",
       "offset": 277,
       "length": 3,
       "value": "1.0"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Exporter\/StablePeriodicMetricReaderSdk.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Exporter\/StablePeriodicMetricReaderSdk.swift",
       "kind": "StringLiteral",
       "offset": 323,
       "length": 63,
       "value": "\"org.opentelemetry.StablePeriodicMetricReaderSdk.scheduleQueue\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Exporter\/StablePeriodicMetricReaderSdk.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/Exporter\/StablePeriodicMetricReaderSdk.swift",
       "kind": "FloatLiteral",
       "offset": 573,
       "length": 4,
       "value": "60.0"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/State\/SynchronousMetricStorage.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Metrics\/Stable\/State\/SynchronousMetricStorage.swift",
       "kind": "StringLiteral",
       "offset": 777,
       "length": 67,
       "value": "\"org.opentelemetry.SynchronousMetricStorage.aggregatorHandlesQueue\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/TracerProviderBuilder.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/TracerProviderBuilder.swift",
       "kind": "Array",
       "offset": 585,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/TracerProviderSdk.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/TracerProviderSdk.swift",
       "kind": "StringLiteral",
       "offset": 383,
       "length": 9,
       "value": "\"unknown\""
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/TracerProviderSdk.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/TracerProviderSdk.swift",
       "kind": "Array",
       "offset": 836,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/TracerSharedState.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Trace\/TracerSharedState.swift",
       "kind": "BooleanLiteral",
       "offset": 463,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/huntapark\/Desktop\/APMSDK\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Version.swift",
+      "filePath": "\/Users\/huntapark\/.jenkins\/workspace\/iOSXCFramework\/Pods\/OpenTelemetry-Swift-Sdk\/Sources\/OpenTelemetrySdk\/Version.swift",
       "kind": "StringLiteral",
       "offset": 179,
       "length": 8,
