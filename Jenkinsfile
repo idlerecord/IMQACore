@@ -78,12 +78,7 @@ pipeline {
                         cat \$HOME/Desktop/iOS/PublishSDKONCocoapods/IMQACore.podspec  # 输出文件内容
                     """
                     sh "pwd"
-                    sh "git status"
-                    sh """
-                        git rm --cached \$HOME/Desktop/iOS/PublishSDKONCocoapods/IMQACore.podspec
-                    """
                     
-
                 }
             }
         }
@@ -92,6 +87,8 @@ pipeline {
             steps{
                 script{
                     sh """
+                        cd $HOME/Desktop/iOS/PublishSDKONCocoapods/
+                        pwd
                         git checkout main
                         git pull
                         git diff
