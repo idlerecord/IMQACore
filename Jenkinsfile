@@ -64,9 +64,8 @@ pipeline {
         stage('change workplace cocoapods IMQACore.podspec'){
             steps{
                 script{
-                    sh """
-                        sed -i '' "s/s.version *= *\"[0-9.]*\"/s.version = \"${params.VERSION}\"/" "~/Desktop/iOS/PublishSDKONCocoapods/IMQACore.podspec"
-                    """
+                    
+                    sed -i '' "s/s.version *= *\"[0-9.]*\"/s.version = \"${params.VERSION}\"/" "~/Desktop/iOS/PublishSDKONCocoapods/IMQACore.podspec"
                     
                     sh """
                         cd ~/Desktop/iOS/PublishSDKONCocoapods/
