@@ -70,6 +70,7 @@ pipeline {
                     
                     sh """
                         sed -i '' 's/s.version *= *\"[0-9.]*\"/s.version = \"${params.VERSION}\"/' \$HOME/Desktop/iOS/PublishSDKONCocoapods/IMQACore.podspec
+                        cat \$HOME/Desktop/iOS/PublishSDKONCocoapods/IMQACore.podspec  # 输出文件内容
                     """
 
                     sh """
