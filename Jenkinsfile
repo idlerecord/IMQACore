@@ -76,13 +76,16 @@ pipeline {
                         cd $HOME/Desktop/iOS/PublishSDKONCocoapods/
                         pwd
                     """
-                    
+                }
+            }
+        }
+        
+        stage('upload changelog and upload cocoapods'){
+            steps{
+                script{
                     sh """
                         git checkout main
                         git add .
-                    """
-                    
-                    sh """
                         git commit -m "cocoapods: update version: ${params.VERSION}"
                         git tag "${params.VERSION}"
                         git push origin "${params.VERSION}"
@@ -92,8 +95,6 @@ pipeline {
                     """
                 }
             }
-            
-
         }
     }
 }
