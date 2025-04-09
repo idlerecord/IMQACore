@@ -101,8 +101,13 @@ pipeline {
                         pwd
                         cd $HOME/Desktop/iOS/PublishSDKONCocoapods/
                         pwd
+                    """
+                    withEnv(["PATH+BREW=/opt/homebrew/bin"]){
+                    sh """
                         pod trunk push IMQACore.podspec --allow-warnings
                     """
+
+                    }
                 }
             }
         }
