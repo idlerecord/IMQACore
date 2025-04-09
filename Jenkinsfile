@@ -73,13 +73,13 @@ pipeline {
                     """
 
                     sh """
-                        cd ~/Desktop/iOS/PublishSDKONCocoapods/
-                        ls -l
+                        cd $HOME/Desktop/iOS/PublishSDKONCocoapods/
+                        pwd
                     """
                     
                     sh """
                         git add .
-                        git commit -m "chore: 更新版本至 ${params.VERSION}"
+                        git commit -m "cocoapods: update version: ${params.VERSION}"
                         git tag "${params.VERSION}"
                         git push origin "${params.VERSION}"
                         git push origin main
