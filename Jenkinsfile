@@ -18,10 +18,13 @@ pipeline {
                                             
                     sh 'ls -l'
                                         
-                    sh """
-                        pwd
-                    """
-                                    
+                    copyArtifacts(
+                        projectName: 'iOSSDK',
+                        selector: lastSuccessful(),
+                        target: 'artifacts'
+                    )
+                    
+                    sh 'ls -l'
 
                 }
             }
