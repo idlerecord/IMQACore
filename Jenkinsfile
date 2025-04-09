@@ -44,6 +44,11 @@ pipeline {
                     """
                     
                     sh """
+                        mkdir -p ${params.COCOAPODSWORKPLACE}
+                    """
+
+                    
+                    sh """
                         unzip -o ${latestZip} -d ./
                     """
                     
