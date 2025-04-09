@@ -65,6 +65,10 @@ pipeline {
             steps{
                 script{
                     sh """
+                    echo "${params.VERSION}✅ ✅ ✅ "
+                    """
+                    
+                    sh """
                         sed -i '' "s/s.version *= *\"[0-9.]*\"/s.version = \"${params.VERSION}\"/" \$HOME/Desktop/iOS/PublishSDKONCocoapods/IMQACore.podspec
                     """
 
