@@ -44,7 +44,11 @@ pipeline {
                     """
                     
                     sh """
-                        unzip -o ${latestZip} -d ${params.COCOAPODSWORKPLACE}
+                        unzip -o ${latestZip} -d ./
+                    """
+                    
+                    sh """
+                        cp -r ./Build/xcframework/* ${params.COCOAPODSWORKPLACE}
                     """
                     
                     
