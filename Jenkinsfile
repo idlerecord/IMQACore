@@ -3,7 +3,7 @@ pipeline {
     
     parameters{
         string(name: 'VERSION', defaultValue: '1.0.0', description: 'SDK Version')
-        string(name: 'COCOAPODSWORKPLACE', defaultValue: '~/Desktop/iOS/PublishSDKONCocoapods/IMQACore/Frameworks', description: 'cocoapods 작업폴더')
+        string(name: 'COCOAPODSWORKPLACE', defaultValue: '$HOME/Desktop/iOS/PublishSDKONCocoapods/IMQACore/Frameworks', description: 'cocoapods 작업폴더')
     }
     stages {
         stage('Copy sdk from iOSSDK') {
@@ -64,8 +64,9 @@ pipeline {
         stage('change workplace cocoapods IMQACore.podspec'){
             steps{
                 script{
-                    
-                    sed -i '' "s/s.version *= *\"[0-9.]*\"/s.version = \"${params.VERSION}\"/" "~/Desktop/iOS/PublishSDKONCocoapods/IMQACore.podspec"
+                    sh """
+                        sed -i '' "s/s.version *= *\"[0-9.]*\"/s.version = \"${params.VERSION}\"/" \$HOME/Desktop/iOS/PublishSDKONCocoapods/IMQACore.podspec
+                    """
                     
                     sh """
                         cd ~/Desktop/iOS/PublishSDKONCocoapods/
