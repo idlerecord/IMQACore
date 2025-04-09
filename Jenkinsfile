@@ -85,6 +85,7 @@ pipeline {
                 script{
                     sh """
                         git checkout main
+                        git pull
                         git add .
                         git commit -m "cocoapods: update version: ${params.VERSION}"
                         git tag "${params.VERSION}"
