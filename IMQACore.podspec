@@ -13,8 +13,8 @@ Pod::Spec.new do |s|
   s.description      = "IMQA iOS Core SDK build한 Frameworks만 포함"
   s.homepage         = "https://github.com/your-repo"
   s.license          = { :type => "MIT", :file => "LICENSE" }
-  s.author           = { "Your Name" => "hunta@onycom.com" }
-  s.source           = { :git => "https://github.com/idlerecord/IMQAAPMKit.git", :tag => s.version.to_s }
+  s.author           = { "Hunta" => "hunta@onycom.com" }
+  s.source           = { :git => "https://github.com/idlerecord/IMQACore.git", :tag => s.version.to_s }
 
   s.ios.deployment_target = "13.0"
 
