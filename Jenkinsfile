@@ -78,6 +78,7 @@ pipeline {
                     """
                     
                     sh """
+                        git checkout main
                         git add .
                     """
                     
