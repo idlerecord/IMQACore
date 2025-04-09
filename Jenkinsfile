@@ -79,6 +79,9 @@ pipeline {
                     
                     sh """
                         git add .
+                    """
+                    
+                    sh """
                         git commit -m "cocoapods: update version: ${params.VERSION}"
                         git tag "${params.VERSION}"
                         git push origin "${params.VERSION}"
