@@ -1,0 +1,4 @@
+framework module IMQACore {
+  header "IMQACore-Swift.h"
+  requires objc
+}

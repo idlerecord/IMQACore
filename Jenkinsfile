@@ -3,7 +3,7 @@ pipeline {
     
     parameters{
         string(name: 'VERSION', defaultValue: '1.0.0', description: 'SDK Version')
-        string(name: 'COCOAPODSWORKPLACE', defaultValue: '/Users/imqatest/Desktop/iOS/PublishSDKONCocoapods/IMQACore/Frameworks', description: 'cocoapods 작업폴더')
+        string(name: 'COCOAPODSWORKPLACE', defaultValue: '~/Desktop/iOS/PublishSDKONCocoapods/IMQACore/Frameworks', description: 'cocoapods 작업폴더')
     }
     stages {
         stage('Copy sdk from iOSSDK') {
@@ -59,6 +59,32 @@ pipeline {
                     
                 }
             }
+        }
+        
+        stage('change workplace cocoapods IMQACore.podspec'){
+            steps{
+                script{
+                    sh """
+                        sed -i '' "s/s.version *= *\"[0-9.]*\"/s.version = \"${params.VERSION}\"/" "~/Desktop/iOS/PublishSDKONCocoapods/IMQACore.podspec"
+                    """
+                    
+                    sh """
+                        cd ~/Desktop/iOS/PublishSDKONCocoapods/
+                    """
+                    
+                    sh """
+                        git add .
+                        git commit -m "chore: 更新版本至 ${params.VERSION}"
+                        git tag "${params.VERSION}"
+                        git push origin "${params.VERSION}"
+                        git push origin main
+                        echo "✅ 推送代码并创建 Tag: ${params.VERSION} 🚀"
+                        pod trunk push IMQACore.podspec --allow-warnings
+                    """
+                }
+            }
+            
+
         }
     }
 }
