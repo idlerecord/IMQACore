@@ -77,7 +77,11 @@ pipeline {
                         sed -i '' 's/s.version *= *\"[0-9.]*\"/s.version = \"${params.VERSION}\"/' \$HOME/Desktop/iOS/PublishSDKONCocoapods/IMQACore.podspec
                         cat \$HOME/Desktop/iOS/PublishSDKONCocoapods/IMQACore.podspec  # 输出文件内容
                     """
+                    sh "pwd"
                     sh "git status"
+                    sh """
+                        git rm --cached \$HOME/Desktop/iOS/PublishSDKONCocoapods/IMQACore.podspec
+                    """
                     
 
                 }
