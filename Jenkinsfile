@@ -32,14 +32,9 @@ pipeline {
         stage('Find Latest sdk and unzip to workplace'){
             steps{
                 script{
-                    def latestZip = sh(
-                        script: "find artifacts -type f -name 'xxx*.zip' -printf '%T@ %p\\n' | sort -nr | head -n 1 | cut -d' ' -f2-",
-                        returnStdout: true
-                    ).trim()
+                    def dirPath = './artifacts/Build/Version/'
 
-                    if (!latestZip) {
-                        error "No xxx.zip file found in artifacts directory."
-                    }
+                    def latestZip = sh(script: "ls -t ${dirPath}/*.zip | head -n 1", returnStdout: true).trim()
 
                     echo "Latest zip found: ${latestZip}"
                 }
