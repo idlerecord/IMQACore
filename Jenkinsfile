@@ -98,6 +98,9 @@ pipeline {
                         git push origin "${params.VERSION}"
                         git push origin main
                         echo "✅ 推送代码并创建 Tag: ${params.VERSION} 🚀"
+                        pwd
+                        cd $HOME/Desktop/iOS/PublishSDKONCocoapods/
+                        pwd
                         pod trunk push IMQACore.podspec --allow-warnings
                     """
                 }
