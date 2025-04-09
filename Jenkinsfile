@@ -67,9 +67,10 @@ pipeline {
                     sh """
                         sed -i '' "s/s.version *= *\"[0-9.]*\"/s.version = \"${params.VERSION}\"/" \$HOME/Desktop/iOS/PublishSDKONCocoapods/IMQACore.podspec
                     """
-                    
+
                     sh """
                         cd ~/Desktop/iOS/PublishSDKONCocoapods/
+                        ls -l
                     """
                     
                     sh """
