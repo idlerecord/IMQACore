@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.version = "1.0.14"
   s.summary          = "IMQA iOS Core SDK"
   s.description      = "IMQA iOS Core SDK build한 Frameworks만 포함"
-  s.homepage         = "https://github.com/your-repo"
+  s.homepage         = "https://imqa.io/"
   s.license          = { :type => "MIT", :file => "LICENSE" }
   s.author           = { "Hunta" => "hunta@onycom.com" }
   s.source           = { :git => "https://github.com/idlerecord/IMQACore.git", :tag => s.version.to_s }
