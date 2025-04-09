@@ -87,6 +87,7 @@ pipeline {
                     sh """
                         git checkout main
                         git pull
+                        git add -f \$HOME/Desktop/iOS/PublishSDKONCocoapods/IMQACore.podspec
                         git add .
                         git commit -m "cocoapods: update version: ${params.VERSION}"
                         git tag "${params.VERSION}"
