@@ -11,11 +11,11 @@ pipeline {
                     sh """
                         echo "🚀🚀🚀🚀🚀...Publish Cocoapods...🚀🚀🚀🚀🚀"
                     """
-                    copyArtifacts(
-                        projectName: 'iOS SDK',
-                        selector: lastSuccessful()
-                    )
-                        
+                    
+                    sh """
+                        echo "Cocoapods Will Upload Version: ${params.VERSION}"
+                    """
+                                            
                     sh 'ls -l'
                                         
                     sh """
