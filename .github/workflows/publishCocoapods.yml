@@ -1,44 +1,45 @@
+# Workflow B: Publish to CocoaPods
+
 name: Publish to CocoaPods
 
 on:
-  workflow_dispatch:
-    inputs:
-      ARCHIVE_NAME:
-        description: 'XCFramework archive name (e.g. 1.0.0_20250410.zip)'
-        required: true
+  repository_dispatch:
+    types: [trigger-publishCocoapods-workflow]  # Listen for trigger event from Workflow A
 
 jobs:
   publish:
-    runs-on: publishCocoapods
+    runs-on: ubuntu-latest  # Update this to the appropriate environment
 
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Download Artifact
+      - name: Download Artifact from Workflow A
         uses: actions/download-artifact@v4
         with:
-          name: ${{ github.event.inputs.ARCHIVE_NAME }}
+          name: ${{ github.event.client_payload.archive_name }}  # Use the archive name passed from Workflow A
           path: ./downloaded
 
       - name: Unzip archive
         run: |
-          unzip ./downloaded/${{ github.event.inputs.ARCHIVE_NAME }} -d ./extracted
+          unzip ./downloaded/${{ github.event.client_payload.archive_name }} -d ./extracted
 
       - name: Replace xcframework in private repo & update podspec
         run: |
           set -e
-          REPO_DIR="/Users/imqatest/Desktop/iOS/PublishSDKONCocoapods"
+          REPO_DIR="/Users/imqatest/Desktop/iOS/PublishSDKONCocoapods"  # Update the path to your repo directory
           DEST_DIR="$REPO_DIR/IMQACore/Frameworks"
           PODSPEC_FILE="$REPO_DIR/IMQACore.podspec"
-          VERSION=$(echo "${{ github.event.inputs.ARCHIVE_NAME }}" | cut -d'_' -f1)
+          VERSION=${{ github.event.client_payload.version }}  # Extract version from the payload
 
           echo "Updating to version $VERSION"
-          rm -rf "$DEST_DIR"/*
-          cp -R ./extracted/* "$DEST_DIR"
+          rm -rf "$DEST_DIR"/*  # Clear out the old xcframework
+          cp -R ./extracted/* "$DEST_DIR"  # Copy new xcframework into repo
 
+          # Update the version in podspec file
           sed -i '' "s/s.version *= *\"[0-9.]*\"/s.version = \"$VERSION\"/" "$PODSPEC_FILE"
 
+          # Commit changes and push to Git
           cd "$REPO_DIR"
           git add .
           git commit -m "chore: 更新版本至 $VERSION"
@@ -49,4 +50,4 @@ jobs:
       - name: Push to CocoaPods
         run: |
           cd "$REPO_DIR"
-          pod trunk push IMQACore.podspec --allow-warnings
+          pod trunk push IMQACore.podspec --allow-warnings  # Push the updated podspec to CocoaPods
