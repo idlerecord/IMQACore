@@ -1,0 +1,52 @@
+name: Publish to CocoaPods
+
+on:
+  workflow_dispatch:
+    inputs:
+      ARCHIVE_NAME:
+        description: 'XCFramework archive name (e.g. 1.0.0_20250410.zip)'
+        required: true
+
+jobs:
+  publish:
+    runs-on: publishCocoapods
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Download Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ github.event.inputs.ARCHIVE_NAME }}
+          path: ./downloaded
+
+      - name: Unzip archive
+        run: |
+          unzip ./downloaded/${{ github.event.inputs.ARCHIVE_NAME }} -d ./extracted
+
+      - name: Replace xcframework in private repo & update podspec
+        run: |
+          set -e
+          REPO_DIR="/Users/imqatest/Desktop/iOS/PublishSDKONCocoapods"
+          DEST_DIR="$REPO_DIR/IMQACore/Frameworks"
+          PODSPEC_FILE="$REPO_DIR/IMQACore.podspec"
+          VERSION=$(echo "${{ github.event.inputs.ARCHIVE_NAME }}" | cut -d'_' -f1)
+
+          echo "Updating to version $VERSION"
+          rm -rf "$DEST_DIR"/*
+          cp -R ./extracted/* "$DEST_DIR"
+
+          sed -i '' "s/s.version *= *\"[0-9.]*\"/s.version = \"$VERSION\"/" "$PODSPEC_FILE"
+
+          cd "$REPO_DIR"
+          git add .
+          git commit -m "chore: 更新版本至 $VERSION"
+          git tag "$VERSION"
+          git push origin main
+          git push origin "$VERSION"
+
+      - name: Push to CocoaPods
+        run: |
+          cd "$REPO_DIR"
+          pod trunk push IMQACore.podspec --allow-warnings
