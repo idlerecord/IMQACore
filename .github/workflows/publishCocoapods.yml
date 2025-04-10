@@ -14,6 +14,12 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
+      - name: Create directory for downloaded artifacts
+        run: mkdir -p ./downloaded  # 确保目录存在
+
+      - name: List files in current directory
+        run: ls -al
+
       - name: Download Artifact from Workflow A
         uses: actions/download-artifact@v4
         with:
