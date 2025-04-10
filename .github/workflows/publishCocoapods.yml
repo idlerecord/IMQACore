@@ -8,7 +8,7 @@ on:
 
 jobs:
   publish:
-    runs-on: ubuntu-latest  # Update this to the appropriate environment
+    runs-on: publishCocoapods  # Update this to the appropriate environment
 
     steps:
       - name: Checkout repo
