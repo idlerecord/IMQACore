@@ -1,0 +1,223 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
+// swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name IMQAOtelInternal
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+import Foundation
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public enum IMQASetupError : Swift.Error, Swift.Equatable {
+  case invalidThread(_: Swift.String)
+  case initializationNotAllowed(_: Swift.String)
+  case unableToInitialize(_: Swift.String)
+  case failedStorageCreation(partitionId: Swift.String, appGroupId: Swift.String?)
+  case invalidAppId(_: Swift.String)
+  case invalidAppGroupId(_: Swift.String)
+  public static func == (a: IMQAOtelInternal.IMQASetupError, b: IMQAOtelInternal.IMQASetupError) -> Swift.Bool
+}
+extension IMQAOtelInternal.IMQASetupError : Foundation.LocalizedError, Foundation.CustomNSError {
+  public static var errorDomain: Swift.String {
+    get
+  }
+  public var errorCode: Swift.Int {
+    get
+  }
+  public var errorDescription: Swift.String? {
+    get
+  }
+  public var localizedDescription: Swift.String {
+    get
+  }
+}
+@objc public enum LogLevel : Swift.Int {
+  case none
+  case trace
+  case debug
+  case info
+  case warning
+  case error
+  public static let `default`: IMQAOtelInternal.LogLevel
+  public var severity: IMQAOtelInternal.LogSeverity {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum LogSeverity : Swift.Int, Swift.Codable {
+  case trace = 1
+  case debug = 5
+  case info = 9
+  case warn = 13
+  case error = 17
+  case fatal = 24
+  public var text: Swift.String {
+    get
+  }
+  public var number: Swift.Int {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension IMQAOtelInternal.LogSeverity : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+extension Foundation.ProcessInfo {
+  public var isSwiftUIPreview: Swift.Bool {
+    get
+  }
+}
+extension Foundation.URL {
+  public static func endpoint(basePath: Swift.String, apiPath: Swift.String) -> Foundation.URL?
+  public static func spansEndpoint(basePath: Swift.String) -> Foundation.URL?
+  public static func logsEndpoint(basePath: Swift.String) -> Foundation.URL?
+}
+public struct ResourceSemantics {
+  public static let serviceName: Swift.String
+  public static let serviceVersion: Swift.String
+  public static let imqaSDKVersion: Swift.String
+  public static let osName: Swift.String
+  public static let osVersion: Swift.String
+  public static let serviceKey: Swift.String
+  public static let deviceId: Swift.String
+  public static let deviceManufacturer: Swift.String
+  public static let deviceBrand: Swift.String
+  public static let deviceModelIdentifier: Swift.String
+}
+public struct SpanSemantics {
+  public static let spanType: Swift.String
+  public struct Event {
+    public static let eventType: Swift.String
+    public static let targetElement: Swift.String
+    public static let targetElementText: Swift.String
+    public static let tapCoords: Swift.String
+  }
+  public enum EventValue : Swift.String {
+    case eventClick
+    case eventScroll
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public struct XHR {
+    public static let httpRequestHeaders: Swift.String
+    public static let httpRequestBody: Swift.String
+    public static let errorType: Swift.String
+    public static let httpHost: Swift.String
+  }
+  public struct Session {
+    public static let name: Swift.String
+    public static let keyId: Swift.String
+    public static let keyState: Swift.String
+    public static let keyColdStart: Swift.String
+    public static let keyTerminated: Swift.String
+    public static let keyCleanExit: Swift.String
+    public static let keySessionNumber: Swift.String
+    public static let keyHeartbeat: Swift.String
+    public static let keyCrashId: Swift.String
+  }
+  public struct Common {
+    public static let sessionId: Swift.String
+    public static let traceId: Swift.String
+    public static let spanId: Swift.String
+    public static let sourceAddress: Swift.String
+    public static let screenName: Swift.String
+    public static let screenType: Swift.String
+    public static let userId: Swift.String
+    public static let networkCarrierName: Swift.String
+    public static let networkConnectionSubtype: Swift.String
+    public static let deviceBatteryLevel: Swift.String
+    public static let deviceBatteryIsCharging: Swift.String
+    public static let deviceCpuUsage: Swift.String
+    public static let deviceMemoryTotal: Swift.String
+    public static let deviceMemoryFree: Swift.String
+    public static let appMemoryAllocated: Swift.String
+    public static let areaCode: Swift.String
+    public static let networkAvailable: Swift.String
+    public static let networkCellular: Swift.String
+    public static let networkWifi: Swift.String
+  }
+  public struct CommonValue {
+    public static var noScreenValue: Swift.String
+    public static var viewValue: Swift.String
+  }
+  public struct SessionValue {
+    public static var name: Swift.String
+  }
+  public struct Applifecycle {
+    public static let appLifecycle: Swift.String
+  }
+}
+public struct UserSemantics {
+  public static var userProfileUserDefaultKey: Swift.String {
+    get
+  }
+}
+public struct IMQAScreen {
+  public static var name: Swift.String?
+}
+public enum IMQALogType : Swift.String {
+  case SESSION
+  case RENDER
+  case XHR
+  case EVENT
+  case CRASH
+  case LOG
+  case APPLIFECYCLE
+  case INTERNAL
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum IMQASpanType : Swift.String, Swift.Decodable {
+  case SESSION
+  case RENDER
+  case XHR
+  case EVENT
+  case CRASH
+  case LOG
+  case APPLIFECYCLE
+  case DEFAULT
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class IMQAMeta {
+  public static let sdkVersion: Swift.String
+  @objc deinit
+}
+extension IMQAOtelInternal.IMQAMeta {
+  public static var userAgent: Swift.String {
+    get
+  }
+}
+extension IMQAOtelInternal.LogLevel : Swift.Equatable {}
+extension IMQAOtelInternal.LogLevel : Swift.Hashable {}
+extension IMQAOtelInternal.LogLevel : Swift.RawRepresentable {}
+extension IMQAOtelInternal.LogSeverity : Swift.Equatable {}
+extension IMQAOtelInternal.LogSeverity : Swift.Hashable {}
+extension IMQAOtelInternal.LogSeverity : Swift.RawRepresentable {}
+extension IMQAOtelInternal.SpanSemantics.EventValue : Swift.Equatable {}
+extension IMQAOtelInternal.SpanSemantics.EventValue : Swift.Hashable {}
+extension IMQAOtelInternal.SpanSemantics.EventValue : Swift.RawRepresentable {}
+extension IMQAOtelInternal.IMQALogType : Swift.Equatable {}
+extension IMQAOtelInternal.IMQALogType : Swift.Hashable {}
+extension IMQAOtelInternal.IMQALogType : Swift.RawRepresentable {}
+extension IMQAOtelInternal.IMQASpanType : Swift.Equatable {}
+extension IMQAOtelInternal.IMQASpanType : Swift.Hashable {}
+extension IMQAOtelInternal.IMQASpanType : Swift.RawRepresentable {}

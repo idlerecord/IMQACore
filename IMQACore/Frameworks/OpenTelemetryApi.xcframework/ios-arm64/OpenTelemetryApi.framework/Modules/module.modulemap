@@ -1,0 +1,11 @@
+framework module OpenTelemetryApi {
+  umbrella header "OpenTelemetry-Swift-Api-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module OpenTelemetryApi.Swift {
+  header "OpenTelemetryApi-Swift.h"
+  requires objc
+}
