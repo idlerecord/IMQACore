@@ -20,15 +20,14 @@ jobs:
       - name: List files in current directory
         run: ls -al
 
-      - name: Download Artifact from Workflow A
-        uses: actions/download-artifact@v4
-        with:
-          name: ${{ github.event.client_payload.archive_name }}  # Use the archive name passed from Workflow A
-          path: ./downloaded
-
-      - name: Unzip archive
+      - name: Download release asset
         run: |
-          unzip ./downloaded/${{ github.event.client_payload.archive_name }} -d ./extracted
+          curl -L -o ./downloaded/${{ github.event.client_payload.archive_name }} \
+          https://github.com/idlerecord/imqa-apm-iOS/releases/download/${{ github.event.client_payload.version }}/${{ github.event.client_payload.archive_name }}
+      
+      - name: Unzip
+        run: unzip ./downloaded/${{ github.event.client_payload.archive_name }} -d ./extracted
+      
 
       - name: Replace xcframework in private repo & update podspec
         run: |
