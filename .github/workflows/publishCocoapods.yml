@@ -22,7 +22,7 @@ jobs:
 
       - name: Download zip from remote server
         run: |
-          curl -O https://7d17-115-95-226-254.ngrok-free.app/${{ github.event.client_payload.archive_name }}
+          curl -O "${{ github.event.client_payload.ngrok_url }}/${{ github.event.client_payload.archive_name }}"
           unzip ${{ github.event.client_payload.archive_name }} -d ./extracted
 
       - name: Replace xcframework in private repo & update podspec
