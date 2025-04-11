@@ -1,4 +1,0 @@
-framework module IMQAOtelInternal {
-  header "IMQAOtelInternal-Swift.h"
-  requires objc
-}

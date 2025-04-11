@@ -1,4 +1,0 @@
-framework module IMQACommonInternal {
-  header "IMQACommonInternal-Swift.h"
-  requires objc
-}
