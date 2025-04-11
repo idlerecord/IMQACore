@@ -18,11 +18,11 @@
 		</data>
 		<key>Modules/OpenTelemetrySdk.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		G3tBPP350ZaOq3nWFPkta5FExKU=
+		dNikwBixSiPkTMrh25TOVdf5xTY=
 		</data>
 		<key>Modules/OpenTelemetrySdk.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		4NNCho3Y5n//JYo+nQj9vtUT1hk=
+		flYJwMAs/zPa6qDO5gxQQzgT8MA=
 		</data>
 		<key>Modules/OpenTelemetrySdk.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -97,22 +97,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			G3tBPP350ZaOq3nWFPkta5FExKU=
+			dNikwBixSiPkTMrh25TOVdf5xTY=
 			</data>
 			<key>hash2</key>
 			<data>
-			IKhskSCNc0iyZ1YT1Vv9a8BfITSxysXQXFqtAVu8byw=
+			2V3oDTKHCOhuilwRYMN4TJdXi39q2Bu9l0g8C9+vrSY=
 			</data>
 		</dict>
 		<key>Modules/OpenTelemetrySdk.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			4NNCho3Y5n//JYo+nQj9vtUT1hk=
+			flYJwMAs/zPa6qDO5gxQQzgT8MA=
 			</data>
 			<key>hash2</key>
 			<data>
-			v7XoQAEX2SVwvq1MxajcyBcYBJBA2M8uF8iFnBh2akE=
+			QbkxC/kC/0QMJlvLIRejxOwad4fOZz7nahWt27X/qME=
 			</data>
 		</dict>
 		<key>Modules/OpenTelemetrySdk.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
