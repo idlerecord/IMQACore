@@ -35,7 +35,7 @@ jobs:
 
           echo "Updating to version $VERSION"
           rm -rf "$DEST_DIR"/*  # Clear out the old xcframework
-          cp -R ./extracted/Build/xcframework/* "$DEST_DIR"  # Copy new xcframework into repo
+          cp -R ./extracted/* "$DEST_DIR"  # Copy new xcframework into repo
 
           # Update the version in podspec file
           sed -i '' "s/s.version *= *\"[0-9.]*\"/s.version = \"$VERSION\"/" "$PODSPEC_FILE"
