@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
-// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name OpenTelemetryApi -package-name opentelemetry_swift
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
+// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name OpenTelemetryApi
+// swift-module-flags-ignorable: -enable-bare-slash-regex
 import Foundation
 @_exported import OpenTelemetryApi
 import Swift
@@ -150,14 +150,18 @@ public protocol ContextManager : AnyObject {
   func setCurrentContextValue(forKey: OpenTelemetryApi.OpenTelemetryContextKeys, value: Swift.AnyObject)
   func removeContextValue(forKey: OpenTelemetryApi.OpenTelemetryContextKeys, value: Swift.AnyObject)
   func withCurrentContextValue<T>(forKey: OpenTelemetryApi.OpenTelemetryContextKeys, value: Swift.AnyObject?, _ operation: () throws -> T) rethrows -> T
+  #if compiler(>=5.3) && $AsyncAwait
   @available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
   func withCurrentContextValue<T>(forKey: OpenTelemetryApi.OpenTelemetryContextKeys, value: Swift.AnyObject?, _ operation: () async throws -> T) async rethrows -> T
+  #endif
 }
 public protocol ImperativeContextManager : OpenTelemetryApi.ContextManager {
 }
 extension OpenTelemetryApi.ContextManager where Self : OpenTelemetryApi.ImperativeContextManager {
+  #if compiler(>=5.3) && $AsyncAwait
   @available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
   public func withCurrentContextValue<T>(forKey key: OpenTelemetryApi.OpenTelemetryContextKeys, value: Swift.AnyObject?, _ operation: () async throws -> T) async rethrows -> T
+  #endif
   public func withCurrentContextValue<T>(forKey key: OpenTelemetryApi.OpenTelemetryContextKeys, value: Swift.AnyObject?, _ operation: () throws -> T) rethrows -> T
 }
 public protocol ContextPropagators {
@@ -599,10 +603,14 @@ public struct OpenTelemetryContextProvider {
   public func removeContextForBaggage(_ baggage: any OpenTelemetryApi.Baggage)
   public func withActiveSpan<T>(_ span: any OpenTelemetryApi.SpanBase, _ operation: () throws -> T) rethrows -> T
   public func withActiveBaggage<T>(_ span: any OpenTelemetryApi.Baggage, _ operation: () throws -> T) rethrows -> T
+  #if compiler(>=5.3) && $AsyncAwait
   @available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
   public func withActiveSpan<T>(_ span: any OpenTelemetryApi.SpanBase, _ operation: () async throws -> T) async rethrows -> T
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
   @available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
   public func withActiveBaggage<T>(_ span: any OpenTelemetryApi.Baggage, _ operation: () async throws -> T) async rethrows -> T
+  #endif
 }
 public struct ProxyMeter : OpenTelemetryApi.Meter {
   public func createRawDoubleCounter(name: Swift.String) -> OpenTelemetryApi.AnyRawCounterMetric<Swift.Double>
@@ -1339,12 +1347,16 @@ public protocol SpanBuilderBase : AnyObject {
   @discardableResult
   func setStartTime(time: Foundation.Date) -> Self
   func withActiveSpan<T>(_ operation: (any OpenTelemetryApi.SpanBase) throws -> T) rethrows -> T
+  #if compiler(>=5.3) && $AsyncAwait
   @available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
   func withActiveSpan<T>(_ operation: (any OpenTelemetryApi.SpanBase) async throws -> T) async rethrows -> T
+  #endif
   func startSpan() -> any OpenTelemetryApi.Span
   func withStartedSpan<T>(_ operation: (any OpenTelemetryApi.SpanBase) throws -> T) rethrows -> T
+  #if compiler(>=5.3) && $AsyncAwait
   @available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
   func withStartedSpan<T>(_ operation: (any OpenTelemetryApi.SpanBase) async throws -> T) async rethrows -> T
+  #endif
 }
 public protocol SpanBuilder : OpenTelemetryApi.SpanBuilderBase {
   @discardableResult
@@ -1352,8 +1364,10 @@ public protocol SpanBuilder : OpenTelemetryApi.SpanBuilderBase {
 }
 extension OpenTelemetryApi.SpanBuilderBase {
   public func withStartedSpan<T>(_ operation: (any OpenTelemetryApi.SpanBase) throws -> T) rethrows -> T
+  #if compiler(>=5.3) && $AsyncAwait
   @available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
   public func withStartedSpan<T>(_ operation: (any OpenTelemetryApi.SpanBase) async throws -> T) async rethrows -> T
+  #endif
   @discardableResult
   public func setAttribute(key: Swift.String, value: Swift.String) -> Self
   @discardableResult
@@ -1529,7 +1543,9 @@ public class TaskLocalContextManager : OpenTelemetryApi.ContextManager {
   public func getCurrentContextValue(forKey key: OpenTelemetryApi.OpenTelemetryContextKeys) -> Swift.AnyObject?
   public func setCurrentContextValue(forKey: OpenTelemetryApi.OpenTelemetryContextKeys, value: Swift.AnyObject)
   public func removeContextValue(forKey: OpenTelemetryApi.OpenTelemetryContextKeys, value: Swift.AnyObject)
+  #if compiler(>=5.3) && $AsyncAwait
   public func withCurrentContextValue<T>(forKey key: OpenTelemetryApi.OpenTelemetryContextKeys, value: Swift.AnyObject?, _ operation: () async throws -> T) async rethrows -> T
+  #endif
   public func withCurrentContextValue<T>(forKey key: OpenTelemetryApi.OpenTelemetryContextKeys, value: Swift.AnyObject?, _ operation: () throws -> T) rethrows -> T
   @objc deinit
 }
