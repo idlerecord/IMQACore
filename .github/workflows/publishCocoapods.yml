@@ -41,15 +41,16 @@ jobs:
           sed -i '' "s/s.version *= *\"[0-9.]*\"/s.version = \"$VERSION\"/" "$PODSPEC_FILE"
 
           # Commit changes and push to Git
+          cat "$PODSPEC_FILE"
           cd "$REPO_DIR"
           git add .
           git commit -m "chore: 更新版本至 $VERSION"
           git tag "$VERSION"
           git push origin main
           git push origin "$VERSION"
+          cat IMQACore.podspec
 
       - name: Push to CocoaPods
         run: |
           cd "$REPO_DIR"
-          cat IMQACore.podspec
           # pod trunk push IMQACore.podspec --allow-warnings  # Push the updated podspec to CocoaPods
