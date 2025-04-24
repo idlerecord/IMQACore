@@ -51,4 +51,5 @@ jobs:
       - name: Push to CocoaPods
         run: |
           cd "$REPO_DIR"
-          pod trunk push IMQACore.podspec --allow-warnings  # Push the updated podspec to CocoaPods
+          cat IMQACore.podspec
+          # pod trunk push IMQACore.podspec --allow-warnings  # Push the updated podspec to CocoaPods
