@@ -82150,42 +82150,42 @@
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/iOSIMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Derived\/Sources\/TuistBundle+IMQACore.swift",
       "kind": "StringLiteral",
-      "offset": 408,
+      "offset": 432,
       "length": 19,
       "value": "\"IMQACore_IMQACore\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/iOSIMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Derived\/Sources\/TuistBundle+IMQACore.swift",
       "kind": "StringLiteral",
-      "offset": 969,
+      "offset": 993,
       "length": 30,
       "value": "\"PACKAGE_RESOURCE_BUNDLE_PATH\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/iOSIMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Derived\/Sources\/TuistBundle+IMQACore.swift",
       "kind": "StringLiteral",
-      "offset": 1595,
+      "offset": 1619,
       "length": 12,
       "value": "\".framework\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/iOSIMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Derived\/Sources\/TuistBundle+IMQACore.swift",
       "kind": "StringLiteral",
-      "offset": 1685,
+      "offset": 1709,
       "length": 3,
       "value": "\"\/\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/iOSIMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Derived\/Sources\/TuistBundle+IMQACore.swift",
       "kind": "StringLiteral",
-      "offset": 2259,
+      "offset": 2283,
       "length": 9,
       "value": "\".bundle\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/iOSIMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Derived\/Sources\/TuistBundle+IMQACore.swift",
       "kind": "StringLiteral",
-      "offset": 2411,
+      "offset": 2435,
       "length": 47,
       "value": "\"unable to find bundle named IMQACore_IMQACore\""
     },
