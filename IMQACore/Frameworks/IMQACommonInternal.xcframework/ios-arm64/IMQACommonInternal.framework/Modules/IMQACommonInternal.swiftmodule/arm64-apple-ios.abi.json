@@ -8200,70 +8200,70 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/iOSIMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQACommonInternal\/Class\/SessionHeartbeat.swift",
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQACommonInternal\/Class\/SessionHeartbeat.swift",
       "kind": "FloatLiteral",
       "offset": 198,
       "length": 3,
       "value": "5.0"
     },
     {
-      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/iOSIMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQACommonInternal\/Enum\/SessionState.swift",
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQACommonInternal\/Enum\/SessionState.swift",
       "kind": "StringLiteral",
       "offset": 164,
       "length": 12,
       "value": "\"foreground\""
     },
     {
-      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/iOSIMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQACommonInternal\/Enum\/SessionState.swift",
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQACommonInternal\/Enum\/SessionState.swift",
       "kind": "StringLiteral",
       "offset": 199,
       "length": 12,
       "value": "\"background\""
     },
     {
-      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/iOSIMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQACommonInternal\/Enum\/StackTraceBehavior.swift",
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQACommonInternal\/Enum\/StackTraceBehavior.swift",
       "kind": "IntegerLiteral",
       "offset": 375,
       "length": 9,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/iOSIMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQACommonInternal\/Extension\/Data+Gzip.swift",
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQACommonInternal\/Extension\/Data+Gzip.swift",
       "kind": "IntegerLiteral",
       "offset": 3989,
       "length": 2,
       "value": "16"
     },
     {
-      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/iOSIMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQACommonInternal\/Extension\/Data+Gzip.swift",
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQACommonInternal\/Extension\/Data+Gzip.swift",
       "kind": "IntegerLiteral",
       "offset": 7149,
       "length": 2,
       "value": "32"
     },
     {
-      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/iOSIMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQACommonInternal\/Extension\/Data+Gzip.swift",
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQACommonInternal\/Extension\/Data+Gzip.swift",
       "kind": "IntegerLiteral",
       "offset": 10232,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/iOSIMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQACommonInternal\/Extension\/Data+Gzip.swift",
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQACommonInternal\/Extension\/Data+Gzip.swift",
       "kind": "IntegerLiteral",
       "offset": 10237,
       "length": 2,
       "value": "14"
     },
     {
-      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/iOSIMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQACommonInternal\/Keychain\/KeychainAccess.swift",
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQACommonInternal\/Keychain\/KeychainAccess.swift",
       "kind": "StringLiteral",
       "offset": 191,
       "length": 14,
       "value": "\"io.imqa.keys\""
     },
     {
-      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/iOSIMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQACommonInternal\/Keychain\/KeychainAccess.swift",
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQACommonInternal\/Keychain\/KeychainAccess.swift",
       "kind": "StringLiteral",
       "offset": 237,
       "length": 21,
