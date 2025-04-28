@@ -1,8 +1,8 @@
 {
   "ABIRoot": {
     "kind": "Root",
-    "name": "IMQAOtelInternal",
-    "printedName": "IMQAOtelInternal",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
     "children": [
       {
         "kind": "Import",
@@ -569,20 +569,6 @@
         "conformances": [
           {
             "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
             "name": "Error",
             "printedName": "Error",
             "usr": "s:s5ErrorP",
@@ -1050,20 +1036,6 @@
         ],
         "enumRawTypeName": "Int",
         "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -1570,20 +1542,6 @@
         ],
         "enumRawTypeName": "Int",
         "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -2156,22 +2114,6 @@
         "declAttributes": [
           "AccessControl",
           "RawDocComment"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          }
         ]
       },
       {
@@ -2427,22 +2369,6 @@
             "moduleName": "IMQAOtelInternal",
             "declAttributes": [
               "AccessControl"
-            ],
-            "conformances": [
-              {
-                "kind": "Conformance",
-                "name": "Copyable",
-                "printedName": "Copyable",
-                "usr": "s:s8CopyableP",
-                "mangledName": "$ss8CopyableP"
-              },
-              {
-                "kind": "Conformance",
-                "name": "Escapable",
-                "printedName": "Escapable",
-                "usr": "s:s9EscapableP",
-                "mangledName": "$ss9EscapableP"
-              }
             ]
           },
           {
@@ -2606,20 +2532,6 @@
             ],
             "enumRawTypeName": "String",
             "conformances": [
-              {
-                "kind": "Conformance",
-                "name": "Copyable",
-                "printedName": "Copyable",
-                "usr": "s:s8CopyableP",
-                "mangledName": "$ss8CopyableP"
-              },
-              {
-                "kind": "Conformance",
-                "name": "Escapable",
-                "printedName": "Escapable",
-                "usr": "s:s9EscapableP",
-                "mangledName": "$ss9EscapableP"
-              },
               {
                 "kind": "Conformance",
                 "name": "Equatable",
@@ -2858,22 +2770,6 @@
             "moduleName": "IMQAOtelInternal",
             "declAttributes": [
               "AccessControl"
-            ],
-            "conformances": [
-              {
-                "kind": "Conformance",
-                "name": "Copyable",
-                "printedName": "Copyable",
-                "usr": "s:s8CopyableP",
-                "mangledName": "$ss8CopyableP"
-              },
-              {
-                "kind": "Conformance",
-                "name": "Escapable",
-                "printedName": "Escapable",
-                "usr": "s:s9EscapableP",
-                "mangledName": "$ss9EscapableP"
-              }
             ]
           },
           {
@@ -3311,22 +3207,6 @@
             "moduleName": "IMQAOtelInternal",
             "declAttributes": [
               "AccessControl"
-            ],
-            "conformances": [
-              {
-                "kind": "Conformance",
-                "name": "Copyable",
-                "printedName": "Copyable",
-                "usr": "s:s8CopyableP",
-                "mangledName": "$ss8CopyableP"
-              },
-              {
-                "kind": "Conformance",
-                "name": "Escapable",
-                "printedName": "Escapable",
-                "usr": "s:s9EscapableP",
-                "mangledName": "$ss9EscapableP"
-              }
             ]
           },
           {
@@ -4251,22 +4131,6 @@
             "moduleName": "IMQAOtelInternal",
             "declAttributes": [
               "AccessControl"
-            ],
-            "conformances": [
-              {
-                "kind": "Conformance",
-                "name": "Copyable",
-                "printedName": "Copyable",
-                "usr": "s:s8CopyableP",
-                "mangledName": "$ss8CopyableP"
-              },
-              {
-                "kind": "Conformance",
-                "name": "Escapable",
-                "printedName": "Escapable",
-                "usr": "s:s9EscapableP",
-                "mangledName": "$ss9EscapableP"
-              }
             ]
           },
           {
@@ -4461,22 +4325,6 @@
             "moduleName": "IMQAOtelInternal",
             "declAttributes": [
               "AccessControl"
-            ],
-            "conformances": [
-              {
-                "kind": "Conformance",
-                "name": "Copyable",
-                "printedName": "Copyable",
-                "usr": "s:s8CopyableP",
-                "mangledName": "$ss8CopyableP"
-              },
-              {
-                "kind": "Conformance",
-                "name": "Escapable",
-                "printedName": "Escapable",
-                "usr": "s:s9EscapableP",
-                "mangledName": "$ss9EscapableP"
-              }
             ]
           },
           {
@@ -4581,22 +4429,6 @@
             "moduleName": "IMQAOtelInternal",
             "declAttributes": [
               "AccessControl"
-            ],
-            "conformances": [
-              {
-                "kind": "Conformance",
-                "name": "Copyable",
-                "printedName": "Copyable",
-                "usr": "s:s8CopyableP",
-                "mangledName": "$ss8CopyableP"
-              },
-              {
-                "kind": "Conformance",
-                "name": "Escapable",
-                "printedName": "Escapable",
-                "usr": "s:s9EscapableP",
-                "mangledName": "$ss9EscapableP"
-              }
             ]
           },
           {
@@ -4659,22 +4491,6 @@
             "moduleName": "IMQAOtelInternal",
             "declAttributes": [
               "AccessControl"
-            ],
-            "conformances": [
-              {
-                "kind": "Conformance",
-                "name": "Copyable",
-                "printedName": "Copyable",
-                "usr": "s:s8CopyableP",
-                "mangledName": "$ss8CopyableP"
-              },
-              {
-                "kind": "Conformance",
-                "name": "Escapable",
-                "printedName": "Escapable",
-                "usr": "s:s9EscapableP",
-                "mangledName": "$ss9EscapableP"
-              }
             ]
           }
         ],
@@ -4685,22 +4501,6 @@
         "declAttributes": [
           "AccessControl",
           "RawDocComment"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          }
         ]
       },
       {
@@ -4767,22 +4567,6 @@
         "moduleName": "IMQAOtelInternal",
         "declAttributes": [
           "AccessControl"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          }
         ]
       },
       {
@@ -4912,22 +4696,6 @@
         "declAttributes": [
           "AccessControl",
           "RawDocComment"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          }
         ]
       },
       {
@@ -5314,20 +5082,6 @@
         ],
         "enumRawTypeName": "String",
         "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -5752,20 +5506,6 @@
         "conformances": [
           {
             "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -5922,23 +5662,7 @@
           "AccessControl",
           "RawDocComment"
         ],
-        "hasMissingDesignatedInitializers": true,
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          }
-        ]
+        "hasMissingDesignatedInitializers": true
       },
       {
         "kind": "TypeDecl",
@@ -5992,9 +5716,7 @@
         "objc_name": "NSProcessInfo",
         "declAttributes": [
           "ObjC",
-          "SynthesizedProtocol",
           "NonSendable",
-          "Sendable",
           "Dynamic"
         ],
         "superclassUsr": "c:objc(cs)NSObject",
@@ -6004,27 +5726,6 @@
           "ObjectiveC.NSObject"
         ],
         "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Sendable",
-            "printedName": "Sendable",
-            "usr": "s:s8SendableP",
-            "mangledName": "$ss8SendableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -6208,41 +5909,6 @@
         "conformances": [
           {
             "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Sendable",
-            "printedName": "Sendable",
-            "usr": "s:s8SendableP",
-            "mangledName": "$ss8SendableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Hashable",
-            "printedName": "Hashable",
-            "usr": "s:SH",
-            "mangledName": "$sSH"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
             "name": "ReferenceConvertible",
             "printedName": "ReferenceConvertible",
             "children": [
@@ -6262,6 +5928,27 @@
             ],
             "usr": "s:10Foundation20ReferenceConvertibleP",
             "mangledName": "$s10Foundation20ReferenceConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
           },
           {
             "kind": "Conformance",
@@ -6333,6 +6020,125 @@
     "json_format_version": 8
   },
   "ConstValues": [
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Enum\/IMQASetupError.swift",
+      "kind": "StringLiteral",
+      "offset": 584,
+      "length": 6,
+      "value": "\"IMQA\""
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Enum\/IMQASetupError.swift",
+      "kind": "IntegerLiteral",
+      "offset": 716,
+      "length": 2,
+      "value": "-1"
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Enum\/IMQASetupError.swift",
+      "kind": "IntegerLiteral",
+      "offset": 766,
+      "length": 2,
+      "value": "-2"
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Enum\/IMQASetupError.swift",
+      "kind": "IntegerLiteral",
+      "offset": 817,
+      "length": 2,
+      "value": "-3"
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Enum\/IMQASetupError.swift",
+      "kind": "IntegerLiteral",
+      "offset": 876,
+      "length": 2,
+      "value": "-5"
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Enum\/IMQASetupError.swift",
+      "kind": "IntegerLiteral",
+      "offset": 932,
+      "length": 2,
+      "value": "-6"
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Enum\/IMQASetupError.swift",
+      "kind": "IntegerLiteral",
+      "offset": 994,
+      "length": 2,
+      "value": "-7"
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Enum\/IMQASetupError.swift",
+      "kind": "StringLiteral",
+      "offset": 1419,
+      "length": 101,
+      "value": "\"Failed to create Storage Directory. partitionId: '\""
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Enum\/IMQASetupError.swift",
+      "kind": "StringLiteral",
+      "offset": 1484,
+      "length": 15,
+      "value": "\"' appGroupId: '\""
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Enum\/IMQASetupError.swift",
+      "kind": "StringLiteral",
+      "offset": 1515,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Enum\/IMQASetupError.swift",
+      "kind": "StringLiteral",
+      "offset": 1518,
+      "length": 2,
+      "value": "\"'\""
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Enum\/IMQASetupError.swift",
+      "kind": "StringLiteral",
+      "offset": 1785,
+      "length": 19,
+      "value": "\"No Matching Error\""
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Enum\/LogLevel.swift",
+      "kind": "IntegerLiteral",
+      "offset": 195,
+      "length": 5,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Enum\/LogLevel.swift",
+      "kind": "IntegerLiteral",
+      "offset": 210,
+      "length": 5,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Enum\/LogLevel.swift",
+      "kind": "IntegerLiteral",
+      "offset": 225,
+      "length": 4,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Enum\/LogLevel.swift",
+      "kind": "IntegerLiteral",
+      "offset": 239,
+      "length": 7,
+      "value": "4"
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Enum\/LogLevel.swift",
+      "kind": "IntegerLiteral",
+      "offset": 256,
+      "length": 5,
+      "value": "5"
+    },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Enum\/LogLevel.swift",
       "kind": "IntegerLiteral",
@@ -6409,6 +6215,118 @@
       "offset": 262,
       "length": 2,
       "value": "24"
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Enum\/LogSeverity.swift",
+      "kind": "StringLiteral",
+      "offset": 491,
+      "length": 7,
+      "value": "\"TRACE\""
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Enum\/LogSeverity.swift",
+      "kind": "StringLiteral",
+      "offset": 520,
+      "length": 7,
+      "value": "\"DEBUG\""
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Enum\/LogSeverity.swift",
+      "kind": "StringLiteral",
+      "offset": 548,
+      "length": 6,
+      "value": "\"INFO\""
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Enum\/LogSeverity.swift",
+      "kind": "StringLiteral",
+      "offset": 575,
+      "length": 6,
+      "value": "\"WARN\""
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Enum\/LogSeverity.swift",
+      "kind": "StringLiteral",
+      "offset": 603,
+      "length": 7,
+      "value": "\"ERROR\""
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Enum\/LogSeverity.swift",
+      "kind": "StringLiteral",
+      "offset": 632,
+      "length": 7,
+      "value": "\"FATAL\""
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Enum\/LogSeverity.swift",
+      "kind": "IntegerLiteral",
+      "offset": 167,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Enum\/LogSeverity.swift",
+      "kind": "IntegerLiteral",
+      "offset": 186,
+      "length": 1,
+      "value": "5"
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Enum\/LogSeverity.swift",
+      "kind": "IntegerLiteral",
+      "offset": 204,
+      "length": 1,
+      "value": "9"
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Enum\/LogSeverity.swift",
+      "kind": "IntegerLiteral",
+      "offset": 222,
+      "length": 2,
+      "value": "13"
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Enum\/LogSeverity.swift",
+      "kind": "IntegerLiteral",
+      "offset": 242,
+      "length": 2,
+      "value": "17"
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Enum\/LogSeverity.swift",
+      "kind": "IntegerLiteral",
+      "offset": 262,
+      "length": 2,
+      "value": "24"
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Extension\/ProcessInfo+Extension.swift",
+      "kind": "StringLiteral",
+      "offset": 198,
+      "length": 28,
+      "value": "\"XCODE_RUNNING_FOR_PREVIEWS\""
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Extension\/ProcessInfo+Extension.swift",
+      "kind": "StringLiteral",
+      "offset": 231,
+      "length": 3,
+      "value": "\"1\""
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Extension\/URL+Extension.swift",
+      "kind": "StringLiteral",
+      "offset": 445,
+      "length": 12,
+      "value": "\"\/v1\/traces\""
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Extension\/URL+Extension.swift",
+      "kind": "StringLiteral",
+      "offset": 576,
+      "length": 10,
+      "value": "\"\/v1\/logs\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Semantics\/ResourceSemantics.swift",
@@ -6514,6 +6432,20 @@
       "offset": 440,
       "length": 12,
       "value": "\"tap.coords\""
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "kind": "StringLiteral",
+      "offset": 527,
+      "length": 7,
+      "value": "\"click\""
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
+      "kind": "StringLiteral",
+      "offset": 563,
+      "length": 8,
+      "value": "\"scroll\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Semantics\/SpanSemantics.swift",
@@ -6782,6 +6714,90 @@
       "value": "\"device.app.lifecycle\""
     },
     {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Semantics\/UserSemantics.swift",
+      "kind": "StringLiteral",
+      "offset": 246,
+      "length": 20,
+      "value": "\"CFBundleIdentifier\""
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Semantics\/UserSemantics.swift",
+      "kind": "StringLiteral",
+      "offset": 308,
+      "length": 14,
+      "value": "\".userdefault\""
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Semantics\/UserSemantics.swift",
+      "kind": "StringLiteral",
+      "offset": 348,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Semantics\/UserSemantics.swift",
+      "kind": "StringLiteral",
+      "offset": 353,
+      "length": 14,
+      "value": "\".userdefault\""
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Type\/IMQALogType.swift",
+      "kind": "StringLiteral",
+      "offset": 138,
+      "length": 9,
+      "value": "\"session\""
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Type\/IMQALogType.swift",
+      "kind": "StringLiteral",
+      "offset": 166,
+      "length": 8,
+      "value": "\"render\""
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Type\/IMQALogType.swift",
+      "kind": "StringLiteral",
+      "offset": 190,
+      "length": 5,
+      "value": "\"xhr\""
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Type\/IMQALogType.swift",
+      "kind": "StringLiteral",
+      "offset": 213,
+      "length": 7,
+      "value": "\"event\""
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Type\/IMQALogType.swift",
+      "kind": "StringLiteral",
+      "offset": 238,
+      "length": 7,
+      "value": "\"crash\""
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Type\/IMQALogType.swift",
+      "kind": "StringLiteral",
+      "offset": 261,
+      "length": 5,
+      "value": "\"log\""
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Type\/IMQALogType.swift",
+      "kind": "StringLiteral",
+      "offset": 291,
+      "length": 15,
+      "value": "\"app_lifecycle\""
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Type\/IMQALogType.swift",
+      "kind": "StringLiteral",
+      "offset": 327,
+      "length": 10,
+      "value": "\"internal\""
+    },
+    {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Type\/IMQALogType.swift",
       "kind": "StringLiteral",
       "offset": 138,
@@ -6894,11 +6910,81 @@
       "value": "\"default\""
     },
     {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Type\/IMQASpanType.swift",
+      "kind": "StringLiteral",
+      "offset": 152,
+      "length": 9,
+      "value": "\"session\""
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Type\/IMQASpanType.swift",
+      "kind": "StringLiteral",
+      "offset": 180,
+      "length": 8,
+      "value": "\"render\""
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Type\/IMQASpanType.swift",
+      "kind": "StringLiteral",
+      "offset": 204,
+      "length": 5,
+      "value": "\"xhr\""
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Type\/IMQASpanType.swift",
+      "kind": "StringLiteral",
+      "offset": 227,
+      "length": 7,
+      "value": "\"event\""
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Type\/IMQASpanType.swift",
+      "kind": "StringLiteral",
+      "offset": 252,
+      "length": 7,
+      "value": "\"crash\""
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Type\/IMQASpanType.swift",
+      "kind": "StringLiteral",
+      "offset": 275,
+      "length": 5,
+      "value": "\"log\""
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Type\/IMQASpanType.swift",
+      "kind": "StringLiteral",
+      "offset": 305,
+      "length": 15,
+      "value": "\"app_lifecycle\""
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Type\/IMQASpanType.swift",
+      "kind": "StringLiteral",
+      "offset": 340,
+      "length": 9,
+      "value": "\"default\""
+    },
+    {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Version\/IMQAMeta.swift",
       "kind": "StringLiteral",
       "offset": 143,
       "length": 8,
-      "value": "\"1.0.22\""
+      "value": "\"1.0.30\""
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Version\/IMQAMeta.swift",
+      "kind": "StringLiteral",
+      "offset": 218,
+      "length": 22,
+      "value": "\"IMQA\/i\/\""
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQAOtelInternal\/Version\/IMQAMeta.swift",
+      "kind": "StringLiteral",
+      "offset": 239,
+      "length": 3,
+      "value": "\"\""
     }
   ]
 }
