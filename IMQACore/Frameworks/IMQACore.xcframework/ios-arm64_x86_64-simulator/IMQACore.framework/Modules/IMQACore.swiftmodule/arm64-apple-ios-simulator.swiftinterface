@@ -548,6 +548,7 @@ extension IMQACore.IMQA {
   @objc public static func customLog(level: IMQACore.IMQALogLevel, message: Swift.String)
   @objc public static func setSharedSession(session: Swift.Bool)
   @objc public static func setWebviewConfiguration(userContentController: WebKit.WKUserContentController)
+  @objc public static func setAdvancedNetworkCapture(isCapture: Swift.Bool)
 }
 extension IMQACore.IMQA {
   @objc dynamic public func currentSessionId() -> Swift.String?

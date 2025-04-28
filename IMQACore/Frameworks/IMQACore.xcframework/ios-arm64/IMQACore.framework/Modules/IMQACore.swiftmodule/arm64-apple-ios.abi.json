@@ -15293,6 +15293,36 @@
           },
           {
             "kind": "Function",
+            "name": "setAdvancedNetworkCapture",
+            "printedName": "setAdvancedNetworkCapture(isCapture:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@IMQACore@objc(cs)IMQA(cm)setAdvancedNetworkCaptureWithIsCapture:",
+            "mangledName": "$s8IMQACore4IMQAC25setAdvancedNetworkCapture02isF0ySb_tFZ",
+            "moduleName": "IMQACore",
+            "static": true,
+            "objc_name": "setAdvancedNetworkCaptureWithIsCapture:",
+            "declAttributes": [
+              "Final",
+              "ObjC"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "currentSessionId",
             "printedName": "currentSessionId()",
             "children": [
@@ -83325,36 +83355,43 @@
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQACore\/Otel\/IMQAOTel.swift",
+      "kind": "BooleanLiteral",
+      "offset": 548,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQACore\/Otel\/IMQAOTel.swift",
       "kind": "StringLiteral",
-      "offset": 538,
+      "offset": 597,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQACore\/Otel\/IMQAOTel.swift",
       "kind": "StringLiteral",
-      "offset": 720,
+      "offset": 779,
       "length": 14,
       "value": "\"imqa.sdk.iOS\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQACore\/Otel\/IMQAOTel.swift",
       "kind": "Dictionary",
-      "offset": 1818,
+      "offset": 1877,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQACore\/Otel\/IMQAOTel.swift",
       "kind": "Dictionary",
-      "offset": 10677,
+      "offset": 10736,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/SDK\/actions-runner\/IMQASDK\/imqa-ios-sdk\/imqa-ios-sdk\/Sources\/IMQACore\/Otel\/IMQAOTel.swift",
       "kind": "Dictionary",
-      "offset": 11042,
+      "offset": 11101,
       "length": 3,
       "value": "[]"
     },

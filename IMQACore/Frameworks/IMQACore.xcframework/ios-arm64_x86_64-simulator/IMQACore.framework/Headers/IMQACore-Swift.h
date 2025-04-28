@@ -553,6 +553,7 @@ enum IMQALogLevel : NSInteger;
 /// \param userContentController userContentController
 ///
 + (void)setWebviewConfigurationWithUserContentController:(WKUserContentController * _Nonnull)userContentController;
++ (void)setAdvancedNetworkCaptureWithIsCapture:(BOOL)isCapture;
 @end
 
 
@@ -1381,6 +1382,7 @@ enum IMQALogLevel : NSInteger;
 /// \param userContentController userContentController
 ///
 + (void)setWebviewConfigurationWithUserContentController:(WKUserContentController * _Nonnull)userContentController;
++ (void)setAdvancedNetworkCaptureWithIsCapture:(BOOL)isCapture;
 @end
 
 
