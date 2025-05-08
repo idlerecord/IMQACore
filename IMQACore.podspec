@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "IMQACore"
-  s.version = "1.0.40"
+  s.version = "1.0.41"
   s.summary          = "IMQA iOS Core SDK"
   s.description      = "IMQA iOS Core SDK build한 Frameworks만 포함"
   s.homepage         = "https://imqa.io/"
