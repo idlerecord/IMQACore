@@ -23,16 +23,11 @@ Pod::Spec.new do |s|
 
   # **2️⃣ 依赖的 Frameworks**
   s.vendored_frameworks = [
-    "IMQACore/Frameworks/IMQACollectDeviceInfo.xcframework",
-    "IMQACore/Frameworks/IMQACommonInternal.xcframework",
+    "IMQACore/Frameworks/IMQADeviceInfo.xcframework",
+    "IMQACore/Frameworks/IMQACommon.xcframework",
     "IMQACore/Frameworks/IMQACore.xcframework",
     "IMQACore/Frameworks/IMQAObjCUtilsInternal.xcframework",
-    "IMQACore/Frameworks/IMQAOtelInternal.xcframework",
     "IMQACore/Frameworks/KSCrash.xcframework",
-    "IMQACore/Frameworks/MMKV.xcframework",
-    "IMQACore/Frameworks/MMKVCore.xcframework",
-    "IMQACore/Frameworks/OpenTelemetryApi.xcframework",
-    "IMQACore/Frameworks/OpenTelemetrySdk.xcframework",
     "IMQACore/Frameworks/SwiftProtobuf.xcframework"
   ]
 
