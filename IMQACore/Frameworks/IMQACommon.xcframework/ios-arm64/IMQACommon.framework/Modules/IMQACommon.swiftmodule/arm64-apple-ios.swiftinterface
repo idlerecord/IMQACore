@@ -1,0 +1,163 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
+// swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name IMQACommon
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+import Compression
+import Foundation
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+extension Foundation.Data {
+  public func compress(withAlgorithm algo: Foundation.Data.CompressionAlgorithm) -> Foundation.Data?
+  public func decompress(withAlgorithm algo: Foundation.Data.CompressionAlgorithm) -> Foundation.Data?
+  public enum CompressionAlgorithm {
+    case zlib
+    case lzfse
+    case lzma
+    case lz4
+    public static func == (a: Foundation.Data.CompressionAlgorithm, b: Foundation.Data.CompressionAlgorithm) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public func deflate() -> Foundation.Data?
+  public func inflate() -> Foundation.Data?
+  public func zip() -> Foundation.Data?
+  public func unzip(skipCheckSumValidation: Swift.Bool = true) -> Foundation.Data?
+  public func gzip() -> Foundation.Data?
+  public func gunzip() -> Foundation.Data?
+}
+public enum HTTPMethod : Swift.String {
+  case GET, POST, PUT, DELETE
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers final public class NetworkClient {
+  public static let shared: IMQACommon.NetworkClient
+  final public func request(url: Foundation.URL, method: IMQACommon.HTTPMethod = .POST, headers: [Swift.String : Swift.String] = [:], body: Foundation.Data?, completion: @escaping (Swift.Result<Foundation.Data, any Swift.Error>) -> Swift.Void)
+  @objc deinit
+}
+@propertyWrapper final public class ThreadSafe<Value> {
+  public init(wrappedValue: Value)
+  final public var wrappedValue: Value {
+    get
+    set
+  }
+  final public func modify(_ operation: (inout Value) -> Swift.Void)
+  @objc deinit
+}
+final public class UnfairLock {
+  public init()
+  @objc deinit
+  final public func locked<ReturnValue>(_ f: () throws -> ReturnValue) rethrows -> ReturnValue
+}
+extension Foundation.Bundle {
+  public class var appIdentifier: Swift.String {
+    get
+  }
+  public class var appVersion: Swift.String {
+    get
+  }
+  public class var appBuildVersion: Swift.String {
+    get
+  }
+  public class var appName: Swift.String {
+    get
+  }
+}
+extension CoreFoundation.CGPoint {
+  public func toString() -> Swift.String
+}
+extension Foundation.Date {
+  public var millisecondsSince1970: Swift.Double {
+    get
+  }
+  public var millisecondsSince1970Truncated: Swift.Int {
+    get
+  }
+  public var nanosecondsSince1970: Swift.Double {
+    get
+  }
+  public var nanosecondsSince1970Truncated: Swift.Int {
+    get
+  }
+  public var serializedInterval: Swift.Int {
+    get
+  }
+}
+public struct SessionIdentifier : Swift.Equatable {
+  public init(value: Foundation.UUID)
+  public init?(string: Swift.String?)
+  public var toString: Swift.String {
+    get
+  }
+  public static func == (a: IMQACommon.SessionIdentifier, b: IMQACommon.SessionIdentifier) -> Swift.Bool
+}
+extension IMQACommon.SessionIdentifier : Swift.Codable {
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+extension IMQACommon.SessionIdentifier {
+  public static var random: IMQACommon.SessionIdentifier {
+    get
+  }
+}
+extension IMQACommon.SessionIdentifier : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+extension Foundation.UUID {
+  public init?(withoutHyphen: Swift.String)
+  public var withoutHyphen: Swift.String {
+    get
+  }
+}
+public protocol DispatchableQueue : AnyObject {
+  func async(_ block: @escaping () -> Swift.Void)
+  func sync(execute block: () -> Swift.Void)
+}
+extension Dispatch.DispatchQueue : IMQACommon.DispatchableQueue {
+  public func async(_ block: @escaping () -> Swift.Void)
+}
+public enum IMQASwizzableError : Swift.Error, Swift.Equatable {
+  case methodNotFound(selectorName: Swift.String, className: Swift.String)
+  public static func == (a: IMQACommon.IMQASwizzableError, b: IMQACommon.IMQASwizzableError) -> Swift.Bool
+}
+extension IMQACommon.IMQASwizzableError : Foundation.LocalizedError, Foundation.CustomNSError {
+  public static var errorDomain: Swift.String {
+    get
+  }
+  public var errorCode: Swift.Int {
+    get
+  }
+  public var errorDescription: Swift.String? {
+    get
+  }
+  public var localizedDescription: Swift.String {
+    get
+  }
+}
+public protocol Swizzlable {
+  associatedtype ImplementationType
+  associatedtype BlockImplementationType
+  static var selector: ObjectiveC.Selector { get }
+  var baseClass: Swift.AnyClass { get }
+  func install() throws
+  func swizzleInstanceMethod(_ block: (Self.ImplementationType) -> Self.BlockImplementationType) throws
+  func swizzleClassMethod(_ block: (Self.ImplementationType) -> Self.BlockImplementationType) throws
+}
+extension IMQACommon.Swizzlable {
+  public func swizzleInstanceMethod(_ block: (Self.ImplementationType) -> Self.BlockImplementationType) throws
+  public func swizzleClassMethod(_ block: (Self.ImplementationType) -> Self.BlockImplementationType) throws
+}
+extension Foundation.Data.CompressionAlgorithm : Swift.Equatable {}
+extension Foundation.Data.CompressionAlgorithm : Swift.Hashable {}
+extension IMQACommon.HTTPMethod : Swift.Equatable {}
+extension IMQACommon.HTTPMethod : Swift.Hashable {}
+extension IMQACommon.HTTPMethod : Swift.RawRepresentable {}

@@ -1,13 +1,12 @@
 //
-//  Copyright © 2024 Embrace Mobile, Inc. All rights reserved.
+//  IMQAObjCUtilsInternal.h
+//  IMQASDK
+//
+//  Created by Hunta Park on 5/14/25.
+//  Copyright © 2025 ONYCOM. All rights reserved.
 //
 
-#ifndef EmbraceObjCUtilsInternal_h
-#define EmbraceObjCUtilsInternal_h
-
-#import "IMQABinaryImageProvider.h"
-#import "IMQAStackTraceProccessor.h"
-#import "NSURLSessionTask+IMQA.h"
-#import "IMQAURLSessionDelegateForwarder.h"
-
-#endif /* EmbraceObjCUtilsInternal_h */
+#ifndef IMQAObjCUtilsInternal_h
+#define IMQAObjCUtilsInternal_h
+#import "IMQAURLSessionDelegateProxy.h"
+#endif /* IMQADeviceInfoDefine_h */
