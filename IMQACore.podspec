@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.author           = { "Hunta" => "hunta@onycom.com" }
   s.source           = { :git => "https://github.com/idlerecord/IMQACore.git", :tag => s.version.to_s }
 
-  s.ios.deployment_target = "13.0"
+  s.ios.deployment_target = "12.0"
 
   # **1️⃣ 没有源代码，去掉 `source_files`**
   # s.source_files = "Sources/**/*.{h,m,swift}"  ⛔️ 删除这一行
