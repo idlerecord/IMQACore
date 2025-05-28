@@ -1,61 +1,39 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
-// swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name IMQACore
+// swift-module-flags: -target arm64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name IMQACore
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface
-import SystemConfiguration.CaptiveNetwork
-import CommonCrypto
 import Compression
-import CoreFoundation
 import CoreTelephony
-import CryptoKit
+import Darwin
 import Foundation
-import IMQACollectDeviceInfo
-import IMQACommonInternal
+import IMQACommon
+import IMQADeviceInfo
 import IMQAObjCUtilsInternal
-import IMQAOtelInternal
 import KSCrash
-import MMKV
-import MachO
-import Network
-import OpenTelemetryApi
-import OpenTelemetrySdk
-import Security
 import Swift
 import SwiftProtobuf
 import SystemConfiguration
 import UIKit
-import UserNotifications
 import WebKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
-@_inheritsConvenienceInitializers @objc public class IMQACoreResources : ObjectiveC.NSObject {
-  @objc public class var bundle: Foundation.Bundle {
-    @objc get
-  }
-  @objc override dynamic public init()
+import os.activity
+import os.log
+import os
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers final public class AppLifecycleCaptureService : IMQACore.CaptureService {
+  @objc convenience override dynamic public init()
   @objc deinit
-}
-@objc extension IMQACore.CaptureService {
-  @objc public static func urlSession(options: IMQACore.URLSessionCaptureService.Options = URLSessionCaptureService.Options()) -> IMQACore.URLSessionCaptureService
-  @objc public static func tap(options: IMQACore.TapCaptureService.Options = TapCaptureService.Options()) -> IMQACore.TapCaptureService
-  @objc public static func view() -> IMQACore.ViewCaptureService
-  @objc public static func webView(options: IMQACore.WebViewCaptureService.Options = WebViewCaptureService.Options()) -> IMQACore.WebViewCaptureService
-  @objc public static func lowMemoryWarning() -> IMQACore.LowMemoryWarningCaptureService
-  @objc public static func lowPowerMode() -> IMQACore.LowPowerModeCaptureService
-  @objc public static func pushNotification(options: IMQACore.PushNotificationCaptureService.Options = PushNotificationCaptureService.Options()) -> IMQACore.PushNotificationCaptureService
+  @objc override final public func onInstall()
 }
 @objc @_inheritsConvenienceInitializers open class CaptureService : ObjectiveC.NSObject {
-  weak public var otel: (any IMQACore.IMQAOpenTelemetry)? {
+  weak public var otel: IMQACore.IMQAOtel? {
     get
   }
-  weak public var logger: (any IMQACore.InternalLogger)? {
+  @IMQACommon.ThreadSafe public var state: IMQACore.CaptureServiceState {
     get
   }
-  @IMQACommonInternal.ThreadSafe public var state: IMQACore.CaptureServiceState {
-    get
-  }
-  public func install(otel: (any IMQACore.IMQAOpenTelemetry)?, logger: (any IMQACore.InternalLogger)? = nil)
+  public func install(otel: IMQACore.IMQAOtel)
   public func start()
   public func stop()
   @objc open func onInstall()
@@ -64,13 +42,7 @@ import _SwiftConcurrencyShims
   @objc override dynamic public init()
   @objc deinit
 }
-extension IMQACore.CaptureService {
-  @discardableResult
-  public func add(event: IMQACore.RecordingSpanEvent) -> Swift.Bool
-  @discardableResult
-  public func add(events: [IMQACore.RecordingSpanEvent]) -> Swift.Bool
-}
-@objc @_inheritsConvenienceInitializers public class CaptureServiceBuilder : ObjectiveC.NSObject {
+@_inheritsConvenienceInitializers @objc public class CaptureServiceBuilder : ObjectiveC.NSObject {
   @objc public func build() -> [IMQACore.CaptureService]
   @discardableResult
   @objc public func add(_ service: IMQACore.CaptureService) -> Self
@@ -78,12 +50,8 @@ extension IMQACore.CaptureService {
   @objc public func remove(ofType type: Swift.AnyClass) -> Self
   @discardableResult
   @objc public func addAll() -> Self
-  @discardableResult
-  @objc public func addBasicServices() -> Self
   @objc override dynamic public init()
   @objc deinit
-}
-public enum CaptureServiceFactory {
 }
 @objc public enum CaptureServiceState : Swift.Int {
   case uninstalled
@@ -96,712 +64,68 @@ public enum CaptureServiceFactory {
     get
   }
 }
-@objc public enum LastRunState : Swift.Int {
-  case unavailable, crash, cleanExit
-  public init?(rawValue: Swift.Int)
-  public typealias RawValue = Swift.Int
-  public var rawValue: Swift.Int {
-    get
-  }
-}
-@objc public protocol CrashReporter {
-  @objc var currentSessionId: Swift.String? { get set }
-  @objc func install(context: IMQACore.CrashReporterContext, logger: any IMQACore.InternalLogger)
-  @objc func getLastRunState() -> IMQACore.LastRunState
-  @objc func fetchUnsentCrashReports(completion: @escaping ([IMQACore.CrashReport]) -> Swift.Void)
-  @objc func deleteCrashReport(id: Swift.Int)
-  @objc func deleteAllCrashReport()
-  @objc var onNewReport: ((IMQACore.CrashReport) -> Swift.Void)? { get set }
-}
-public protocol ExtendableCrashReporter : IMQACore.CrashReporter {
-  func appendCrashInfo(key: Swift.String, value: Swift.String)
-}
-@objc public class CrashReport : ObjectiveC.NSObject {
-  public var id: Foundation.UUID {
-    get
-  }
-  public var payload: Swift.String {
-    get
-  }
-  public var provider: Swift.String {
-    get
-  }
-  public var internalId: Swift.Int? {
-    get
-  }
-  public var sessionId: Swift.String? {
-    get
-  }
-  public var timestamp: Foundation.Date? {
-    get
-  }
-  public var spanRecord: IMQACore.SpanRecord? {
-    get
-  }
-  public init(payload: Swift.String, provider: Swift.String, internalId: Swift.Int? = nil, sessionId: Swift.String? = nil, timestamp: Foundation.Date? = nil, spanRecord: IMQACore.SpanRecord? = nil)
-  @objc deinit
-}
-@objc final public class CrashReporterContext : ObjectiveC.NSObject {
-  final public let appId: Swift.String?
-  final public let sdkVersion: Swift.String
-  final public let filePathProvider: any IMQACore.FilePathProvider
-  final public let notificationCenter: Foundation.NotificationCenter
-  public init(appId: Swift.String?, sdkVersion: Swift.String, filePathProvider: any IMQACore.FilePathProvider, notificationCenter: Foundation.NotificationCenter)
-  @objc deinit
-}
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers final public class CrashlyticsReporter : ObjectiveC.NSObject, IMQACore.CrashReporter {
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(IMQACrashCaptureService) final public class CrashCaptureService : IMQACore.CaptureService {
   @objc convenience override dynamic public init()
-  @objc final public var currentSessionId: Swift.String? {
-    @objc get
-    @objc set
-  }
-  @objc final public var onNewReport: ((IMQACore.CrashReport) -> Swift.Void)?
-  @objc final public func getLastRunState() -> IMQACore.LastRunState
-  @objc final public func install(context: IMQACore.CrashReporterContext, logger: any IMQACore.InternalLogger)
+  @objc override final public func onInstall()
   @objc deinit
-  @objc final public func fetchUnsentCrashReports(completion: @escaping ([IMQACore.CrashReport]) -> Swift.Void)
-  @objc final public func deleteCrashReport(id: Swift.Int)
-  @objc final public func deleteAllCrashReport()
-}
-extension IMQACore.CrashlyticsReporter : IMQACore.ExtendableCrashReporter {
-  final public func appendCrashInfo(key: Swift.String, value: Swift.String)
-}
-@objc @_inheritsConvenienceInitializers final public class IMQACrashReporter : ObjectiveC.NSObject, IMQACore.CrashReporter {
-  final public var basePath: Swift.String? {
-    get
-  }
-  @objc final public var currentSessionId: Swift.String? {
-    @objc get
-    @objc set
-  }
-  @objc final public var onNewReport: ((IMQACore.CrashReport) -> Swift.Void)?
-  @objc final public func getLastRunState() -> IMQACore.LastRunState
-  @objc final public func install(context: IMQACore.CrashReporterContext, logger: any IMQACore.InternalLogger)
-  @objc final public func fetchUnsentCrashReports(completion: @escaping ([IMQACore.CrashReport]) -> Swift.Void)
-  @objc final public func deleteCrashReport(id: Swift.Int)
-  @objc final public func deleteAllCrashReport()
-  @objc override dynamic public init()
-  @objc deinit
-}
-extension IMQACore.IMQACrashReporter : IMQACore.ExtendableCrashReporter {
-  final public func appendCrashInfo(key: Swift.String, value: Swift.String)
-}
-extension IMQACore.IMQACrashReporter {
-  public static func removeCrashSpanRecord(sessionId: Swift.String)
-}
-@_inheritsConvenienceInitializers @objc(IMQALowMemoryWarningCaptureService) public class LowMemoryWarningCaptureService : IMQACore.CaptureService {
-  public var onWarningCaptured: (() -> Swift.Void)?
-  @objc deinit
-  @objc override public func onInstall()
-  @objc override dynamic public init()
-}
-@objc(IMQALowPowerModeCaptureService) public class LowPowerModeCaptureService : IMQACore.CaptureService {
-  final public let provider: any IMQACore.PowerModeProvider
-  public init(provider: any IMQACore.PowerModeProvider = DefaultPowerModeProvider())
-  @objc deinit
-  @objc override public func onInstall()
-  @objc override public func onStart()
-  @objc override public func onStop()
-}
-public protocol PowerModeProvider {
-  var isLowPowerModeEnabled: Swift.Bool { get }
-}
-@_inheritsConvenienceInitializers @objc(IMQADefaultPowerModeProvider) public class DefaultPowerModeProvider : ObjectiveC.NSObject, IMQACore.PowerModeProvider {
-  @objc public var isLowPowerModeEnabled: Swift.Bool {
-    @objc get
-  }
-  @objc override dynamic public init()
-  @objc deinit
-}
-extension Foundation.NSNotification.Name {
-  public static let imqaConfigUpdated: Foundation.Notification.Name
-}
-@_hasMissingDesignatedInitializers @objc final public class NetworkPayloadCaptureRule : ObjectiveC.NSObject, Swift.Decodable {
-  final public let id: Swift.String
-  final public let urlRegex: Swift.String
-  final public let statusCodes: [Swift.Int]?
-  final public let methods: [Swift.String]?
-  final public let expiration: Swift.Double
-  final public let publicKey: Swift.String
-  final public var expirationDate: Foundation.Date {
-    get
-  }
-  @objc deinit
-  public init(from decoder: any Swift.Decoder) throws
-}
-extension IMQACore.NetworkPayloadCaptureRule {
-  public static func == (lhs: IMQACore.NetworkPayloadCaptureRule, rhs: IMQACore.NetworkPayloadCaptureRule) -> Swift.Bool
-}
-public enum ReachabilityError : Swift.Error {
-  case failedToCreateWithAddress(Darwin.sockaddr, Swift.Int32)
-  case failedToCreateWithHostname(Swift.String, Swift.Int32)
-  case unableToSetCallback(Swift.Int32)
-  case unableToSetDispatchQueue(Swift.Int32)
-  case unableToGetFlags(Swift.Int32)
-}
-@available(*, unavailable, renamed: "Notification.Name.reachabilityChanged")
-public let ReachabilityChangedNotification: Foundation.NSNotification.Name
-extension Foundation.NSNotification.Name {
-  public static let reachabilityChanged: Foundation.Notification.Name
-}
-public class Reachability {
-  public typealias NetworkReachable = (IMQACore.Reachability) -> ()
-  public typealias NetworkUnreachable = (IMQACore.Reachability) -> ()
-  @available(*, unavailable, renamed: "Connection")
-  public enum NetworkStatus : Swift.CustomStringConvertible {
-    case notReachable, reachableViaWiFi, reachableViaWWAN
-    public var description: Swift.String {
-      get
-    }
-    public static func == (a: IMQACore.Reachability.NetworkStatus, b: IMQACore.Reachability.NetworkStatus) -> Swift.Bool
-    public func hash(into hasher: inout Swift.Hasher)
-    public var hashValue: Swift.Int {
-      get
-    }
-  }
-  public enum Connection : Swift.CustomStringConvertible {
-    case unavailable, wifi, cellular
-    public var description: Swift.String {
-      get
-    }
-    @available(*, deprecated, renamed: "unavailable")
-    public static let none: IMQACore.Reachability.Connection
-    public static func == (a: IMQACore.Reachability.Connection, b: IMQACore.Reachability.Connection) -> Swift.Bool
-    public func hash(into hasher: inout Swift.Hasher)
-    public var hashValue: Swift.Int {
-      get
-    }
-  }
-  public var whenReachable: IMQACore.Reachability.NetworkReachable?
-  public var whenUnreachable: IMQACore.Reachability.NetworkUnreachable?
-  @available(*, deprecated, renamed: "allowsCellularConnection")
-  final public let reachableOnWWAN: Swift.Bool
-  public var allowsCellularConnection: Swift.Bool
-  public var notificationCenter: Foundation.NotificationCenter
-  @available(*, deprecated, renamed: "connection.description")
-  public var currentReachabilityString: Swift.String {
-    get
-  }
-  @available(*, unavailable, renamed: "connection")
-  public var currentReachabilityStatus: IMQACore.Reachability.Connection {
-    get
-  }
-  public var connection: IMQACore.Reachability.Connection {
-    get
-  }
-  required public init(reachabilityRef: SystemConfiguration.SCNetworkReachability, queueQoS: Dispatch.DispatchQoS = .default, targetQueue: Dispatch.DispatchQueue? = nil, notificationQueue: Dispatch.DispatchQueue? = .main)
-  convenience public init(hostname: Swift.String, queueQoS: Dispatch.DispatchQoS = .default, targetQueue: Dispatch.DispatchQueue? = nil, notificationQueue: Dispatch.DispatchQueue? = .main) throws
-  convenience public init(queueQoS: Dispatch.DispatchQoS = .default, targetQueue: Dispatch.DispatchQueue? = nil, notificationQueue: Dispatch.DispatchQueue? = .main) throws
-  @objc deinit
-}
-extension IMQACore.Reachability {
-  public func startNotifier() throws
-  public func stopNotifier()
-  @available(*, deprecated, message: "Please use `connection != .none`")
-  public var isReachable: Swift.Bool {
-    get
-  }
-  @available(*, deprecated, message: "Please use `connection == .cellular`")
-  public var isReachableViaWWAN: Swift.Bool {
-    get
-  }
-  @available(*, deprecated, message: "Please use `connection == .wifi`")
-  public var isReachableViaWiFi: Swift.Bool {
-    get
-  }
-  public var description: Swift.String {
-    get
-  }
-}
-extension IMQACore.URLSessionCaptureService {
-  @objc @_inheritsConvenienceInitializers final public class Options : ObjectiveC.NSObject {
-    @objc final public let injectTracingHeader: Swift.Bool
-    @objc final public let requestsDataSource: (any IMQACore.URLSessionRequestsDataSource)?
-    @objc public init(injectTracingHeader: Swift.Bool, requestsDataSource: (any IMQACore.URLSessionRequestsDataSource)?)
-    @objc convenience override dynamic public init()
-    @objc deinit
-  }
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(IMQAURLSessionCaptureService) final public class URLSessionCaptureService : IMQACore.CaptureService {
-  final public let options: IMQACore.URLSessionCaptureService.Options
-  @objc convenience public init(options: IMQACore.URLSessionCaptureService.Options)
   @objc convenience override dynamic public init()
   @objc override final public func onInstall()
   @objc deinit
 }
-@objc public protocol URLSessionRequestsDataSource : ObjectiveC.NSObjectProtocol {
-  @objc func modifiedRequest(for request: Foundation.URLRequest) -> Foundation.URLRequest
-}
-public protocol URLSessionTaskHandler : AnyObject {
-  @discardableResult
-  func create(task: Foundation.URLSessionTask) -> Swift.Bool
-  func finish(task: Foundation.URLSessionTask, data: Foundation.Data?, error: (any Swift.Error)?)
-}
-extension IMQACore.PushNotificationCaptureService {
-  @_inheritsConvenienceInitializers @objc(IMQAPushNotificationCaptureServiceOptions) final public class Options : ObjectiveC.NSObject {
-    @objc final public let captureData: Swift.Bool
-    @objc public init(captureData: Swift.Bool)
-    @objc convenience override dynamic public init()
-    @objc deinit
-  }
-}
-@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc final public class PushNotificationCaptureService : IMQACore.CaptureService {
-  @objc final public let options: IMQACore.PushNotificationCaptureService.Options
-  @objc convenience public init(options: IMQACore.PushNotificationCaptureService.Options)
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(IMQATapCaptureService) final public class TapCaptureService : IMQACore.CaptureService {
   @objc convenience override dynamic public init()
   @objc override final public func onInstall()
   @objc deinit
 }
-public enum PushNotificationError : Swift.Error, Swift.Equatable {
-  case invalidPayload(_: Swift.String)
-  public static func == (a: IMQACore.PushNotificationError, b: IMQACore.PushNotificationError) -> Swift.Bool
+extension UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency public func findTitle() -> Swift.String?
 }
-extension IMQACore.PushNotificationError : Foundation.LocalizedError, Foundation.CustomNSError {
-  public static var errorDomain: Swift.String {
-    get
-  }
-  public var errorCode: Swift.Int {
-    get
-  }
-  public var errorDescription: Swift.String? {
-    get
-  }
-  public var localizedDescription: Swift.String {
-    get
-  }
-}
-@_hasMissingDesignatedInitializers @objc(IMQAPushNotificationEvent) public class PushNotificationEvent : ObjectiveC.NSObject, IMQACore.SpanEvent {
-  final public let name: Swift.String
-  final public let timestamp: Foundation.Date
-  public var attributes: [Swift.String : OpenTelemetryApi.AttributeValue] {
-    get
-  }
+@_hasMissingDesignatedInitializers public class UIViewControllerHandler {
   @objc deinit
-}
-extension IMQACore.SpanEvent where Self == IMQACore.PushNotificationEvent {
-  public static func push(notification: UserNotifications.UNNotification, properties: [Swift.String : Swift.String] = [:]) throws -> any IMQACore.SpanEvent
-  public static func push(userInfo: [Swift.AnyHashable : Any], properties: [Swift.String : Swift.String] = [:]) throws -> any IMQACore.SpanEvent
-}
-extension IMQACore.TapCaptureService {
-  @_inheritsConvenienceInitializers @objc(IMQATapCaptureServiceOptions) final public class Options : ObjectiveC.NSObject {
-    @objc final public let ignoredViewTypes: [Swift.AnyClass]
-    @objc final public let captureTapCoordinates: Swift.Bool
-    @objc final public let delegate: (any IMQACore.TapCaptureServiceDelegate)?
-    @objc public init(ignoredViewTypes: [Swift.AnyClass] = [], captureTapCoordinates: Swift.Bool = true, delegate: (any IMQACore.TapCaptureServiceDelegate)? = nil)
-    @objc convenience override dynamic public init()
-    @objc deinit
-  }
-}
-@_hasMissingDesignatedInitializers @objc(IMQATapCaptureService) final public class TapCaptureService : IMQACore.CaptureService {
-  final public let options: IMQACore.TapCaptureService.Options
-  @objc convenience public init(options: IMQACore.TapCaptureService.Options = TapCaptureService.Options())
-  @objc override final public func onInstall()
-  @objc deinit
-}
-@objc(IMQATapCaptureServiceDelegate) public protocol TapCaptureServiceDelegate : ObjectiveC.NSObjectProtocol {
-  @objc func shouldCaptureTap(onView: UIKit.UIView) -> Swift.Bool
-  @objc func shouldCaptureTapCoordinates(onView: UIKit.UIView) -> Swift.Bool
-}
-public protocol IMQAViewControllerCustomization {
-  var nameForViewControllerInIMQA: Swift.String? { get }
-  var shouldCaptureViewInIMQA: Swift.Bool { get }
-}
-extension IMQACore.IMQAViewControllerCustomization where Self : UIKit.UIViewController {
-  public var nameForViewControllerInIMQA: Swift.String? {
-    get
-  }
-  public var shouldCaptureViewInIMQA: Swift.Bool {
-    get
-  }
-}
-public protocol InstrumentableViewController : UIKit.UIViewController {
-}
-extension IMQACore.InstrumentableViewController {
-  public func buildChildSpan(name: Swift.String, type: IMQAOtelInternal.IMQASpanType = .RENDER, startTime: Foundation.Date = Date(), attributes: [Swift.String : Swift.String] = [:]) throws -> (any OpenTelemetryApi.SpanBuilder)?
-  public func recordCompletedChildSpan(name: Swift.String, type: IMQAOtelInternal.IMQASpanType = .RENDER, startTime: Foundation.Date, endTime: Foundation.Date, attributes: [Swift.String : Swift.String] = [:]) throws
-}
-public protocol InteractableViewController : UIKit.UIViewController {
-}
-extension IMQACore.InteractableViewController {
-  public func setInteractionReady() throws
-}
-extension IMQACore.ViewCaptureService {
-  @_inheritsConvenienceInitializers @objc(IMQAViewCaptureServiceOptions) final public class Options : ObjectiveC.NSObject {
-    @objc final public let instrumentVisibility: Swift.Bool
-    @objc final public let instrumentFirstRender: Swift.Bool
-    @objc public init(instrumentVisibility: Swift.Bool, instrumentFirstRender: Swift.Bool)
-    @objc convenience override dynamic public init()
-    @objc deinit
-  }
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(IMQAViewCaptureService) final public class ViewCaptureService : IMQACore.CaptureService {
-  final public let options: IMQACore.ViewCaptureService.Options
-  @objc convenience public init(options: IMQACore.ViewCaptureService.Options)
   @objc convenience override dynamic public init()
   @objc override final public func onInstall()
   @objc deinit
-}
-public enum ViewCaptureServiceError : Swift.Error, Swift.Equatable {
-  case serviceNotFound(_: Swift.String)
-  case firstRenderInstrumentationDisabled(_: Swift.String)
-  case parentSpanNotFound(_: Swift.String)
-  public static func == (a: IMQACore.ViewCaptureServiceError, b: IMQACore.ViewCaptureServiceError) -> Swift.Bool
-}
-extension IMQACore.ViewCaptureServiceError : Foundation.LocalizedError, Foundation.CustomNSError {
-  public static var errorDomain: Swift.String {
-    get
-  }
-  public var errorCode: Swift.Int {
-    get
-  }
-  public var errorDescription: Swift.String? {
-    get
-  }
-  public var localizedDescription: Swift.String {
-    get
-  }
-}
-extension IMQACore.WebViewCaptureService {
-  @_inheritsConvenienceInitializers @objc(IMQAWebViewCaptureServiceOptions) final public class Options : ObjectiveC.NSObject {
-    @objc final public let stripQueryParams: Swift.Bool
-    @objc public init(stripQueryParams: Swift.Bool)
-    @objc convenience override dynamic public init()
-    @objc deinit
-  }
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(IMQAWebViewCaptureService) final public class WebViewCaptureService : IMQACore.CaptureService {
-  @objc final public let options: IMQACore.WebViewCaptureService.Options
-  @objc convenience public init(options: IMQACore.WebViewCaptureService.Options)
   @objc convenience override dynamic public init()
   @objc override final public func onInstall()
   @objc deinit
 }
-public protocol IMQALoggerConfig : Swift.Equatable {
-  var batchLifetimeInSeconds: Swift.Int { get }
-  var maximumTimeBetweenLogsInSeconds: Swift.Int { get }
-  var maximumMessageLength: Swift.Int { get }
-  var maximumAttributes: Swift.Int { get }
-  var logAmountLimit: Swift.Int { get }
-}
-@objc public class OpenTelemetryExporter : ObjectiveC.NSObject {
-  final public let spanExporter: (any OpenTelemetrySdk.SpanExporter)?
-  final public let logExporter: (any OpenTelemetrySdk.LogRecordExporter)?
-  public init(spanExporter: (any OpenTelemetrySdk.SpanExporter)? = nil, logExporter: (any OpenTelemetrySdk.LogRecordExporter)? = nil)
-  @objc deinit
-}
-public class CustomOtlpHttpExporterBase {
-  public init(endpoint: Foundation.URL, config: IMQACore.CustomOtlpConfiguration = CustomOtlpConfiguration(), useSession: Foundation.URLSession? = nil, envVarHeaders: [(Swift.String, Swift.String)]? = CustomEnvVarHeaders.attributes)
-  public func createRequest(body: any SwiftProtobuf.Message, endpoint: Foundation.URL) -> Foundation.URLRequest
-  public func shutdown(explicitTimeout: Foundation.TimeInterval? = nil)
-  @objc deinit
-}
-@_inheritsConvenienceInitializers public class CustomOtlpHttpTraceExporter : IMQACore.CustomOtlpHttpExporterBase, OpenTelemetrySdk.SpanExporter {
-  convenience public init(endpoint: Foundation.URL, config: IMQACore.CustomOtlpConfiguration = CustomOtlpConfiguration(), useSession: Foundation.URLSession? = nil, envVarHeaders: [(Swift.String, Swift.String)]? = CustomEnvVarHeaders.attributes, uploadCache: IMQACore.IMQAUploadCache)
-  public func export(spans: [OpenTelemetrySdk.SpanData], explicitTimeout: Foundation.TimeInterval? = nil) -> OpenTelemetrySdk.SpanExporterResultCode
-  public func flush(explicitTimeout: Foundation.TimeInterval? = nil) -> OpenTelemetrySdk.SpanExporterResultCode
-  override public init(endpoint: Foundation.URL, config: IMQACore.CustomOtlpConfiguration = super, useSession: Foundation.URLSession? = nil, envVarHeaders: [(Swift.String, Swift.String)]? = super)
-  @objc deinit
-}
-public struct CustomEnvVarHeaders {
-  public static let attributes: [(Swift.String, Swift.String)]?
-  public static func attributes(for rawEnvAttributes: Swift.String? = ProcessInfo.processInfo.environment["OTEL_EXPORTER_OTLP_HEADERS"]) -> [(Swift.String, Swift.String)]?
-}
-@objc public enum IMQALogLevel : Swift.Int {
-  case none = 0
-  case trace
-  case debug
-  case info
-  case warning
-  case error
-  public init?(rawValue: Swift.Int)
-  public typealias RawValue = Swift.Int
-  public var rawValue: Swift.Int {
-    get
-  }
-}
-@_hasMissingDesignatedInitializers @objc public class IMQA : ObjectiveC.NSObject {
-  @objc public static var client: IMQACore.IMQA?
-  @objc public var options: IMQACore.IMQA.Options {
-    get
-  }
-  @objc public var started: Swift.Bool {
-    get
-  }
-  public var deviceId: IMQACommonInternal.DeviceIdentifier {
-    get
-  }
-  @objc public var logLevel: IMQAOtelInternal.LogLevel {
-    @objc get
-    @objc set
-  }
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class IMQA : ObjectiveC.NSObject {
+  @objc public static var isDebug: Swift.Bool
   @objc deinit
 }
 extension IMQACore.IMQA {
   @discardableResult
-  @objc dynamic public func start() throws -> IMQACore.IMQA
-  @discardableResult
-  @objc public static func setup(options: IMQACore.IMQA.Options) throws -> IMQACore.IMQA
-}
-extension IMQACore.IMQA {
+  @objc public static func setup(options: IMQACore.IMQA.Options, isDebug: Swift.Bool = false) -> IMQACore.IMQA
+  @objc dynamic public func start()
   @objc public static func setUserId(id: Swift.String?)
   @objc public static func getUserId() -> Swift.String?
-  @objc public static func customLog(level: IMQACore.IMQALogLevel, message: Swift.String)
+  @objc public static func customLog(level: IMQACore.IMQA.LogLevel, message: Swift.String)
   @objc public static func setSharedSession(session: Swift.Bool)
-  @objc public static func setWebviewConfiguration(userContentController: WebKit.WKUserContentController)
   @objc public static func setAdvancedNetworkCapture(isCapture: Swift.Bool)
+  @objc public static func sendClickEvent(buttonName: Swift.String, buttonClassName: Swift.String)
+  @objc public static func setWebviewConfiguration(userContentController: WebKit.WKUserContentController)
 }
-extension IMQACore.IMQA {
-  @objc dynamic public func currentSessionId() -> Swift.String?
-}
-extension OpenTelemetryApi.Severity {
-  public func toLogSeverity() -> IMQAOtelInternal.LogSeverity?
-  public static func fromLogSeverity(_ logSeverity: IMQAOtelInternal.LogSeverity) -> OpenTelemetryApi.Severity?
-}
-extension OpenTelemetrySdk.SpanData {
-  public var spanType: IMQAOtelInternal.IMQASpanType {
+@_hasMissingDesignatedInitializers public class IMQAOtel {
+  @IMQACommon.ThreadSafe public var commonAttributes: [Swift.String : Swift.String] {
     get
+    set
+    _modify
   }
-  public var errorCode: IMQACommonInternal.ErrorCode? {
-    get
-  }
-  public func toJSON() throws -> Foundation.Data
-}
-public struct W3C {
-}
-extension IMQACore.W3C {
-  public static let traceparentHeaderName: Swift.String
-  public static func traceparent(from span: any OpenTelemetryApi.Span) -> Swift.String
-  public static func traceparent(from context: OpenTelemetryApi.SpanContext) -> Swift.String
-  public static func traceparent(traceId: Swift.String, spanId: Swift.String, sampled: Swift.Bool = false) -> Swift.String
-}
-public protocol IMQALogSharedState {
-  var processors: [any OpenTelemetrySdk.LogRecordProcessor] { get }
-  var config: any IMQACore.IMQALoggerConfig { get }
-  var resourceProvider: any IMQACore.IMQAResourceProvider { get }
-  func update(_ config: any IMQACore.IMQALoggerConfig)
-}
-public protocol IMQALoggerProvider : OpenTelemetryApi.LoggerProvider {
-  func get() -> any OpenTelemetryApi.Logger
-  func update(_ config: any IMQACore.IMQALoggerConfig)
-}
-extension Foundation.NSNotification.Name {
-  public static let imqaSessionDidStart: Foundation.Notification.Name
-  public static let imqaSessionWillEnd: Foundation.Notification.Name
-}
-@objc public protocol InternalLogger {
-  @discardableResult
-  @objc func log(level: IMQAOtelInternal.LogLevel, message: Swift.String, attributes: [Swift.String : Swift.String]) -> Swift.Bool
-  @discardableResult
-  @objc func log(level: IMQAOtelInternal.LogLevel, message: Swift.String) -> Swift.Bool
-  @discardableResult
-  @objc func trace(_ message: Swift.String, attributes: [Swift.String : Swift.String]) -> Swift.Bool
-  @discardableResult
-  @objc func trace(_ message: Swift.String) -> Swift.Bool
-  @discardableResult
-  @objc func debug(_ message: Swift.String, attributes: [Swift.String : Swift.String]) -> Swift.Bool
-  @discardableResult
-  @objc func debug(_ message: Swift.String) -> Swift.Bool
-  @discardableResult
-  @objc func info(_ message: Swift.String, attributes: [Swift.String : Swift.String]) -> Swift.Bool
-  @discardableResult
-  @objc func info(_ message: Swift.String) -> Swift.Bool
-  @discardableResult
-  @objc func warning(_ message: Swift.String, attributes: [Swift.String : Swift.String]) -> Swift.Bool
-  @discardableResult
-  @objc func warning(_ message: Swift.String) -> Swift.Bool
-  @discardableResult
-  @objc func error(_ message: Swift.String, attributes: [Swift.String : Swift.String]) -> Swift.Bool
-  @discardableResult
-  @objc func error(_ message: Swift.String) -> Swift.Bool
-}
-public struct RecordingSpanEvent : IMQACore.SpanEvent, Swift.Codable, Swift.Equatable {
-  public let name: Swift.String
-  public let timestamp: Foundation.Date
-  public let attributes: [Swift.String : OpenTelemetryApi.AttributeValue]
-  public init(name: Swift.String, timestamp: Foundation.Date, attributes: [Swift.String : OpenTelemetryApi.AttributeValue] = [:])
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
-}
-public func == (lhs: IMQACore.RecordingSpanEvent, rhs: IMQACore.RecordingSpanEvent) -> Swift.Bool
-public func == (lhs: [IMQACore.RecordingSpanEvent], rhs: [IMQACore.RecordingSpanEvent]) -> Swift.Bool
-public protocol SpanEvent {
-  var name: Swift.String { get }
-  var timestamp: Foundation.Date { get }
-  var attributes: [Swift.String : OpenTelemetryApi.AttributeValue] { get }
-}
-extension OpenTelemetrySdk.SpanData.Event : IMQACore.SpanEvent {
-}
-public protocol SpanLink {
-  var context: OpenTelemetryApi.SpanContext { get }
-  var attributes: [Swift.String : OpenTelemetryApi.AttributeValue] { get }
-}
-extension OpenTelemetrySdk.SpanData.Link : IMQACore.SpanLink {
-}
-public protocol VVIdenti {
-  var vvid: Swift.String { get }
-}
-public class CrashSpanRecord : Swift.Codable, IMQACore.VVIdenti {
-  public var id: Swift.String
-  public var name: Swift.String
-  public var traceId: Swift.String
-  public var type: IMQAOtelInternal.IMQASpanType
-  public var data: Foundation.Data
-  public var startTime: Foundation.Date
-  public var endTime: Foundation.Date?
-  public var processIdentifier: IMQACommonInternal.ProcessIdentifier
-  public var sessionId: Swift.String
-  public var vvid: Swift.String {
-    get
-  }
-  convenience public init(spanRecord: IMQACore.SpanRecord, sessionId: Swift.String)
-  public init(id: Swift.String, name: Swift.String, traceId: Swift.String, type: IMQAOtelInternal.IMQASpanType, data: Foundation.Data, startTime: Foundation.Date, endTime: Foundation.Date? = nil, processIdentifier: IMQACommonInternal.ProcessIdentifier, sessionId: Swift.String)
-  public func encode(to encoder: any Swift.Encoder) throws
-  required public init(from decoder: any Swift.Decoder) throws
   @objc deinit
 }
-extension IMQACore.CrashSpanRecord {
-  public func toSpanRecord() -> IMQACore.SpanRecord
-}
-public struct LogRecord : Swift.Codable, IMQACore.VVIdenti {
-  public var identifier: IMQACommonInternal.LogIdentifier
-  public var processIdentifier: IMQACommonInternal.ProcessIdentifier
-  public var severity: IMQAOtelInternal.LogSeverity
-  public var body: Swift.String
-  public var timestamp: Foundation.Date
-  public var attributes: [Swift.String : IMQACommonInternal.PersistableValue]
-  public var spanContext: OpenTelemetryApi.SpanContext?
-  public var vvid: Swift.String {
-    get
-  }
-  public init(identifier: IMQACommonInternal.LogIdentifier, processIdentifier: IMQACommonInternal.ProcessIdentifier, severity: IMQAOtelInternal.LogSeverity, body: Swift.String, attributes: [Swift.String : IMQACommonInternal.PersistableValue], timestamp: Foundation.Date = Date(), spanContext: OpenTelemetryApi.SpanContext?)
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
-}
-public enum MetadataRecordType : Swift.String, Swift.Codable {
-  case resource
-  case requiredResource
-  case customProperty
-  case personaTag
-  public init?(rawValue: Swift.String)
-  public typealias RawValue = Swift.String
-  public var rawValue: Swift.String {
-    get
-  }
-}
-public enum MetadataRecordLifespan : Swift.String, Swift.Codable {
-  case session
-  case process
-  case permanent
-  public init?(rawValue: Swift.String)
-  public typealias RawValue = Swift.String
-  public var rawValue: Swift.String {
-    get
-  }
-}
-public struct MetadataRecord : Swift.Codable, IMQACore.VVIdenti {
-  public var vvid: Swift.String {
-    get
-  }
-  public let key: Swift.String
-  public var value: OpenTelemetryApi.AttributeValue
-  public let type: IMQACore.MetadataRecordType
-  public let lifespan: IMQACore.MetadataRecordLifespan
-  public let lifespanId: Swift.String
-  public let collectedAt: Foundation.Date
-  public init(key: Swift.String, value: OpenTelemetryApi.AttributeValue, type: IMQACore.MetadataRecordType, lifespan: IMQACore.MetadataRecordLifespan, lifespanId: Swift.String, collectedAt: Foundation.Date = Date())
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
-}
-extension IMQACore.MetadataRecord {
-  public static let lifespanIdForPermanent: Swift.String
-}
-extension IMQACore.MetadataRecord {
-  public var boolValue: Swift.Bool? {
-    get
-  }
-  public var integerValue: Swift.Int? {
-    get
-  }
-  public var doubleValue: Swift.Double? {
-    get
-  }
-  public var stringValue: Swift.String? {
-    get
-  }
-  public var uuidValue: Foundation.UUID? {
-    get
-  }
-}
-public class SessionRecord : Swift.Codable, IMQACore.VVIdenti {
-  public var id: IMQACommonInternal.SessionIdentifier
-  public var processId: IMQACommonInternal.ProcessIdentifier
-  public var state: Swift.String
-  public var traceId: Swift.String
-  public var spanId: Swift.String
-  public var startTime: Foundation.Date
-  public var endTime: Foundation.Date?
-  public var lastHeartbeatTime: Foundation.Date
-  public var crashReportId: Swift.String?
-  public var coldStart: Swift.Bool
-  public var cleanExit: Swift.Bool
-  public var appTerminated: Swift.Bool
-  public var vvid: Swift.String {
-    get
-  }
-  public init(id: IMQACommonInternal.SessionIdentifier, processId: IMQACommonInternal.ProcessIdentifier, state: Swift.String, traceId: Swift.String, spanId: Swift.String, startTime: Foundation.Date, endTime: Foundation.Date? = nil, lastHeartbeatTime: Foundation.Date? = nil, crashReportId: Swift.String? = nil, coldStart: Swift.Bool = false, cleanExit: Swift.Bool = false, appTerminated: Swift.Bool = false)
-  public func encode(to encoder: any Swift.Encoder) throws
-  required public init(from decoder: any Swift.Decoder) throws
+@_hasMissingDesignatedInitializers public class IMQADeviceInfoCollecter {
   @objc deinit
-}
-public class SpanRecord : Swift.Codable, IMQACore.VVIdenti {
-  public var id: Swift.String
-  public var name: Swift.String
-  public var traceId: Swift.String
-  public var type: IMQAOtelInternal.IMQASpanType
-  public var data: Foundation.Data
-  public var startTime: Foundation.Date
-  public var endTime: Foundation.Date?
-  public var processIdentifier: IMQACommonInternal.ProcessIdentifier
-  public var vvid: Swift.String {
-    get
-  }
-  public init(id: Swift.String, name: Swift.String, traceId: Swift.String, type: IMQAOtelInternal.IMQASpanType, data: Foundation.Data, startTime: Foundation.Date, endTime: Foundation.Date? = nil, processIdentifier: IMQACommonInternal.ProcessIdentifier = .current)
-  public func encode(to encoder: any Swift.Encoder) throws
-  required public init(from decoder: any Swift.Decoder) throws
-  @objc deinit
-}
-public typealias ResourceValue = OpenTelemetryApi.AttributeValue
-public protocol IMQAResource {
-  var key: Swift.String { get }
-  var value: IMQACore.ResourceValue { get }
-}
-public protocol IMQAResourceProvider {
-  func getResource() -> OpenTelemetrySdk.Resource
-}
-extension OpenTelemetryApi.Span {
-  public func end(errorCode: IMQACommonInternal.ErrorCode? = nil, time: Foundation.Date = Date())
-  public func end(error: (any Swift.Error)?, errorCode: IMQACommonInternal.ErrorCode? = nil, time: Foundation.Date = Date())
-}
-extension OpenTelemetryApi.Span {
-  public func add(events: [any IMQACore.SpanEvent])
-}
-public struct AppStatusSemantics {
-}
-@_hasMissingDesignatedInitializers final public class iOSSessionLifecycle {
-  @objc deinit
-}
-public struct BatteryModel {
-  public static var isCharging: Swift.Bool {
-    get
-  }
-  public static var level: Swift.String {
-    get
-  }
 }
 public struct UserSemantics {
   public static let userProfileUserDefaultKey: Swift.String
 }
-public struct UserModel {
+public struct IMQAUserModel {
   public static var id: Swift.String? {
     get
   }
@@ -815,250 +139,161 @@ public struct UserModel {
   public static func setUserName(_ name: Swift.String?)
   public static func setUserEmail(_ email: Swift.String?)
 }
-public struct AreaCodeModel {
-  public static func setAreaCode(_ areaCode: Swift.String?)
+public struct ArrayWithCapacity<T> {
+  public let capacity: Swift.Int
+  public init(capacity: Swift.Int)
+  public mutating func append(_ item: T)
 }
-extension IMQACore.IMQA {
-  @objc(IMQAEndpoits) public class Endpoints : ObjectiveC.NSObject {
-    @objc final public let baseURL: Swift.String
-    @objc public init(collectorURL: Swift.String)
-    public enum OpentelemetryBaseUrl {
-      case tracer(Swift.String)
-      case metric(Swift.String)
-      case logs(Swift.String)
-    }
-    @objc deinit
-  }
-}
-extension IMQACore.IMQA {
-  @objc(IMQAOptions) final public class Options : ObjectiveC.NSObject {
-    final public let serviceKey: Swift.String
-    final public let endpoints: IMQACore.IMQA.Endpoints?
-    final public let services: [IMQACore.CaptureService]
-    final public let crashReporter: (any IMQACore.CrashReporter)?
-    final public var sampleRate: Swift.Double
-    @objc public init(serviceKey: Swift.String, endpoints: IMQACore.IMQA.Endpoints? = nil, sampleRate: Swift.Double = 1.0)
-    @objc deinit
-  }
-}
-extension Swift.Array where Element == IMQACore.CaptureService {
-  public static var all: [IMQACore.CaptureService] {
+extension IMQACore.ArrayWithCapacity : Swift.MutableCollection {
+  public var startIndex: Swift.Int {
     get
   }
-  public static var basic: [IMQACore.CaptureService] {
+  public var endIndex: Swift.Int {
     get
   }
+  public subscript(index: Swift.Int) -> T {
+    get
+    set
+  }
+  public func index(after i: Swift.Int) -> Swift.Int
+  public typealias Element = T
+  public typealias Index = Swift.Int
+  public typealias Indices = Swift.DefaultIndices<IMQACore.ArrayWithCapacity<T>>
+  public typealias Iterator = Swift.IndexingIterator<IMQACore.ArrayWithCapacity<T>>
+  public typealias SubSequence = Swift.Slice<IMQACore.ArrayWithCapacity<T>>
 }
-extension IMQACore.IMQA : IMQACore.IMQAOpenTelemetry {
-  public func tracer(instrumentationName: Swift.String) -> any OpenTelemetryApi.Tracer
-  public func buildSpan(name: Swift.String, type: IMQAOtelInternal.IMQASpanType, attributes: [Swift.String : Swift.String] = [:]) -> any OpenTelemetryApi.SpanBuilder
-  public func recordCompletedSpan(name: Swift.String, type: IMQAOtelInternal.IMQASpanType, parent: (any OpenTelemetryApi.Span)?, startTime: Foundation.Date, endTime: Foundation.Date, attributes: [Swift.String : Swift.String], events: [IMQACore.RecordingSpanEvent], errorCode: IMQACommonInternal.ErrorCode?)
-  public func add(events: [any IMQACore.SpanEvent])
-  public func add(event: any IMQACore.SpanEvent)
-  public func flush(_ span: any OpenTelemetryApi.Span)
-  public func log(_ message: Swift.String, severity: IMQAOtelInternal.LogSeverity, type: IMQAOtelInternal.IMQALogType, attributes: [Swift.String : Swift.String] = [:], stackTraceBehavior: IMQACommonInternal.StackTraceBehavior = .default)
-  public func log(_ message: Swift.String, severity: IMQAOtelInternal.LogSeverity, type: IMQAOtelInternal.IMQALogType, timestamp: Foundation.Date, attributes: [Swift.String : Swift.String], stackTraceBehavior: IMQACommonInternal.StackTraceBehavior = .default)
-  public func log(_ message: Swift.String, severity: IMQAOtelInternal.LogSeverity, type: IMQAOtelInternal.IMQALogType, spanContext: OpenTelemetryApi.SpanContext, timestamp: Foundation.Date, attributes: [Swift.String : Swift.String], stackTraceBehavior: IMQACommonInternal.StackTraceBehavior = .default)
-}
-extension IMQACore.IMQA {
-  public static func recordSpan<T>(name: Swift.String, parent: (any OpenTelemetryApi.Span)? = nil, type: IMQAOtelInternal.IMQASpanType, attributes: [Swift.String : Swift.String] = [:], block: ((any OpenTelemetryApi.Span)?) throws -> T) rethrows -> T
-}
-extension IMQACore.IMQA {
-  public func propagators(spanContext: OpenTelemetryApi.SpanContext)
-  public func baggage(key: Swift.String, value: Swift.String, metadata: Swift.String?) -> (any OpenTelemetryApi.Baggage)?
-}
-@_hasMissingDesignatedInitializers public class IMQAOTel {
+@_hasMissingDesignatedInitializers open class AttributeArray : Swift.Hashable, Swift.Codable {
+  public var values: [IMQACore.AttributeValue] {
+    get
+  }
+  public static var empty: IMQACore.AttributeArray
+  public var description: Swift.String {
+    get
+  }
+  required public init(values: [IMQACore.AttributeValue])
+  public static func == (lhs: IMQACore.AttributeArray, rhs: IMQACore.AttributeArray) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   @objc deinit
-}
-extension IMQACore.IMQAOTel {
-  public func recordSpan<T>(name: Swift.String, type: IMQAOtelInternal.IMQASpanType, attributes: [Swift.String : Swift.String] = [:], spanOperation: () -> T) -> T
-  public func buildSpan(name: Swift.String, type: IMQAOtelInternal.IMQASpanType, attributes: [Swift.String : Swift.String] = [:]) -> any OpenTelemetryApi.SpanBuilder
-  public func log(_ message: Swift.String, severity: IMQAOtelInternal.LogSeverity, attributes: [Swift.String : Swift.String])
-  public func log(_ message: Swift.String, severity: IMQAOtelInternal.LogSeverity, timestamp: Foundation.Date, attributes: [Swift.String : Swift.String])
-  public func log(_ message: Swift.String, severity: IMQAOtelInternal.LogSeverity, spanContext: OpenTelemetryApi.SpanContext, timestamp: Foundation.Date, attributes: [Swift.String : Swift.String])
-}
-public protocol IMQAOpenTelemetry : AnyObject {
-  func buildSpan(name: Swift.String, type: IMQAOtelInternal.IMQASpanType, attributes: [Swift.String : Swift.String]) -> any OpenTelemetryApi.SpanBuilder
-  func recordCompletedSpan(name: Swift.String, type: IMQAOtelInternal.IMQASpanType, parent: (any OpenTelemetryApi.Span)?, startTime: Foundation.Date, endTime: Foundation.Date, attributes: [Swift.String : Swift.String], events: [IMQACore.RecordingSpanEvent], errorCode: IMQACommonInternal.ErrorCode?)
-  func add(events: [any IMQACore.SpanEvent])
-  func add(event: any IMQACore.SpanEvent)
-  func log(_ message: Swift.String, severity: IMQAOtelInternal.LogSeverity, type: IMQAOtelInternal.IMQALogType, attributes: [Swift.String : Swift.String], stackTraceBehavior: IMQACommonInternal.StackTraceBehavior)
-  func log(_ message: Swift.String, severity: IMQAOtelInternal.LogSeverity, type: IMQAOtelInternal.IMQALogType, timestamp: Foundation.Date, attributes: [Swift.String : Swift.String], stackTraceBehavior: IMQACommonInternal.StackTraceBehavior)
-  func log(_ message: Swift.String, severity: IMQAOtelInternal.LogSeverity, type: IMQAOtelInternal.IMQALogType, spanContext: OpenTelemetryApi.SpanContext, timestamp: Foundation.Date, attributes: [Swift.String : Swift.String], stackTraceBehavior: IMQACommonInternal.StackTraceBehavior)
-  func propagators(spanContext: OpenTelemetryApi.SpanContext)
-  func baggage(key: Swift.String, value: Swift.String, metadata: Swift.String?) -> (any OpenTelemetryApi.Baggage)?
-}
-public struct SpanUtils {
-}
-extension IMQACommonInternal.DeviceIdentifier : IMQACore.VVIdenti {
-  public var vvid: Swift.String {
+  open func encode(to encoder: any Swift.Encoder) throws
+  open var hashValue: Swift.Int {
     get
   }
-}
-public protocol FilePathProvider {
-  func fileURL(for scope: Swift.String, name: Swift.String) -> Foundation.URL?
-  func directoryURL(for scope: Swift.String) -> Foundation.URL?
-}
-public struct IMQAFileSystem {
-  public static let defaultPartitionId: Swift.String
-}
-@_hasMissingDesignatedInitializers public class LogFileManager {
-  public static let shared: IMQACore.LogFileManager
-  public func recordToFile(text: Swift.String)
-  @objc deinit
-}
-extension IMQACore.IMQAStorage {
-  @discardableResult
-  public func addMetadata(key: Swift.String, value: Swift.String, type: IMQACore.MetadataRecordType, lifespan: IMQACore.MetadataRecordLifespan, lifespanId: Swift.String = "") throws -> IMQACore.MetadataRecord?
-  public func addMetadata(_ metadata: IMQACore.MetadataRecord) -> Swift.Bool
-  public func updateMetadata(key: Swift.String, value: Swift.String, type: IMQACore.MetadataRecordType, lifespan: IMQACore.MetadataRecordLifespan)
-  public func updateMetadata(_ record: IMQACore.MetadataRecord) throws
-  public func cleanMetadata(currentSessionId: Swift.String?, currentProcessId: Swift.String)
-  public func removeMetadata(key: Swift.String, type: IMQACore.MetadataRecordType, lifespan: IMQACore.MetadataRecordLifespan, lifespanId: Swift.String)
-  public func removeAllMetadata(type: IMQACore.MetadataRecordType, lifespans: [IMQACore.MetadataRecordLifespan]) throws
-  public func removeAllMetadata(keys: [Swift.String], lifespan: IMQACore.MetadataRecordLifespan) throws
-  public func fetchMetadata(key: Swift.String, type: IMQACore.MetadataRecordType, lifespan: IMQACore.MetadataRecordLifespan, lifespanId: Swift.String = "") -> IMQACore.MetadataRecord?
-  public func fetchRequiredPermanentResource(key: Swift.String) -> IMQACore.MetadataRecord?
-  public func fetchAllResources() -> [IMQACore.MetadataRecord]
-  public func fetchResourcesForSessionId(_ sessionId: IMQACommonInternal.SessionIdentifier) -> [IMQACore.MetadataRecord]
-  public func fetchResourcesForProcessId(_ processId: IMQACommonInternal.ProcessIdentifier) -> [IMQACore.MetadataRecord]
-  public func fetchCustomPropertiesForSessionId(_ sessionId: IMQACommonInternal.SessionIdentifier) -> [IMQACore.MetadataRecord]
-  public func fetchPersonaTagsForSessionId(_ sessionId: IMQACommonInternal.SessionIdentifier) throws -> [IMQACore.MetadataRecord]
-  public func fetchPersonaTagsForProcessId(_ processId: IMQACommonInternal.ProcessIdentifier) throws -> [IMQACore.MetadataRecord]
-}
-extension IMQACore.IMQAStorage {
-  public enum StorageMechanism {
-    case inMemory(name: Swift.String)
-    case onDisk(baseURL: Foundation.URL, fileName: Swift.String)
-  }
-  public class Options {
-    public var spanLimits: [IMQAOtelInternal.IMQASpanType : Swift.Int]
-    public var resourcesLimit: Swift.Int
-    public var customPropertiesLimit: Swift.Int
-    public var personaTagsLimit: Swift.Int
-    public init(baseUrl: Foundation.URL, fileName: Swift.String)
-    public init(named name: Swift.String)
-    @objc deinit
-  }
-}
-extension IMQACore.IMQAStorage.Options {
-  public var name: Swift.String? {
-    get
-  }
-  public var baseUrl: Foundation.URL? {
-    get
-  }
-  public var fileName: Swift.String? {
-    get
-  }
-  public var fileURL: Foundation.URL? {
-    get
-  }
-}
-@_hasMissingDesignatedInitializers public class SessionSamplerRecord : Swift.Codable, IMQACore.VVIdenti {
-  public var vvid: Swift.String {
-    get
-  }
-  @objc deinit
-  public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
-extension IMQACore.IMQAStorage {
-  public func addSamplerRecord(_ record: IMQACore.SessionSamplerRecord)
-  public func getSamplerRecord(_ sessionId: Swift.String) -> IMQACore.SessionSamplerRecord?
-}
-extension IMQACore.IMQAStorage {
-  @discardableResult
-  public func addSession(id: IMQACommonInternal.SessionIdentifier, state: IMQACommonInternal.SessionState, processId: IMQACommonInternal.ProcessIdentifier, traceId: Swift.String, spanId: Swift.String, startTime: Foundation.Date, endTime: Foundation.Date? = nil, lastHeartbeatTime: Foundation.Date? = nil, crashReportId: Swift.String? = nil) throws -> IMQACore.SessionRecord
-  public func upsertSession(_ session: IMQACore.SessionRecord)
-  public func fetchSession(id: IMQACommonInternal.SessionIdentifier) -> IMQACore.SessionRecord?
-  public func fetchLatestSession(ignoringCurrentSessionId sessionId: IMQACommonInternal.SessionIdentifier? = nil) throws -> IMQACore.SessionRecord?
-  public func fetchOldestSession() throws -> IMQACore.SessionRecord?
-}
-extension IMQACore.IMQAStorage {
-  @discardableResult
-  public func addSpan(id: Swift.String, name: Swift.String, traceId: Swift.String, type: IMQAOtelInternal.IMQASpanType, data: Foundation.Data, startTime: Foundation.Date, endTime: Foundation.Date? = nil, processIdentifier: IMQACommonInternal.ProcessIdentifier = .current) throws -> IMQACore.SpanRecord
-  public func upsertSpan(_ span: IMQACore.SpanRecord) throws
-  public func fetchSpan(id: Swift.String, traceId: Swift.String) throws -> IMQACore.SpanRecord?
-  public func cleanUpSpans(date: Foundation.Date? = nil) throws
-  public func closeOpenSpans(endTime: Foundation.Date)
-  public func fetchSpans(for sessionRecord: IMQACore.SessionRecord, ignoreSessionSpans: Swift.Bool = true, limit: Swift.Int = 1000) -> [IMQACore.SpanRecord]
-}
-public typealias Storage = IMQACore.IMQAStorageMetadataFetcher & IMQACore.LogRepository
-public class IMQAStorage : IMQACore.Storage {
-  public var options: IMQACore.IMQAStorage.Options {
+@_hasMissingDesignatedInitializers open class AttributeSet : Swift.Hashable, Swift.Codable {
+  public var labels: [Swift.String : IMQACore.AttributeValue] {
     get
   }
-  public var appId: Swift.String {
-    get
-  }
-  public var logger: any IMQACore.InternalLogger {
-    get
-  }
-  public init(options: IMQACore.IMQAStorage.Options, logger: any IMQACore.InternalLogger, appId: Swift.String)
+  public static var empty: IMQACore.AttributeSet
+  required public init(labels: [Swift.String : IMQACore.AttributeValue])
+  public static func == (lhs: IMQACore.AttributeSet, rhs: IMQACore.AttributeSet) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   @objc deinit
+  open func encode(to encoder: any Swift.Encoder) throws
+  open var hashValue: Swift.Int {
+    get
+  }
+  required public init(from decoder: any Swift.Decoder) throws
 }
-extension IMQACore.IMQAStorage {
-  public func update(session: IMQACore.SessionRecord)
+public enum AttributeValue : Swift.Equatable, Swift.CustomStringConvertible, Swift.Hashable {
+  case string(Swift.String)
+  case bool(Swift.Bool)
+  case int(Swift.Int)
+  case double(Swift.Double)
+  @available(*, deprecated, message: "replaced by .array(AttributeArray)")
+  case stringArray([Swift.String])
+  @available(*, deprecated, message: "replaced by .array(AttributeArray)")
+  case boolArray([Swift.Bool])
+  @available(*, deprecated, message: "replaced by .array(AttributeArray)")
+  case intArray([Swift.Int])
+  @available(*, deprecated, message: "replaced by .array(AttributeArray)")
+  case doubleArray([Swift.Double])
+  case array(IMQACore.AttributeArray)
+  case set(IMQACore.AttributeSet)
+  public var description: Swift.String {
+    get
+  }
+  public init?(_ value: Any)
+  public static func == (a: IMQACore.AttributeValue, b: IMQACore.AttributeValue) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension IMQACore.AttributeValue {
+  public init(_ value: Swift.String)
+  public init(_ value: Swift.Bool)
+  public init(_ value: Swift.Int)
+  public init(_ value: Swift.Double)
+  public init(_ value: [Swift.String])
+  public init(_ value: [Swift.Int])
+  public init(_ value: [Swift.Double])
+  public init(_ value: [Swift.Bool])
+  public init(_ value: IMQACore.AttributeArray)
+  public init(_ value: IMQACore.AttributeSet)
+}
+extension IMQACore.AttributeValue : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct AttributesDictionary {
+  public init(capacity: Swift.Int, valueLengthLimit: Swift.Int = Int.max)
+  public subscript(key: Swift.String) -> IMQACore.AttributeValue? {
+    get
+    set
+  }
   @discardableResult
-  public func delete(session: IMQACore.SessionRecord) -> Swift.Bool
-  public func fetchAll() -> [IMQACore.SessionRecord]
-  public func fetchOne(id: Swift.String) -> IMQACore.SessionRecord?
-}
-extension IMQACore.LogRecord : Swift.Identifiable {
-  public var id: Swift.String {
+  public mutating func updateValue(value: IMQACore.AttributeValue, forKey key: Swift.String) -> IMQACore.AttributeValue?
+  public mutating func updateValues(attributes: [Swift.String : IMQACore.AttributeValue])
+  public mutating func updateValues(attributes: IMQACore.AttributesDictionary)
+  public mutating func removeValueForKey(key: Swift.String) -> IMQACore.AttributeValue?
+  public mutating func removeAll(keepCapacity: Swift.Int)
+  public var count: Swift.Int {
     get
   }
-  public typealias ID = Swift.String
-}
-extension IMQACore.IMQAStorage {
-  public func fetchAll(excludingProcessIdentifier processIdentifier: IMQACommonInternal.ProcessIdentifier) throws -> [IMQACore.LogRecord]
-  public func removeAllLogs()
-  public func remove(logs: [IMQACore.LogRecord])
-  public func getAll() -> [IMQACore.LogRecord]
-  public func create(_ log: IMQACore.LogRecord, completion: (Swift.Result<IMQACore.LogRecord, any Swift.Error>) -> Swift.Void)
-}
-public struct VersionSemantics {
-}
-public enum IMQAStorageError : Swift.Error, Swift.Equatable {
-  case cannotUpsertSpan(spanName: Swift.String, message: Swift.String)
-  public static func == (a: IMQACore.IMQAStorageError, b: IMQACore.IMQAStorageError) -> Swift.Bool
-}
-extension IMQACore.IMQAStorageError : Foundation.LocalizedError, Foundation.CustomNSError {
-  public static var errorDomain: Swift.String {
+  public var numberOfDroppedAttributes: Swift.Int {
     get
   }
-  public var errorCode: Swift.Int {
-    get
-  }
-  public var errorDescription: Swift.String? {
-    get
-  }
-  public var localizedDescription: Swift.String {
+  public var values: [IMQACore.AttributeValue] {
     get
   }
 }
-public protocol IMQAStorageMetadataFetcher : AnyObject {
-  func fetchAllResources() throws -> [IMQACore.MetadataRecord]
-  func fetchResourcesForSessionId(_ sessionId: IMQACommonInternal.SessionIdentifier) throws -> [IMQACore.MetadataRecord]
-  func fetchResourcesForProcessId(_ processId: IMQACommonInternal.ProcessIdentifier) throws -> [IMQACore.MetadataRecord]
-  func fetchCustomPropertiesForSessionId(_ sessionId: IMQACommonInternal.SessionIdentifier) throws -> [IMQACore.MetadataRecord]
-  func fetchPersonaTagsForSessionId(_ sessionId: IMQACommonInternal.SessionIdentifier) throws -> [IMQACore.MetadataRecord]
-  func fetchPersonaTagsForProcessId(_ processId: IMQACommonInternal.ProcessIdentifier) throws -> [IMQACore.MetadataRecord]
+extension IMQACore.AttributesDictionary : Swift.Sequence {
+  public func makeIterator() -> IMQACore.AttributesWithCapacityIterator
+  public typealias Element = (Swift.String, IMQACore.AttributeValue)
+  public typealias Iterator = IMQACore.AttributesWithCapacityIterator
 }
-public protocol LogRepository {
-  func create(_ log: IMQACore.LogRecord, completion: (Swift.Result<IMQACore.LogRecord, any Swift.Error>) -> Swift.Void)
-  func fetchAll(excludingProcessIdentifier processIdentifier: IMQACommonInternal.ProcessIdentifier) throws -> [IMQACore.LogRecord]
-  func remove(logs: [IMQACore.LogRecord]) throws
-  func removeAllLogs() throws
+public struct AttributesWithCapacityIterator : Swift.IteratorProtocol {
+  public mutating func next() -> (Swift.String, IMQACore.AttributeValue)?
+  public typealias Element = (Swift.String, IMQACore.AttributeValue)
+}
+public protocol Clock : AnyObject {
+  var now: Foundation.Date { get }
+}
+extension IMQACore.Clock {
+  public var nanoTime: Swift.UInt64 {
+    get
+  }
+}
+public func == (lhs: any IMQACore.Clock, rhs: any IMQACore.Clock) -> Swift.Bool
+public protocol ContextManager : AnyObject {
+  func getCurrentContextValue(forKey: IMQACore.OpenTelemetryContextKeys) -> Swift.AnyObject?
+  func setCurrentContextValue(forKey: IMQACore.OpenTelemetryContextKeys, value: Swift.AnyObject)
+  func removeContextValue(forKey: IMQACore.OpenTelemetryContextKeys, value: Swift.AnyObject)
+  func withCurrentContextValue<T>(forKey: IMQACore.OpenTelemetryContextKeys, value: Swift.AnyObject?, _ operation: () throws -> T) rethrows -> T
+}
+public protocol ImperativeContextManager : IMQACore.ContextManager {
+}
+extension IMQACore.ContextManager where Self : IMQACore.ImperativeContextManager {
+  public func withCurrentContextValue<T>(forKey key: IMQACore.OpenTelemetryContextKeys, value: Swift.AnyObject?, _ operation: () throws -> T) rethrows -> T
 }
 public struct CustomCommonAdapter {
-  public static func toProtoAttribute(key: Swift.String, attributeValue: OpenTelemetryApi.AttributeValue) -> IMQACore.Opentelemetry_Proto_Common_V1_KeyValue
-  public static func toProtoAnyValue(attributeValue: OpenTelemetryApi.AttributeValue) -> IMQACore.Opentelemetry_Proto_Common_V1_AnyValue
-  public static func toProtoInstrumentationScope(instrumentationScopeInfo: OpenTelemetrySdk.InstrumentationScopeInfo) -> IMQACore.Opentelemetry_Proto_Common_V1_InstrumentationScope
+  public static func toProtoAttribute(key: Swift.String, attributeValue: IMQACore.AttributeValue) -> IMQACore.Opentelemetry_Proto_Common_V1_KeyValue
+  public static func toProtoAnyValue(attributeValue: IMQACore.AttributeValue) -> IMQACore.Opentelemetry_Proto_Common_V1_AnyValue
+  public static func toProtoInstrumentationScope(instrumentationScopeInfo: IMQACore.InstrumentationScopeInfo) -> IMQACore.Opentelemetry_Proto_Common_V1_InstrumentationScope
 }
 @_hasMissingDesignatedInitializers public class CustomLogRecordAdapter {
-  public static func toProtoResourceRecordLog(logRecordList: [OpenTelemetrySdk.ReadableLogRecord]) -> [IMQACore.Opentelemetry_Proto_Logs_V1_ResourceLogs]
+  public static func toProtoResourceRecordLog(logRecordList: [IMQACore.ReadableLogRecord]) -> [IMQACore.Opentelemetry_Proto_Logs_V1_ResourceLogs]
   @objc deinit
 }
 public enum CustomCompressionType {
@@ -1084,15 +319,15 @@ public struct CustomOtlpSpan : Swift.Codable {
   public init(from decoder: any Swift.Decoder) throws
 }
 public struct CustomResourceAdapter {
-  public static func toProtoResource(resource: OpenTelemetrySdk.Resource) -> IMQACore.Opentelemetry_Proto_Resource_V1_Resource
+  public static func toProtoResource(resource: IMQACore.Resource) -> IMQACore.Opentelemetry_Proto_Resource_V1_Resource
 }
 public struct CustomSpanAdapter {
-  public static func toProtoResourceSpans(spanDataList: [OpenTelemetrySdk.SpanData]) -> [IMQACore.Opentelemetry_Proto_Trace_V1_ResourceSpans]
-  public static func toProtoSpan(spanData: OpenTelemetrySdk.SpanData) -> IMQACore.Opentelemetry_Proto_Trace_V1_Span
-  public static func toProtoSpanKind(kind: OpenTelemetryApi.SpanKind) -> IMQACore.Opentelemetry_Proto_Trace_V1_Span.SpanKind
-  public static func toProtoSpanEvent(event: OpenTelemetrySdk.SpanData.Event) -> IMQACore.Opentelemetry_Proto_Trace_V1_Span.Event
-  public static func toProtoSpanLink(link: OpenTelemetrySdk.SpanData.Link) -> IMQACore.Opentelemetry_Proto_Trace_V1_Span.Link
-  public static func toStatusProto(status: OpenTelemetryApi.Status) -> IMQACore.Opentelemetry_Proto_Trace_V1_Status
+  public static func toProtoResourceSpans(spanDataList: [IMQACore.SpanData]) -> [IMQACore.Opentelemetry_Proto_Trace_V1_ResourceSpans]
+  public static func toProtoSpan(spanData: IMQACore.SpanData) -> IMQACore.Opentelemetry_Proto_Trace_V1_Span
+  public static func toProtoSpanKind(kind: IMQACore.SpanKind) -> IMQACore.Opentelemetry_Proto_Trace_V1_Span.SpanKind
+  public static func toProtoSpanEvent(event: IMQACore.SpanData.Event) -> IMQACore.Opentelemetry_Proto_Trace_V1_Span.Event
+  public static func toProtoSpanLink(link: IMQACore.SpanData.Link) -> IMQACore.Opentelemetry_Proto_Trace_V1_Span.Link
+  public static func toStatusProto(status: IMQACore.Status) -> IMQACore.Opentelemetry_Proto_Trace_V1_Status
 }
 public struct Opentelemetry_Proto_Common_V1_AnyValue {
   public var value: IMQACore.Opentelemetry_Proto_Common_V1_AnyValue.OneOf_Value?
@@ -2295,30 +1530,611 @@ extension IMQACore.Opentelemetry_Proto_Collector_Trace_V1_ExportTracePartialSucc
     get
   }
 }
-extension Foundation.Data {
-  public func compress(withAlgorithm algo: Foundation.Data.CompressionAlgorithm) -> Foundation.Data?
-  public func decompress(withAlgorithm algo: Foundation.Data.CompressionAlgorithm) -> Foundation.Data?
-  public enum CompressionAlgorithm {
-    case zlib
-    case lzfse
-    case lzma
-    case lz4
-    public static func == (a: Foundation.Data.CompressionAlgorithm, b: Foundation.Data.CompressionAlgorithm) -> Swift.Bool
-    public func hash(into hasher: inout Swift.Hasher)
-    public var hashValue: Swift.Int {
+@_hasMissingDesignatedInitializers public class DefaultLogger : IMQACore.Logger {
+  public func eventBuilder(name: Swift.String) -> any IMQACore.EventBuilder
+  public func logRecordBuilder() -> any IMQACore.LogRecordBuilder
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class DefaultLoggerProvider : IMQACore.LoggerProvider {
+  public static let instance: any IMQACore.LoggerProvider
+  public func get(instrumentationScopeName: Swift.String) -> any IMQACore.Logger
+  public func loggerBuilder(instrumentationScopeName: Swift.String) -> any IMQACore.LoggerBuilder
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class DefaultTracer : IMQACore.Tracer {
+  public static var instance: IMQACore.DefaultTracer
+  public func spanBuilder(spanName: Swift.String) -> any IMQACore.SpanBuilder
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class DefaultTracerProvider : IMQACore.TracerProvider {
+  public static let instance: IMQACore.DefaultTracerProvider
+  public func get(instrumentationName: Swift.String, instrumentationVersion: Swift.String? = nil) -> any IMQACore.Tracer
+  @objc deinit
+}
+public struct EnvVarResource {
+  public static let resource: IMQACore.Resource
+  public static func get(environment: [Swift.String : Swift.String] = ProcessInfo.processInfo.environment) -> IMQACore.Resource
+}
+public struct EnvironmentContextPropagator : IMQACore.TextMapPropagator {
+  public let fields: Swift.Set<Swift.String>
+  public init()
+  public func inject<S>(spanContext: IMQACore.SpanContext, carrier: inout [Swift.String : Swift.String], setter: S) where S : IMQACore.Setter
+  public func extract<G>(carrier: [Swift.String : Swift.String], getter: G) -> IMQACore.SpanContext? where G : IMQACore.Getter
+}
+public protocol EventBuilder : IMQACore.LogRecordBuilder {
+  func setData(_ attributes: [Swift.String : IMQACore.AttributeValue]) -> Self
+}
+public enum ExportResult {
+  case success
+  case failure
+  public static func == (a: IMQACore.ExportResult, b: IMQACore.ExportResult) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol IdGenerator {
+  func generateSpanId() -> IMQACore.SpanId
+  func generateTraceId() -> IMQACore.TraceId
+}
+public struct InstrumentationScopeInfo : Swift.Hashable, Swift.Codable, Swift.Equatable {
+  public var name: Swift.String {
+    get
+  }
+  public var version: Swift.String? {
+    get
+  }
+  public var schemaUrl: Swift.String? {
+    get
+  }
+  public init()
+  public init(name: Swift.String, version: Swift.String? = nil, schemaUrl: Swift.String? = nil)
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: IMQACore.InstrumentationScopeInfo, b: IMQACore.InstrumentationScopeInfo) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public var hashValue: Swift.Int {
+    get
+  }
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct LogLimits {
+  public static let defaultMaxAttributeCount: Swift.Int
+  public static let defaultMaxAttributeLength: Swift.Int
+  public let maxAttributeCount: Swift.Int
+  public let maxAttributeLength: Swift.Int
+  public init(maxAttributeCount: Swift.Int = Self.defaultMaxAttributeCount, maxAttributeLength: Swift.Int = Self.defaultMaxAttributeLength)
+}
+public protocol LogRecordBuilder {
+  func setTimestamp(_ timestamp: Foundation.Date) -> Self
+  func setObservedTimestamp(_ observed: Foundation.Date) -> Self
+  func setSpanContext(_ context: IMQACore.SpanContext) -> Self
+  func setSeverity(_ severity: IMQACore.Severity) -> Self
+  func setBody(_ body: IMQACore.AttributeValue) -> Self
+  func setAttributes(_ attributes: [Swift.String : IMQACore.AttributeValue]) -> Self
+  func emit()
+}
+@_hasMissingDesignatedInitializers public class LogRecordBuilderSdk : IMQACore.EventBuilder {
+  public func setTimestamp(_ timestamp: Foundation.Date) -> Self
+  public func setObservedTimestamp(_ observed: Foundation.Date) -> Self
+  public func setSpanContext(_ context: IMQACore.SpanContext) -> Self
+  public func setSeverity(_ severity: IMQACore.Severity) -> Self
+  public func setBody(_ body: IMQACore.AttributeValue) -> Self
+  public func setAttributes(_ attributes: [Swift.String : IMQACore.AttributeValue]) -> Self
+  public func setData(_ attributes: [Swift.String : IMQACore.AttributeValue]) -> Self
+  public func emit()
+  @objc deinit
+}
+public protocol LogRecordExporter {
+  func export(logRecords: [IMQACore.ReadableLogRecord], explicitTimeout: Foundation.TimeInterval?) -> IMQACore.ExportResult
+  func shutdown(explicitTimeout: Foundation.TimeInterval?)
+  func forceFlush(explicitTimeout: Foundation.TimeInterval?) -> IMQACore.ExportResult
+}
+extension IMQACore.LogRecordExporter {
+  public func export(logRecords: [IMQACore.ReadableLogRecord]) -> IMQACore.ExportResult
+  public func shutdown()
+  public func forceFlush() -> IMQACore.ExportResult
+}
+public protocol LogRecordProcessor {
+  func onEmit(logRecord: IMQACore.ReadableLogRecord)
+  func forceFlush(explicitTimeout: Foundation.TimeInterval?) -> IMQACore.ExportResult
+  func shutdown(explicitTimeout: Foundation.TimeInterval?) -> IMQACore.ExportResult
+}
+extension IMQACore.LogRecordProcessor {
+  public func forceFlush() -> IMQACore.ExportResult
+  public func shutdown() -> IMQACore.ExportResult
+}
+@objc public enum LogSeverity : Swift.Int, Swift.Codable {
+  case trace = 1
+  case debug = 5
+  case info = 9
+  case warn = 13
+  case error = 17
+  case fatal = 24
+  public var text: Swift.String {
+    get
+  }
+  public var number: Swift.Int {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension IMQACore.LogSeverity : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+public protocol Logger {
+  func eventBuilder(name: Swift.String) -> any IMQACore.EventBuilder
+  func logRecordBuilder() -> any IMQACore.LogRecordBuilder
+}
+public protocol LoggerBuilder {
+  func setEventDomain(_ eventDomain: Swift.String) -> Self
+  func setSchemaUrl(_ schemaUrl: Swift.String) -> Self
+  func setInstrumentationVersion(_ instrumentationVersion: Swift.String) -> Self
+  func setIncludeTraceContext(_ includeTraceContext: Swift.Bool) -> Self
+  func setAttributes(_ attributes: [Swift.String : IMQACore.AttributeValue]) -> Self
+  func build() -> any IMQACore.Logger
+}
+public protocol LoggerProvider : AnyObject {
+  func get(instrumentationScopeName: Swift.String) -> any IMQACore.Logger
+  func loggerBuilder(instrumentationScopeName: Swift.String) -> any IMQACore.LoggerBuilder
+}
+public class LoggerProviderBuilder {
+  public var clock: any IMQACore.Clock {
+    get
+  }
+  public var resource: IMQACore.Resource {
+    get
+  }
+  public var logLimits: IMQACore.LogLimits {
+    get
+  }
+  public var logProcessors: [any IMQACore.LogRecordProcessor] {
+    get
+  }
+  public init()
+  public func with(clock: any IMQACore.Clock) -> Self
+  public func with(resource: IMQACore.Resource) -> Self
+  public func with(logLimits: IMQACore.LogLimits) -> Self
+  public func with(processors: [any IMQACore.LogRecordProcessor]) -> Self
+  public func build() -> IMQACore.LoggerProviderSdk
+  @objc deinit
+}
+public class LoggerProviderSdk : IMQACore.LoggerProvider {
+  public init(clock: any IMQACore.Clock = MillisClock(), resource: IMQACore.Resource = EnvVarResource.get(), logLimits: IMQACore.LogLimits = LogLimits(), logRecordProcessors: [any IMQACore.LogRecordProcessor] = [])
+  public func get(instrumentationScopeName: Swift.String) -> any IMQACore.Logger
+  public func loggerBuilder(instrumentationScopeName: Swift.String) -> any IMQACore.LoggerBuilder
+  @objc deinit
+}
+public class MillisClock : IMQACore.Clock {
+  public init()
+  public var now: Foundation.Date {
+    get
+  }
+  @objc deinit
+}
+public class MonotonicClock : IMQACore.Clock {
+  public init(clock: any IMQACore.Clock)
+  public var now: Foundation.Date {
+    get
+  }
+  @objc deinit
+}
+public class MultiLogRecordProcessor : IMQACore.LogRecordProcessor {
+  public func forceFlush(explicitTimeout: Foundation.TimeInterval? = nil) -> IMQACore.ExportResult
+  public func shutdown(explicitTimeout: Foundation.TimeInterval? = nil) -> IMQACore.ExportResult
+  public init(logRecordProcessors: [any IMQACore.LogRecordProcessor])
+  public func onEmit(logRecord: IMQACore.ReadableLogRecord)
+  @objc deinit
+}
+public struct MultiSpanProcessor : IMQACore.SpanProcessor {
+  public init(spanProcessors: [any IMQACore.SpanProcessor])
+  public var isStartRequired: Swift.Bool {
+    get
+  }
+  public var isEndRequired: Swift.Bool {
+    get
+  }
+  public func onStart(parentContext: IMQACore.SpanContext?, span: any IMQACore.ReadableSpan)
+  public func onEnd(span: any IMQACore.ReadableSpan)
+  public func shutdown(explicitTimeout: Foundation.TimeInterval? = nil)
+  public func forceFlush(timeout: Foundation.TimeInterval? = nil)
+}
+@_hasMissingDesignatedInitializers public class NoopLogRecordProcessor : IMQACore.LogRecordProcessor {
+  public static let noopLogRecordProcessor: IMQACore.NoopLogRecordProcessor
+  public func onEmit(logRecord: IMQACore.ReadableLogRecord)
+  public func forceFlush(explicitTimeout: Foundation.TimeInterval? = nil) -> IMQACore.ExportResult
+  public func shutdown(explicitTimeout: Foundation.TimeInterval? = nil) -> IMQACore.ExportResult
+  @objc deinit
+}
+public enum OpenTelemetryContextKeys : Swift.String {
+  case span
+  case baggage
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct OpenTelemetryContextProvider {
+  public var activeSpan: (any IMQACore.Span)? {
+    get
+  }
+  public func setActiveSpan(_ span: any IMQACore.Span)
+  public func removeContextForSpan(_ span: any IMQACore.Span)
+  public func withActiveSpan<T>(_ span: any IMQACore.SpanBase, _ operation: () throws -> T) rethrows -> T
+}
+public struct RandomIdGenerator : IMQACore.IdGenerator {
+  public init()
+  public func generateSpanId() -> IMQACore.SpanId
+  public func generateTraceId() -> IMQACore.TraceId
+}
+public struct ReadableLogRecord : Swift.Codable {
+  public init(resource: IMQACore.Resource, instrumentationScopeInfo: IMQACore.InstrumentationScopeInfo, timestamp: Foundation.Date, observedTimestamp: Foundation.Date? = nil, spanContext: IMQACore.SpanContext? = nil, severity: IMQACore.Severity? = nil, body: IMQACore.AttributeValue? = nil, attributes: [Swift.String : IMQACore.AttributeValue])
+  public var resource: IMQACore.Resource {
+    get
+  }
+  public var instrumentationScopeInfo: IMQACore.InstrumentationScopeInfo {
+    get
+  }
+  public var timestamp: Foundation.Date {
+    get
+  }
+  public var observedTimestamp: Foundation.Date? {
+    get
+  }
+  public var spanContext: IMQACore.SpanContext? {
+    get
+  }
+  public var severity: IMQACore.Severity? {
+    get
+  }
+  public var body: IMQACore.AttributeValue? {
+    get
+  }
+  public var attributes: [Swift.String : IMQACore.AttributeValue] {
+    get
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public protocol ReadableSpan : IMQACore.Span {
+  var name: Swift.String { get set }
+  var instrumentationScopeInfo: IMQACore.InstrumentationScopeInfo { get }
+  func toSpanData() -> IMQACore.SpanData
+  var hasEnded: Swift.Bool { get }
+  var latency: Foundation.TimeInterval { get }
+}
+@_hasMissingDesignatedInitializers public class RecordEventsReadableSpan : IMQACore.ReadableSpan {
+  public var isRecording: Swift.Bool
+  public var name: Swift.String {
+    get
+    set
+  }
+  public var spanLimits: IMQACore.SpanLimits {
+    get
+  }
+  public var context: IMQACore.SpanContext {
+    get
+  }
+  public var parentContext: IMQACore.SpanContext? {
+    get
+  }
+  public var hasRemoteParent: Swift.Bool {
+    get
+  }
+  public var spanProcessor: any IMQACore.SpanProcessor {
+    get
+  }
+  public var links: [IMQACore.SpanData.Link] {
+    get
+  }
+  public var totalRecordedLinks: Swift.Int {
+    get
+  }
+  public var maxNumberOfAttributes: Swift.Int {
+    get
+  }
+  public var maxValueLengthPerSpanAttribute: Swift.Int {
+    get
+  }
+  public var maxNumberOfAttributesPerEvent: Swift.Int {
+    get
+  }
+  public var kind: IMQACore.SpanKind {
+    get
+  }
+  public var clock: any IMQACore.Clock {
+    get
+  }
+  public var resource: IMQACore.Resource {
+    get
+  }
+  public var instrumentationScopeInfo: IMQACore.InstrumentationScopeInfo {
+    get
+  }
+  public var startTime: Foundation.Date {
+    get
+  }
+  public var events: IMQACore.ArrayWithCapacity<IMQACore.SpanData.Event> {
+    get
+  }
+  public var totalAttributeCount: Swift.Int {
+    get
+  }
+  public var totalRecordedEvents: Swift.Int {
+    get
+  }
+  public var status: IMQACore.Status {
+    get
+    set
+  }
+  public var latency: Foundation.TimeInterval {
+    get
+  }
+  public var endTime: Foundation.Date? {
+    get
+  }
+  public var hasEnded: Swift.Bool {
+    get
+  }
+  public static func startSpan(context: IMQACore.SpanContext, name: Swift.String, instrumentationScopeInfo: IMQACore.InstrumentationScopeInfo, kind: IMQACore.SpanKind, parentContext: IMQACore.SpanContext?, hasRemoteParent: Swift.Bool, spanLimits: IMQACore.SpanLimits, spanProcessor: any IMQACore.SpanProcessor, clock: any IMQACore.Clock, resource: IMQACore.Resource, attributes: IMQACore.AttributesDictionary, links: [IMQACore.SpanData.Link], totalRecordedLinks: Swift.Int, startTime: Foundation.Date?) -> IMQACore.RecordEventsReadableSpan
+  public func toSpanData() -> IMQACore.SpanData
+  public func setAttribute(key: Swift.String, value: IMQACore.AttributeValue?)
+  public func addEvent(name: Swift.String)
+  public func addEvent(name: Swift.String, timestamp: Foundation.Date)
+  public func addEvent(name: Swift.String, attributes: [Swift.String : IMQACore.AttributeValue])
+  public func addEvent(name: Swift.String, attributes: [Swift.String : IMQACore.AttributeValue], timestamp: Foundation.Date)
+  public func end()
+  public func end(time: Foundation.Date)
+  public var description: Swift.String {
+    get
+  }
+  public func recordException(_ exception: any IMQACore.SpanException)
+  public func recordException(_ exception: any IMQACore.SpanException, timestamp: Foundation.Date)
+  public func recordException(_ exception: any IMQACore.SpanException, attributes: [Swift.String : IMQACore.AttributeValue])
+  public func recordException(_ exception: any IMQACore.SpanException, attributes: [Swift.String : IMQACore.AttributeValue], timestamp: Foundation.Date)
+  @objc deinit
+}
+public struct Resource : Swift.Equatable, Swift.Hashable, Swift.Codable {
+  public var attributes: [Swift.String : IMQACore.AttributeValue]
+  public init()
+  public init(attributes: [Swift.String : IMQACore.AttributeValue])
+  public mutating func merge(other: IMQACore.Resource)
+  public func merging(other: IMQACore.Resource) -> IMQACore.Resource
+  public static func == (a: IMQACore.Resource, b: IMQACore.Resource) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public var hashValue: Swift.Int {
+    get
+  }
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum ResourceAttributes : Swift.String {
+  case browserBrands
+  case browserPlatform
+  case browserMobile
+  case browserLanguage
+  case userAgentOriginal
+  case cloudProvider
+  case cloudAccountId
+  case cloudRegion
+  case cloudResourceId
+  case cloudAvailabilityZone
+  case cloudPlatform
+  case awsEcsContainerArn
+  case awsEcsClusterArn
+  case awsEcsLaunchtype
+  case awsEcsTaskArn
+  case awsEcsTaskFamily
+  case awsEcsTaskRevision
+  case awsEksClusterArn
+  case awsLogGroupNames
+  case awsLogGroupArns
+  case awsLogStreamNames
+  case awsLogStreamArns
+  case gcpCloudRunJobExecution
+  case gcpCloudRunJobTaskIndex
+  case gcpGceInstanceName
+  case gcpGceInstanceHostname
+  case herokuReleaseCreationTimestamp
+  case herokuReleaseCommit
+  case herokuAppId
+  case containerName
+  case containerId
+  case containerRuntime
+  case containerImageName
+  case containerImageTag
+  case containerImageId
+  case containerCommand
+  case containerCommandLine
+  case containerCommandArgs
+  case deploymentEnvironment
+  case deviceId
+  case deviceModelIdentifier
+  case deviceModelName
+  case deviceManufacturer
+  case faasName
+  case faasVersion
+  case faasInstance
+  case faasMaxMemory
+  case hostId
+  case hostName
+  case hostType
+  case hostArch
+  case hostImageName
+  case hostImageId
+  case hostImageVersion
+  case k8sClusterName
+  case k8sClusterUid
+  case k8sNodeName
+  case k8sNodeUid
+  case k8sNamespaceName
+  case k8sPodUid
+  case k8sPodName
+  case k8sContainerName
+  case k8sContainerRestartCount
+  case k8sReplicasetUid
+  case k8sReplicasetName
+  case k8sDeploymentUid
+  case k8sDeploymentName
+  case k8sStatefulsetUid
+  case k8sStatefulsetName
+  case k8sDaemonsetUid
+  case k8sDaemonsetName
+  case k8sJobUid
+  case k8sJobName
+  case k8sCronjobUid
+  case k8sCronjobName
+  case osType
+  case osDescription
+  case osName
+  case osVersion
+  case processPid
+  case processParentPid
+  case processExecutableName
+  case processExecutablePath
+  case processCommand
+  case processCommandLine
+  case processCommandArgs
+  case processOwner
+  case processRuntimeName
+  case processRuntimeVersion
+  case processRuntimeDescription
+  case serviceName
+  case serviceVersion
+  case serviceNamespace
+  case serviceInstanceId
+  case telemetrySdkName
+  case telemetrySdkLanguage
+  case telemetrySdkVersion
+  case telemetryAutoVersion
+  case webengineName
+  case webengineVersion
+  case webengineDescription
+  case otelScopeName
+  case otelScopeVersion
+  case otelLibraryName
+  case otelLibraryVersion
+  public struct CloudProviderValues : Swift.CustomStringConvertible {
+    public static let alibabaCloud: IMQACore.ResourceAttributes.CloudProviderValues
+    public static let aws: IMQACore.ResourceAttributes.CloudProviderValues
+    public static let azure: IMQACore.ResourceAttributes.CloudProviderValues
+    public static let gcp: IMQACore.ResourceAttributes.CloudProviderValues
+    public static let heroku: IMQACore.ResourceAttributes.CloudProviderValues
+    public static let ibmCloud: IMQACore.ResourceAttributes.CloudProviderValues
+    public static let tencentCloud: IMQACore.ResourceAttributes.CloudProviderValues
+    public init(_ customValue: Swift.String)
+    public var description: Swift.String {
       get
     }
   }
-  public func deflate() -> Foundation.Data?
-  public func inflate() -> Foundation.Data?
-  public func zip() -> Foundation.Data?
-  public func unzip(skipCheckSumValidation: Swift.Bool = true) -> Foundation.Data?
-  public func gzip() -> Foundation.Data?
-  public func gunzip() -> Foundation.Data?
+  public struct CloudPlatformValues : Swift.CustomStringConvertible {
+    public static let alibabaCloudEcs: IMQACore.ResourceAttributes.CloudPlatformValues
+    public static let alibabaCloudFc: IMQACore.ResourceAttributes.CloudPlatformValues
+    public static let alibabaCloudOpenshift: IMQACore.ResourceAttributes.CloudPlatformValues
+    public static let awsEc2: IMQACore.ResourceAttributes.CloudPlatformValues
+    public static let awsEcs: IMQACore.ResourceAttributes.CloudPlatformValues
+    public static let awsEks: IMQACore.ResourceAttributes.CloudPlatformValues
+    public static let awsLambda: IMQACore.ResourceAttributes.CloudPlatformValues
+    public static let awsElasticBeanstalk: IMQACore.ResourceAttributes.CloudPlatformValues
+    public static let awsAppRunner: IMQACore.ResourceAttributes.CloudPlatformValues
+    public static let awsOpenshift: IMQACore.ResourceAttributes.CloudPlatformValues
+    public static let azureVm: IMQACore.ResourceAttributes.CloudPlatformValues
+    public static let azureContainerInstances: IMQACore.ResourceAttributes.CloudPlatformValues
+    public static let azureAks: IMQACore.ResourceAttributes.CloudPlatformValues
+    public static let azureFunctions: IMQACore.ResourceAttributes.CloudPlatformValues
+    public static let azureAppService: IMQACore.ResourceAttributes.CloudPlatformValues
+    public static let azureOpenshift: IMQACore.ResourceAttributes.CloudPlatformValues
+    public static let gcpBareMetalSolution: IMQACore.ResourceAttributes.CloudPlatformValues
+    public static let gcpComputeEngine: IMQACore.ResourceAttributes.CloudPlatformValues
+    public static let gcpCloudRun: IMQACore.ResourceAttributes.CloudPlatformValues
+    public static let gcpKubernetesEngine: IMQACore.ResourceAttributes.CloudPlatformValues
+    public static let gcpCloudFunctions: IMQACore.ResourceAttributes.CloudPlatformValues
+    public static let gcpAppEngine: IMQACore.ResourceAttributes.CloudPlatformValues
+    public static let gcpOpenshift: IMQACore.ResourceAttributes.CloudPlatformValues
+    public static let ibmCloudOpenshift: IMQACore.ResourceAttributes.CloudPlatformValues
+    public static let tencentCloudCvm: IMQACore.ResourceAttributes.CloudPlatformValues
+    public static let tencentCloudEks: IMQACore.ResourceAttributes.CloudPlatformValues
+    public static let tencentCloudScf: IMQACore.ResourceAttributes.CloudPlatformValues
+    public init(_ customValue: Swift.String)
+    public var description: Swift.String {
+      get
+    }
+  }
+  public enum AwsEcsLaunchtypeValues : Swift.String {
+    case ec2
+    case fargate
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public struct HostArchValues : Swift.CustomStringConvertible {
+    public static let amd64: IMQACore.ResourceAttributes.HostArchValues
+    public static let arm32: IMQACore.ResourceAttributes.HostArchValues
+    public static let arm64: IMQACore.ResourceAttributes.HostArchValues
+    public static let ia64: IMQACore.ResourceAttributes.HostArchValues
+    public static let ppc32: IMQACore.ResourceAttributes.HostArchValues
+    public static let ppc64: IMQACore.ResourceAttributes.HostArchValues
+    public static let s390x: IMQACore.ResourceAttributes.HostArchValues
+    public static let x86: IMQACore.ResourceAttributes.HostArchValues
+    public init(_ customValue: Swift.String)
+    public var description: Swift.String {
+      get
+    }
+  }
+  public struct OsTypeValues : Swift.CustomStringConvertible {
+    public static let windows: IMQACore.ResourceAttributes.OsTypeValues
+    public static let linux: IMQACore.ResourceAttributes.OsTypeValues
+    public static let darwin: IMQACore.ResourceAttributes.OsTypeValues
+    public static let freebsd: IMQACore.ResourceAttributes.OsTypeValues
+    public static let netbsd: IMQACore.ResourceAttributes.OsTypeValues
+    public static let openbsd: IMQACore.ResourceAttributes.OsTypeValues
+    public static let dragonflybsd: IMQACore.ResourceAttributes.OsTypeValues
+    public static let hpux: IMQACore.ResourceAttributes.OsTypeValues
+    public static let aix: IMQACore.ResourceAttributes.OsTypeValues
+    public static let solaris: IMQACore.ResourceAttributes.OsTypeValues
+    public static let zOs: IMQACore.ResourceAttributes.OsTypeValues
+    public init(_ customValue: Swift.String)
+    public var description: Swift.String {
+      get
+    }
+  }
+  public struct TelemetrySdkLanguageValues : Swift.CustomStringConvertible {
+    public static let cpp: IMQACore.ResourceAttributes.TelemetrySdkLanguageValues
+    public static let dotnet: IMQACore.ResourceAttributes.TelemetrySdkLanguageValues
+    public static let erlang: IMQACore.ResourceAttributes.TelemetrySdkLanguageValues
+    public static let go: IMQACore.ResourceAttributes.TelemetrySdkLanguageValues
+    public static let java: IMQACore.ResourceAttributes.TelemetrySdkLanguageValues
+    public static let nodejs: IMQACore.ResourceAttributes.TelemetrySdkLanguageValues
+    public static let php: IMQACore.ResourceAttributes.TelemetrySdkLanguageValues
+    public static let python: IMQACore.ResourceAttributes.TelemetrySdkLanguageValues
+    public static let ruby: IMQACore.ResourceAttributes.TelemetrySdkLanguageValues
+    public static let rust: IMQACore.ResourceAttributes.TelemetrySdkLanguageValues
+    public static let swift: IMQACore.ResourceAttributes.TelemetrySdkLanguageValues
+    public static let webjs: IMQACore.ResourceAttributes.TelemetrySdkLanguageValues
+    public init(_ customValue: Swift.String)
+    public var description: Swift.String {
+      get
+    }
+  }
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
 }
+public func == (left: IMQACore.ResourceAttributes, right: Swift.String) -> Swift.Bool
+public func == (left: Swift.String, right: IMQACore.ResourceAttributes) -> Swift.Bool
 @_hasMissingDesignatedInitializers public class ApplicationResourceProvider : IMQACore.ResourceProvider {
   public init(source: any IMQACore.IApplicationDataSource)
-  override public var attributes: [Swift.String : OpenTelemetryApi.AttributeValue] {
+  override public var attributes: [Swift.String : IMQACore.AttributeValue] {
     get
   }
   @objc deinit
@@ -2401,229 +2217,1022 @@ public class TelemetryDataSource : IMQACore.ITelemetryDataSource {
 }
 public class DefaultResources {
   public init()
-  public func get() -> OpenTelemetrySdk.Resource
+  public func get() -> IMQACore.Resource
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class DeviceResourceProvider : IMQACore.ResourceProvider {
   public init(source: any IMQACore.IDeviceDataSource)
-  override public var attributes: [Swift.String : OpenTelemetryApi.AttributeValue] {
+  override public var attributes: [Swift.String : IMQACore.AttributeValue] {
     get
   }
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class OSResourceProvider : IMQACore.ResourceProvider {
   public init(source: any IMQACore.IOperatingSystemDataSource)
-  override public var attributes: [Swift.String : OpenTelemetryApi.AttributeValue] {
+  override public var attributes: [Swift.String : IMQACore.AttributeValue] {
     get
   }
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class ResourceProvider {
-  public var attributes: [Swift.String : OpenTelemetryApi.AttributeValue] {
+  public var attributes: [Swift.String : IMQACore.AttributeValue] {
     get
   }
-  public func create() -> OpenTelemetrySdk.Resource
+  public func create() -> IMQACore.Resource
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class TelemetryResourceProvider : IMQACore.ResourceProvider {
   public init(source: any IMQACore.ITelemetryDataSource)
-  override public var attributes: [Swift.String : OpenTelemetryApi.AttributeValue] {
+  override public var attributes: [Swift.String : IMQACore.AttributeValue] {
     get
   }
   @objc deinit
 }
-extension IMQACore.IMQAUpload {
-  public enum StorageMechanism {
-    case inMemory(name: Swift.String)
-    case onDisk(baseURL: Foundation.URL, fileName: Swift.String)
-  }
-  public class CacheOptions {
-    public var cacheLimit: Swift.UInt
-    public var cacheDaysLimit: Swift.UInt
-    public var cacheSizeLimit: Swift.UInt
-    public init?(cacheBaseUrl: Foundation.URL, cacheFileName: Swift.String = "db.sqlite", cacheLimit: Swift.UInt = 0, cacheDaysLimit: Swift.UInt = 0, cacheSizeLimit: Swift.UInt = 0)
-    public init(named: Swift.String, cacheLimit: Swift.UInt = 0, cacheDaysLimit: Swift.UInt = 0, cacheSizeLimit: Swift.UInt = 0)
-    @objc deinit
-  }
+public protocol Sampler : AnyObject, Swift.CustomStringConvertible {
+  func shouldSample(parentContext: IMQACore.SpanContext?, traceId: IMQACore.TraceId, name: Swift.String, kind: IMQACore.SpanKind, attributes: [Swift.String : IMQACore.AttributeValue], parentLinks: [IMQACore.SpanData.Link]) -> any IMQACore.Decision
 }
-extension IMQACore.IMQAUpload.CacheOptions {
-  public var name: Swift.String? {
+public protocol Decision {
+  var isSampled: Swift.Bool { get }
+  var attributes: [Swift.String : IMQACore.AttributeValue] { get }
+}
+public enum Samplers {
+  public static var alwaysOn: any IMQACore.Sampler
+  public static var alwaysOff: any IMQACore.Sampler
+  public static func traceIdRatio(ratio: Swift.Double) -> any IMQACore.Sampler
+  public static func parentBased(root: any IMQACore.Sampler, remoteParentSampled: (any IMQACore.Sampler)? = nil, remoteParentNotSampled: (any IMQACore.Sampler)? = nil, localParentSampled: (any IMQACore.Sampler)? = nil, localParentNotSampled: (any IMQACore.Sampler)? = nil) -> any IMQACore.Sampler
+}
+public struct BatchSpanProcessor : IMQACore.SpanProcessor {
+  public static var name: Swift.String {
     get
   }
-  public var baseUrl: Foundation.URL? {
-    get
-  }
-  public var fileName: Swift.String? {
-    get
-  }
-  public var fileURL: Foundation.URL? {
-    get
-  }
+  public init(spanExporter: any IMQACore.SpanExporter, scheduleDelay: Foundation.TimeInterval = 5, exportTimeout: Foundation.TimeInterval = 30, maxQueueSize: Swift.Int = 2048, maxExportBatchSize: Swift.Int = 512, willExportCallback: ((inout [IMQACore.SpanData]) -> Swift.Void)? = nil)
+  public let isStartRequired: Swift.Bool
+  public let isEndRequired: Swift.Bool
+  public func onStart(parentContext: IMQACore.SpanContext?, span: any IMQACore.ReadableSpan)
+  public func onEnd(span: any IMQACore.ReadableSpan)
+  public func shutdown(explicitTimeout: Foundation.TimeInterval? = nil)
+  public func forceFlush(timeout: Foundation.TimeInterval? = nil)
 }
-extension IMQACore.IMQAUpload {
-  public class EndpointOptions {
-    final public let spansURL: Foundation.URL
-    final public let logsURL: Foundation.URL
-    public init(spansURL: Foundation.URL, logsURL: Foundation.URL)
-    @objc deinit
-  }
+public protocol IMQALogSharedState {
+  var processors: [any IMQACore.LogRecordProcessor] { get }
 }
-extension IMQACore.IMQAUpload {
-  public class MetadataOptions {
-    public var apiKey: Swift.String
-    public var userAgent: Swift.String
-    public var deviceId: Swift.String
-    public init(apiKey: Swift.String, userAgent: Swift.String, deviceId: Swift.String)
-    @objc deinit
-  }
-}
-extension IMQACore.IMQAUpload {
-  public class Options {
-    final public let endpoints: IMQACore.IMQAUpload.EndpointOptions
-    final public let cache: IMQACore.IMQAUpload.CacheOptions
-    final public let metadata: IMQACore.IMQAUpload.MetadataOptions
-    final public let redundancy: IMQACore.IMQAUpload.RedundancyOptions
-    final public let urlSessionConfiguration: Foundation.URLSessionConfiguration
-    public init(endpoints: IMQACore.IMQAUpload.EndpointOptions, cache: IMQACore.IMQAUpload.CacheOptions, metadata: IMQACore.IMQAUpload.MetadataOptions, redundancy: IMQACore.IMQAUpload.RedundancyOptions = RedundancyOptions(), urlSessionConfiguration: Foundation.URLSessionConfiguration? = nil)
-    @objc deinit
-  }
-}
-extension IMQACore.IMQAUpload {
-  public class RedundancyOptions {
-    public var automaticRetryCount: Swift.Int
-    public var retryOnInternetConnected: Swift.Bool
-    public init(automaticRetryCount: Swift.Int = 0, retryOnInternetConnected: Swift.Bool = true)
-    @objc deinit
-  }
-}
-public protocol IMQALogUploader : AnyObject {
-  func uploadLog(id: Swift.String, data: Foundation.Data, completion: ((Swift.Result<(), any Swift.Error>) -> Swift.Void)?)
-}
-public class IMQAUpload : IMQACore.IMQALogUploader {
-  public var options: IMQACore.IMQAUpload.Options {
-    get
-  }
-  public var logger: any IMQACore.InternalLogger {
-    get
-  }
-  public var queue: Dispatch.DispatchQueue {
-    get
-  }
-  public init(options: IMQACore.IMQAUpload.Options, logger: any IMQACore.InternalLogger, queue: Dispatch.DispatchQueue) throws
-  public func retryCachedData()
-  public func uploadSpans(id: Swift.String, data: Foundation.Data, completion: ((Swift.Result<(), any Swift.Error>) -> Swift.Void)?)
-  public func uploadLog(id: Swift.String, data: Foundation.Data, completion: ((Swift.Result<(), any Swift.Error>) -> Swift.Void)?)
+@_hasMissingDesignatedInitializers public class SessionSamplerRecord : Swift.Codable {
   @objc deinit
-}
-extension IMQACore.IMQAUpload {
-  public func uploadCrashLog(id: Swift.String, data: Foundation.Data, completion: ((Swift.Result<(), any Swift.Error>) -> Swift.Void)?)
-  public func uploadCrashSpan(id: Swift.String, data: Foundation.Data, completion: ((Swift.Result<(), any Swift.Error>) -> Swift.Void)?)
-}
-@_hasMissingDesignatedInitializers public class IMQAUploadCache {
-  public func fetchUploadData(id: Swift.String, type: IMQACore.IMQAUploadType) -> IMQACore.UploadDataRecord?
-  public func fetchAllUploadData() -> [IMQACore.UploadDataRecord]
-  @discardableResult
-  public func clearStaleDataIfNeeded() -> Swift.UInt
-  @objc deinit
-}
-public enum IMQAUploadErrorCode : Swift.Int {
-  case invalidMetadata
-  case invalidData
-  case operationCancelled
-  case valueConvertError
-  public init?(rawValue: Swift.Int)
-  public typealias RawValue = Swift.Int
-  public var rawValue: Swift.Int {
-    get
-  }
-}
-public enum IMQAUploadError : Swift.Error, Swift.Equatable {
-  case incorrectStatusCodeError(_: Swift.Int)
-  case internalError(_: IMQACore.IMQAUploadErrorCode)
-  public static func == (a: IMQACore.IMQAUploadError, b: IMQACore.IMQAUploadError) -> Swift.Bool
-}
-extension IMQACore.IMQAUploadError : Foundation.LocalizedError, Foundation.CustomNSError {
-  public static var errorDomain: Swift.String {
-    get
-  }
-  public var errorCode: Swift.Int {
-    get
-  }
-  public var errorDescription: Swift.String? {
-    get
-  }
-  public var localizedDescription: Swift.String {
-    get
-  }
-}
-public enum IMQAUploadType : Swift.Int {
-  case spans
-  case logs
-  case crash
-  public init?(rawValue: Swift.Int)
-  public typealias RawValue = Swift.Int
-  public var rawValue: Swift.Int {
-    get
-  }
-}
-public struct LogAttribute : Swift.Codable {
-  public struct Value : Swift.Codable {
-    public func encode(to encoder: any Swift.Encoder) throws
-    public init(from decoder: any Swift.Decoder) throws
-  }
   public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
-}
-public struct SpanAttribute : Swift.Codable {
-  public struct Value : Swift.Codable {
-    public func encode(to encoder: any Swift.Encoder) throws
-    public init(from decoder: any Swift.Decoder) throws
-  }
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
-}
-extension IMQACore.SpanAttribute : Swift.Equatable {
-  public static func == (lhs: IMQACore.SpanAttribute, rhs: IMQACore.SpanAttribute) -> Swift.Bool
-}
-extension IMQACore.SpanAttribute.Value : Swift.Equatable {
-  public static func == (lhs: IMQACore.SpanAttribute.Value, rhs: IMQACore.SpanAttribute.Value) -> Swift.Bool
-}
-@_hasMissingDesignatedInitializers public class UploadDataRecord : Swift.Codable, IMQACore.VVIdenti {
-  public var vvid: Swift.String {
-    get
-  }
   required public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
+}
+@_hasMissingDesignatedInitializers public class SessionSamplerStorage {
+  public static let shared: IMQACore.SessionSamplerStorage
+  public func save(record: IMQACore.SessionSamplerRecord)
+  public func load(sessionId: Swift.String) -> IMQACore.SessionSamplerRecord?
+  public func delete(sessionId: Swift.String)
+  public func clearAll()
   @objc deinit
+}
+public struct OpenTelemetry {
+  public static var version: Swift.String
+  public static var instance: IMQACore.OpenTelemetry
+  public var tracerProvider: any IMQACore.TracerProvider {
+    get
+  }
+  public var loggerProvider: any IMQACore.LoggerProvider {
+    get
+  }
+  public var contextProvider: IMQACore.OpenTelemetryContextProvider {
+    get
+  }
+  public static func registerTracerProvider(tracerProvider: any IMQACore.TracerProvider)
+  public static func registerLoggerProvider(loggerProvider: any IMQACore.LoggerProvider)
+  public static func registerContextManager(contextManager: any IMQACore.ContextManager)
+}
+public class OtlpHttpTraceExporter : IMQACore.SpanExporter {
+  public init(url: Foundation.URL)
+  public func shutdown(explicitTimeout: Foundation.TimeInterval?)
+  public func flush(explicitTimeout: Foundation.TimeInterval?) -> IMQACore.SpanExporterResultCode
+  public func export(spans: [IMQACore.SpanData], explicitTimeout: Foundation.TimeInterval?) -> IMQACore.SpanExporterResultCode
+  @objc deinit
+}
+public struct SimpleSpanProcessor : IMQACore.SpanProcessor {
+  public let isStartRequired: Swift.Bool
+  public let isEndRequired: Swift.Bool
+  public func onStart(parentContext: IMQACore.SpanContext?, span: any IMQACore.ReadableSpan)
+  public mutating func onEnd(span: any IMQACore.ReadableSpan)
+  public func shutdown(explicitTimeout: Foundation.TimeInterval? = nil)
+  public func forceFlush(timeout: Foundation.TimeInterval? = nil)
+  public init(spanExporter: any IMQACore.SpanExporter)
+  public func reportingOnlySampled(sampled: Swift.Bool) -> IMQACore.SimpleSpanProcessor
+}
+extension IMQACore.Severity {
+  public func toLogSeverity() -> IMQACore.LogSeverity?
+  public static func fromLogSeverity(_ logSeverity: IMQACore.LogSeverity) -> IMQACore.Severity?
+}
+public enum Severity : Swift.Int, Swift.Comparable, Swift.CustomStringConvertible, Swift.Codable {
+  case trace
+  case trace2, trace3, trace4, debug, debug2, debug3, debug4, info, info2, info3, info4, warn, warn2, warn3, warn4, error, error2, error3, error4, fatal, fatal2, fatal3, fatal4
+  public var description: Swift.String {
+    get
+  }
+  public static func < (lhs: IMQACore.Severity, rhs: IMQACore.Severity) -> Swift.Bool
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public protocol SpanBase : AnyObject, Swift.CustomStringConvertible {
+  var kind: IMQACore.SpanKind { get }
+  var context: IMQACore.SpanContext { get }
+  var isRecording: Swift.Bool { get }
+  var status: IMQACore.Status { get set }
+  var name: Swift.String { get set }
+  func setAttribute(key: Swift.String, value: IMQACore.AttributeValue?)
+  func addEvent(name: Swift.String)
+  func addEvent(name: Swift.String, timestamp: Foundation.Date)
+  func addEvent(name: Swift.String, attributes: [Swift.String : IMQACore.AttributeValue])
+  func addEvent(name: Swift.String, attributes: [Swift.String : IMQACore.AttributeValue], timestamp: Foundation.Date)
+}
+public protocol SpanExceptionRecorder {
+  func recordException(_ exception: any IMQACore.SpanException)
+  func recordException(_ exception: any IMQACore.SpanException, timestamp: Foundation.Date)
+  func recordException(_ exception: any IMQACore.SpanException, attributes: [Swift.String : IMQACore.AttributeValue])
+  func recordException(_ exception: any IMQACore.SpanException, attributes: [Swift.String : IMQACore.AttributeValue], timestamp: Foundation.Date)
+}
+public protocol Span : IMQACore.SpanBase, IMQACore.SpanExceptionRecorder {
+  func end()
+  func end(time: Foundation.Date)
+}
+extension IMQACore.SpanBase {
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (lhs: Self, rhs: Self) -> Swift.Bool
+}
+extension IMQACore.SpanBase {
+  public func setAttribute(key: Swift.String, value: Swift.String)
+  public func setAttribute(key: Swift.String, value: Swift.Int)
+  public func setAttribute(key: Swift.String, value: Swift.Double)
+  public func setAttribute(key: Swift.String, value: Swift.Bool)
+}
+extension IMQACore.SpanExceptionRecorder {
+  public func recordException(_ exception: any Swift.Error, attributes: [Swift.String : IMQACore.AttributeValue]? = nil, timestamp: Foundation.Date? = nil)
+}
+extension IMQACore.Span {
+  public func putHttpHostAttribute(string hostName: Swift.String, int port: Swift.Int)
+  public func putHttpStatusCode(statusCode: Swift.Int, reasonPhrase: Swift.String)
+}
+public protocol SpanBuilderBase : AnyObject {
+  @discardableResult
+  func setParent(_ parent: any IMQACore.Span) -> Self
+  @discardableResult
+  func setParent(_ parent: IMQACore.SpanContext) -> Self
+  @discardableResult
+  func setNoParent() -> Self
+  @discardableResult
+  func addLink(spanContext: IMQACore.SpanContext) -> Self
+  @discardableResult
+  func addLink(spanContext: IMQACore.SpanContext, attributes: [Swift.String : IMQACore.AttributeValue]) -> Self
+  @discardableResult
+  func setAttribute(key: Swift.String, value: Swift.String) -> Self
+  @discardableResult
+  func setAttribute(key: Swift.String, value: Swift.Int) -> Self
+  @discardableResult
+  func setAttribute(key: Swift.String, value: Swift.Double) -> Self
+  @discardableResult
+  func setAttribute(key: Swift.String, value: Swift.Bool) -> Self
+  @discardableResult
+  func setAttribute(key: Swift.String, value: IMQACore.AttributeValue) -> Self
+  @discardableResult
+  func setSpanKind(spanKind: IMQACore.SpanKind) -> Self
+  @discardableResult
+  func setStartTime(time: Foundation.Date) -> Self
+  func withActiveSpan<T>(_ operation: (any IMQACore.SpanBase) throws -> T) rethrows -> T
+  func startSpan() -> any IMQACore.Span
+  func withStartedSpan<T>(_ operation: (any IMQACore.SpanBase) throws -> T) rethrows -> T
+}
+public protocol SpanBuilder : IMQACore.SpanBuilderBase {
+  @discardableResult
+  func setActive(_ active: Swift.Bool) -> Self
+}
+extension IMQACore.SpanBuilderBase {
+  public func withStartedSpan<T>(_ operation: (any IMQACore.SpanBase) throws -> T) rethrows -> T
+  @discardableResult
+  public func setAttribute(key: Swift.String, value: Swift.String) -> Self
+  @discardableResult
+  public func setAttribute(key: Swift.String, value: Swift.Int) -> Self
+  @discardableResult
+  public func setAttribute(key: Swift.String, value: Swift.Double) -> Self
+  @discardableResult
+  public func setAttribute(key: Swift.String, value: Swift.Bool) -> Self
+}
+public struct SpanContext : Swift.Equatable, Swift.CustomStringConvertible, Swift.Hashable, Swift.Codable {
+  public var traceId: IMQACore.TraceId {
+    get
+  }
+  public var spanId: IMQACore.SpanId {
+    get
+  }
+  public var traceFlags: IMQACore.TraceFlags {
+    get
+  }
+  public var traceState: IMQACore.TraceState
+  public let isRemote: Swift.Bool
+  public static func create(traceId: IMQACore.TraceId, spanId: IMQACore.SpanId, traceFlags: IMQACore.TraceFlags, traceState: IMQACore.TraceState) -> IMQACore.SpanContext
+  public static func createFromRemoteParent(traceId: IMQACore.TraceId, spanId: IMQACore.SpanId, traceFlags: IMQACore.TraceFlags, traceState: IMQACore.TraceState) -> IMQACore.SpanContext
+  public var isValid: Swift.Bool {
+    get
+  }
+  public var isSampled: Swift.Bool {
+    get
+  }
+  public static func == (lhs: IMQACore.SpanContext, rhs: IMQACore.SpanContext) -> Swift.Bool
+  public var description: Swift.String {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public var hashValue: Swift.Int {
+    get
+  }
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct SpanData : Swift.Equatable, Swift.Codable {
+  public var traceId: IMQACore.TraceId {
+    get
+  }
+  public var spanId: IMQACore.SpanId {
+    get
+  }
+  public var traceFlags: IMQACore.TraceFlags {
+    get
+  }
+  public var traceState: IMQACore.TraceState {
+    get
+  }
+  public var parentSpanId: IMQACore.SpanId? {
+    get
+  }
+  public var resource: IMQACore.Resource {
+    get
+  }
+  public var instrumentationScope: IMQACore.InstrumentationScopeInfo {
+    get
+  }
+  public var name: Swift.String {
+    get
+  }
+  public var kind: IMQACore.SpanKind {
+    get
+  }
+  public var startTime: Foundation.Date {
+    get
+  }
+  public var attributes: [Swift.String : IMQACore.AttributeValue] {
+    get
+  }
+  public var events: [IMQACore.SpanData.Event] {
+    get
+  }
+  public var links: [IMQACore.SpanData.Link] {
+    get
+  }
+  public var status: IMQACore.Status {
+    get
+  }
+  public var endTime: Foundation.Date {
+    get
+  }
+  public var hasRemoteParent: Swift.Bool {
+    get
+  }
+  public var hasEnded: Swift.Bool {
+    get
+  }
+  public var totalRecordedEvents: Swift.Int {
+    get
+  }
+  public var totalRecordedLinks: Swift.Int {
+    get
+  }
+  public var totalAttributeCount: Swift.Int {
+    get
+  }
+  public static func == (lhs: IMQACore.SpanData, rhs: IMQACore.SpanData) -> Swift.Bool
+  @discardableResult
+  public mutating func settingName(_ name: Swift.String) -> IMQACore.SpanData
+  @discardableResult
+  public mutating func settingTraceId(_ traceId: IMQACore.TraceId) -> IMQACore.SpanData
+  @discardableResult
+  public mutating func settingSpanId(_ spanId: IMQACore.SpanId) -> IMQACore.SpanData
+  @discardableResult
+  public mutating func settingTraceFlags(_ traceFlags: IMQACore.TraceFlags) -> IMQACore.SpanData
+  @discardableResult
+  public mutating func settingTraceState(_ traceState: IMQACore.TraceState) -> IMQACore.SpanData
+  @discardableResult
+  public mutating func settingAttributes(_ attributes: [Swift.String : IMQACore.AttributeValue]) -> IMQACore.SpanData
+  @discardableResult
+  public mutating func settingStartTime(_ time: Foundation.Date) -> IMQACore.SpanData
+  @discardableResult
+  public mutating func settingEndTime(_ time: Foundation.Date) -> IMQACore.SpanData
+  @discardableResult
+  public mutating func settingKind(_ kind: IMQACore.SpanKind) -> IMQACore.SpanData
+  @discardableResult
+  public mutating func settingLinks(_ links: [IMQACore.SpanData.Link]) -> IMQACore.SpanData
+  @discardableResult
+  public mutating func settingParentSpanId(_ parentSpanId: IMQACore.SpanId) -> IMQACore.SpanData
+  @discardableResult
+  public mutating func settingResource(_ resource: IMQACore.Resource) -> IMQACore.SpanData
+  @discardableResult
+  public mutating func settingStatus(_ status: IMQACore.Status) -> IMQACore.SpanData
+  @discardableResult
+  public mutating func settingEvents(_ events: [IMQACore.SpanData.Event]) -> IMQACore.SpanData
+  @discardableResult
+  public mutating func settingHasRemoteParent(_ hasRemoteParent: Swift.Bool) -> IMQACore.SpanData
+  @discardableResult
+  public mutating func settingHasEnded(_ hasEnded: Swift.Bool) -> IMQACore.SpanData
+  @discardableResult
+  public mutating func settingTotalRecordedEvents(_ totalRecordedEvents: Swift.Int) -> IMQACore.SpanData
+  @discardableResult
+  public mutating func settingTotalRecordedLinks(_ totalRecordedLinks: Swift.Int) -> IMQACore.SpanData
+  @discardableResult
+  public mutating func settingTotalAttributeCount(_ totalAttributeCount: Swift.Int) -> IMQACore.SpanData
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+extension IMQACore.SpanData {
+  public struct Event : Swift.Equatable, Swift.Codable {
+    public var timestamp: Foundation.Date {
+      get
+    }
+    public var name: Swift.String {
+      get
+    }
+    public var attributes: [Swift.String : IMQACore.AttributeValue] {
+      get
+    }
+    public init(name: Swift.String, timestamp: Foundation.Date, attributes: [Swift.String : IMQACore.AttributeValue]? = nil)
+    public init(timestamp: Foundation.Date, event: IMQACore.SpanData.Event)
+    public static func == (a: IMQACore.SpanData.Event, b: IMQACore.SpanData.Event) -> Swift.Bool
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+}
+extension IMQACore.SpanData {
+  public struct Link : Swift.Codable {
+    public let context: IMQACore.SpanContext
+    public let attributes: [Swift.String : IMQACore.AttributeValue]
+    public init(context: IMQACore.SpanContext, attributes: [Swift.String : IMQACore.AttributeValue] = [String: AttributeValue]())
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+}
+public func == (lhs: IMQACore.SpanData.Link, rhs: IMQACore.SpanData.Link) -> Swift.Bool
+public func == (lhs: [IMQACore.SpanData.Link], rhs: [IMQACore.SpanData.Link]) -> Swift.Bool
+public protocol SpanException {
+  var type: Swift.String { get }
+  var message: Swift.String? { get }
+  var stackTrace: [Swift.String]? { get }
+}
+extension Foundation.NSError : IMQACore.SpanException {
+  public var type: Swift.String {
+    get
+  }
+  public var message: Swift.String? {
+    get
+  }
+  public var stackTrace: [Swift.String]? {
+    get
+  }
+}
+extension Foundation.NSException : IMQACore.SpanException {
+  public var type: Swift.String {
+    get
+  }
+  public var message: Swift.String? {
+    get
+  }
+  public var stackTrace: [Swift.String]? {
+    get
+  }
+}
+public protocol SpanExporter : AnyObject {
+  @discardableResult
+  func export(spans: [IMQACore.SpanData], explicitTimeout: Foundation.TimeInterval?) -> IMQACore.SpanExporterResultCode
+  func flush(explicitTimeout: Foundation.TimeInterval?) -> IMQACore.SpanExporterResultCode
+  func shutdown(explicitTimeout: Foundation.TimeInterval?)
+}
+extension IMQACore.SpanExporter {
+  public func export(spans: [IMQACore.SpanData]) -> IMQACore.SpanExporterResultCode
+  public func flush() -> IMQACore.SpanExporterResultCode
+  public func shutdown()
+}
+public enum SpanExporterResultCode {
+  case success
+  case failure
+  public static func == (a: IMQACore.SpanExporterResultCode, b: IMQACore.SpanExporterResultCode) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct SpanId : Swift.Equatable, Swift.Comparable, Swift.Hashable, Swift.CustomStringConvertible, Swift.Codable {
+  public static let size: Swift.Int
+  public static let invalidId: Swift.UInt64
+  public static let invalid: IMQACore.SpanId
+  public static func getSize() -> Swift.Int
+  public init(id: Swift.UInt64)
+  public init()
+  public static func random() -> IMQACore.SpanId
+  public init(fromBytes bytes: [Swift.UInt8], withOffset offset: Swift.Int = 0)
+  public init(fromBytes bytes: Swift.ArraySlice<Swift.UInt8>, withOffset offset: Swift.Int = 0)
+  public init(fromBytes bytes: Swift.ArraySlice<Swift.Character>, withOffset offset: Swift.Int = 0)
+  public func copyBytesTo(dest: inout Foundation.Data, destOffset: Swift.Int)
+  public func copyBytesTo(dest: inout [Swift.UInt8], destOffset: Swift.Int)
+  public func copyBytesTo(dest: inout Swift.ArraySlice<Swift.UInt8>, destOffset: Swift.Int)
+  public init(fromHexString hex: Swift.String, withOffset offset: Swift.Int = 0)
+  public var hexString: Swift.String {
+    get
+  }
+  public var rawValue: Swift.UInt64 {
+    get
+  }
+  public var isValid: Swift.Bool {
+    get
+  }
+  public var description: Swift.String {
+    get
+  }
+  public static func < (lhs: IMQACore.SpanId, rhs: IMQACore.SpanId) -> Swift.Bool
+  public static func == (lhs: IMQACore.SpanId, rhs: IMQACore.SpanId) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public var hashValue: Swift.Int {
+    get
+  }
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum SpanKind : Swift.String, Swift.Equatable, Swift.Codable {
+  case `internal`
+  case server
+  case client
+  case producer
+  case consumer
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct SpanLimits : Swift.Equatable {
+  public var attributeCountLimit: Swift.Int {
+    get
+  }
+  public var eventCountLimit: Swift.Int {
+    get
+  }
+  public var linkCountLimit: Swift.Int {
+    get
+  }
+  public var attributePerEventCountLimit: Swift.Int {
+    get
+  }
+  public var attributePerLinkCountLimit: Swift.Int {
+    get
+  }
+  public var attributeValueLengthLimit: Swift.Int {
+    get
+  }
+  public init()
+  @discardableResult
+  public func settingAttributeCountLimit(_ number: Swift.UInt) -> IMQACore.SpanLimits
+  @discardableResult
+  public func settingAttributeValueLengthLimit(_ number: Swift.UInt) -> IMQACore.SpanLimits
+  @discardableResult
+  public func settingEventCountLimit(_ number: Swift.UInt) -> IMQACore.SpanLimits
+  @discardableResult
+  public func settingLinkCountLimit(_ number: Swift.UInt) -> IMQACore.SpanLimits
+  @discardableResult
+  public func settingAttributePerEventCountLimit(_ number: Swift.UInt) -> IMQACore.SpanLimits
+  @discardableResult
+  public func settingAttributePerLinkCountLimit(_ number: Swift.UInt) -> IMQACore.SpanLimits
+  public static func == (lhs: IMQACore.SpanLimits, rhs: IMQACore.SpanLimits) -> Swift.Bool
+}
+public protocol SpanProcessor {
+  var isStartRequired: Swift.Bool { get }
+  var isEndRequired: Swift.Bool { get }
+  func onStart(parentContext: IMQACore.SpanContext?, span: any IMQACore.ReadableSpan)
+  mutating func onEnd(span: any IMQACore.ReadableSpan)
+  mutating func shutdown(explicitTimeout: Foundation.TimeInterval?)
+  func forceFlush(timeout: Foundation.TimeInterval?)
+}
+public enum Status : Swift.Equatable {
+  case ok
+  case unset
+  case error(description: Swift.String)
+  public var isOk: Swift.Bool {
+    get
+  }
+  public var isError: Swift.Bool {
+    get
+  }
+  public var name: Swift.String {
+    get
+  }
+  public var code: Swift.Int {
+    get
+  }
+  public static func == (a: IMQACore.Status, b: IMQACore.Status) -> Swift.Bool
+}
+extension IMQACore.Status : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+extension IMQACore.Status : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct StringUtils {
+  public static func isPrintableString(_ string: Swift.String) -> Swift.Bool
+  public static func isValidMetricName(_ metricName: Swift.String) -> Swift.Bool
+}
+extension Swift.Double {
+  public var toMilliseconds: Swift.UInt64 {
+    get
+  }
+  public var toMicroseconds: Swift.UInt64 {
+    get
+  }
+  public var toNanoseconds: Swift.UInt64 {
+    get
+  }
+  public static func fromMilliseconds(_ millis: Swift.Int64) -> Foundation.TimeInterval
+  public static func fromMicroseconds(_ micros: Swift.Int64) -> Foundation.TimeInterval
+  public static func fromNanoseconds(_ nanos: Swift.Int64) -> Foundation.TimeInterval
+}
+public protocol TextMapBaggagePropagator {
+  var fields: Swift.Set<Swift.String> { get }
+}
+public protocol TextMapPropagator {
+  var fields: Swift.Set<Swift.String> { get }
+  func inject<S>(spanContext: IMQACore.SpanContext, carrier: inout [Swift.String : Swift.String], setter: S) where S : IMQACore.Setter
+  @discardableResult
+  func extract<G>(carrier: [Swift.String : Swift.String], getter: G) -> IMQACore.SpanContext? where G : IMQACore.Getter
+}
+public protocol Setter {
+  func set(carrier: inout [Swift.String : Swift.String], key: Swift.String, value: Swift.String)
+}
+public protocol Getter {
+  func get(carrier: [Swift.String : Swift.String], key: Swift.String) -> [Swift.String]?
+}
+public struct TraceFlags : Swift.Equatable, Swift.CustomStringConvertible, Swift.Codable {
+  public var byte: Swift.UInt8 {
+    get
+  }
+  public var hexString: Swift.String {
+    get
+  }
+  public init()
+  public init(fromByte src: Swift.UInt8)
+  public init(fromHexString hex: Swift.String, withOffset offset: Swift.Int = 0)
+  public var sampled: Swift.Bool {
+    get
+  }
+  public mutating func setIsSampled(_ isSampled: Swift.Bool)
+  public func settingIsSampled(_ isSampled: Swift.Bool) -> IMQACore.TraceFlags
+  public var description: Swift.String {
+    get
+  }
+  public static func == (a: IMQACore.TraceFlags, b: IMQACore.TraceFlags) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct TraceId : Swift.Comparable, Swift.Hashable, Swift.CustomStringConvertible, Swift.Equatable, Swift.Codable {
+  public static let size: Swift.Int
+  public static let invalidId: Swift.UInt64
+  public static let invalid: IMQACore.TraceId
+  public var idHi: Swift.UInt64 {
+    get
+  }
+  public var idLo: Swift.UInt64 {
+    get
+  }
+  public init(idHi: Swift.UInt64, idLo: Swift.UInt64)
+  public init()
+  public static func random() -> IMQACore.TraceId
+  public init(fromData data: Foundation.Data)
+  public init(fromBytes bytes: [Swift.UInt8])
+  public init(fromBytes bytes: Swift.ArraySlice<Swift.UInt8>)
+  public init(fromBytes bytes: Swift.ArraySlice<Swift.Character>)
+  public func copyBytesTo(dest: inout Foundation.Data, destOffset: Swift.Int)
+  public func copyBytesTo(dest: inout [Swift.UInt8], destOffset: Swift.Int)
+  public func copyBytesTo(dest: inout Swift.ArraySlice<Swift.UInt8>, destOffset: Swift.Int)
+  public init(fromHexString hex: Swift.String, withOffset offset: Swift.Int = 0)
+  public var isValid: Swift.Bool {
+    get
+  }
+  public var hexString: Swift.String {
+    get
+  }
+  public var rawHigherLong: Swift.UInt64 {
+    get
+  }
+  public var rawLowerLong: Swift.UInt64 {
+    get
+  }
+  public var description: Swift.String {
+    get
+  }
+  public static func < (lhs: IMQACore.TraceId, rhs: IMQACore.TraceId) -> Swift.Bool
+  public static func == (lhs: IMQACore.TraceId, rhs: IMQACore.TraceId) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public var hashValue: Swift.Int {
+    get
+  }
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct TraceState : Swift.Equatable, Swift.Codable {
+  public var entries: [IMQACore.TraceState.Entry] {
+    get
+  }
+  public init()
+  public init?(entries: [IMQACore.TraceState.Entry])
+  public func get(key: Swift.String) -> Swift.String?
+  public func setting(key: Swift.String, value: Swift.String) -> IMQACore.TraceState
+  public func removing(key: Swift.String) -> IMQACore.TraceState
+  public struct Entry : Swift.Equatable, Swift.Codable {
+    public var key: Swift.String {
+      get
+    }
+    public var value: Swift.String {
+      get
+    }
+    public init?(key: Swift.String, value: Swift.String)
+    public static func == (a: IMQACore.TraceState.Entry, b: IMQACore.TraceState.Entry) -> Swift.Bool
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public static func == (a: IMQACore.TraceState, b: IMQACore.TraceState) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public protocol Tracer : AnyObject {
+  func spanBuilder(spanName: Swift.String) -> any IMQACore.SpanBuilder
+}
+public protocol TracerProvider {
+  func get(instrumentationName: Swift.String, instrumentationVersion: Swift.String?) -> any IMQACore.Tracer
+}
+public class TracerProviderBuilder {
+  public var clock: any IMQACore.Clock {
+    get
+  }
+  public var idGenerator: any IMQACore.IdGenerator {
+    get
+  }
+  public var resource: IMQACore.Resource {
+    get
+  }
+  public var spanLimits: IMQACore.SpanLimits {
+    get
+  }
+  public var sampler: any IMQACore.Sampler {
+    get
+  }
+  public var spanProcessors: [any IMQACore.SpanProcessor] {
+    get
+  }
+  public init()
+  public func with(clock: any IMQACore.Clock) -> Self
+  public func with(idGenerator: any IMQACore.IdGenerator) -> Self
+  public func with(resource: IMQACore.Resource) -> Self
+  public func with(spanLimits: IMQACore.SpanLimits) -> Self
+  public func with(sampler: any IMQACore.Sampler) -> Self
+  public func add(spanProcessor: any IMQACore.SpanProcessor) -> Self
+  public func add(spanProcessors: [any IMQACore.SpanProcessor]) -> Self
+  public func build() -> IMQACore.TracerProviderSdk
+  @objc deinit
+}
+public class TracerProviderSdk : IMQACore.TracerProvider {
+  public init(clock: any IMQACore.Clock = MillisClock(), idGenerator: any IMQACore.IdGenerator = RandomIdGenerator(), resource: IMQACore.Resource = EnvVarResource.get(), spanLimits: IMQACore.SpanLimits = SpanLimits(), sampler: any IMQACore.Sampler = Samplers.parentBased(root: Samplers.alwaysOn), spanProcessors: [any IMQACore.SpanProcessor] = [])
+  @objc deinit
+  public func get(instrumentationName: Swift.String, instrumentationVersion: Swift.String? = nil) -> any IMQACore.Tracer
+  public func getActiveClock() -> any IMQACore.Clock
+  public func updateActiveClock(_ newClock: any IMQACore.Clock)
+  public func getActiveIdGenerator() -> any IMQACore.IdGenerator
+  public func updateActiveIdGenerator(_ newGenerator: any IMQACore.IdGenerator)
+  public func getActiveResource() -> IMQACore.Resource
+  public func updateActiveResource(_ newResource: IMQACore.Resource)
+  public func getActiveSpanLimits() -> IMQACore.SpanLimits
+  public func updateActiveSpanLimits(_ spanLimits: IMQACore.SpanLimits)
+  public func getActiveSampler() -> any IMQACore.Sampler
+  public func updateActiveSampler(_ newSampler: any IMQACore.Sampler)
+  public func getActiveSpanProcessors() -> [any IMQACore.SpanProcessor]
+  public func addSpanProcessor(_ spanProcessor: any IMQACore.SpanProcessor)
+  public func resetSpanProcessors()
+  public func shutdown()
+  public func forceFlush(timeout: Foundation.TimeInterval? = nil)
+}
+@_hasMissingDesignatedInitializers public class TracerSdk : IMQACore.Tracer {
+  final public let instrumentationScopeInfo: IMQACore.InstrumentationScopeInfo
+  public func spanBuilder(spanName: Swift.String) -> any IMQACore.SpanBuilder
+  @objc deinit
+}
+extension IMQACore.Resource {
+  public static let OTEL_SWIFT_SDK_VERSION: Swift.String
+}
+public struct W3CTraceContextPropagator : IMQACore.TextMapPropagator {
+  public init()
+  public let fields: Swift.Set<Swift.String>
+  public func inject<S>(spanContext: IMQACore.SpanContext, carrier: inout [Swift.String : Swift.String], setter: S) where S : IMQACore.Setter
+  public func extract<G>(carrier: [Swift.String : Swift.String], getter: G) -> IMQACore.SpanContext? where G : IMQACore.Getter
+}
+extension IMQACore.IMQA {
+  @objc(IMQAEndpoints) public class Endpoints : ObjectiveC.NSObject {
+    @objc final public let baseURL: Swift.String
+    @objc public init(collectorURL: Swift.String)
+    public enum OpentelemetryBaseUrl {
+      case tracer(Swift.String)
+      case metric(Swift.String)
+      case logs(Swift.String)
+    }
+    @objc deinit
+  }
+}
+extension IMQACore.IMQA {
+  @objc(IMQALogLevel) public enum LogLevel : Swift.Int {
+    case none = 0
+    case trace
+    case debug
+    case info
+    case warning
+    case error
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+}
+extension IMQACore.IMQA {
+  @objc(IMQAOptions) final public class Options : ObjectiveC.NSObject {
+    final public let serviceKey: Swift.String
+    final public let endpoints: IMQACore.IMQA.Endpoints?
+    final public var sampleRate: Swift.Double
+    @objc public init(serviceKey: Swift.String, endpoints: IMQACore.IMQA.Endpoints? = nil, sampleRate: Swift.Double = 1.0)
+    @objc deinit
+  }
+}
+@_hasMissingDesignatedInitializers public class IMQAMeta {
+  public static let sdkVersion: Swift.String
+  public static let scopeName: Swift.String
+  @objc deinit
+}
+public enum IMQASpanType : Swift.String, Swift.Decodable {
+  case SESSION
+  case RENDER
+  case XHR
+  case EVENT
+  case CRASH
+  case LOG
+  case APPLIFECYCLE
+  case DEFAULT
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct ResourceSemantics {
+  public static let serviceName: Swift.String
+  public static let serviceVersion: Swift.String
+  public static let imqaSDKVersion: Swift.String
+  public static let osName: Swift.String
+  public static let osVersion: Swift.String
+  public static let serviceKey: Swift.String
+  public static let deviceId: Swift.String
+  public static let deviceManufacturer: Swift.String
+  public static let deviceBrand: Swift.String
+  public static let deviceModelIdentifier: Swift.String
+}
+public struct SpanSemantics {
+  public static let spanType: Swift.String
+  public struct Event {
+    public static let eventType: Swift.String
+    public static let targetElement: Swift.String
+    public static let targetElementText: Swift.String
+    public static let tapCoords: Swift.String
+  }
+  public enum EventValue : Swift.String {
+    case eventClick
+    case eventScroll
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public struct XHR {
+    public static let httpRequestHeaders: Swift.String
+    public static let httpRequestBody: Swift.String
+    public static let errorType: Swift.String
+    public static let urlFull: Swift.String
+    public static let httpUrl: Swift.String
+    public static let httpHost: Swift.String
+    public static let httpScheme: Swift.String
+    public static let urlScheme: Swift.String
+    public static let httpMethod: Swift.String
+    public static let httpRequestMethod: Swift.String
+    public static let httpResponseStatusCode: Swift.String
+    public static let exceptionType: Swift.String
+    public static let exceptionMessage: Swift.String
+  }
+  public struct Session {
+    public static let name: Swift.String
+    public static let keyId: Swift.String
+    public static let keyState: Swift.String
+    public static let keyColdStart: Swift.String
+    public static let keyTerminated: Swift.String
+    public static let keyCleanExit: Swift.String
+    public static let keySessionNumber: Swift.String
+    public static let keyHeartbeat: Swift.String
+    public static let keyCrashId: Swift.String
+  }
+  public struct Common {
+    public static let sessionId: Swift.String
+    public static let traceId: Swift.String
+    public static let spanId: Swift.String
+    public static let sourceAddress: Swift.String
+    public static let screenName: Swift.String
+    public static let screenType: Swift.String
+    public static let userId: Swift.String
+    public static let networkCarrierName: Swift.String
+    public static let networkConnectionSubtype: Swift.String
+    public static let deviceBatteryLevel: Swift.String
+    public static let deviceBatteryIsCharging: Swift.String
+    public static let deviceCpuUsage: Swift.String
+    public static let deviceMemoryTotal: Swift.String
+    public static let deviceMemoryFree: Swift.String
+    public static let appMemoryAllocated: Swift.String
+    public static let areaCode: Swift.String
+    public static let networkAvailable: Swift.String
+    public static let networkCellular: Swift.String
+    public static let networkWifi: Swift.String
+  }
+  public struct CommonValue {
+    public static var noScreenValue: Swift.String
+    public static var viewValue: Swift.String
+  }
+  public struct SessionValue {
+    public static var name: Swift.String
+  }
+  public struct Applifecycle {
+    public static let appLifecycle: Swift.String
+  }
+}
+public protocol LogStorage {
+  func save(data: Foundation.Data)
+  func loadNext() -> Foundation.Data?
+  func removeLastLoaded()
+  func flush()
+}
+public class FileLogStorage : IMQACore.LogStorage {
+  public init()
+  public func save(data: Foundation.Data)
+  public func loadNext() -> Foundation.Data?
+  public func removeLastLoaded()
+  public func flush()
+  @objc deinit
+}
+public protocol SpanStorage {
+  func save(data: Foundation.Data)
+  func loadNext() -> Foundation.Data?
+  func removeLastLoaded()
+  func flush()
+}
+public class FileSpanStorage : IMQACore.SpanStorage {
+  public init()
+  public func save(data: Foundation.Data)
+  public func loadNext() -> Foundation.Data?
+  public func removeLastLoaded()
+  public func flush()
+  @objc deinit
+}
+public enum ReachabilityError : Swift.Error {
+  case failedToCreateWithAddress(Darwin.sockaddr, Swift.Int32)
+  case failedToCreateWithHostname(Swift.String, Swift.Int32)
+  case unableToSetCallback(Swift.Int32)
+  case unableToSetDispatchQueue(Swift.Int32)
+  case unableToGetFlags(Swift.Int32)
+}
+@available(*, unavailable, renamed: "Notification.Name.reachabilityChanged")
+public let ReachabilityChangedNotification: Foundation.NSNotification.Name
+extension Foundation.NSNotification.Name {
+  public static let reachabilityChanged: Foundation.Notification.Name
+}
+public class Reachability {
+  public typealias NetworkReachable = (IMQACore.Reachability) -> ()
+  public typealias NetworkUnreachable = (IMQACore.Reachability) -> ()
+  @available(*, unavailable, renamed: "Connection")
+  public enum NetworkStatus : Swift.CustomStringConvertible {
+    case notReachable, reachableViaWiFi, reachableViaWWAN
+    public var description: Swift.String {
+      get
+    }
+    public static func == (a: IMQACore.Reachability.NetworkStatus, b: IMQACore.Reachability.NetworkStatus) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public enum Connection : Swift.CustomStringConvertible {
+    case unavailable, wifi, cellular
+    public var description: Swift.String {
+      get
+    }
+    @available(*, deprecated, renamed: "unavailable")
+    public static let none: IMQACore.Reachability.Connection
+    public static func == (a: IMQACore.Reachability.Connection, b: IMQACore.Reachability.Connection) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public var whenReachable: IMQACore.Reachability.NetworkReachable?
+  public var whenUnreachable: IMQACore.Reachability.NetworkUnreachable?
+  @available(*, deprecated, renamed: "allowsCellularConnection")
+  final public let reachableOnWWAN: Swift.Bool
+  public var allowsCellularConnection: Swift.Bool
+  public var notificationCenter: Foundation.NotificationCenter
+  @available(*, deprecated, renamed: "connection.description")
+  public var currentReachabilityString: Swift.String {
+    get
+  }
+  @available(*, unavailable, renamed: "connection")
+  public var currentReachabilityStatus: IMQACore.Reachability.Connection {
+    get
+  }
+  public var connection: IMQACore.Reachability.Connection {
+    get
+  }
+  required public init(reachabilityRef: SystemConfiguration.SCNetworkReachability, queueQoS: Dispatch.DispatchQoS = .default, targetQueue: Dispatch.DispatchQueue? = nil, notificationQueue: Dispatch.DispatchQueue? = .main)
+  convenience public init(hostname: Swift.String, queueQoS: Dispatch.DispatchQoS = .default, targetQueue: Dispatch.DispatchQueue? = nil, notificationQueue: Dispatch.DispatchQueue? = .main) throws
+  convenience public init(queueQoS: Dispatch.DispatchQoS = .default, targetQueue: Dispatch.DispatchQueue? = nil, notificationQueue: Dispatch.DispatchQueue? = .main) throws
+  @objc deinit
+}
+extension IMQACore.Reachability {
+  public func startNotifier() throws
+  public func stopNotifier()
+  @available(*, deprecated, message: "Please use `connection != .none`")
+  public var isReachable: Swift.Bool {
+    get
+  }
+  @available(*, deprecated, message: "Please use `connection == .cellular`")
+  public var isReachableViaWWAN: Swift.Bool {
+    get
+  }
+  @available(*, deprecated, message: "Please use `connection == .wifi`")
+  public var isReachableViaWiFi: Swift.Bool {
+    get
+  }
+  public var description: Swift.String {
+    get
+  }
 }
 extension IMQACore.CaptureServiceState : Swift.Equatable {}
 extension IMQACore.CaptureServiceState : Swift.Hashable {}
 extension IMQACore.CaptureServiceState : Swift.RawRepresentable {}
-extension IMQACore.LastRunState : Swift.Equatable {}
-extension IMQACore.LastRunState : Swift.Hashable {}
-extension IMQACore.LastRunState : Swift.RawRepresentable {}
+extension IMQACore.CustomCompressionType : Swift.Equatable {}
+extension IMQACore.CustomCompressionType : Swift.Hashable {}
+extension IMQACore.ExportResult : Swift.Equatable {}
+extension IMQACore.ExportResult : Swift.Hashable {}
+extension IMQACore.LogSeverity : Swift.Equatable {}
+extension IMQACore.LogSeverity : Swift.Hashable {}
+extension IMQACore.LogSeverity : Swift.RawRepresentable {}
+extension IMQACore.OpenTelemetryContextKeys : Swift.Equatable {}
+extension IMQACore.OpenTelemetryContextKeys : Swift.Hashable {}
+extension IMQACore.OpenTelemetryContextKeys : Swift.RawRepresentable {}
+extension IMQACore.ResourceAttributes : Swift.Equatable {}
+extension IMQACore.ResourceAttributes : Swift.Hashable {}
+extension IMQACore.ResourceAttributes : Swift.RawRepresentable {}
+extension IMQACore.ResourceAttributes.AwsEcsLaunchtypeValues : Swift.Equatable {}
+extension IMQACore.ResourceAttributes.AwsEcsLaunchtypeValues : Swift.Hashable {}
+extension IMQACore.ResourceAttributes.AwsEcsLaunchtypeValues : Swift.RawRepresentable {}
+extension IMQACore.Severity : Swift.Hashable {}
+extension IMQACore.Severity : Swift.RawRepresentable {}
+extension IMQACore.SpanExporterResultCode : Swift.Equatable {}
+extension IMQACore.SpanExporterResultCode : Swift.Hashable {}
+extension IMQACore.SpanKind : Swift.Hashable {}
+extension IMQACore.SpanKind : Swift.RawRepresentable {}
+extension IMQACore.IMQA.LogLevel : Swift.Equatable {}
+extension IMQACore.IMQA.LogLevel : Swift.Hashable {}
+extension IMQACore.IMQA.LogLevel : Swift.RawRepresentable {}
+extension IMQACore.IMQASpanType : Swift.Equatable {}
+extension IMQACore.IMQASpanType : Swift.Hashable {}
+extension IMQACore.IMQASpanType : Swift.RawRepresentable {}
+extension IMQACore.SpanSemantics.EventValue : Swift.Equatable {}
+extension IMQACore.SpanSemantics.EventValue : Swift.Hashable {}
+extension IMQACore.SpanSemantics.EventValue : Swift.RawRepresentable {}
 @available(*, unavailable, renamed: "Connection")
 extension IMQACore.Reachability.NetworkStatus : Swift.Equatable {}
 @available(*, unavailable, renamed: "Connection")
 extension IMQACore.Reachability.NetworkStatus : Swift.Hashable {}
 extension IMQACore.Reachability.Connection : Swift.Equatable {}
 extension IMQACore.Reachability.Connection : Swift.Hashable {}
-extension IMQACore.IMQALogLevel : Swift.Equatable {}
-extension IMQACore.IMQALogLevel : Swift.Hashable {}
-extension IMQACore.IMQALogLevel : Swift.RawRepresentable {}
-extension IMQACore.MetadataRecordType : Swift.Equatable {}
-extension IMQACore.MetadataRecordType : Swift.Hashable {}
-extension IMQACore.MetadataRecordType : Swift.RawRepresentable {}
-extension IMQACore.MetadataRecordLifespan : Swift.Equatable {}
-extension IMQACore.MetadataRecordLifespan : Swift.Hashable {}
-extension IMQACore.MetadataRecordLifespan : Swift.RawRepresentable {}
-extension IMQACore.CustomCompressionType : Swift.Equatable {}
-extension IMQACore.CustomCompressionType : Swift.Hashable {}
-extension Foundation.Data.CompressionAlgorithm : Swift.Equatable {}
-extension Foundation.Data.CompressionAlgorithm : Swift.Hashable {}
-extension IMQACore.IMQAUploadErrorCode : Swift.Equatable {}
-extension IMQACore.IMQAUploadErrorCode : Swift.Hashable {}
-extension IMQACore.IMQAUploadErrorCode : Swift.RawRepresentable {}
-extension IMQACore.IMQAUploadType : Swift.Equatable {}
-extension IMQACore.IMQAUploadType : Swift.Hashable {}
-extension IMQACore.IMQAUploadType : Swift.RawRepresentable {}

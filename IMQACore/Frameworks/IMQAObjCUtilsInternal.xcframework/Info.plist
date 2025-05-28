@@ -39,6 +39,6 @@
 	<key>CFBundlePackageType</key>
 	<string>XFWK</string>
 	<key>XCFrameworkFormatVersion</key>
-	<string>1.0.49</string>
+	<string>1.0.51</string>
 </dict>
 </plist>

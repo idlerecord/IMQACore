@@ -4,29 +4,17 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Headers/IMQABinaryImageProvider.h</key>
-		<data>
-		44Wyfrsuw6owk03fHiDaesiTR94=
-		</data>
 		<key>Headers/IMQAObjCUtilsInternal.h</key>
 		<data>
-		FeFR9q7zUjCIBQVyZxk71a9Uyn4=
+		cXU/yq34Tl2zxtwuh6ZFYiXkt7E=
 		</data>
-		<key>Headers/IMQAStackTraceProccessor.h</key>
+		<key>Headers/IMQAURLSessionDelegateProxy.h</key>
 		<data>
-		1NeFutS+Os4H0yHiHpafA4hAXsY=
-		</data>
-		<key>Headers/IMQAURLSessionDelegateForwarder.h</key>
-		<data>
-		OoT5gc6umAKLzK6zzFVFX5bzJXc=
-		</data>
-		<key>Headers/NSURLSessionTask+IMQA.h</key>
-		<data>
-		XuupVrI92Alvg+c+KyWUo/nBh1U=
+		clLkTqw0f144zu2DyJhblPPpds4=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		evOM26sTtHTsr94Ab1untLaSAbo=
+		75BDZfh3t+Ju3Nf5rWfexSOj+Pk=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -35,59 +23,26 @@
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Headers/IMQABinaryImageProvider.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			44Wyfrsuw6owk03fHiDaesiTR94=
-			</data>
-			<key>hash2</key>
-			<data>
-			Nv4h2GT/8Tzbjsh+O4mcIdejusgCZX7mLPn1PfL0yrE=
-			</data>
-		</dict>
 		<key>Headers/IMQAObjCUtilsInternal.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			FeFR9q7zUjCIBQVyZxk71a9Uyn4=
+			cXU/yq34Tl2zxtwuh6ZFYiXkt7E=
 			</data>
 			<key>hash2</key>
 			<data>
-			65cs/vBGhCidss8XW/grhx3eQ13ijg2rfIWQOV34JSo=
+			q2acT8rFdy+JF081ZpJIgKAoFqMxcPg7+dT5406eHJA=
 			</data>
 		</dict>
-		<key>Headers/IMQAStackTraceProccessor.h</key>
+		<key>Headers/IMQAURLSessionDelegateProxy.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			1NeFutS+Os4H0yHiHpafA4hAXsY=
+			clLkTqw0f144zu2DyJhblPPpds4=
 			</data>
 			<key>hash2</key>
 			<data>
-			HmcYZ/vfk6OGh+RNCWyVl3cOroG4Foh3lHQG8noGcvw=
-			</data>
-		</dict>
-		<key>Headers/IMQAURLSessionDelegateForwarder.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			OoT5gc6umAKLzK6zzFVFX5bzJXc=
-			</data>
-			<key>hash2</key>
-			<data>
-			wyOYQrjhUH0i9XhNNExJKdosAb7XZvW9c+5Eaglz9wI=
-			</data>
-		</dict>
-		<key>Headers/NSURLSessionTask+IMQA.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			XuupVrI92Alvg+c+KyWUo/nBh1U=
-			</data>
-			<key>hash2</key>
-			<data>
-			GpzhRCrmXmHj1jcFYegEGu/7Mn6bsdYyz+Yq3Mn7TTs=
+			MeiCnlrrP8WKsBCR8TCkf83dHUCP1piHzWzCm467+FY=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

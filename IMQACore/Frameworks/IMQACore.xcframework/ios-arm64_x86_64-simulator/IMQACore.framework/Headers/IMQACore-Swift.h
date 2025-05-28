@@ -281,7 +281,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
 @import Foundation;
-@import IMQAOtelInternal;
 @import ObjectiveC;
 #endif
 
@@ -305,16 +304,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 #if defined(__OBJC__)
 
-
-/// Base class for all capture services (this class should never be used directly)
-/// In order to make your own <code>CaptureService</code> you should create a subclass and override
-/// the necessary methods.
-/// A <code>CaptureService</code> is an object that can be passed to the imqa during setup
-/// and that will capture and generate data in Open Telemetry format.
-/// Multiple <code>CaptureServices</code> can run at the same time and be in charge of handling
-/// different types of data.
-/// This base class provides the necessary functionality and structure that should be used
-/// by all capture services.
 SWIFT_CLASS("_TtC8IMQACore14CaptureService")
 @interface CaptureService : NSObject
 /// This method will be called once when the IMQA SDK starts.
@@ -331,64 +320,20 @@ SWIFT_CLASS("_TtC8IMQACore14CaptureService")
 @end
 
 
-@class Options;
-@class IMQAURLSessionCaptureService;
-@class IMQATapCaptureServiceOptions;
-@class IMQATapCaptureService;
-@class IMQAViewCaptureService;
-@class IMQAWebViewCaptureServiceOptions;
-@class IMQAWebViewCaptureService;
-@class IMQALowMemoryWarningCaptureService;
-@class IMQALowPowerModeCaptureService;
-@class IMQAPushNotificationCaptureServiceOptions;
-@class PushNotificationCaptureService;
-
-@interface CaptureService (SWIFT_EXTENSION(IMQACore))
-/// Returns a <code>URLSessionCaptureService</code> with the given <code>URLSessionCaptureService.Options</code>.
-/// \param options <code>URLSessionCaptureService.Options</code> used to configure the service.
-///
-+ (IMQAURLSessionCaptureService * _Nonnull)urlSessionWithOptions:(Options * _Nonnull)options SWIFT_WARN_UNUSED_RESULT;
-/// Returns a <code>TapCaptureService</code> with the given <code>TapCaptureService.Options</code>.
-/// \param options <code>TapCaptureService.Options</code> used to configure the service.
-///
-+ (IMQATapCaptureService * _Nonnull)tapWithOptions:(IMQATapCaptureServiceOptions * _Nonnull)options SWIFT_WARN_UNUSED_RESULT;
-/// Returns a <code>ViewCaptureService</code>.
-+ (IMQAViewCaptureService * _Nonnull)view SWIFT_WARN_UNUSED_RESULT;
-/// Returns a <code>WebViewCaptureService</code> with the given <code>WebViewCaptureService.Options</code>.
-/// \param options <code>WebViewCaptureService.Options</code> used to configure the service.
-///
-+ (IMQAWebViewCaptureService * _Nonnull)webViewWithOptions:(IMQAWebViewCaptureServiceOptions * _Nonnull)options SWIFT_WARN_UNUSED_RESULT;
-/// Adds a <code>LowMemoryWarningCaptureService</code>.
-+ (IMQALowMemoryWarningCaptureService * _Nonnull)lowMemoryWarning SWIFT_WARN_UNUSED_RESULT;
-/// Adds a <code>LowPowerModeCaptureService</code>.
-+ (IMQALowPowerModeCaptureService * _Nonnull)lowPowerMode SWIFT_WARN_UNUSED_RESULT;
-/// Adds a <code>PushNotificationCaptureService</code> with the given <code>PushNotificationCaptureService.Options</code>.
-/// \param options <code>PushNotificationCaptureService.Options</code> used to configure the service.
-///
-+ (PushNotificationCaptureService * _Nonnull)pushNotificationWithOptions:(IMQAPushNotificationCaptureServiceOptions * _Nonnull)options SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS("_TtC8IMQACore26AppLifecycleCaptureService")
+@interface AppLifecycleCaptureService : CaptureService
+- (nonnull instancetype)init;
+- (void)onInstall;
 @end
 
 
-/// Class used to build the list of <code>CaptureServices</code> to be used by the <code>Embrace</code> instance.
+
 SWIFT_CLASS("_TtC8IMQACore21CaptureServiceBuilder")
 @interface CaptureServiceBuilder : NSObject
-/// Returns the list of <code>CaptureServices</code> generated with this builder.
 - (NSArray<CaptureService *> * _Nonnull)build SWIFT_WARN_UNUSED_RESULT;
-/// Adds the given <code>CaptureService</code>.
-/// note:
-/// If there was another <code>CaptureService</code> already added of the same type, it will be replaced with the new one.
 - (nonnull instancetype)add:(CaptureService * _Nonnull)service;
-/// Removes a previously added <code>CaptureService</code> of the given type, if any.
-/// \param type Type of the <code>CaptureService</code> to remove.
-///
 - (nonnull instancetype)removeOfType:(Class _Nonnull)type;
-/// Adds the default <code>CaptureServices</code> using their corresponding default options.
-/// The default services are: <code>URLSessionCaptureService</code>, <code>TapCaptureService</code>, <code>ViewCaptureService</code>,
-/// <code>WebViewCaptureService</code>, <code>LowMemoryWarningCaptureService</code> and <code>LowPowerModeCaptureService</code>.
-/// note:
-/// Any existing <code>CaptureService</code> previously added will not get replaced by calling this method.
 - (nonnull instancetype)addAll;
-- (nonnull instancetype)addBasicServices;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -410,88 +355,43 @@ typedef SWIFT_ENUM(NSInteger, CaptureServiceState, open) {
 };
 
 
-SWIFT_CLASS("_TtC8IMQACore11CrashReport")
-@interface CrashReport : NSObject
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-@class NSString;
-@class CrashReporterContext;
-@protocol InternalLogger;
-enum LastRunState : NSInteger;
-
-SWIFT_PROTOCOL("_TtP8IMQACore13CrashReporter_")
-@protocol CrashReporter
-@property (nonatomic, copy) NSString * _Nullable currentSessionId;
-- (void)installWithContext:(CrashReporterContext * _Nonnull)context logger:(id <InternalLogger> _Nonnull)logger;
-- (enum LastRunState)getLastRunState SWIFT_WARN_UNUSED_RESULT;
-- (void)fetchUnsentCrashReportsWithCompletion:(void (^ _Nonnull)(NSArray<CrashReport *> * _Nonnull))completion;
-- (void)deleteCrashReportWithId:(NSInteger)id;
-- (void)deleteAllCrashReport;
-@property (nonatomic, copy) void (^ _Nullable onNewReport)(CrashReport * _Nonnull);
-@end
-
-
-/// Object passed to the active crash reporter during setup
-SWIFT_CLASS("_TtC8IMQACore20CrashReporterContext")
-@interface CrashReporterContext : NSObject
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
-/// Special <code>CrashReporter</code> implementation that captures crash data from Crashlytics reports.
-SWIFT_CLASS("_TtC8IMQACore19CrashlyticsReporter")
-@interface CrashlyticsReporter : NSObject <CrashReporter>
+SWIFT_CLASS_NAMED("CrashCaptureService")
+@interface IMQACrashCaptureService : CaptureService
 - (nonnull instancetype)init;
-/// Sets the current session identifier that will be included in a crash report.
-@property (nonatomic, copy) NSString * _Nullable currentSessionId;
-/// Block called when there’s a new report to upload
-@property (nonatomic, copy) void (^ _Nullable onNewReport)(CrashReport * _Nonnull);
-/// Always returns <code>.invalid</code>
-- (enum LastRunState)getLastRunState SWIFT_WARN_UNUSED_RESULT;
-- (void)installWithContext:(CrashReporterContext * _Nonnull)context logger:(id <InternalLogger> _Nonnull)logger;
-/// Unused
-- (void)fetchUnsentCrashReportsWithCompletion:(void (^ _Nonnull)(NSArray<CrashReport *> * _Nonnull))completion;
-/// Unused
-- (void)deleteCrashReportWithId:(NSInteger)id;
-/// deleteallcrashReport
-- (void)deleteAllCrashReport;
+- (void)onInstall;
 @end
 
-
-
-SWIFT_CLASS_NAMED("DefaultPowerModeProvider")
-@interface IMQADefaultPowerModeProvider : NSObject
-@property (nonatomic, readonly) BOOL isLowPowerModeEnabled;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
-@class IMQAOptions;
 
 SWIFT_CLASS("_TtC8IMQACore4IMQA")
 @interface IMQA : NSObject
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) IMQA * _Nullable client;)
-+ (IMQA * _Nullable)client SWIFT_WARN_UNUSED_RESULT;
-+ (void)setClient:(IMQA * _Nullable)value;
-@property (nonatomic, readonly, strong) IMQAOptions * _Nonnull options;
-/// SDK가 시작되였는가
-@property (nonatomic, readonly) BOOL started;
-/// log level
-@property (nonatomic) enum LogLevel logLevel;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL isDebug;)
++ (BOOL)isDebug SWIFT_WARN_UNUSED_RESULT;
++ (void)setIsDebug:(BOOL)value;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
-
 
 
 @interface IMQA (SWIFT_EXTENSION(IMQACore))
 @end
 
+typedef SWIFT_ENUM_NAMED(NSInteger, IMQALogLevel, "LogLevel", open) {
+  IMQALogLevelNone = 0,
+  IMQALogLevelTrace = 1,
+  IMQALogLevelDebug = 2,
+  IMQALogLevelInfo = 3,
+  IMQALogLevelWarning = 4,
+  IMQALogLevelError = 5,
+};
+
+
+@interface IMQA (SWIFT_EXTENSION(IMQACore))
+@end
+
+@class NSString;
 
 SWIFT_CLASS_NAMED("Endpoints")
-@interface IMQAEndpoits : NSObject
+@interface IMQAEndpoints : NSObject
 /// The base URL to upload session data
 @property (nonatomic, readonly, copy) NSString * _Nonnull baseURL;
 - (nonnull instancetype)initWithCollectorURL:(NSString * _Nonnull)collectorURL OBJC_DESIGNATED_INITIALIZER;
@@ -504,43 +404,33 @@ SWIFT_CLASS_NAMED("Endpoints")
 @end
 
 
-/// Class used to setup the IMQA SDK.
 SWIFT_CLASS_NAMED("Options")
 @interface IMQAOptions : NSObject
-- (nonnull instancetype)initWithServiceKey:(NSString * _Nonnull)serviceKey endpoints:(IMQAEndpoits * _Nullable)endpoints sampleRate:(double)sampleRate OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithServiceKey:(NSString * _Nonnull)serviceKey endpoints:(IMQAEndpoints * _Nullable)endpoints sampleRate:(double)sampleRate OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 
-
-
-@interface IMQA (SWIFT_EXTENSION(IMQACore))
-- (NSString * _Nullable)currentSessionId SWIFT_WARN_UNUSED_RESULT;
-@end
-
-
-@interface IMQA (SWIFT_EXTENSION(IMQACore))
-- (IMQA * _Nullable)startAndReturnError:(NSError * _Nullable * _Nullable)error;
-+ (IMQA * _Nullable)setupWithOptions:(IMQAOptions * _Nonnull)options error:(NSError * _Nullable * _Nullable)error;
-@end
-
-
-enum IMQALogLevel : NSInteger;
 @class WKUserContentController;
 
 @interface IMQA (SWIFT_EXTENSION(IMQACore))
-/// UserId 저장
-/// \param id id
+/// sdk parameters setting fucntion
+/// \param options parameters
 ///
-+ (void)setUserIdWithId:(NSString * _Nullable)id;
-/// UserId 회득
 ///
 /// returns:
-/// id
+/// instance
++ (IMQA * _Nonnull)setupWithOptions:(IMQAOptions * _Nonnull)options isDebug:(BOOL)isDebug;
+/// SDK시작
+- (void)start;
+/// set userID
+/// \param id userID
+///
++ (void)setUserIdWithId:(NSString * _Nullable)id;
 + (NSString * _Nullable)getUserId SWIFT_WARN_UNUSED_RESULT;
-/// custom 로그
-/// \param level 로그 레별
+/// custom log 찍기
+/// \param level log level
 ///
 /// \param message 메세지
 ///
@@ -549,274 +439,60 @@ enum IMQALogLevel : NSInteger;
 /// \param session webview에서 session 공용여부
 ///
 + (void)setSharedSessionWithSession:(BOOL)session;
-/// webview를 띄울때 꼭 호출해야 하는 함수
-/// \param userContentController userContentController
+/// XHR시 HTTPRequestBody를 수집여부
+/// \param isCapture 수집여부
 ///
-+ (void)setWebviewConfigurationWithUserContentController:(WKUserContentController * _Nonnull)userContentController;
 + (void)setAdvancedNetworkCaptureWithIsCapture:(BOOL)isCapture;
-@end
-
-
-@class NSBundle;
-
-SWIFT_CLASS("_TtC8IMQACore17IMQACoreResources")
-@interface IMQACoreResources : NSObject
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) NSBundle * _Nonnull bundle;)
-+ (NSBundle * _Nonnull)bundle SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-SWIFT_CLASS("_TtC8IMQACore17IMQACrashReporter")
-@interface IMQACrashReporter : NSObject <CrashReporter>
-/// Sets the current session identifier that will be included in a crash report.
-@property (nonatomic, copy) NSString * _Nullable currentSessionId;
-/// Unused in this KSCrash implementation
-@property (nonatomic, copy) void (^ _Nullable onNewReport)(CrashReport * _Nonnull);
-/// Used to determine if the last session ended cleanly or in a crash.
-- (enum LastRunState)getLastRunState SWIFT_WARN_UNUSED_RESULT;
-- (void)installWithContext:(CrashReporterContext * _Nonnull)context logger:(id <InternalLogger> _Nonnull)logger;
-/// Fetches all saved <code>CrashReports</code>.
-/// \param completion Completion handler to be called with the fetched <code>CrashReports</code>
+/// 수동으로 click span 수집
+/// \param buttonName 버튼 이름
 ///
-- (void)fetchUnsentCrashReportsWithCompletion:(void (^ _Nonnull)(NSArray<CrashReport *> * _Nonnull))completion;
-/// Permanently deletes a crash report for the given identifier.
-/// \param id Identifier of the report to delete
+/// \param buttonClassName 버튼 클라스
 ///
-- (void)deleteCrashReportWithId:(NSInteger)id;
-- (void)deleteAllCrashReport;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
++ (void)sendClickEventWithButtonName:(NSString * _Nonnull)buttonName buttonClassName:(NSString * _Nonnull)buttonClassName;
++ (void)setWebviewConfigurationWithUserContentController:(WKUserContentController * _Nonnull)userContentController;
 @end
 
-
-
-typedef SWIFT_ENUM(NSInteger, IMQALogLevel, open) {
-  IMQALogLevelNone = 0,
-  IMQALogLevelTrace = 1,
-  IMQALogLevelDebug = 2,
-  IMQALogLevelInfo = 3,
-  IMQALogLevelWarning = 4,
-  IMQALogLevelError = 5,
+typedef SWIFT_ENUM(NSInteger, LogSeverity, open) {
+  LogSeverityTrace = 1,
+  LogSeverityDebug = 5,
+  LogSeverityInfo = 9,
+  LogSeverityWarn = 13,
+  LogSeverityError = 17,
+  LogSeverityFatal = 24,
 };
 
 
-SWIFT_PROTOCOL("_TtP8IMQACore14InternalLogger_")
-@protocol InternalLogger
-- (BOOL)logWithLevel:(enum LogLevel)level message:(NSString * _Nonnull)message attributes:(NSDictionary<NSString *, NSString *> * _Nonnull)attributes;
-- (BOOL)logWithLevel:(enum LogLevel)level message:(NSString * _Nonnull)message;
-- (BOOL)trace:(NSString * _Nonnull)message attributes:(NSDictionary<NSString *, NSString *> * _Nonnull)attributes;
-- (BOOL)trace:(NSString * _Nonnull)message;
-- (BOOL)debug:(NSString * _Nonnull)message attributes:(NSDictionary<NSString *, NSString *> * _Nonnull)attributes;
-- (BOOL)debug:(NSString * _Nonnull)message;
-- (BOOL)info:(NSString * _Nonnull)message attributes:(NSDictionary<NSString *, NSString *> * _Nonnull)attributes;
-- (BOOL)info:(NSString * _Nonnull)message;
-- (BOOL)warning:(NSString * _Nonnull)message attributes:(NSDictionary<NSString *, NSString *> * _Nonnull)attributes;
-- (BOOL)warning:(NSString * _Nonnull)message;
-- (BOOL)error:(NSString * _Nonnull)message attributes:(NSDictionary<NSString *, NSString *> * _Nonnull)attributes;
-- (BOOL)error:(NSString * _Nonnull)message;
-@end
-
-typedef SWIFT_ENUM(NSInteger, LastRunState, open) {
-  LastRunStateUnavailable = 0,
-  LastRunStateCrash = 1,
-  LastRunStateCleanExit = 2,
-};
 
 
-/// Service that generates OpenTelemetry span events when the application receives a low memory warning.
-SWIFT_CLASS_NAMED("LowMemoryWarningCaptureService")
-@interface IMQALowMemoryWarningCaptureService : CaptureService
-- (void)onInstall;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-/// Service that generates OpenTelemetry spans when the phone is running in low power mode.
-SWIFT_CLASS_NAMED("LowPowerModeCaptureService")
-@interface IMQALowPowerModeCaptureService : CaptureService
-- (void)onInstall;
-- (void)onStart;
-- (void)onStop;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
-SWIFT_CLASS("_TtC8IMQACore25NetworkPayloadCaptureRule")
-@interface NetworkPayloadCaptureRule : NSObject
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
-
-
-SWIFT_CLASS("_TtC8IMQACore21OpenTelemetryExporter")
-@interface OpenTelemetryExporter : NSObject
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
-/// Service that generates OpenTelemetry span events when notifications are received through the <code>UNUserNotificationCenter</code>.
-SWIFT_CLASS("_TtC8IMQACore30PushNotificationCaptureService")
-@interface PushNotificationCaptureService : CaptureService
-@property (nonatomic, readonly, strong) IMQAPushNotificationCaptureServiceOptions * _Nonnull options;
-- (nonnull instancetype)initWithOptions:(IMQAPushNotificationCaptureServiceOptions * _Nonnull)options;
-- (nonnull instancetype)init;
-- (void)onInstall;
-@end
-
-
-@interface PushNotificationCaptureService (SWIFT_EXTENSION(IMQACore))
-@end
-
-
-/// Class used to setup a WebViewCaptureService.
-SWIFT_CLASS_NAMED("Options")
-@interface IMQAPushNotificationCaptureServiceOptions : NSObject
-/// Defines wether or not the IMQA SDK should capture the data from the push notifications
-@property (nonatomic, readonly) BOOL captureData;
-- (nonnull instancetype)initWithCaptureData:(BOOL)captureData OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)init;
-@end
-
-
-/// Class used to represent a Push Notification as a SpanEvent.
-/// Usage example:
-/// <code>Embrace.client?.add(.push(userInfo: apsDictionary))</code>
-SWIFT_CLASS_NAMED("PushNotificationEvent")
-@interface IMQAPushNotificationEvent : NSObject
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
-/// Service that generates OpenTelemetry span events for taps on the screen.
-/// Note that any taps done on a keyboard view will be automatically ignored.
 SWIFT_CLASS_NAMED("TapCaptureService")
 @interface IMQATapCaptureService : CaptureService
-- (nonnull instancetype)initWithOptions:(IMQATapCaptureServiceOptions * _Nonnull)options;
-- (void)onInstall;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
-@interface IMQATapCaptureService (SWIFT_EXTENSION(IMQACore))
-@end
-
-@protocol IMQATapCaptureServiceDelegate;
-
-/// Class used to setup a TapCaptureService.
-SWIFT_CLASS_NAMED("Options")
-@interface IMQATapCaptureServiceOptions : NSObject
-/// Defines a list of UIView types to be ignored by this service. Any taps done on views of these types will not be recorded.
-@property (nonatomic, readonly, copy) NSArray<Class> * _Nonnull ignoredViewTypes;
-/// Defines wether the service should capture the coordinates of the taps.
-@property (nonatomic, readonly) BOOL captureTapCoordinates;
-/// Delegate used to decide if each individual tap should be recorded or not.
-@property (nonatomic, readonly, strong) id <IMQATapCaptureServiceDelegate> _Nullable delegate;
-- (nonnull instancetype)initWithIgnoredViewTypes:(NSArray<Class> * _Nonnull)ignoredViewTypes captureTapCoordinates:(BOOL)captureTapCoordinates delegate:(id <IMQATapCaptureServiceDelegate> _Nullable)delegate OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init;
-@end
-
-@class UIView;
-
-/// Delegate used to control which taps are allowed to be captured by a <code>TapCaptureService</code>.
-SWIFT_PROTOCOL_NAMED("TapCaptureServiceDelegate")
-@protocol IMQATapCaptureServiceDelegate <NSObject>
-- (BOOL)shouldCaptureTapOnView:(UIView * _Nonnull)onView SWIFT_WARN_UNUSED_RESULT;
-- (BOOL)shouldCaptureTapCoordinatesOnView:(UIView * _Nonnull)onView SWIFT_WARN_UNUSED_RESULT;
+- (void)onInstall;
 @end
 
 
 
-/// Service that generates OpenTelemetry spans for network requests that use <code>URLSession</code>.
+
+
 SWIFT_CLASS_NAMED("URLSessionCaptureService")
 @interface IMQAURLSessionCaptureService : CaptureService
-- (nonnull instancetype)initWithOptions:(Options * _Nonnull)options;
 - (nonnull instancetype)init;
 - (void)onInstall;
 @end
 
 
-@interface IMQAURLSessionCaptureService (SWIFT_EXTENSION(IMQACore))
-@end
 
-@class NSURLRequest;
-
-/// This protocol can be used to modify requests before the Embrace SDK
-/// captures their data into OTel spans.
-/// Example:
-/// This could be useful if you need to obfuscate certain parts of a request path
-/// if it contains sensitive data.
-SWIFT_PROTOCOL("_TtP8IMQACore28URLSessionRequestsDataSource_")
-@protocol URLSessionRequestsDataSource <NSObject>
-- (NSURLRequest * _Nonnull)modifiedRequestFor:(NSURLRequest * _Nonnull)request SWIFT_WARN_UNUSED_RESULT;
-@end
-
-
-@class IMQAViewCaptureServiceOptions;
-
-/// Service that generates OpenTelemetry spans for <code>UIViewControllers</code>.
 SWIFT_CLASS_NAMED("ViewCaptureService")
 @interface IMQAViewCaptureService : CaptureService
-- (nonnull instancetype)initWithOptions:(IMQAViewCaptureServiceOptions * _Nonnull)options;
 - (nonnull instancetype)init;
 - (void)onInstall;
 @end
 
 
-@interface IMQAViewCaptureService (SWIFT_EXTENSION(IMQACore))
-@end
-
-
-/// Class used to setup a <code>ViewCaptureService</code>.
-SWIFT_CLASS_NAMED("Options")
-@interface IMQAViewCaptureServiceOptions : NSObject
-/// When enabled, the capture service will generate spans that measure the visible period of a <code>UIViewController</code>.
-/// The spans start  on <code>viewDidAppear</code> and end on <code>viewDidDisappear</code>.
-@property (nonatomic, readonly) BOOL instrumentVisibility;
-/// When enabled, the capture service will generate spans that measure the loading process of a <code>UIViewController</code>
-/// until it renders for the first time.
-/// The parent span (<code>time-to-first-render</code>) starts on <code>viewDidLoad</code> and ends on <code>viewDidAppear</code>.
-/// This span will contain contain child spans measuring each step in the process (<code>viewDidLoad</code>, <code>viewWillAppear</code> and <code>viewDidDisappear</code>).
-/// If the <code>UIViewController</code> follows the <code>InstrumentableViewController</code> protocol, custom child
-/// spans can be added to the parent span as well.
-/// If the <code>UIViewController</code> follows the <code>InteractableViewController</code> protocol, the parent span will end
-/// when the view is ready to be interacted instead (<code>time-to-interactive</code>).
-/// The implementers will need to call <code>setInteractionReady()</code> on the <code>UIViewController</code> to mark the end time.
-/// If the <code>UIViewController</code> disappears before the interaction is set as ready, the span status will be set to <code>error</code>
-/// with the <code>userAbandon</code> error code.
-@property (nonatomic, readonly) BOOL instrumentFirstRender;
-- (nonnull instancetype)initWithInstrumentVisibility:(BOOL)instrumentVisibility instrumentFirstRender:(BOOL)instrumentFirstRender OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)init;
-@end
-
-
-
-/// Service that generates OpenTelemetry span events when a <code>WKWebView</code> loads an URL or throws an error.
 SWIFT_CLASS_NAMED("WebViewCaptureService")
 @interface IMQAWebViewCaptureService : CaptureService
-@property (nonatomic, readonly, strong) IMQAWebViewCaptureServiceOptions * _Nonnull options;
-- (nonnull instancetype)initWithOptions:(IMQAWebViewCaptureServiceOptions * _Nonnull)options;
 - (nonnull instancetype)init;
 - (void)onInstall;
-@end
-
-
-@interface IMQAWebViewCaptureService (SWIFT_EXTENSION(IMQACore))
-@end
-
-
-/// Class used to setup a WebViewCaptureService.
-SWIFT_CLASS_NAMED("Options")
-@interface IMQAWebViewCaptureServiceOptions : NSObject
-/// Defines wether or not the Embrace SDK should remove the query params when capturing URLs from a web view.
-@property (nonatomic, readonly) BOOL stripQueryParams;
-- (nonnull instancetype)initWithStripQueryParams:(BOOL)stripQueryParams OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)init;
 @end
 
 #endif
@@ -1110,7 +786,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
 @import Foundation;
-@import IMQAOtelInternal;
 @import ObjectiveC;
 #endif
 
@@ -1134,16 +809,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 #if defined(__OBJC__)
 
-
-/// Base class for all capture services (this class should never be used directly)
-/// In order to make your own <code>CaptureService</code> you should create a subclass and override
-/// the necessary methods.
-/// A <code>CaptureService</code> is an object that can be passed to the imqa during setup
-/// and that will capture and generate data in Open Telemetry format.
-/// Multiple <code>CaptureServices</code> can run at the same time and be in charge of handling
-/// different types of data.
-/// This base class provides the necessary functionality and structure that should be used
-/// by all capture services.
 SWIFT_CLASS("_TtC8IMQACore14CaptureService")
 @interface CaptureService : NSObject
 /// This method will be called once when the IMQA SDK starts.
@@ -1160,64 +825,20 @@ SWIFT_CLASS("_TtC8IMQACore14CaptureService")
 @end
 
 
-@class Options;
-@class IMQAURLSessionCaptureService;
-@class IMQATapCaptureServiceOptions;
-@class IMQATapCaptureService;
-@class IMQAViewCaptureService;
-@class IMQAWebViewCaptureServiceOptions;
-@class IMQAWebViewCaptureService;
-@class IMQALowMemoryWarningCaptureService;
-@class IMQALowPowerModeCaptureService;
-@class IMQAPushNotificationCaptureServiceOptions;
-@class PushNotificationCaptureService;
-
-@interface CaptureService (SWIFT_EXTENSION(IMQACore))
-/// Returns a <code>URLSessionCaptureService</code> with the given <code>URLSessionCaptureService.Options</code>.
-/// \param options <code>URLSessionCaptureService.Options</code> used to configure the service.
-///
-+ (IMQAURLSessionCaptureService * _Nonnull)urlSessionWithOptions:(Options * _Nonnull)options SWIFT_WARN_UNUSED_RESULT;
-/// Returns a <code>TapCaptureService</code> with the given <code>TapCaptureService.Options</code>.
-/// \param options <code>TapCaptureService.Options</code> used to configure the service.
-///
-+ (IMQATapCaptureService * _Nonnull)tapWithOptions:(IMQATapCaptureServiceOptions * _Nonnull)options SWIFT_WARN_UNUSED_RESULT;
-/// Returns a <code>ViewCaptureService</code>.
-+ (IMQAViewCaptureService * _Nonnull)view SWIFT_WARN_UNUSED_RESULT;
-/// Returns a <code>WebViewCaptureService</code> with the given <code>WebViewCaptureService.Options</code>.
-/// \param options <code>WebViewCaptureService.Options</code> used to configure the service.
-///
-+ (IMQAWebViewCaptureService * _Nonnull)webViewWithOptions:(IMQAWebViewCaptureServiceOptions * _Nonnull)options SWIFT_WARN_UNUSED_RESULT;
-/// Adds a <code>LowMemoryWarningCaptureService</code>.
-+ (IMQALowMemoryWarningCaptureService * _Nonnull)lowMemoryWarning SWIFT_WARN_UNUSED_RESULT;
-/// Adds a <code>LowPowerModeCaptureService</code>.
-+ (IMQALowPowerModeCaptureService * _Nonnull)lowPowerMode SWIFT_WARN_UNUSED_RESULT;
-/// Adds a <code>PushNotificationCaptureService</code> with the given <code>PushNotificationCaptureService.Options</code>.
-/// \param options <code>PushNotificationCaptureService.Options</code> used to configure the service.
-///
-+ (PushNotificationCaptureService * _Nonnull)pushNotificationWithOptions:(IMQAPushNotificationCaptureServiceOptions * _Nonnull)options SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS("_TtC8IMQACore26AppLifecycleCaptureService")
+@interface AppLifecycleCaptureService : CaptureService
+- (nonnull instancetype)init;
+- (void)onInstall;
 @end
 
 
-/// Class used to build the list of <code>CaptureServices</code> to be used by the <code>Embrace</code> instance.
+
 SWIFT_CLASS("_TtC8IMQACore21CaptureServiceBuilder")
 @interface CaptureServiceBuilder : NSObject
-/// Returns the list of <code>CaptureServices</code> generated with this builder.
 - (NSArray<CaptureService *> * _Nonnull)build SWIFT_WARN_UNUSED_RESULT;
-/// Adds the given <code>CaptureService</code>.
-/// note:
-/// If there was another <code>CaptureService</code> already added of the same type, it will be replaced with the new one.
 - (nonnull instancetype)add:(CaptureService * _Nonnull)service;
-/// Removes a previously added <code>CaptureService</code> of the given type, if any.
-/// \param type Type of the <code>CaptureService</code> to remove.
-///
 - (nonnull instancetype)removeOfType:(Class _Nonnull)type;
-/// Adds the default <code>CaptureServices</code> using their corresponding default options.
-/// The default services are: <code>URLSessionCaptureService</code>, <code>TapCaptureService</code>, <code>ViewCaptureService</code>,
-/// <code>WebViewCaptureService</code>, <code>LowMemoryWarningCaptureService</code> and <code>LowPowerModeCaptureService</code>.
-/// note:
-/// Any existing <code>CaptureService</code> previously added will not get replaced by calling this method.
 - (nonnull instancetype)addAll;
-- (nonnull instancetype)addBasicServices;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1239,88 +860,43 @@ typedef SWIFT_ENUM(NSInteger, CaptureServiceState, open) {
 };
 
 
-SWIFT_CLASS("_TtC8IMQACore11CrashReport")
-@interface CrashReport : NSObject
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-@class NSString;
-@class CrashReporterContext;
-@protocol InternalLogger;
-enum LastRunState : NSInteger;
-
-SWIFT_PROTOCOL("_TtP8IMQACore13CrashReporter_")
-@protocol CrashReporter
-@property (nonatomic, copy) NSString * _Nullable currentSessionId;
-- (void)installWithContext:(CrashReporterContext * _Nonnull)context logger:(id <InternalLogger> _Nonnull)logger;
-- (enum LastRunState)getLastRunState SWIFT_WARN_UNUSED_RESULT;
-- (void)fetchUnsentCrashReportsWithCompletion:(void (^ _Nonnull)(NSArray<CrashReport *> * _Nonnull))completion;
-- (void)deleteCrashReportWithId:(NSInteger)id;
-- (void)deleteAllCrashReport;
-@property (nonatomic, copy) void (^ _Nullable onNewReport)(CrashReport * _Nonnull);
-@end
-
-
-/// Object passed to the active crash reporter during setup
-SWIFT_CLASS("_TtC8IMQACore20CrashReporterContext")
-@interface CrashReporterContext : NSObject
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
-/// Special <code>CrashReporter</code> implementation that captures crash data from Crashlytics reports.
-SWIFT_CLASS("_TtC8IMQACore19CrashlyticsReporter")
-@interface CrashlyticsReporter : NSObject <CrashReporter>
+SWIFT_CLASS_NAMED("CrashCaptureService")
+@interface IMQACrashCaptureService : CaptureService
 - (nonnull instancetype)init;
-/// Sets the current session identifier that will be included in a crash report.
-@property (nonatomic, copy) NSString * _Nullable currentSessionId;
-/// Block called when there’s a new report to upload
-@property (nonatomic, copy) void (^ _Nullable onNewReport)(CrashReport * _Nonnull);
-/// Always returns <code>.invalid</code>
-- (enum LastRunState)getLastRunState SWIFT_WARN_UNUSED_RESULT;
-- (void)installWithContext:(CrashReporterContext * _Nonnull)context logger:(id <InternalLogger> _Nonnull)logger;
-/// Unused
-- (void)fetchUnsentCrashReportsWithCompletion:(void (^ _Nonnull)(NSArray<CrashReport *> * _Nonnull))completion;
-/// Unused
-- (void)deleteCrashReportWithId:(NSInteger)id;
-/// deleteallcrashReport
-- (void)deleteAllCrashReport;
+- (void)onInstall;
 @end
 
-
-
-SWIFT_CLASS_NAMED("DefaultPowerModeProvider")
-@interface IMQADefaultPowerModeProvider : NSObject
-@property (nonatomic, readonly) BOOL isLowPowerModeEnabled;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
-@class IMQAOptions;
 
 SWIFT_CLASS("_TtC8IMQACore4IMQA")
 @interface IMQA : NSObject
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) IMQA * _Nullable client;)
-+ (IMQA * _Nullable)client SWIFT_WARN_UNUSED_RESULT;
-+ (void)setClient:(IMQA * _Nullable)value;
-@property (nonatomic, readonly, strong) IMQAOptions * _Nonnull options;
-/// SDK가 시작되였는가
-@property (nonatomic, readonly) BOOL started;
-/// log level
-@property (nonatomic) enum LogLevel logLevel;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL isDebug;)
++ (BOOL)isDebug SWIFT_WARN_UNUSED_RESULT;
++ (void)setIsDebug:(BOOL)value;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
-
 
 
 @interface IMQA (SWIFT_EXTENSION(IMQACore))
 @end
 
+typedef SWIFT_ENUM_NAMED(NSInteger, IMQALogLevel, "LogLevel", open) {
+  IMQALogLevelNone = 0,
+  IMQALogLevelTrace = 1,
+  IMQALogLevelDebug = 2,
+  IMQALogLevelInfo = 3,
+  IMQALogLevelWarning = 4,
+  IMQALogLevelError = 5,
+};
+
+
+@interface IMQA (SWIFT_EXTENSION(IMQACore))
+@end
+
+@class NSString;
 
 SWIFT_CLASS_NAMED("Endpoints")
-@interface IMQAEndpoits : NSObject
+@interface IMQAEndpoints : NSObject
 /// The base URL to upload session data
 @property (nonatomic, readonly, copy) NSString * _Nonnull baseURL;
 - (nonnull instancetype)initWithCollectorURL:(NSString * _Nonnull)collectorURL OBJC_DESIGNATED_INITIALIZER;
@@ -1333,43 +909,33 @@ SWIFT_CLASS_NAMED("Endpoints")
 @end
 
 
-/// Class used to setup the IMQA SDK.
 SWIFT_CLASS_NAMED("Options")
 @interface IMQAOptions : NSObject
-- (nonnull instancetype)initWithServiceKey:(NSString * _Nonnull)serviceKey endpoints:(IMQAEndpoits * _Nullable)endpoints sampleRate:(double)sampleRate OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithServiceKey:(NSString * _Nonnull)serviceKey endpoints:(IMQAEndpoints * _Nullable)endpoints sampleRate:(double)sampleRate OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 
-
-
-@interface IMQA (SWIFT_EXTENSION(IMQACore))
-- (NSString * _Nullable)currentSessionId SWIFT_WARN_UNUSED_RESULT;
-@end
-
-
-@interface IMQA (SWIFT_EXTENSION(IMQACore))
-- (IMQA * _Nullable)startAndReturnError:(NSError * _Nullable * _Nullable)error;
-+ (IMQA * _Nullable)setupWithOptions:(IMQAOptions * _Nonnull)options error:(NSError * _Nullable * _Nullable)error;
-@end
-
-
-enum IMQALogLevel : NSInteger;
 @class WKUserContentController;
 
 @interface IMQA (SWIFT_EXTENSION(IMQACore))
-/// UserId 저장
-/// \param id id
+/// sdk parameters setting fucntion
+/// \param options parameters
 ///
-+ (void)setUserIdWithId:(NSString * _Nullable)id;
-/// UserId 회득
 ///
 /// returns:
-/// id
+/// instance
++ (IMQA * _Nonnull)setupWithOptions:(IMQAOptions * _Nonnull)options isDebug:(BOOL)isDebug;
+/// SDK시작
+- (void)start;
+/// set userID
+/// \param id userID
+///
++ (void)setUserIdWithId:(NSString * _Nullable)id;
 + (NSString * _Nullable)getUserId SWIFT_WARN_UNUSED_RESULT;
-/// custom 로그
-/// \param level 로그 레별
+/// custom log 찍기
+/// \param level log level
 ///
 /// \param message 메세지
 ///
@@ -1378,274 +944,60 @@ enum IMQALogLevel : NSInteger;
 /// \param session webview에서 session 공용여부
 ///
 + (void)setSharedSessionWithSession:(BOOL)session;
-/// webview를 띄울때 꼭 호출해야 하는 함수
-/// \param userContentController userContentController
+/// XHR시 HTTPRequestBody를 수집여부
+/// \param isCapture 수집여부
 ///
-+ (void)setWebviewConfigurationWithUserContentController:(WKUserContentController * _Nonnull)userContentController;
 + (void)setAdvancedNetworkCaptureWithIsCapture:(BOOL)isCapture;
-@end
-
-
-@class NSBundle;
-
-SWIFT_CLASS("_TtC8IMQACore17IMQACoreResources")
-@interface IMQACoreResources : NSObject
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) NSBundle * _Nonnull bundle;)
-+ (NSBundle * _Nonnull)bundle SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-SWIFT_CLASS("_TtC8IMQACore17IMQACrashReporter")
-@interface IMQACrashReporter : NSObject <CrashReporter>
-/// Sets the current session identifier that will be included in a crash report.
-@property (nonatomic, copy) NSString * _Nullable currentSessionId;
-/// Unused in this KSCrash implementation
-@property (nonatomic, copy) void (^ _Nullable onNewReport)(CrashReport * _Nonnull);
-/// Used to determine if the last session ended cleanly or in a crash.
-- (enum LastRunState)getLastRunState SWIFT_WARN_UNUSED_RESULT;
-- (void)installWithContext:(CrashReporterContext * _Nonnull)context logger:(id <InternalLogger> _Nonnull)logger;
-/// Fetches all saved <code>CrashReports</code>.
-/// \param completion Completion handler to be called with the fetched <code>CrashReports</code>
+/// 수동으로 click span 수집
+/// \param buttonName 버튼 이름
 ///
-- (void)fetchUnsentCrashReportsWithCompletion:(void (^ _Nonnull)(NSArray<CrashReport *> * _Nonnull))completion;
-/// Permanently deletes a crash report for the given identifier.
-/// \param id Identifier of the report to delete
+/// \param buttonClassName 버튼 클라스
 ///
-- (void)deleteCrashReportWithId:(NSInteger)id;
-- (void)deleteAllCrashReport;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
++ (void)sendClickEventWithButtonName:(NSString * _Nonnull)buttonName buttonClassName:(NSString * _Nonnull)buttonClassName;
++ (void)setWebviewConfigurationWithUserContentController:(WKUserContentController * _Nonnull)userContentController;
 @end
 
-
-
-typedef SWIFT_ENUM(NSInteger, IMQALogLevel, open) {
-  IMQALogLevelNone = 0,
-  IMQALogLevelTrace = 1,
-  IMQALogLevelDebug = 2,
-  IMQALogLevelInfo = 3,
-  IMQALogLevelWarning = 4,
-  IMQALogLevelError = 5,
+typedef SWIFT_ENUM(NSInteger, LogSeverity, open) {
+  LogSeverityTrace = 1,
+  LogSeverityDebug = 5,
+  LogSeverityInfo = 9,
+  LogSeverityWarn = 13,
+  LogSeverityError = 17,
+  LogSeverityFatal = 24,
 };
 
 
-SWIFT_PROTOCOL("_TtP8IMQACore14InternalLogger_")
-@protocol InternalLogger
-- (BOOL)logWithLevel:(enum LogLevel)level message:(NSString * _Nonnull)message attributes:(NSDictionary<NSString *, NSString *> * _Nonnull)attributes;
-- (BOOL)logWithLevel:(enum LogLevel)level message:(NSString * _Nonnull)message;
-- (BOOL)trace:(NSString * _Nonnull)message attributes:(NSDictionary<NSString *, NSString *> * _Nonnull)attributes;
-- (BOOL)trace:(NSString * _Nonnull)message;
-- (BOOL)debug:(NSString * _Nonnull)message attributes:(NSDictionary<NSString *, NSString *> * _Nonnull)attributes;
-- (BOOL)debug:(NSString * _Nonnull)message;
-- (BOOL)info:(NSString * _Nonnull)message attributes:(NSDictionary<NSString *, NSString *> * _Nonnull)attributes;
-- (BOOL)info:(NSString * _Nonnull)message;
-- (BOOL)warning:(NSString * _Nonnull)message attributes:(NSDictionary<NSString *, NSString *> * _Nonnull)attributes;
-- (BOOL)warning:(NSString * _Nonnull)message;
-- (BOOL)error:(NSString * _Nonnull)message attributes:(NSDictionary<NSString *, NSString *> * _Nonnull)attributes;
-- (BOOL)error:(NSString * _Nonnull)message;
-@end
-
-typedef SWIFT_ENUM(NSInteger, LastRunState, open) {
-  LastRunStateUnavailable = 0,
-  LastRunStateCrash = 1,
-  LastRunStateCleanExit = 2,
-};
 
 
-/// Service that generates OpenTelemetry span events when the application receives a low memory warning.
-SWIFT_CLASS_NAMED("LowMemoryWarningCaptureService")
-@interface IMQALowMemoryWarningCaptureService : CaptureService
-- (void)onInstall;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-/// Service that generates OpenTelemetry spans when the phone is running in low power mode.
-SWIFT_CLASS_NAMED("LowPowerModeCaptureService")
-@interface IMQALowPowerModeCaptureService : CaptureService
-- (void)onInstall;
-- (void)onStart;
-- (void)onStop;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
-SWIFT_CLASS("_TtC8IMQACore25NetworkPayloadCaptureRule")
-@interface NetworkPayloadCaptureRule : NSObject
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
-
-
-SWIFT_CLASS("_TtC8IMQACore21OpenTelemetryExporter")
-@interface OpenTelemetryExporter : NSObject
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
-/// Service that generates OpenTelemetry span events when notifications are received through the <code>UNUserNotificationCenter</code>.
-SWIFT_CLASS("_TtC8IMQACore30PushNotificationCaptureService")
-@interface PushNotificationCaptureService : CaptureService
-@property (nonatomic, readonly, strong) IMQAPushNotificationCaptureServiceOptions * _Nonnull options;
-- (nonnull instancetype)initWithOptions:(IMQAPushNotificationCaptureServiceOptions * _Nonnull)options;
-- (nonnull instancetype)init;
-- (void)onInstall;
-@end
-
-
-@interface PushNotificationCaptureService (SWIFT_EXTENSION(IMQACore))
-@end
-
-
-/// Class used to setup a WebViewCaptureService.
-SWIFT_CLASS_NAMED("Options")
-@interface IMQAPushNotificationCaptureServiceOptions : NSObject
-/// Defines wether or not the IMQA SDK should capture the data from the push notifications
-@property (nonatomic, readonly) BOOL captureData;
-- (nonnull instancetype)initWithCaptureData:(BOOL)captureData OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)init;
-@end
-
-
-/// Class used to represent a Push Notification as a SpanEvent.
-/// Usage example:
-/// <code>Embrace.client?.add(.push(userInfo: apsDictionary))</code>
-SWIFT_CLASS_NAMED("PushNotificationEvent")
-@interface IMQAPushNotificationEvent : NSObject
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
-/// Service that generates OpenTelemetry span events for taps on the screen.
-/// Note that any taps done on a keyboard view will be automatically ignored.
 SWIFT_CLASS_NAMED("TapCaptureService")
 @interface IMQATapCaptureService : CaptureService
-- (nonnull instancetype)initWithOptions:(IMQATapCaptureServiceOptions * _Nonnull)options;
-- (void)onInstall;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
-@interface IMQATapCaptureService (SWIFT_EXTENSION(IMQACore))
-@end
-
-@protocol IMQATapCaptureServiceDelegate;
-
-/// Class used to setup a TapCaptureService.
-SWIFT_CLASS_NAMED("Options")
-@interface IMQATapCaptureServiceOptions : NSObject
-/// Defines a list of UIView types to be ignored by this service. Any taps done on views of these types will not be recorded.
-@property (nonatomic, readonly, copy) NSArray<Class> * _Nonnull ignoredViewTypes;
-/// Defines wether the service should capture the coordinates of the taps.
-@property (nonatomic, readonly) BOOL captureTapCoordinates;
-/// Delegate used to decide if each individual tap should be recorded or not.
-@property (nonatomic, readonly, strong) id <IMQATapCaptureServiceDelegate> _Nullable delegate;
-- (nonnull instancetype)initWithIgnoredViewTypes:(NSArray<Class> * _Nonnull)ignoredViewTypes captureTapCoordinates:(BOOL)captureTapCoordinates delegate:(id <IMQATapCaptureServiceDelegate> _Nullable)delegate OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init;
-@end
-
-@class UIView;
-
-/// Delegate used to control which taps are allowed to be captured by a <code>TapCaptureService</code>.
-SWIFT_PROTOCOL_NAMED("TapCaptureServiceDelegate")
-@protocol IMQATapCaptureServiceDelegate <NSObject>
-- (BOOL)shouldCaptureTapOnView:(UIView * _Nonnull)onView SWIFT_WARN_UNUSED_RESULT;
-- (BOOL)shouldCaptureTapCoordinatesOnView:(UIView * _Nonnull)onView SWIFT_WARN_UNUSED_RESULT;
+- (void)onInstall;
 @end
 
 
 
-/// Service that generates OpenTelemetry spans for network requests that use <code>URLSession</code>.
+
+
 SWIFT_CLASS_NAMED("URLSessionCaptureService")
 @interface IMQAURLSessionCaptureService : CaptureService
-- (nonnull instancetype)initWithOptions:(Options * _Nonnull)options;
 - (nonnull instancetype)init;
 - (void)onInstall;
 @end
 
 
-@interface IMQAURLSessionCaptureService (SWIFT_EXTENSION(IMQACore))
-@end
 
-@class NSURLRequest;
-
-/// This protocol can be used to modify requests before the Embrace SDK
-/// captures their data into OTel spans.
-/// Example:
-/// This could be useful if you need to obfuscate certain parts of a request path
-/// if it contains sensitive data.
-SWIFT_PROTOCOL("_TtP8IMQACore28URLSessionRequestsDataSource_")
-@protocol URLSessionRequestsDataSource <NSObject>
-- (NSURLRequest * _Nonnull)modifiedRequestFor:(NSURLRequest * _Nonnull)request SWIFT_WARN_UNUSED_RESULT;
-@end
-
-
-@class IMQAViewCaptureServiceOptions;
-
-/// Service that generates OpenTelemetry spans for <code>UIViewControllers</code>.
 SWIFT_CLASS_NAMED("ViewCaptureService")
 @interface IMQAViewCaptureService : CaptureService
-- (nonnull instancetype)initWithOptions:(IMQAViewCaptureServiceOptions * _Nonnull)options;
 - (nonnull instancetype)init;
 - (void)onInstall;
 @end
 
 
-@interface IMQAViewCaptureService (SWIFT_EXTENSION(IMQACore))
-@end
-
-
-/// Class used to setup a <code>ViewCaptureService</code>.
-SWIFT_CLASS_NAMED("Options")
-@interface IMQAViewCaptureServiceOptions : NSObject
-/// When enabled, the capture service will generate spans that measure the visible period of a <code>UIViewController</code>.
-/// The spans start  on <code>viewDidAppear</code> and end on <code>viewDidDisappear</code>.
-@property (nonatomic, readonly) BOOL instrumentVisibility;
-/// When enabled, the capture service will generate spans that measure the loading process of a <code>UIViewController</code>
-/// until it renders for the first time.
-/// The parent span (<code>time-to-first-render</code>) starts on <code>viewDidLoad</code> and ends on <code>viewDidAppear</code>.
-/// This span will contain contain child spans measuring each step in the process (<code>viewDidLoad</code>, <code>viewWillAppear</code> and <code>viewDidDisappear</code>).
-/// If the <code>UIViewController</code> follows the <code>InstrumentableViewController</code> protocol, custom child
-/// spans can be added to the parent span as well.
-/// If the <code>UIViewController</code> follows the <code>InteractableViewController</code> protocol, the parent span will end
-/// when the view is ready to be interacted instead (<code>time-to-interactive</code>).
-/// The implementers will need to call <code>setInteractionReady()</code> on the <code>UIViewController</code> to mark the end time.
-/// If the <code>UIViewController</code> disappears before the interaction is set as ready, the span status will be set to <code>error</code>
-/// with the <code>userAbandon</code> error code.
-@property (nonatomic, readonly) BOOL instrumentFirstRender;
-- (nonnull instancetype)initWithInstrumentVisibility:(BOOL)instrumentVisibility instrumentFirstRender:(BOOL)instrumentFirstRender OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)init;
-@end
-
-
-
-/// Service that generates OpenTelemetry span events when a <code>WKWebView</code> loads an URL or throws an error.
 SWIFT_CLASS_NAMED("WebViewCaptureService")
 @interface IMQAWebViewCaptureService : CaptureService
-@property (nonatomic, readonly, strong) IMQAWebViewCaptureServiceOptions * _Nonnull options;
-- (nonnull instancetype)initWithOptions:(IMQAWebViewCaptureServiceOptions * _Nonnull)options;
 - (nonnull instancetype)init;
 - (void)onInstall;
-@end
-
-
-@interface IMQAWebViewCaptureService (SWIFT_EXTENSION(IMQACore))
-@end
-
-
-/// Class used to setup a WebViewCaptureService.
-SWIFT_CLASS_NAMED("Options")
-@interface IMQAWebViewCaptureServiceOptions : NSObject
-/// Defines wether or not the Embrace SDK should remove the query params when capturing URLs from a web view.
-@property (nonatomic, readonly) BOOL stripQueryParams;
-- (nonnull instancetype)initWithStripQueryParams:(BOOL)stripQueryParams OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)init;
 @end
 
 #endif

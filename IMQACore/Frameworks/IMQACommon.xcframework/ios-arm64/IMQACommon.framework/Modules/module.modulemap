@@ -1,0 +1,4 @@
+framework module IMQACommon {
+  header "IMQACommon-Swift.h"
+  requires objc
+}
