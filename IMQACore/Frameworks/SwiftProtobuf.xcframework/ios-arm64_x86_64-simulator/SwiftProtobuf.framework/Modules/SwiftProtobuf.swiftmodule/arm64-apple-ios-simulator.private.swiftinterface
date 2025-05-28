@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.0.2 effective-5.10 (swiftlang-6.0.2.1.2 clang-1600.0.26.4)
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
 // swift-module-flags: -target arm64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name SwiftProtobuf
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface
 import Dispatch
@@ -314,7 +314,8 @@ public protocol Decoder {
 extension SwiftProtobuf.Decoder {
   public mutating func decodeExtensionFieldsAsMessageSet(values: inout SwiftProtobuf.ExtensionFieldValueSet, messageType: any SwiftProtobuf.Message.Type) throws
 }
-public enum Google_Protobuf_Edition : Swift.Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+public enum Google_Protobuf_Edition : SwiftProtobuf.Enum, Swift.CaseIterable {
+  public typealias RawValue = Swift.Int
   case unknown
   case legacy
   case proto2
@@ -329,20 +330,18 @@ public enum Google_Protobuf_Edition : Swift.Int, SwiftProtobuf.Enum, Swift.CaseI
   case max
   public init()
   public init?(rawValue: Swift.Int)
-  public typealias AllCases = [SwiftProtobuf.Google_Protobuf_Edition]
-  public typealias RawValue = Swift.Int
-  nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_Edition] {
-    get
-  }
   public var rawValue: Swift.Int {
     get
   }
+  public typealias AllCases = [SwiftProtobuf.Google_Protobuf_Edition]
+  nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_Edition] {
+    get
+  }
 }
-public struct Google_Protobuf_FileDescriptorSet : SwiftProtobuf.ExtensibleMessage, Swift.Sendable {
+public struct Google_Protobuf_FileDescriptorSet : Swift.Sendable {
   public var file: [SwiftProtobuf.Google_Protobuf_FileDescriptorProto]
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public init()
-  public var _protobuf_extensionFieldValues: SwiftProtobuf.ExtensionFieldValueSet
 }
 public struct Google_Protobuf_FileDescriptorProto : Swift.Sendable {
   public var name: Swift.String {
@@ -523,17 +522,17 @@ public struct Google_Protobuf_ExtensionRangeOptions : SwiftProtobuf.ExtensibleMe
   }
   public mutating func clearVerification()
   public var unknownFields: SwiftProtobuf.UnknownStorage
-  public enum VerificationState : Swift.Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+  public enum VerificationState : SwiftProtobuf.Enum, Swift.CaseIterable {
+    public typealias RawValue = Swift.Int
     case declaration
     case unverified
     public init()
     public init?(rawValue: Swift.Int)
-    public typealias AllCases = [SwiftProtobuf.Google_Protobuf_ExtensionRangeOptions.VerificationState]
-    public typealias RawValue = Swift.Int
-    nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_ExtensionRangeOptions.VerificationState] {
+    public var rawValue: Swift.Int {
       get
     }
-    public var rawValue: Swift.Int {
+    public typealias AllCases = [SwiftProtobuf.Google_Protobuf_ExtensionRangeOptions.VerificationState]
+    nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_ExtensionRangeOptions.VerificationState] {
       get
     }
   }
@@ -674,7 +673,8 @@ public struct Google_Protobuf_FieldDescriptorProto : Swift.Sendable {
   }
   public mutating func clearProto3Optional()
   public var unknownFields: SwiftProtobuf.UnknownStorage
-  public enum TypeEnum : Swift.Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+  public enum TypeEnum : SwiftProtobuf.Enum, Swift.CaseIterable {
+    public typealias RawValue = Swift.Int
     case double
     case float
     case int64
@@ -695,27 +695,26 @@ public struct Google_Protobuf_FieldDescriptorProto : Swift.Sendable {
     case sint64
     public init()
     public init?(rawValue: Swift.Int)
-    public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FieldDescriptorProto.TypeEnum]
-    public typealias RawValue = Swift.Int
-    nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FieldDescriptorProto.TypeEnum] {
-      get
-    }
     public var rawValue: Swift.Int {
       get
     }
+    public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FieldDescriptorProto.TypeEnum]
+    nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FieldDescriptorProto.TypeEnum] {
+      get
+    }
   }
-  public enum Label : Swift.Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+  public enum Label : SwiftProtobuf.Enum, Swift.CaseIterable {
+    public typealias RawValue = Swift.Int
     case optional
     case repeated
     case required
     public init()
     public init?(rawValue: Swift.Int)
-    public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FieldDescriptorProto.Label]
-    public typealias RawValue = Swift.Int
-    nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FieldDescriptorProto.Label] {
+    public var rawValue: Swift.Int {
       get
     }
-    public var rawValue: Swift.Int {
+    public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FieldDescriptorProto.Label]
+    nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FieldDescriptorProto.Label] {
       get
     }
   }
@@ -1051,18 +1050,18 @@ public struct Google_Protobuf_FileOptions : SwiftProtobuf.ExtensibleMessage, @un
     set
   }
   public var unknownFields: SwiftProtobuf.UnknownStorage
-  public enum OptimizeMode : Swift.Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+  public enum OptimizeMode : SwiftProtobuf.Enum, Swift.CaseIterable {
+    public typealias RawValue = Swift.Int
     case speed
     case codeSize
     case liteRuntime
     public init()
     public init?(rawValue: Swift.Int)
-    public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FileOptions.OptimizeMode]
-    public typealias RawValue = Swift.Int
-    nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FileOptions.OptimizeMode] {
+    public var rawValue: Swift.Int {
       get
     }
-    public var rawValue: Swift.Int {
+    public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FileOptions.OptimizeMode]
+    nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FileOptions.OptimizeMode] {
       get
     }
   }
@@ -1225,52 +1224,53 @@ public struct Google_Protobuf_FieldOptions : SwiftProtobuf.ExtensibleMessage, @u
     set
   }
   public var unknownFields: SwiftProtobuf.UnknownStorage
-  public enum CType : Swift.Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+  public enum CType : SwiftProtobuf.Enum, Swift.CaseIterable {
+    public typealias RawValue = Swift.Int
     case string
     case cord
     case stringPiece
     public init()
     public init?(rawValue: Swift.Int)
-    public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FieldOptions.CType]
-    public typealias RawValue = Swift.Int
-    nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FieldOptions.CType] {
-      get
-    }
     public var rawValue: Swift.Int {
       get
     }
+    public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FieldOptions.CType]
+    nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FieldOptions.CType] {
+      get
+    }
   }
-  public enum JSType : Swift.Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+  public enum JSType : SwiftProtobuf.Enum, Swift.CaseIterable {
+    public typealias RawValue = Swift.Int
     case jsNormal
     case jsString
     case jsNumber
     public init()
     public init?(rawValue: Swift.Int)
-    public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FieldOptions.JSType]
-    public typealias RawValue = Swift.Int
-    nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FieldOptions.JSType] {
-      get
-    }
     public var rawValue: Swift.Int {
       get
     }
+    public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FieldOptions.JSType]
+    nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FieldOptions.JSType] {
+      get
+    }
   }
-  public enum OptionRetention : Swift.Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+  public enum OptionRetention : SwiftProtobuf.Enum, Swift.CaseIterable {
+    public typealias RawValue = Swift.Int
     case retentionUnknown
     case retentionRuntime
     case retentionSource
     public init()
     public init?(rawValue: Swift.Int)
-    public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FieldOptions.OptionRetention]
-    public typealias RawValue = Swift.Int
-    nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FieldOptions.OptionRetention] {
-      get
-    }
     public var rawValue: Swift.Int {
       get
     }
+    public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FieldOptions.OptionRetention]
+    nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FieldOptions.OptionRetention] {
+      get
+    }
   }
-  public enum OptionTargetType : Swift.Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+  public enum OptionTargetType : SwiftProtobuf.Enum, Swift.CaseIterable {
+    public typealias RawValue = Swift.Int
     case targetTypeUnknown
     case targetTypeFile
     case targetTypeExtensionRange
@@ -1283,12 +1283,11 @@ public struct Google_Protobuf_FieldOptions : SwiftProtobuf.ExtensibleMessage, @u
     case targetTypeMethod
     public init()
     public init?(rawValue: Swift.Int)
-    public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FieldOptions.OptionTargetType]
-    public typealias RawValue = Swift.Int
-    nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FieldOptions.OptionTargetType] {
+    public var rawValue: Swift.Int {
       get
     }
-    public var rawValue: Swift.Int {
+    public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FieldOptions.OptionTargetType]
+    nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FieldOptions.OptionTargetType] {
       get
     }
   }
@@ -1490,18 +1489,18 @@ public struct Google_Protobuf_MethodOptions : SwiftProtobuf.ExtensibleMessage, S
   public mutating func clearFeatures()
   public var uninterpretedOption: [SwiftProtobuf.Google_Protobuf_UninterpretedOption]
   public var unknownFields: SwiftProtobuf.UnknownStorage
-  public enum IdempotencyLevel : Swift.Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+  public enum IdempotencyLevel : SwiftProtobuf.Enum, Swift.CaseIterable {
+    public typealias RawValue = Swift.Int
     case idempotencyUnknown
     case noSideEffects
     case idempotent
     public init()
     public init?(rawValue: Swift.Int)
-    public typealias AllCases = [SwiftProtobuf.Google_Protobuf_MethodOptions.IdempotencyLevel]
-    public typealias RawValue = Swift.Int
-    nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_MethodOptions.IdempotencyLevel] {
+    public var rawValue: Swift.Int {
       get
     }
-    public var rawValue: Swift.Int {
+    public typealias AllCases = [SwiftProtobuf.Google_Protobuf_MethodOptions.IdempotencyLevel]
+    nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_MethodOptions.IdempotencyLevel] {
       get
     }
   }
@@ -1630,118 +1629,95 @@ public struct Google_Protobuf_FeatureSet : SwiftProtobuf.ExtensibleMessage, Swif
     get
   }
   public mutating func clearJsonFormat()
-  public var enforceNamingStyle: SwiftProtobuf.Google_Protobuf_FeatureSet.EnforceNamingStyle {
-    get
-    set
-  }
-  public var hasEnforceNamingStyle: Swift.Bool {
-    get
-  }
-  public mutating func clearEnforceNamingStyle()
   public var unknownFields: SwiftProtobuf.UnknownStorage
-  public enum FieldPresence : Swift.Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+  public enum FieldPresence : SwiftProtobuf.Enum, Swift.CaseIterable {
+    public typealias RawValue = Swift.Int
     case unknown
     case explicit
     case implicit
     case legacyRequired
     public init()
     public init?(rawValue: Swift.Int)
-    public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FeatureSet.FieldPresence]
-    public typealias RawValue = Swift.Int
-    nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FeatureSet.FieldPresence] {
-      get
-    }
     public var rawValue: Swift.Int {
       get
     }
+    public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FeatureSet.FieldPresence]
+    nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FeatureSet.FieldPresence] {
+      get
+    }
   }
-  public enum EnumType : Swift.Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+  public enum EnumType : SwiftProtobuf.Enum, Swift.CaseIterable {
+    public typealias RawValue = Swift.Int
     case unknown
     case open
     case closed
     public init()
     public init?(rawValue: Swift.Int)
-    public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FeatureSet.EnumType]
-    public typealias RawValue = Swift.Int
-    nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FeatureSet.EnumType] {
-      get
-    }
     public var rawValue: Swift.Int {
       get
     }
+    public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FeatureSet.EnumType]
+    nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FeatureSet.EnumType] {
+      get
+    }
   }
-  public enum RepeatedFieldEncoding : Swift.Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+  public enum RepeatedFieldEncoding : SwiftProtobuf.Enum, Swift.CaseIterable {
+    public typealias RawValue = Swift.Int
     case unknown
     case packed
     case expanded
     public init()
     public init?(rawValue: Swift.Int)
-    public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FeatureSet.RepeatedFieldEncoding]
-    public typealias RawValue = Swift.Int
-    nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FeatureSet.RepeatedFieldEncoding] {
-      get
-    }
     public var rawValue: Swift.Int {
       get
     }
+    public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FeatureSet.RepeatedFieldEncoding]
+    nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FeatureSet.RepeatedFieldEncoding] {
+      get
+    }
   }
-  public enum Utf8Validation : Swift.Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+  public enum Utf8Validation : SwiftProtobuf.Enum, Swift.CaseIterable {
+    public typealias RawValue = Swift.Int
     case unknown
     case verify
     case none
     public init()
     public init?(rawValue: Swift.Int)
-    public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FeatureSet.Utf8Validation]
-    public typealias RawValue = Swift.Int
-    nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FeatureSet.Utf8Validation] {
-      get
-    }
     public var rawValue: Swift.Int {
       get
     }
+    public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FeatureSet.Utf8Validation]
+    nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FeatureSet.Utf8Validation] {
+      get
+    }
   }
-  public enum MessageEncoding : Swift.Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+  public enum MessageEncoding : SwiftProtobuf.Enum, Swift.CaseIterable {
+    public typealias RawValue = Swift.Int
     case unknown
     case lengthPrefixed
     case delimited
     public init()
     public init?(rawValue: Swift.Int)
-    public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FeatureSet.MessageEncoding]
-    public typealias RawValue = Swift.Int
-    nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FeatureSet.MessageEncoding] {
-      get
-    }
     public var rawValue: Swift.Int {
       get
     }
+    public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FeatureSet.MessageEncoding]
+    nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FeatureSet.MessageEncoding] {
+      get
+    }
   }
-  public enum JsonFormat : Swift.Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+  public enum JsonFormat : SwiftProtobuf.Enum, Swift.CaseIterable {
+    public typealias RawValue = Swift.Int
     case unknown
     case allow
     case legacyBestEffort
     public init()
     public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
     public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FeatureSet.JsonFormat]
-    public typealias RawValue = Swift.Int
     nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FeatureSet.JsonFormat] {
-      get
-    }
-    public var rawValue: Swift.Int {
-      get
-    }
-  }
-  public enum EnforceNamingStyle : Swift.Int, SwiftProtobuf.Enum, Swift.CaseIterable {
-    case unknown
-    case style2024
-    case styleLegacy
-    public init()
-    public init?(rawValue: Swift.Int)
-    public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FeatureSet.EnforceNamingStyle]
-    public typealias RawValue = Swift.Int
-    nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FeatureSet.EnforceNamingStyle] {
-      get
-    }
-    public var rawValue: Swift.Int {
       get
     }
   }
@@ -1797,7 +1773,7 @@ public struct Google_Protobuf_FeatureSetDefaults : Swift.Sendable {
   }
   public init()
 }
-public struct Google_Protobuf_SourceCodeInfo : SwiftProtobuf.ExtensibleMessage, Swift.Sendable {
+public struct Google_Protobuf_SourceCodeInfo : Swift.Sendable {
   public var location: [SwiftProtobuf.Google_Protobuf_SourceCodeInfo.Location]
   public var unknownFields: SwiftProtobuf.UnknownStorage
   public struct Location : Swift.Sendable {
@@ -1824,7 +1800,6 @@ public struct Google_Protobuf_SourceCodeInfo : SwiftProtobuf.ExtensibleMessage, 
     public init()
   }
   public init()
-  public var _protobuf_extensionFieldValues: SwiftProtobuf.ExtensionFieldValueSet
 }
 public struct Google_Protobuf_GeneratedCodeInfo : Swift.Sendable {
   public var annotation: [SwiftProtobuf.Google_Protobuf_GeneratedCodeInfo.Annotation]
@@ -1864,18 +1839,18 @@ public struct Google_Protobuf_GeneratedCodeInfo : Swift.Sendable {
     }
     public mutating func clearSemantic()
     public var unknownFields: SwiftProtobuf.UnknownStorage
-    public enum Semantic : Swift.Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    public enum Semantic : SwiftProtobuf.Enum, Swift.CaseIterable {
+      public typealias RawValue = Swift.Int
       case none
       case set
       case alias
       public init()
       public init?(rawValue: Swift.Int)
-      public typealias AllCases = [SwiftProtobuf.Google_Protobuf_GeneratedCodeInfo.Annotation.Semantic]
-      public typealias RawValue = Swift.Int
-      nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_GeneratedCodeInfo.Annotation.Semantic] {
+      public var rawValue: Swift.Int {
         get
       }
-      public var rawValue: Swift.Int {
+      public typealias AllCases = [SwiftProtobuf.Google_Protobuf_GeneratedCodeInfo.Annotation.Semantic]
+      nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_GeneratedCodeInfo.Annotation.Semantic] {
         get
       }
     }
@@ -2267,9 +2242,6 @@ extension SwiftProtobuf.Google_Protobuf_FeatureSet.MessageEncoding : SwiftProtob
 extension SwiftProtobuf.Google_Protobuf_FeatureSet.JsonFormat : SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap
 }
-extension SwiftProtobuf.Google_Protobuf_FeatureSet.EnforceNamingStyle : SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
-}
 extension SwiftProtobuf.Google_Protobuf_FeatureSetDefaults : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: Swift.String
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap
@@ -2299,9 +2271,6 @@ extension SwiftProtobuf.Google_Protobuf_FeatureSetDefaults.FeatureSetEditionDefa
 extension SwiftProtobuf.Google_Protobuf_SourceCodeInfo : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: Swift.String
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap
-  public var isInitialized: Swift.Bool {
-    get
-  }
   public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
   public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
   public static func == (lhs: SwiftProtobuf.Google_Protobuf_SourceCodeInfo, rhs: SwiftProtobuf.Google_Protobuf_SourceCodeInfo) -> Swift.Bool
@@ -2858,20 +2827,10 @@ extension SwiftProtobuf.Google_Protobuf_Duration : Swift.ExpressibleByFloatLiter
   public init(floatLiteral value: Swift.Double)
 }
 extension SwiftProtobuf.Google_Protobuf_Duration {
-  @available(*, deprecated, renamed: "init(rounding:rule:)")
   public init(timeInterval: Foundation.TimeInterval)
-  public init(rounding timeInterval: Foundation.TimeInterval, rule: Swift.FloatingPointRoundingRule = .toNearestOrAwayFromZero)
   public var timeInterval: Foundation.TimeInterval {
     get
   }
-}
-@available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
-extension SwiftProtobuf.Google_Protobuf_Duration {
-  public init(rounding duration: Swift.Duration, rule: Swift.FloatingPointRoundingRule = .toNearestOrAwayFromZero)
-}
-@available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
-extension Swift.Duration {
-  public init(_ duration: SwiftProtobuf.Google_Protobuf_Duration)
 }
 prefix public func - (operand: SwiftProtobuf.Google_Protobuf_Duration) -> SwiftProtobuf.Google_Protobuf_Duration
 public func + (lhs: SwiftProtobuf.Google_Protobuf_Duration, rhs: SwiftProtobuf.Google_Protobuf_Duration) -> SwiftProtobuf.Google_Protobuf_Duration
@@ -2936,12 +2895,8 @@ extension SwiftProtobuf.Google_Protobuf_Timestamp {
   public init(seconds: Swift.Int64 = 0, nanos: Swift.Int32 = 0)
 }
 extension SwiftProtobuf.Google_Protobuf_Timestamp {
-  @available(*, deprecated, renamed: "init(roundingTimeIntervalSince1970:rule:)")
   public init(timeIntervalSince1970: Foundation.TimeInterval)
-  public init(roundingTimeIntervalSince1970 timeIntervalSince1970: Foundation.TimeInterval, rule: Swift.FloatingPointRoundingRule = .toNearestOrAwayFromZero)
-  @available(*, deprecated, renamed: "init(roundingTimeIntervalSinceReferenceDate:rule:)")
   public init(timeIntervalSinceReferenceDate: Foundation.TimeInterval)
-  public init(roundingTimeIntervalSinceReferenceDate timeIntervalSinceReferenceDate: Foundation.TimeInterval, rule: Swift.FloatingPointRoundingRule = .toNearestOrAwayFromZero)
   public init(date: Foundation.Date)
   public var timeIntervalSince1970: Foundation.TimeInterval {
     get
@@ -3441,12 +3396,6 @@ extension SwiftProtobuf.SwiftProtobufError {
     public static var binaryStreamDecodingError: SwiftProtobuf.SwiftProtobufError.Code {
       get
     }
-    public static var jsonDecodingError: SwiftProtobuf.SwiftProtobufError.Code {
-      get
-    }
-    public static var jsonEncodingError: SwiftProtobuf.SwiftProtobufError.Code {
-      get
-    }
     public func hash(into hasher: inout Swift.Hasher)
     public static func == (a: SwiftProtobuf.SwiftProtobufError.Code, b: SwiftProtobuf.SwiftProtobufError.Code) -> Swift.Bool
     public var hashValue: Swift.Int {
@@ -3485,14 +3434,6 @@ extension SwiftProtobuf.SwiftProtobufError {
     public static func tooLarge(function: Swift.String = #function, file: Swift.String = #fileID, line: Swift.Int = #line) -> SwiftProtobuf.SwiftProtobufError
     public static func malformedLength(function: Swift.String = #function, file: Swift.String = #fileID, line: Swift.Int = #line) -> SwiftProtobuf.SwiftProtobufError
     public static func noBytesAvailable(function: Swift.String = #function, file: Swift.String = #fileID, line: Swift.Int = #line) -> SwiftProtobuf.SwiftProtobufError
-  }
-  public enum JSONDecoding {
-    public static func invalidAnyTypeURL(type_url: Swift.String, function: Swift.String = #function, file: Swift.String = #fileID, line: Swift.Int = #line) -> SwiftProtobuf.SwiftProtobufError
-    public static func emptyAnyTypeURL(function: Swift.String = #function, file: Swift.String = #fileID, line: Swift.Int = #line) -> SwiftProtobuf.SwiftProtobufError
-  }
-  public enum JSONEncoding {
-    public static func invalidAnyTypeURL(type_url: Swift.String, function: Swift.String = #function, file: Swift.String = #fileID, line: Swift.Int = #line) -> SwiftProtobuf.SwiftProtobufError
-    public static func emptyAnyTypeURL(function: Swift.String = #function, file: Swift.String = #fileID, line: Swift.Int = #line) -> SwiftProtobuf.SwiftProtobufError
   }
 }
 public enum TextFormatDecodingError : Swift.Error {
