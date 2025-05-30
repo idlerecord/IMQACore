@@ -429,6 +429,10 @@ SWIFT_CLASS_NAMED("Options")
 /// \param id userID
 ///
 + (void)setUserIdWithId:(NSString * _Nullable)id;
+/// userID 회득
+///
+/// returns:
+/// userID
 + (NSString * _Nullable)getUserId SWIFT_WARN_UNUSED_RESULT;
 /// custom log 찍기
 /// \param level log level
@@ -450,6 +454,13 @@ SWIFT_CLASS_NAMED("Options")
 /// \param buttonClassName 버튼 클라스
 ///
 + (void)sendClickEventWithButtonName:(NSString * _Nonnull)buttonName buttonClassName:(NSString * _Nonnull)buttonClassName;
+/// 1:) xib 로 webview layout시 주동으로 이 함수를 호출하세요.  webview와 연동하는 script주입하는 방법입니다.
+/// 2:) code로 initial시 호출하지 않아도 됩니다.
+/// 즉: 아래와 같은 code로 initial시
+/// let configuration = WKWebViewConfiguration()
+/// let view = WKWebView(frame: .zero, configuration: configuration)
+/// \param userContentController userContentController
+///
 + (void)setWebviewConfigurationWithUserContentController:(WKUserContentController * _Nonnull)userContentController;
 @end
 
