@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
-// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name SwiftProtobuf
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
+// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name SwiftProtobuf
+// swift-module-flags-ignorable: -enable-bare-slash-regex
 import Dispatch
 import Foundation
 import Swift
@@ -106,6 +106,7 @@ extension SwiftProtobuf.Google_Protobuf_Mixin : SwiftProtobuf.Message, SwiftProt
     get
   }
 }
+#if compiler(>=5.3) && $RethrowsProtocol
 @available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 extension _Concurrency.AsyncSequence where Self.Element == Swift.UInt8 {
   @inlinable public func binaryProtobufDelimitedMessages<M>(of messageType: M.Type = M.self, extensions: (any SwiftProtobuf.ExtensionMap)? = nil, partial: Swift.Bool = false, options: SwiftProtobuf.BinaryDecodingOptions = BinaryDecodingOptions()) -> SwiftProtobuf.AsyncMessageSequence<Self, M> where M : SwiftProtobuf.Message {
@@ -117,6 +118,8 @@ extension _Concurrency.AsyncSequence where Self.Element == Swift.UInt8 {
         )
     }
 }
+#endif
+#if compiler(>=5.3) && $RethrowsProtocol
 @available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 public struct AsyncMessageSequence<Base, M> : _Concurrency.AsyncSequence where Base : _Concurrency.AsyncSequence, M : SwiftProtobuf.Message, Base.Element == Swift.UInt8 {
   public typealias Element = M
@@ -130,6 +133,7 @@ public struct AsyncMessageSequence<Base, M> : _Concurrency.AsyncSequence where B
     internal let partial: Swift.Bool
     @usableFromInline
     internal let options: SwiftProtobuf.BinaryDecodingOptions
+    #if compiler(>=5.3) && $AsyncAwait
     @inlinable internal mutating func nextVarInt() async throws -> Swift.UInt64? {
             var messageSize: UInt64 = 0
             var shift: UInt64 = 0
@@ -146,14 +150,18 @@ public struct AsyncMessageSequence<Base, M> : _Concurrency.AsyncSequence where B
                 }
             }
             if shift > 0 {
-                 
+                // The stream has ended inside a varint.
                 iterator = nil
                 throw BinaryDelimited.Error.truncated
             }
-            return nil   
+            return nil  // End of stream reached.
         }
+    #endif
+    #if compiler(>=5.3) && $AsyncAwait
     @usableFromInline
     internal mutating func readBytes(_ size: Swift.Int) async throws -> [Swift.UInt8]
+    #endif
+    #if compiler(>=5.3) && $AsyncAwait
     @inlinable public mutating func next() async throws -> M? {
             guard let messageSize = try await nextVarInt() else {
                 iterator = nil
@@ -179,31 +187,22 @@ public struct AsyncMessageSequence<Base, M> : _Concurrency.AsyncSequence where B
                 options: options
             )
         }
-    @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
-    public typealias Element = M
-    #if compiler(>=5.3) && $AssociatedTypeImplements
-    @available(iOS 18.0, tvOS 18.0, watchOS 11.0, visionOS 2.0, macOS 15.0, *)
-    @_implements(_Concurrency.AsyncIteratorProtocol, Failure) public typealias __AsyncIteratorProtocol_Failure = any Swift.Error
-    #else
-    @available(iOS 18.0, tvOS 18.0, watchOS 11.0, visionOS 2.0, macOS 15.0, *)
-    public typealias __AsyncIteratorProtocol_Failure = any Swift.Error
     #endif
+    public typealias Element = M
   }
   public func makeAsyncIterator() -> SwiftProtobuf.AsyncMessageSequence<Base, M>.AsyncIterator
-  #if compiler(>=5.3) && $AssociatedTypeImplements
-  @available(iOS 18.0, tvOS 18.0, watchOS 11.0, visionOS 2.0, macOS 15.0, *)
-  @_implements(_Concurrency.AsyncSequence, Failure) public typealias __AsyncSequence_Failure = any Swift.Error
-  #else
-  @available(iOS 18.0, tvOS 18.0, watchOS 11.0, visionOS 2.0, macOS 15.0, *)
-  public typealias __AsyncSequence_Failure = any Swift.Error
-  #endif
 }
+#endif
+#if compiler(>=5.3) && $RethrowsProtocol
 @available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
 extension SwiftProtobuf.AsyncMessageSequence : Swift.Sendable where Base : Swift.Sendable {
 }
+#endif
+#if compiler(>=5.3) && $RethrowsProtocol
 @available(*, unavailable)
 extension SwiftProtobuf.AsyncMessageSequence.AsyncIterator : Swift.Sendable {
 }
+#endif
 public enum BinaryDecodingError : Swift.Error {
   case trailingGarbage
   case truncated
@@ -334,7 +333,7 @@ public enum Google_Protobuf_Edition : SwiftProtobuf.Enum, Swift.CaseIterable {
     get
   }
   public typealias AllCases = [SwiftProtobuf.Google_Protobuf_Edition]
-  nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_Edition] {
+  public static var allCases: [SwiftProtobuf.Google_Protobuf_Edition] {
     get
   }
 }
@@ -532,7 +531,7 @@ public struct Google_Protobuf_ExtensionRangeOptions : SwiftProtobuf.ExtensibleMe
       get
     }
     public typealias AllCases = [SwiftProtobuf.Google_Protobuf_ExtensionRangeOptions.VerificationState]
-    nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_ExtensionRangeOptions.VerificationState] {
+    public static var allCases: [SwiftProtobuf.Google_Protobuf_ExtensionRangeOptions.VerificationState] {
       get
     }
   }
@@ -699,7 +698,7 @@ public struct Google_Protobuf_FieldDescriptorProto : Swift.Sendable {
       get
     }
     public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FieldDescriptorProto.TypeEnum]
-    nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FieldDescriptorProto.TypeEnum] {
+    public static var allCases: [SwiftProtobuf.Google_Protobuf_FieldDescriptorProto.TypeEnum] {
       get
     }
   }
@@ -714,7 +713,7 @@ public struct Google_Protobuf_FieldDescriptorProto : Swift.Sendable {
       get
     }
     public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FieldDescriptorProto.Label]
-    nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FieldDescriptorProto.Label] {
+    public static var allCases: [SwiftProtobuf.Google_Protobuf_FieldDescriptorProto.Label] {
       get
     }
   }
@@ -1061,7 +1060,7 @@ public struct Google_Protobuf_FileOptions : SwiftProtobuf.ExtensibleMessage, @un
       get
     }
     public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FileOptions.OptimizeMode]
-    nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FileOptions.OptimizeMode] {
+    public static var allCases: [SwiftProtobuf.Google_Protobuf_FileOptions.OptimizeMode] {
       get
     }
   }
@@ -1235,7 +1234,7 @@ public struct Google_Protobuf_FieldOptions : SwiftProtobuf.ExtensibleMessage, @u
       get
     }
     public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FieldOptions.CType]
-    nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FieldOptions.CType] {
+    public static var allCases: [SwiftProtobuf.Google_Protobuf_FieldOptions.CType] {
       get
     }
   }
@@ -1250,7 +1249,7 @@ public struct Google_Protobuf_FieldOptions : SwiftProtobuf.ExtensibleMessage, @u
       get
     }
     public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FieldOptions.JSType]
-    nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FieldOptions.JSType] {
+    public static var allCases: [SwiftProtobuf.Google_Protobuf_FieldOptions.JSType] {
       get
     }
   }
@@ -1265,7 +1264,7 @@ public struct Google_Protobuf_FieldOptions : SwiftProtobuf.ExtensibleMessage, @u
       get
     }
     public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FieldOptions.OptionRetention]
-    nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FieldOptions.OptionRetention] {
+    public static var allCases: [SwiftProtobuf.Google_Protobuf_FieldOptions.OptionRetention] {
       get
     }
   }
@@ -1287,7 +1286,7 @@ public struct Google_Protobuf_FieldOptions : SwiftProtobuf.ExtensibleMessage, @u
       get
     }
     public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FieldOptions.OptionTargetType]
-    nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FieldOptions.OptionTargetType] {
+    public static var allCases: [SwiftProtobuf.Google_Protobuf_FieldOptions.OptionTargetType] {
       get
     }
   }
@@ -1500,7 +1499,7 @@ public struct Google_Protobuf_MethodOptions : SwiftProtobuf.ExtensibleMessage, S
       get
     }
     public typealias AllCases = [SwiftProtobuf.Google_Protobuf_MethodOptions.IdempotencyLevel]
-    nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_MethodOptions.IdempotencyLevel] {
+    public static var allCases: [SwiftProtobuf.Google_Protobuf_MethodOptions.IdempotencyLevel] {
       get
     }
   }
@@ -1642,7 +1641,7 @@ public struct Google_Protobuf_FeatureSet : SwiftProtobuf.ExtensibleMessage, Swif
       get
     }
     public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FeatureSet.FieldPresence]
-    nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FeatureSet.FieldPresence] {
+    public static var allCases: [SwiftProtobuf.Google_Protobuf_FeatureSet.FieldPresence] {
       get
     }
   }
@@ -1657,7 +1656,7 @@ public struct Google_Protobuf_FeatureSet : SwiftProtobuf.ExtensibleMessage, Swif
       get
     }
     public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FeatureSet.EnumType]
-    nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FeatureSet.EnumType] {
+    public static var allCases: [SwiftProtobuf.Google_Protobuf_FeatureSet.EnumType] {
       get
     }
   }
@@ -1672,7 +1671,7 @@ public struct Google_Protobuf_FeatureSet : SwiftProtobuf.ExtensibleMessage, Swif
       get
     }
     public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FeatureSet.RepeatedFieldEncoding]
-    nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FeatureSet.RepeatedFieldEncoding] {
+    public static var allCases: [SwiftProtobuf.Google_Protobuf_FeatureSet.RepeatedFieldEncoding] {
       get
     }
   }
@@ -1687,7 +1686,7 @@ public struct Google_Protobuf_FeatureSet : SwiftProtobuf.ExtensibleMessage, Swif
       get
     }
     public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FeatureSet.Utf8Validation]
-    nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FeatureSet.Utf8Validation] {
+    public static var allCases: [SwiftProtobuf.Google_Protobuf_FeatureSet.Utf8Validation] {
       get
     }
   }
@@ -1702,7 +1701,7 @@ public struct Google_Protobuf_FeatureSet : SwiftProtobuf.ExtensibleMessage, Swif
       get
     }
     public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FeatureSet.MessageEncoding]
-    nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FeatureSet.MessageEncoding] {
+    public static var allCases: [SwiftProtobuf.Google_Protobuf_FeatureSet.MessageEncoding] {
       get
     }
   }
@@ -1717,7 +1716,7 @@ public struct Google_Protobuf_FeatureSet : SwiftProtobuf.ExtensibleMessage, Swif
       get
     }
     public typealias AllCases = [SwiftProtobuf.Google_Protobuf_FeatureSet.JsonFormat]
-    nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_FeatureSet.JsonFormat] {
+    public static var allCases: [SwiftProtobuf.Google_Protobuf_FeatureSet.JsonFormat] {
       get
     }
   }
@@ -1850,7 +1849,7 @@ public struct Google_Protobuf_GeneratedCodeInfo : Swift.Sendable {
         get
       }
       public typealias AllCases = [SwiftProtobuf.Google_Protobuf_GeneratedCodeInfo.Annotation.Semantic]
-      nonisolated public static var allCases: [SwiftProtobuf.Google_Protobuf_GeneratedCodeInfo.Annotation.Semantic] {
+      public static var allCases: [SwiftProtobuf.Google_Protobuf_GeneratedCodeInfo.Annotation.Semantic] {
         get
       }
     }
