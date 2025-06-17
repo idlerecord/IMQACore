@@ -3018,6 +3018,7 @@ public struct ResourceSemantics {
   public static let deviceManufacturer: Swift.String
   public static let deviceBrand: Swift.String
   public static let deviceModelIdentifier: Swift.String
+  public static let serviceType: Swift.String
 }
 public struct SpanSemantics {
   public static let spanType: Swift.String

@@ -86647,6 +86647,54 @@
                 "accessorKind": "get"
               }
             ]
+          },
+          {
+            "kind": "Var",
+            "name": "serviceType",
+            "printedName": "serviceType",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8IMQACore17ResourceSemanticsV11serviceTypeSSvpZ",
+            "mangledName": "$s8IMQACore17ResourceSemanticsV11serviceTypeSSvpZ",
+            "moduleName": "IMQACore",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8IMQACore17ResourceSemanticsV11serviceTypeSSvgZ",
+                "mangledName": "$s8IMQACore17ResourceSemanticsV11serviceTypeSSvgZ",
+                "moduleName": "IMQACore",
+                "static": true,
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
           }
         ],
         "declKind": "Struct",
@@ -93842,7 +93890,7 @@
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/IMQAOtel.swift",
       "kind": "Dictionary",
-      "offset": 4439,
+      "offset": 4529,
       "length": 3,
       "value": "[]"
     },
@@ -99689,7 +99737,7 @@
       "kind": "StringLiteral",
       "offset": 162,
       "length": 8,
-      "value": "\"1.0.66\""
+      "value": "\"1.0.67\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Options\/IMQAMeta.swift",
@@ -99823,6 +99871,13 @@
       "offset": 1011,
       "length": 25,
       "value": "\"device.model.identifier\""
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/ResourceSemantics.swift",
+      "kind": "StringLiteral",
+      "offset": 1100,
+      "length": 19,
+      "value": "\"imqa.service.type\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
