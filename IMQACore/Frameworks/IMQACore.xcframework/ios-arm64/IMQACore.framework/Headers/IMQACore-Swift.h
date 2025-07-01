@@ -407,7 +407,7 @@ SWIFT_CLASS_NAMED("Endpoints")
 
 SWIFT_CLASS_NAMED("Options")
 @interface IMQAOptions : NSObject
-- (nonnull instancetype)initWithServiceKey:(NSString * _Nonnull)serviceKey endpoints:(IMQAEndpoints * _Nullable)endpoints sampleRate:(double)sampleRate OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithServiceKey:(NSString * _Nonnull)serviceKey endpoints:(IMQAEndpoints * _Nullable)endpoints sampleRate:(double)sampleRate isDeviceIdEnable:(BOOL)isDeviceIdEnable OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end

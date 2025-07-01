@@ -2983,7 +2983,8 @@ extension IMQACore.IMQA {
     final public let serviceKey: Swift.String
     final public let endpoints: IMQACore.IMQA.Endpoints?
     final public var sampleRate: Swift.Double
-    @objc public init(serviceKey: Swift.String, endpoints: IMQACore.IMQA.Endpoints? = nil, sampleRate: Swift.Double = 1.0)
+    final public var isDeviceIdEnable: Swift.Bool
+    @objc public init(serviceKey: Swift.String, endpoints: IMQACore.IMQA.Endpoints? = nil, sampleRate: Swift.Double = 1.0, isDeviceIdEnable: Swift.Bool = true)
     @objc deinit
   }
 }

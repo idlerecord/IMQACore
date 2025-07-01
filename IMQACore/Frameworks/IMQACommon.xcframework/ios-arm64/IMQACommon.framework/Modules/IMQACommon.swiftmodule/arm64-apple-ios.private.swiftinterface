@@ -4,6 +4,7 @@
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface
 import Compression
 import Foundation
+import Security
 import Swift
 import _Concurrency
 import _StringProcessing
@@ -89,6 +90,37 @@ extension Foundation.Date {
   public var serializedInterval: Swift.Int {
     get
   }
+}
+public protocol KeychainInterface {
+  func valueFor(service: CoreFoundation.CFString, account: CoreFoundation.CFString) -> (value: Swift.String?, status: Darwin.OSStatus)
+  func setValue(service: CoreFoundation.CFString, account: CoreFoundation.CFString, value: Swift.String) -> Darwin.OSStatus
+  func deleteValue(service: CoreFoundation.CFString, account: CoreFoundation.CFString) -> Darwin.OSStatus
+}
+@_hasMissingDesignatedInitializers public class DefaultKeychainInterface : IMQACommon.KeychainInterface {
+  public func valueFor(service: CoreFoundation.CFString, account: CoreFoundation.CFString) -> (value: Swift.String?, status: Darwin.OSStatus)
+  public func setValue(service: CoreFoundation.CFString, account: CoreFoundation.CFString, value: Swift.String) -> Darwin.OSStatus
+  public func deleteValue(service: CoreFoundation.CFString, account: CoreFoundation.CFString) -> Darwin.OSStatus
+  @objc deinit
+}
+public struct DeviceIdentifier : Swift.Equatable {
+  public init(value: Foundation.UUID)
+  public init?(string: Swift.String?)
+  public var hex: Swift.String {
+    get
+  }
+  public static func == (a: IMQACommon.DeviceIdentifier, b: IMQACommon.DeviceIdentifier) -> Swift.Bool
+}
+extension IMQACommon.DeviceIdentifier {
+  public func intValue(digitCount: Swift.UInt) -> Swift.UInt64
+}
+extension IMQACommon.DeviceIdentifier {
+  public static func retrieve() -> IMQACommon.DeviceIdentifier
+}
+@_hasMissingDesignatedInitializers public class KeychainAccess {
+  public static var deviceId: Foundation.UUID {
+    get
+  }
+  @objc deinit
 }
 public struct SessionIdentifier : Swift.Equatable {
   public init(value: Foundation.UUID)

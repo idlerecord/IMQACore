@@ -3698,9 +3698,105 @@
                 ]
               },
               {
+                "kind": "Var",
+                "name": "isDeviceIdEnable",
+                "printedName": "isDeviceIdEnable",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:8IMQACore4IMQAC7OptionsC16isDeviceIdEnableSbvp",
+                "mangledName": "$s8IMQACore4IMQAC7OptionsC16isDeviceIdEnableSbvp",
+                "moduleName": "IMQACore",
+                "declAttributes": [
+                  "HasInitialValue",
+                  "Final",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:8IMQACore4IMQAC7OptionsC16isDeviceIdEnableSbvg",
+                    "mangledName": "$s8IMQACore4IMQAC7OptionsC16isDeviceIdEnableSbvg",
+                    "moduleName": "IMQACore",
+                    "implicit": true,
+                    "declAttributes": [
+                      "Final"
+                    ],
+                    "accessorKind": "get"
+                  },
+                  {
+                    "kind": "Accessor",
+                    "name": "Set",
+                    "printedName": "Set()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:8IMQACore4IMQAC7OptionsC16isDeviceIdEnableSbvs",
+                    "mangledName": "$s8IMQACore4IMQAC7OptionsC16isDeviceIdEnableSbvs",
+                    "moduleName": "IMQACore",
+                    "implicit": true,
+                    "declAttributes": [
+                      "Final"
+                    ],
+                    "accessorKind": "set"
+                  },
+                  {
+                    "kind": "Accessor",
+                    "name": "Modify",
+                    "printedName": "Modify()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:8IMQACore4IMQAC7OptionsC16isDeviceIdEnableSbvM",
+                    "mangledName": "$s8IMQACore4IMQAC7OptionsC16isDeviceIdEnableSbvM",
+                    "moduleName": "IMQACore",
+                    "implicit": true,
+                    "declAttributes": [
+                      "Final"
+                    ],
+                    "accessorKind": "_modify"
+                  }
+                ]
+              },
+              {
                 "kind": "Constructor",
                 "name": "init",
-                "printedName": "init(serviceKey:endpoints:sampleRate:)",
+                "printedName": "init(serviceKey:endpoints:sampleRate:isDeviceIdEnable:)",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -3735,13 +3831,20 @@
                     "printedName": "Swift.Double",
                     "hasDefaultArg": true,
                     "usr": "s:Sd"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "hasDefaultArg": true,
+                    "usr": "s:Sb"
                   }
                 ],
                 "declKind": "Constructor",
-                "usr": "s:8IMQACore4IMQAC7OptionsC10serviceKey9endpoints10sampleRateAESS_AC9EndpointsCSgSdtcfc",
-                "mangledName": "$s8IMQACore4IMQAC7OptionsC10serviceKey9endpoints10sampleRateAESS_AC9EndpointsCSgSdtcfc",
+                "usr": "s:8IMQACore4IMQAC7OptionsC10serviceKey9endpoints10sampleRate16isDeviceIdEnableAESS_AC9EndpointsCSgSdSbtcfc",
+                "mangledName": "$s8IMQACore4IMQAC7OptionsC10serviceKey9endpoints10sampleRate16isDeviceIdEnableAESS_AC9EndpointsCSgSdSbtcfc",
                 "moduleName": "IMQACore",
-                "objc_name": "initWithServiceKey:endpoints:sampleRate:",
+                "objc_name": "initWithServiceKey:endpoints:sampleRate:isDeviceIdEnable:",
                 "declAttributes": [
                   "AccessControl",
                   "ObjC"
@@ -93778,51 +93881,30 @@
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Capture\/UX\/View\/UIViewControllerHandler.swift",
       "kind": "Dictionary",
-      "offset": 449,
+      "offset": 443,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Capture\/UX\/View\/UIViewControllerHandler.swift",
       "kind": "Dictionary",
-      "offset": 511,
+      "offset": 505,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Capture\/UX\/View\/UIViewControllerHandler.swift",
       "kind": "Dictionary",
-      "offset": 578,
-      "length": 3,
-      "value": "[]"
-    },
-    {
-      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Capture\/UX\/View\/UIViewControllerHandler.swift",
-      "kind": "Dictionary",
-      "offset": 643,
-      "length": 3,
-      "value": "[]"
-    },
-    {
-      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Capture\/UX\/View\/UIViewControllerHandler.swift",
-      "kind": "Dictionary",
-      "offset": 709,
-      "length": 3,
-      "value": "[]"
-    },
-    {
-      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Capture\/UX\/View\/UIViewControllerHandler.swift",
-      "kind": "Dictionary",
-      "offset": 773,
+      "offset": 566,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Capture\/UX\/View\/UIViewControllerHandler.swift",
       "kind": "Array",
-      "offset": 862,
-      "length": 603,
-      "value": "[\"UINavigationController\", \"UIEditingOverlayViewController\", \"UIInputWindowController\", \"UIAlertController\", \"UIActivityViewController\", \"UIEditingOverlayViewController\", \"UISnapshotModalViewController\", \"UIApplicationRotationFollowingController\", \"UIKeyboardCandidateGridCollectionViewController\", \"UICompatibilityInputViewController\", \"UIRemoteKeyboardWindow\", \"UIHostedWindowHostingController\", \"_UIFullscreenPresentationController\", \"_UIResilientRemoteViewContainerViewController\"]"
+      "offset": 656,
+      "length": 720,
+      "value": "[\"UINavigationController\", \"UIEditingOverlayViewController\", \"UIInputWindowController\", \"UIAlertController\", \"UIActivityViewController\", \"UIEditingOverlayViewController\", \"UISnapshotModalViewController\", \"UIApplicationRotationFollowingController\", \"UIKeyboardCandidateGridCollectionViewController\", \"UICompatibilityInputViewController\", \"UIRemoteKeyboardWindow\", \"UIHostedWindowHostingController\", \"_UIFullscreenPresentationController\", \"_UIResilientRemoteViewContainerViewController\", \"UIPredictionViewController\", \"UICandidateViewController\", \"UISystemKeyboardDockController\"]"
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Capture\/UX\/View\/ViewCaptureService.swift",
@@ -93890,7 +93972,7 @@
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/IMQAOtel.swift",
       "kind": "Dictionary",
-      "offset": 4529,
+      "offset": 4785,
       "length": 3,
       "value": "[]"
     },
@@ -99727,17 +99809,31 @@
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Options\/IMQA+Options.swift",
+      "kind": "BooleanLiteral",
+      "offset": 362,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Options\/IMQA+Options.swift",
       "kind": "FloatLiteral",
-      "offset": 465,
+      "offset": 514,
       "length": 3,
       "value": "1.0"
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Options\/IMQA+Options.swift",
+      "kind": "BooleanLiteral",
+      "offset": 556,
+      "length": 4,
+      "value": "true"
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Options\/IMQAMeta.swift",
       "kind": "StringLiteral",
       "offset": 162,
       "length": 8,
-      "value": "\"1.0.69\""
+      "value": "\"1.0.70\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Options\/IMQAMeta.swift",

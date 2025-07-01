@@ -857,6 +857,674 @@
       },
       {
         "kind": "TypeDecl",
+        "name": "KeychainInterface",
+        "printedName": "KeychainInterface",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "valueFor",
+            "printedName": "valueFor(service:account:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Tuple",
+                "printedName": "(value: Swift.String?, status: Swift.Int32)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int32",
+                    "printedName": "Swift.Int32",
+                    "usr": "s:s5Int32V"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CFString",
+                "printedName": "CoreFoundation.CFString",
+                "usr": "c:@T@CFStringRef"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CFString",
+                "printedName": "CoreFoundation.CFString",
+                "usr": "c:@T@CFStringRef"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10IMQACommon17KeychainInterfaceP8valueFor7service7accountSSSg0D0_s5Int32V6statustSo11CFStringRefa_AMtF",
+            "mangledName": "$s10IMQACommon17KeychainInterfaceP8valueFor7service7accountSSSg0D0_s5Int32V6statustSo11CFStringRefa_AMtF",
+            "moduleName": "IMQACommon",
+            "genericSig": "<τ_0_0 where τ_0_0 : IMQACommon.KeychainInterface>",
+            "sugared_genericSig": "<Self where Self : IMQACommon.KeychainInterface>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setValue",
+            "printedName": "setValue(service:account:value:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int32",
+                "printedName": "Swift.Int32",
+                "usr": "s:s5Int32V"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CFString",
+                "printedName": "CoreFoundation.CFString",
+                "usr": "c:@T@CFStringRef"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CFString",
+                "printedName": "CoreFoundation.CFString",
+                "usr": "c:@T@CFStringRef"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10IMQACommon17KeychainInterfaceP8setValue7service7account5values5Int32VSo11CFStringRefa_AKSStF",
+            "mangledName": "$s10IMQACommon17KeychainInterfaceP8setValue7service7account5values5Int32VSo11CFStringRefa_AKSStF",
+            "moduleName": "IMQACommon",
+            "genericSig": "<τ_0_0 where τ_0_0 : IMQACommon.KeychainInterface>",
+            "sugared_genericSig": "<Self where Self : IMQACommon.KeychainInterface>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "deleteValue",
+            "printedName": "deleteValue(service:account:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int32",
+                "printedName": "Swift.Int32",
+                "usr": "s:s5Int32V"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CFString",
+                "printedName": "CoreFoundation.CFString",
+                "usr": "c:@T@CFStringRef"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CFString",
+                "printedName": "CoreFoundation.CFString",
+                "usr": "c:@T@CFStringRef"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10IMQACommon17KeychainInterfaceP11deleteValue7service7accounts5Int32VSo11CFStringRefa_AJtF",
+            "mangledName": "$s10IMQACommon17KeychainInterfaceP11deleteValue7service7accounts5Int32VSo11CFStringRefa_AJtF",
+            "moduleName": "IMQACommon",
+            "genericSig": "<τ_0_0 where τ_0_0 : IMQACommon.KeychainInterface>",
+            "sugared_genericSig": "<Self where Self : IMQACommon.KeychainInterface>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:10IMQACommon17KeychainInterfaceP",
+        "mangledName": "$s10IMQACommon17KeychainInterfaceP",
+        "moduleName": "IMQACommon",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "DefaultKeychainInterface",
+        "printedName": "DefaultKeychainInterface",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "valueFor",
+            "printedName": "valueFor(service:account:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Tuple",
+                "printedName": "(value: Swift.String?, status: Swift.Int32)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int32",
+                    "printedName": "Swift.Int32",
+                    "usr": "s:s5Int32V"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CFString",
+                "printedName": "CoreFoundation.CFString",
+                "usr": "c:@T@CFStringRef"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CFString",
+                "printedName": "CoreFoundation.CFString",
+                "usr": "c:@T@CFStringRef"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10IMQACommon24DefaultKeychainInterfaceC8valueFor7service7accountSSSg0E0_s5Int32V6statustSo11CFStringRefa_AMtF",
+            "mangledName": "$s10IMQACommon24DefaultKeychainInterfaceC8valueFor7service7accountSSSg0E0_s5Int32V6statustSo11CFStringRefa_AMtF",
+            "moduleName": "IMQACommon",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setValue",
+            "printedName": "setValue(service:account:value:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int32",
+                "printedName": "Swift.Int32",
+                "usr": "s:s5Int32V"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CFString",
+                "printedName": "CoreFoundation.CFString",
+                "usr": "c:@T@CFStringRef"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CFString",
+                "printedName": "CoreFoundation.CFString",
+                "usr": "c:@T@CFStringRef"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10IMQACommon24DefaultKeychainInterfaceC8setValue7service7account5values5Int32VSo11CFStringRefa_AKSStF",
+            "mangledName": "$s10IMQACommon24DefaultKeychainInterfaceC8setValue7service7account5values5Int32VSo11CFStringRefa_AKSStF",
+            "moduleName": "IMQACommon",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "deleteValue",
+            "printedName": "deleteValue(service:account:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int32",
+                "printedName": "Swift.Int32",
+                "usr": "s:s5Int32V"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CFString",
+                "printedName": "CoreFoundation.CFString",
+                "usr": "c:@T@CFStringRef"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CFString",
+                "printedName": "CoreFoundation.CFString",
+                "usr": "c:@T@CFStringRef"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10IMQACommon24DefaultKeychainInterfaceC11deleteValue7service7accounts5Int32VSo11CFStringRefa_AJtF",
+            "mangledName": "$s10IMQACommon24DefaultKeychainInterfaceC11deleteValue7service7accounts5Int32VSo11CFStringRefa_AJtF",
+            "moduleName": "IMQACommon",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:10IMQACommon24DefaultKeychainInterfaceC",
+        "mangledName": "$s10IMQACommon24DefaultKeychainInterfaceC",
+        "moduleName": "IMQACommon",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "KeychainInterface",
+            "printedName": "KeychainInterface",
+            "usr": "s:10IMQACommon17KeychainInterfaceP",
+            "mangledName": "$s10IMQACommon17KeychainInterfaceP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "IMQACommon",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "DeviceIdentifier",
+        "printedName": "DeviceIdentifier",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(value:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "DeviceIdentifier",
+                "printedName": "IMQACommon.DeviceIdentifier",
+                "usr": "s:10IMQACommon16DeviceIdentifierV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:10IMQACommon16DeviceIdentifierV5valueAC10Foundation4UUIDV_tcfc",
+            "mangledName": "$s10IMQACommon16DeviceIdentifierV5valueAC10Foundation4UUIDV_tcfc",
+            "moduleName": "IMQACommon",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(string:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "IMQACommon.DeviceIdentifier?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DeviceIdentifier",
+                    "printedName": "IMQACommon.DeviceIdentifier",
+                    "usr": "s:10IMQACommon16DeviceIdentifierV"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:10IMQACommon16DeviceIdentifierV6stringACSgSSSg_tcfc",
+            "mangledName": "$s10IMQACommon16DeviceIdentifierV6stringACSgSSSg_tcfc",
+            "moduleName": "IMQACommon",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "hex",
+            "printedName": "hex",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10IMQACommon16DeviceIdentifierV3hexSSvp",
+            "mangledName": "$s10IMQACommon16DeviceIdentifierV3hexSSvp",
+            "moduleName": "IMQACommon",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10IMQACommon16DeviceIdentifierV3hexSSvg",
+                "mangledName": "$s10IMQACommon16DeviceIdentifierV3hexSSvg",
+                "moduleName": "IMQACommon",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "DeviceIdentifier",
+                "printedName": "IMQACommon.DeviceIdentifier",
+                "usr": "s:10IMQACommon16DeviceIdentifierV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "DeviceIdentifier",
+                "printedName": "IMQACommon.DeviceIdentifier",
+                "usr": "s:10IMQACommon16DeviceIdentifierV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10IMQACommon16DeviceIdentifierV2eeoiySbAC_ACtFZ",
+            "mangledName": "$s10IMQACommon16DeviceIdentifierV2eeoiySbAC_ACtFZ",
+            "moduleName": "IMQACommon",
+            "static": true,
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "intValue",
+            "printedName": "intValue(digitCount:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UInt64",
+                "printedName": "Swift.UInt64",
+                "usr": "s:s6UInt64V"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UInt",
+                "printedName": "Swift.UInt",
+                "usr": "s:Su"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10IMQACommon16DeviceIdentifierV8intValue10digitCounts6UInt64VSu_tF",
+            "mangledName": "$s10IMQACommon16DeviceIdentifierV8intValue10digitCounts6UInt64VSu_tF",
+            "moduleName": "IMQACommon",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "retrieve",
+            "printedName": "retrieve()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "DeviceIdentifier",
+                "printedName": "IMQACommon.DeviceIdentifier",
+                "usr": "s:10IMQACommon16DeviceIdentifierV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10IMQACommon16DeviceIdentifierV8retrieveACyFZ",
+            "mangledName": "$s10IMQACommon16DeviceIdentifierV8retrieveACyFZ",
+            "moduleName": "IMQACommon",
+            "static": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:10IMQACommon16DeviceIdentifierV",
+        "mangledName": "$s10IMQACommon16DeviceIdentifierV",
+        "moduleName": "IMQACommon",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "IMQACommon",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Security",
+        "printedName": "Security",
+        "declKind": "Import",
+        "moduleName": "IMQACommon"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "KeychainAccess",
+        "printedName": "KeychainAccess",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "deviceId",
+            "printedName": "deviceId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UUID",
+                "printedName": "Foundation.UUID",
+                "usr": "s:10Foundation4UUIDV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10IMQACommon14KeychainAccessC8deviceId10Foundation4UUIDVvpZ",
+            "mangledName": "$s10IMQACommon14KeychainAccessC8deviceId10Foundation4UUIDVvpZ",
+            "moduleName": "IMQACommon",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UUID",
+                    "printedName": "Foundation.UUID",
+                    "usr": "s:10Foundation4UUIDV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10IMQACommon14KeychainAccessC8deviceId10Foundation4UUIDVvgZ",
+                "mangledName": "$s10IMQACommon14KeychainAccessC8deviceId10Foundation4UUIDVvgZ",
+                "moduleName": "IMQACommon",
+                "static": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:10IMQACommon14KeychainAccessC",
+        "mangledName": "$s10IMQACommon14KeychainAccessC",
+        "moduleName": "IMQACommon",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "IMQACommon",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
         "name": "SessionIdentifier",
         "printedName": "SessionIdentifier",
         "children": [
@@ -4517,6 +5185,27 @@
       "offset": 628,
       "length": 3,
       "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACommon\/Identifier\/DeviceIdentifier.swift",
+      "kind": "StringLiteral",
+      "offset": 1238,
+      "length": 18,
+      "value": "\".deviceIdDefault\""
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACommon\/Identifier\/KeychainAccess.swift",
+      "kind": "StringLiteral",
+      "offset": 242,
+      "length": 14,
+      "value": "\"io.imqa.keys\""
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACommon\/Identifier\/KeychainAccess.swift",
+      "kind": "StringLiteral",
+      "offset": 288,
+      "length": 21,
+      "value": "\"io.imqa.deviceid_v3\""
     }
   ]
 }
