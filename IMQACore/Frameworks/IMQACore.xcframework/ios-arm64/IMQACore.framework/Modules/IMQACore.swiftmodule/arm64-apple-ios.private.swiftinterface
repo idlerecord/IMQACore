@@ -3103,6 +3103,8 @@ public protocol LogStorage {
   func flush()
 }
 public class FileLogStorage : IMQACore.LogStorage {
+  final public let directory: Foundation.URL
+  final public let queue: Dispatch.DispatchQueue
   public init()
   public func save(data: Foundation.Data)
   public func loadNext() -> Foundation.Data?
@@ -3117,6 +3119,8 @@ public protocol SpanStorage {
   func flush()
 }
 public class FileSpanStorage : IMQACore.SpanStorage {
+  final public let directory: Foundation.URL
+  final public let queue: Dispatch.DispatchQueue
   public init()
   public func save(data: Foundation.Data)
   public func loadNext() -> Foundation.Data?

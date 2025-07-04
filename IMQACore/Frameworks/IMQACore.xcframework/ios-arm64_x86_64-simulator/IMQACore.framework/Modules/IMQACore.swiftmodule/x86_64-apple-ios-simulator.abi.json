@@ -89923,6 +89923,103 @@
         "printedName": "FileLogStorage",
         "children": [
           {
+            "kind": "Var",
+            "name": "directory",
+            "printedName": "directory",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8IMQACore14FileLogStorageC9directory10Foundation3URLVvp",
+            "mangledName": "$s8IMQACore14FileLogStorageC9directory10Foundation3URLVvp",
+            "moduleName": "IMQACore",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "URL",
+                    "printedName": "Foundation.URL",
+                    "usr": "s:10Foundation3URLV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8IMQACore14FileLogStorageC9directory10Foundation3URLVvg",
+                "mangledName": "$s8IMQACore14FileLogStorageC9directory10Foundation3URLVvg",
+                "moduleName": "IMQACore",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "queue",
+            "printedName": "queue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "DispatchQueue",
+                "printedName": "Dispatch.DispatchQueue",
+                "usr": "c:objc(cs)OS_dispatch_queue"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8IMQACore14FileLogStorageC5queueSo012OS_dispatch_E0Cvp",
+            "mangledName": "$s8IMQACore14FileLogStorageC5queueSo012OS_dispatch_E0Cvp",
+            "moduleName": "IMQACore",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DispatchQueue",
+                    "printedName": "Dispatch.DispatchQueue",
+                    "usr": "c:objc(cs)OS_dispatch_queue"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8IMQACore14FileLogStorageC5queueSo012OS_dispatch_E0Cvg",
+                "mangledName": "$s8IMQACore14FileLogStorageC5queueSo012OS_dispatch_E0Cvg",
+                "moduleName": "IMQACore",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init()",
@@ -90211,6 +90308,103 @@
         "name": "FileSpanStorage",
         "printedName": "FileSpanStorage",
         "children": [
+          {
+            "kind": "Var",
+            "name": "directory",
+            "printedName": "directory",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8IMQACore15FileSpanStorageC9directory10Foundation3URLVvp",
+            "mangledName": "$s8IMQACore15FileSpanStorageC9directory10Foundation3URLVvp",
+            "moduleName": "IMQACore",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "URL",
+                    "printedName": "Foundation.URL",
+                    "usr": "s:10Foundation3URLV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8IMQACore15FileSpanStorageC9directory10Foundation3URLVvg",
+                "mangledName": "$s8IMQACore15FileSpanStorageC9directory10Foundation3URLVvg",
+                "moduleName": "IMQACore",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "queue",
+            "printedName": "queue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "DispatchQueue",
+                "printedName": "Dispatch.DispatchQueue",
+                "usr": "c:objc(cs)OS_dispatch_queue"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8IMQACore15FileSpanStorageC5queueSo012OS_dispatch_E0Cvp",
+            "mangledName": "$s8IMQACore15FileSpanStorageC5queueSo012OS_dispatch_E0Cvp",
+            "moduleName": "IMQACore",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DispatchQueue",
+                    "printedName": "Dispatch.DispatchQueue",
+                    "usr": "c:objc(cs)OS_dispatch_queue"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8IMQACore15FileSpanStorageC5queueSo012OS_dispatch_E0Cvg",
+                "mangledName": "$s8IMQACore15FileSpanStorageC5queueSo012OS_dispatch_E0Cvg",
+                "moduleName": "IMQACore",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
           {
             "kind": "Constructor",
             "name": "init",
@@ -99833,7 +100027,7 @@
       "kind": "StringLiteral",
       "offset": 162,
       "length": 8,
-      "value": "\"1.0.72\""
+      "value": "\"1.0.74\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Options\/IMQAMeta.swift",
@@ -100342,14 +100536,14 @@
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Storage\/FileLogStorage.swift",
       "kind": "StringLiteral",
-      "offset": 384,
+      "offset": 382,
       "length": 28,
       "value": "\"com.onycom.FileSpanStorage\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Storage\/FileSpanStorage.swift",
       "kind": "StringLiteral",
-      "offset": 305,
+      "offset": 303,
       "length": 28,
       "value": "\"com.onycom.FileSpanStorage\""
     },
