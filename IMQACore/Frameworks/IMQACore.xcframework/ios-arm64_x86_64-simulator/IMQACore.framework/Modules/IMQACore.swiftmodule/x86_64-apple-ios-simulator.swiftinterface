@@ -3027,6 +3027,7 @@ public struct SpanSemantics {
     public static let eventType: Swift.String
     public static let targetElement: Swift.String
     public static let targetElementText: Swift.String
+    public static let targetElementId: Swift.String
     public static let tapCoords: Swift.String
   }
   public enum EventValue : Swift.String {

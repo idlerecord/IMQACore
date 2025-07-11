@@ -87026,6 +87026,53 @@
               },
               {
                 "kind": "Var",
+                "name": "targetElementId",
+                "printedName": "targetElementId",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:8IMQACore13SpanSemanticsV5EventV15targetElementIdSSvpZ",
+                "mangledName": "$s8IMQACore13SpanSemanticsV5EventV15targetElementIdSSvpZ",
+                "moduleName": "IMQACore",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:8IMQACore13SpanSemanticsV5EventV15targetElementIdSSvgZ",
+                    "mangledName": "$s8IMQACore13SpanSemanticsV5EventV15targetElementIdSSvgZ",
+                    "moduleName": "IMQACore",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
                 "name": "tapCoords",
                 "printedName": "tapCoords",
                 "children": [
@@ -100069,7 +100116,7 @@
       "kind": "StringLiteral",
       "offset": 162,
       "length": 8,
-      "value": "\"1.0.78\""
+      "value": "\"1.0.79\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Options\/IMQAMeta.swift",
@@ -100242,336 +100289,343 @@
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 487,
+      "offset": 493,
+      "length": 19,
+      "value": "\"target_element_id\""
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
+      "kind": "StringLiteral",
+      "offset": 551,
       "length": 12,
       "value": "\"tap.coords\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 574,
+      "offset": 638,
       "length": 7,
       "value": "\"click\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 610,
+      "offset": 674,
       "length": 8,
       "value": "\"scroll\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 697,
+      "offset": 761,
       "length": 22,
       "value": "\"http.request.headers\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 764,
+      "offset": 828,
       "length": 19,
       "value": "\"http.request.body\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 822,
+      "offset": 886,
       "length": 12,
       "value": "\"error.type\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 872,
+      "offset": 936,
       "length": 10,
       "value": "\"url.full\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 919,
+      "offset": 983,
       "length": 10,
       "value": "\"http.url\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 967,
+      "offset": 1031,
       "length": 11,
       "value": "\"http.host\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 1046,
+      "offset": 1110,
       "length": 13,
       "value": "\"http.scheme\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 1098,
+      "offset": 1162,
       "length": 12,
       "value": "\"url.scheme\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 1150,
+      "offset": 1214,
       "length": 13,
       "value": "\"http.method\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 1210,
+      "offset": 1274,
       "length": 21,
       "value": "\"http.request.method\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 1283,
+      "offset": 1347,
       "length": 27,
       "value": "\"http.response.status_code\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 1353,
+      "offset": 1417,
       "length": 16,
       "value": "\"exception.type\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 1415,
+      "offset": 1479,
       "length": 19,
       "value": "\"exception.message\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 1503,
+      "offset": 1567,
       "length": 9,
       "value": "\"session\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 1547,
+      "offset": 1611,
       "length": 12,
       "value": "\"session.id\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 1597,
+      "offset": 1661,
       "length": 12,
       "value": "\"imqa.state\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 1651,
+      "offset": 1715,
       "length": 17,
       "value": "\"imqa.cold_start\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 1711,
+      "offset": 1775,
       "length": 17,
       "value": "\"imqa.terminated\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 1770,
+      "offset": 1834,
       "length": 17,
       "value": "\"imqa.clean_exit\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 1833,
+      "offset": 1897,
       "length": 21,
       "value": "\"imqa.session_number\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 1896,
+      "offset": 1960,
       "length": 31,
       "value": "\"imqa.heartbeat_time_unix_nano\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 1967,
+      "offset": 2031,
       "length": 15,
       "value": "\"imqa.crash_id\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 2112,
+      "offset": 2176,
       "length": 12,
       "value": "\"session.id\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 2170,
+      "offset": 2234,
       "length": 10,
       "value": "\"trace.id\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 2225,
+      "offset": 2289,
       "length": 9,
       "value": "\"span.id\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 2317,
+      "offset": 2381,
       "length": 16,
       "value": "\"source.address\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 2407,
+      "offset": 2471,
       "length": 13,
       "value": "\"screen.name\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 2489,
+      "offset": 2553,
       "length": 13,
       "value": "\"screen.type\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 2566,
+      "offset": 2630,
       "length": 9,
       "value": "\"user.id\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 2655,
+      "offset": 2719,
       "length": 22,
       "value": "\"network.carrier.name\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 2783,
+      "offset": 2847,
       "length": 28,
       "value": "\"network.connection.subtype\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 2901,
+      "offset": 2965,
       "length": 22,
       "value": "\"device.battery.level\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 3005,
+      "offset": 3069,
       "length": 25,
       "value": "\"device.battery.charging\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 3099,
+      "offset": 3163,
       "length": 15,
       "value": "\"app.cpu.usage\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 3197,
+      "offset": 3261,
       "length": 21,
       "value": "\"device.memory.total\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 3300,
+      "offset": 3364,
       "length": 20,
       "value": "\"device.memory.free\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 3413,
+      "offset": 3477,
       "length": 22,
       "value": "\"app.memory.allocated\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 3497,
+      "offset": 3561,
       "length": 11,
       "value": "\"area.code\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 3603,
+      "offset": 3667,
       "length": 19,
       "value": "\"network.available\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 3754,
+      "offset": 3818,
       "length": 18,
       "value": "\"network.cellular\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 3880,
+      "offset": 3944,
       "length": 14,
       "value": "\"network.wifi\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 3995,
+      "offset": 4059,
       "length": 10,
       "value": "\"NoScreen\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 4051,
+      "offset": 4115,
       "length": 6,
       "value": "\"view\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 4137,
+      "offset": 4201,
       "length": 9,
       "value": "\"Session\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 4286,
+      "offset": 4350,
       "length": 22,
       "value": "\"device.app.lifecycle\""
     },
