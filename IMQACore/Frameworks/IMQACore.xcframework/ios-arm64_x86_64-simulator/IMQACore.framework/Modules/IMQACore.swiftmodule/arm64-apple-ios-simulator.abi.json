@@ -94144,8 +94144,15 @@
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Capture\/UX\/View\/UIViewControllerHandler.swift",
       "kind": "Array",
       "offset": 656,
-      "length": 720,
-      "value": "[\"UINavigationController\", \"UIEditingOverlayViewController\", \"UIInputWindowController\", \"UIAlertController\", \"UIActivityViewController\", \"UIEditingOverlayViewController\", \"UISnapshotModalViewController\", \"UIApplicationRotationFollowingController\", \"UIKeyboardCandidateGridCollectionViewController\", \"UICompatibilityInputViewController\", \"UIRemoteKeyboardWindow\", \"UIHostedWindowHostingController\", \"_UIFullscreenPresentationController\", \"_UIResilientRemoteViewContainerViewController\", \"UIPredictionViewController\", \"UICandidateViewController\", \"UISystemKeyboardDockController\"]"
+      "length": 722,
+      "value": "[\"UINavigationController\", \"UIEditingOverlayViewController\", \"UIInputWindowController\", \"UIAlertController\", \"UIActivityViewController\", \"UISnapshotModalViewController\", \"UIApplicationRotationFollowingController\", \"UIKeyboardCandidateGridCollectionViewController\", \"UICompatibilityInputViewController\", \"UIRemoteKeyboardWindow\", \"UIHostedWindowHostingController\", \"_UIFullscreenPresentationController\", \"_UIResilientRemoteViewContainerViewController\", \"UIPredictionViewController\", \"UICandidateViewController\", \"UISystemKeyboardDockController\", \"_UICursorAccessoryViewController\"]"
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Capture\/UX\/View\/UIViewControllerHandler.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1456,
+      "length": 5,
+      "value": "false"
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Capture\/UX\/View\/ViewCaptureService.swift",
@@ -100116,7 +100123,7 @@
       "kind": "StringLiteral",
       "offset": 162,
       "length": 8,
-      "value": "\"1.0.79\""
+      "value": "\"1.0.80\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Options\/IMQAMeta.swift",
