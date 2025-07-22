@@ -3877,6 +3877,47 @@
           },
           {
             "kind": "Var",
+            "name": "majorVersion",
+            "printedName": "majorVersion",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:So8NSBundleC10IMQACommonE12majorVersionSSvpZ",
+            "mangledName": "$sSo8NSBundleC10IMQACommonE12majorVersionSSvpZ",
+            "moduleName": "IMQACommon",
+            "static": true,
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:So8NSBundleC10IMQACommonE12majorVersionSSvgZ",
+                "mangledName": "$sSo8NSBundleC10IMQACommonE12majorVersionSSvgZ",
+                "moduleName": "IMQACommon",
+                "static": true,
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "appBuildVersion",
             "printedName": "appBuildVersion",
             "children": [

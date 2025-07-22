@@ -3015,6 +3015,7 @@ public struct ResourceSemantics {
   public static let serviceVersion: Swift.String
   public static let imqaSDKVersion: Swift.String
   public static let osName: Swift.String
+  public static let osVersionMajor: Swift.String
   public static let osVersion: Swift.String
   public static let serviceKey: Swift.String
   public static let deviceId: Swift.String

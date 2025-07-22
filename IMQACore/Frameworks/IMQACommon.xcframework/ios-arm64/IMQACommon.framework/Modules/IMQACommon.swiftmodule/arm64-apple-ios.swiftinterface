@@ -64,6 +64,9 @@ extension Foundation.Bundle {
   public class var appVersion: Swift.String {
     get
   }
+  public class var majorVersion: Swift.String {
+    get
+  }
   public class var appBuildVersion: Swift.String {
     get
   }
