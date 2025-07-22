@@ -462,6 +462,7 @@ SWIFT_CLASS_NAMED("Options")
 /// \param userContentController userContentController
 ///
 + (void)setWebviewConfigurationWithUserContentController:(WKUserContentController * _Nonnull)userContentController;
++ (void)setIsGenerateData;
 @end
 
 @class NSBundle;

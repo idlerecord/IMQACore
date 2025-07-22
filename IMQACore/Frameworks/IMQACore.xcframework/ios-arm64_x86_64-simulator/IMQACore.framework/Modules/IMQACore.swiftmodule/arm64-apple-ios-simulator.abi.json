@@ -2725,6 +2725,30 @@
             "funcSelfKind": "NonMutating"
           },
           {
+            "kind": "Function",
+            "name": "setIsGenerateData",
+            "printedName": "setIsGenerateData()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@IMQACore@objc(cs)IMQA(cm)setIsGenerateData",
+            "mangledName": "$s8IMQACore4IMQAC17setIsGenerateDatayyFZ",
+            "moduleName": "IMQACore",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
             "kind": "TypeDecl",
             "name": "Endpoints",
             "printedName": "Endpoints",
@@ -4062,6 +4086,106 @@
         "name": "IMQAOtel",
         "printedName": "IMQAOtel",
         "children": [
+          {
+            "kind": "Var",
+            "name": "isGenerateData",
+            "printedName": "isGenerateData",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8IMQACore8IMQAOtelC14isGenerateDataSbvpZ",
+            "mangledName": "$s8IMQACore8IMQAOtelC14isGenerateDataSbvpZ",
+            "moduleName": "IMQACore",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8IMQACore8IMQAOtelC14isGenerateDataSbvgZ",
+                "mangledName": "$s8IMQACore8IMQAOtelC14isGenerateDataSbvgZ",
+                "moduleName": "IMQACore",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8IMQACore8IMQAOtelC14isGenerateDataSbvsZ",
+                "mangledName": "$s8IMQACore8IMQAOtelC14isGenerateDataSbvsZ",
+                "moduleName": "IMQACore",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8IMQACore8IMQAOtelC14isGenerateDataSbvMZ",
+                "mangledName": "$s8IMQACore8IMQAOtelC14isGenerateDataSbvMZ",
+                "moduleName": "IMQACore",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
           {
             "kind": "Var",
             "name": "commonAttributes",
@@ -89365,6 +89489,54 @@
                     "accessorKind": "get"
                   }
                 ]
+              },
+              {
+                "kind": "Var",
+                "name": "networkConnectionType",
+                "printedName": "networkConnectionType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:8IMQACore13SpanSemanticsV6CommonV21networkConnectionTypeSSvpZ",
+                "mangledName": "$s8IMQACore13SpanSemanticsV6CommonV21networkConnectionTypeSSvpZ",
+                "moduleName": "IMQACore",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl",
+                  "RawDocComment"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:8IMQACore13SpanSemanticsV6CommonV21networkConnectionTypeSSvgZ",
+                    "mangledName": "$s8IMQACore13SpanSemanticsV6CommonV21networkConnectionTypeSSvgZ",
+                    "moduleName": "IMQACore",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
               }
             ],
             "declKind": "Struct",
@@ -94212,57 +94384,64 @@
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/IMQAOtel.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1039,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/IMQAOtel.swift",
       "kind": "Dictionary",
-      "offset": 1061,
+      "offset": 1117,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/IMQAOtel.swift",
       "kind": "Dictionary",
-      "offset": 4785,
+      "offset": 10377,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/IMQAOtel.swift",
       "kind": "Dictionary",
-      "offset": 7070,
+      "offset": 12830,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/IMQAOtel.swift",
       "kind": "Dictionary",
-      "offset": 7283,
+      "offset": 13043,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/IMQAOtel.swift",
       "kind": "Dictionary",
-      "offset": 7495,
+      "offset": 13255,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/IMQAOtel.swift",
       "kind": "Dictionary",
-      "offset": 7708,
+      "offset": 13468,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/IMQAOtel.swift",
       "kind": "Dictionary",
-      "offset": 7922,
+      "offset": 13682,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/IMQAOtel.swift",
       "kind": "Dictionary",
-      "offset": 8136,
+      "offset": 13896,
       "length": 3,
       "value": "[]"
     },
@@ -94311,7 +94490,7 @@
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Info\/IMQADeviceInfoCollecter.swift",
       "kind": "FloatLiteral",
-      "offset": 3317,
+      "offset": 3404,
       "length": 4,
       "value": "10.0"
     },
@@ -100123,7 +100302,7 @@
       "kind": "StringLiteral",
       "offset": 162,
       "length": 8,
-      "value": "\"1.0.81\""
+      "value": "\"1.0.82\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Options\/IMQAMeta.swift",
@@ -100611,28 +100790,35 @@
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 4059,
+      "offset": 4021,
+      "length": 25,
+      "value": "\"network.connection.type\""
+    },
+    {
+      "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
+      "kind": "StringLiteral",
+      "offset": 4147,
       "length": 10,
       "value": "\"NoScreen\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 4115,
+      "offset": 4203,
       "length": 6,
       "value": "\"view\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 4201,
+      "offset": 4289,
       "length": 9,
       "value": "\"Session\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Semantics\/SpanSemantics.swift",
       "kind": "StringLiteral",
-      "offset": 4350,
+      "offset": 4438,
       "length": 22,
       "value": "\"device.app.lifecycle\""
     },

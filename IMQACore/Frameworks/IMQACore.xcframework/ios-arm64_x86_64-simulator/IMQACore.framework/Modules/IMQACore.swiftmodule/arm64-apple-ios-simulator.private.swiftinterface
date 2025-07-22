@@ -117,8 +117,10 @@ extension IMQACore.IMQA {
   @objc public static func setAdvancedNetworkCapture(isCapture: Swift.Bool)
   @objc public static func sendClickEvent(buttonName: Swift.String, buttonClassName: Swift.String)
   @objc public static func setWebviewConfiguration(userContentController: WebKit.WKUserContentController)
+  @objc public static func setIsGenerateData()
 }
 @_hasMissingDesignatedInitializers public class IMQAOtel {
+  public static var isGenerateData: Swift.Bool
   @IMQACommon.ThreadSafe public var commonAttributes: [Swift.String : Swift.String] {
     get
     set
@@ -3085,6 +3087,7 @@ public struct SpanSemantics {
     public static let networkAvailable: Swift.String
     public static let networkCellular: Swift.String
     public static let networkWifi: Swift.String
+    public static let networkConnectionType: Swift.String
   }
   public struct CommonValue {
     public static var noScreenValue: Swift.String
