@@ -94496,49 +94496,49 @@
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Info\/IMQADeviceInfoCollecter.swift",
       "kind": "StringLiteral",
-      "offset": 1877,
+      "offset": 2076,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Info\/IMQADeviceInfoCollecter.swift",
       "kind": "StringLiteral",
-      "offset": 1947,
+      "offset": 2146,
       "length": 4,
       "value": "\"0%\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Info\/IMQADeviceInfoCollecter.swift",
       "kind": "StringLiteral",
-      "offset": 2028,
+      "offset": 2227,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Info\/IMQADeviceInfoCollecter.swift",
       "kind": "StringLiteral",
-      "offset": 2105,
+      "offset": 2304,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Info\/IMQADeviceInfoCollecter.swift",
       "kind": "StringLiteral",
-      "offset": 2178,
+      "offset": 2377,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Info\/IMQADeviceInfoCollecter.swift",
       "kind": "StringLiteral",
-      "offset": 2249,
+      "offset": 2448,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Info\/IMQADeviceInfoCollecter.swift",
       "kind": "FloatLiteral",
-      "offset": 3642,
+      "offset": 3841,
       "length": 4,
       "value": "10.0"
     },
@@ -100350,7 +100350,7 @@
       "kind": "StringLiteral",
       "offset": 162,
       "length": 8,
-      "value": "\"1.0.85\""
+      "value": "\"1.0.86\""
     },
     {
       "filePath": "\/Users\/imqatest\/Desktop\/iOS\/imqa-ios-sdk-next\/actions-runner\/IMQASDKNEXT\/imqa-ios-sdk-next\/imqa-ios-sdk-next\/IMQASDK\/IMQACore\/Options\/IMQAMeta.swift",
