@@ -486,6 +486,13 @@ typedef SWIFT_ENUM(NSInteger, LogSeverity, open) {
 
 
 
+SWIFT_CLASS_NAMED("SwiftUILifecycleCaptureService")
+@interface IMQASwiftUILifecycleCaptureService : CaptureService
+- (nonnull instancetype)init;
+- (void)onInstall;
+@end
+
+
 SWIFT_CLASS_NAMED("TapCaptureService")
 @interface IMQATapCaptureService : CaptureService
 - (nonnull instancetype)init;

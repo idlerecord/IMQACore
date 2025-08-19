@@ -12,6 +12,7 @@ import IMQAObjCUtilsInternal
 import KSCrash
 import Swift
 import SwiftProtobuf
+import SwiftUI
 import SystemConfiguration
 import UIKit
 import WebKit
@@ -88,6 +89,42 @@ import os
 }
 extension UIKit.UIView {
   @_Concurrency.MainActor @preconcurrency public func findTitle() -> Swift.String?
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(IMQASwiftUILifecycleCaptureService) final public class SwiftUILifecycleCaptureService : IMQACore.CaptureService {
+  @objc convenience override dynamic public init()
+  @objc override final public func onInstall()
+  final public func onViewAppear(_ viewName: Swift.String)
+  public static var shared: IMQACore.SwiftUILifecycleCaptureService!
+  @objc deinit
+}
+@available(iOS 13.0, *)
+extension SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public func imqaTrackLifecycle(_ viewName: Swift.String? = nil) -> some SwiftUICore.View
+  
+  @_Concurrency.MainActor @preconcurrency public func imqaTrackLifecycle(_ viewName: Swift.String, callback: @escaping (IMQACore.IMQALifecycleEvent) -> Swift.Void) -> some SwiftUICore.View
+  
+}
+public enum IMQALifecycleEvent {
+  case onAppear
+  case onDisappear
+  case task
+  public static func == (a: IMQACore.IMQALifecycleEvent, b: IMQACore.IMQALifecycleEvent) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_Concurrency.MainActor @preconcurrency public struct IMQALifecycleModifier : SwiftUICore.ViewModifier {
+  @_Concurrency.MainActor @preconcurrency public init(viewName: Swift.String, callback: ((IMQACore.IMQALifecycleEvent) -> Swift.Void)? = nil)
+  @available(iOS 13.0.0, *)
+  @_Concurrency.MainActor @preconcurrency public func body(content: IMQACore.IMQALifecycleModifier.Content) -> some SwiftUICore.View
+  
+  public typealias Body = @_opaqueReturnTypeOf("$s8IMQACore21IMQALifecycleModifierV4body7contentQr7SwiftUI05_ViewC8_ContentVyACG_tF", 0) __
+}
+@available(iOS 13.0, *)
+extension SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public func imqaLifecycle(viewName: Swift.String, callback: ((IMQACore.IMQALifecycleEvent) -> Swift.Void)? = nil) -> some SwiftUICore.View
+  
 }
 @_hasMissingDesignatedInitializers public class UIViewControllerHandler {
   @objc deinit
@@ -3217,6 +3254,9 @@ extension IMQACore.Reachability {
 extension IMQACore.CaptureServiceState : Swift.Equatable {}
 extension IMQACore.CaptureServiceState : Swift.Hashable {}
 extension IMQACore.CaptureServiceState : Swift.RawRepresentable {}
+extension IMQACore.IMQALifecycleEvent : Swift.Equatable {}
+extension IMQACore.IMQALifecycleEvent : Swift.Hashable {}
+extension IMQACore.IMQALifecycleModifier : Swift.Sendable {}
 extension IMQACore.CustomCompressionType : Swift.Equatable {}
 extension IMQACore.CustomCompressionType : Swift.Hashable {}
 extension IMQACore.ExportResult : Swift.Equatable {}
